@@ -11,7 +11,7 @@ class IRohbergBluechurchFeaturesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-class IInserat(Interface):
+class IBluechurchInserat(Interface):
 
     title = schema.TextLine(
         title=_(u'Title'),

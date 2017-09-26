@@ -3,7 +3,7 @@ from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
-from rohberg.bluechurch.features.interfaces import IInserat
+from rohberg.bluechurch.features.interfaces import IBluechurchInserat
 from rohberg.bluechurch.features.testing import ROHBERG_BLUECHURCH_FEATURES_INTEGRATION_TESTING  # noqa
 from zope.component import createObject
 from zope.component import queryUtility
@@ -11,7 +11,7 @@ from zope.component import queryUtility
 import unittest
 
 
-class InseratIntegrationTest(unittest.TestCase):
+class BluechurchInseratIntegrationTest(unittest.TestCase):
 
     layer = ROHBERG_BLUECHURCH_FEATURES_INTEGRATION_TESTING
 
@@ -22,24 +22,24 @@ class InseratIntegrationTest(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Inserat')
+        fti = queryUtility(IDexterityFTI, name='BluechurchInserat')
         schema = fti.lookupSchema()
-        self.assertEqual(IInserat, schema)
+        self.assertEqual(IBluechurchInserat, schema)
 
     def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name='Inserat')
+        fti = queryUtility(IDexterityFTI, name='BluechurchInserat')
         self.assertTrue(fti)
 
     def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name='Inserat')
+        fti = queryUtility(IDexterityFTI, name='BluechurchInserat')
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(IInserat.providedBy(obj))
+        self.assertTrue(IBluechurchInserat.providedBy(obj))
 
     def test_adding(self):
         obj = api.content.create(
             container=self.portal,
-            type='Inserat',
-            id='Inserat',
+            type='BluechurchInserat',
+            id='BluechurchInserat',
         )
-        self.assertTrue(IInserat.providedBy(obj))
+        self.assertTrue(IBluechurchInserat.providedBy(obj))
