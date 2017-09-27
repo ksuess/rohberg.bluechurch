@@ -35,3 +35,4 @@ report.html
 !src/rohberg
 .DS_Store
 *.pyc
+*.pyo

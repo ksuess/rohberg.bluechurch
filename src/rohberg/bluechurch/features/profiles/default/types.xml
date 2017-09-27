@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <object name="portal_types" meta_type="Plone Types Tool">
-  <object name="rohberg.bluechurch.features.IBluechurchProfile" meta_type="Dexterity FTI"/>
-  <object name="rohberg.bluechurch.features.IBluechurchEvent" meta_type="Dexterity FTI"/>
-  <object name="rohberg.bluechurch.features.IBluechurchLocation" meta_type="Dexterity FTI"/>
-  <object name="rohberg.bluechurch.features.IBluechurchdoc" meta_type="Dexterity FTI"/>
   <object name="rohberg.bluechurch.features.IBluechurchInserat" meta_type="Dexterity FTI"/>
+  <object meta_type="Dexterity FTI" name="bluechurchprofile"/>
 </object>
