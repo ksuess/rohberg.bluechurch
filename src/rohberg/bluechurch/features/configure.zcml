@@ -11,6 +11,12 @@
   <include package=".browser" />
 
 
+  <utility
+      name="rohberg.bluechurch.features.BluchurchTags"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component="rohberg.bluechurch.features.vocabularies.BluchurchTagsVocabularyFactory"
+  />
+  
   <genericsetup:registerProfile
       name="default"
       title="rohberg.bluechurch.features"
