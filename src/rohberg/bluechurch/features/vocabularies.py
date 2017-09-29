@@ -3,7 +3,6 @@
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
-
 def BluchurchTagsVocabularyFactory(context=None):
     terms = []
     terms.append(SimpleVocabulary.createTerm("kinder", "kinder", u"Kinder"))

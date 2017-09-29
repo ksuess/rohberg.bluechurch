@@ -19,6 +19,13 @@
       />
 
 
+  	<browser:page
+  	    name="bluechurch-controlpanel"
+  	    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+  	    class=".controlpanel.BluechurchControlPanelView"
+  	    permission="cmf.ManagePortal"
+  	    />
+        
   <browser:page
         for="*"
         name="testview"
