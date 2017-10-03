@@ -4,6 +4,11 @@ from zope.schema.interfaces import IVocabularyFactory
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+
+class BluechurchprofileView(BrowserView):
+    """ the default view for BluechurchProfile"""
+
+# Testview
 class MyView(BrowserView):
 
     # index = ViewPageTemplateFile("my-template.pt")

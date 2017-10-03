@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+
+  <index name="bluechurchtags" meta_type="KeywordIndex">
+    <indexed_attr value="bluechurchtags"/>
+  </index>
+
+  <column value="bluechurchtags" />
+</object>

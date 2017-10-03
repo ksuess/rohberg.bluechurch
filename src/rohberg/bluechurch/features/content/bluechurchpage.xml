@@ -1,32 +1,27 @@
 <model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
   <schema>
-    <field name="lastname" type="zope.schema.TextLine">
+    <field name="kontaktperson" type="z3c.relationfield.schema.RelationChoice">
       <description/>
-      <title>Lastname</title>
+      <title>Kontaktperson</title>
+      <portal_type>
+        <element>bluechurchprofile</element>
+      </portal_type>
     </field>
-    <field name="firstname" type="zope.schema.TextLine">
-      <description/>
-      <title>Firstname</title>
-    </field>
-    <field name="title" type="zope.schema.TextLine">
-      <description>Voller Name. Wird von Plone gesetzt.</description>
+    <field name="kontakte" type="z3c.relationfield.schema.RelationList">
+      <description>Beteiligte Artists, Veranstalter</description>
       <required>False</required>
-      <title>Title</title>
+      <title>Artists</title>
+      <value_type type="z3c.relationfield.schema.RelationChoice">
+        <title i18n:translate="">Relation Choice</title>
+        <portal_type>
+          <element>bluechurchprofile</element>
+        </portal_type>
+      </value_type>
     </field>
     <field name="website" type="zope.schema.URI">
       <description/>
       <required>False</required>
       <title>Website</title>
-    </field>
-    <field name="twitter_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Twitter Handle</title>
-    </field>
-    <field name="facebook_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Facebook Handle</title>
     </field>
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>

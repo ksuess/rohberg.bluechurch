@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ploneconf.site">
+<body>
+    <metal:content-core fill-slot="content-core">
+        <h2>bluechurchprofileview.pt</h2>
+        <p>view/w <em tal:replace="structure view/w"></em>
+        </p>
+
+        <div tal:content="structure view/w/bluechurchtags/render" />
+
+        <div tal:content="context/title_or_id">
+            title_or_id
+        </div>
+    </metal:content-core>
+</body>
+</html>
