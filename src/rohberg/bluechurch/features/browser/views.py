@@ -3,9 +3,10 @@ from zope.schema.interfaces import IVocabularyFactory
 
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.dexterity.browser.view import DefaultView
 
 
-class BluechurchprofileView(BrowserView):
+class BluechurchprofileView(DefaultView):
     """ the default view for BluechurchProfile"""
 
 # Testview
