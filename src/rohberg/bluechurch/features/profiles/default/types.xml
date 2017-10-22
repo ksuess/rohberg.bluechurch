@@ -5,4 +5,6 @@
   <object name="bluechurchlocation" meta_type="Dexterity FTI"/>
   <object name="bluechurchinserat" meta_type="Dexterity FTI"/>
   <object name="bluechurchpage" meta_type="Dexterity FTI"/>
+
+  <object name="dexterity.membrane.bluechurchmembraneprofile" meta_type="Dexterity FTI" />
 </object>
