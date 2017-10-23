@@ -5,7 +5,7 @@
     </roles>
     
   <permissions>
-    <permission name="Bluechurch: Add Bluechurch Content"
+    <permission name="rohberg.bluechurch: Add Bluechurch Content"
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>

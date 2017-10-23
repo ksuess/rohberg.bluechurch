@@ -38,7 +38,7 @@
 
   <permission
     id="rohberg.bluechurch.addbluechurchcontent"
-    title="Bluechurch: Add Bluechurch Content"
+    title="rohberg.bluechurch: Add Bluechurch Content"
     />
     
   <utility
