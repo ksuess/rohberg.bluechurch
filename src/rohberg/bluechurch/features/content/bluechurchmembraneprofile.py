@@ -1,7 +1,9 @@
 # TODO: IBluechurchmembraneprofile mit Schema
 # siehe dexterity.membrane.content.member.IMember
 
+from zope import schema
 from dexterity.membrane.content.member import IMember
+from rohberg.bluechurch import _
 
 class IBluechurchmembraneprofile(IMember):
     """
@@ -14,6 +16,6 @@ class IBluechurchmembraneprofile(IMember):
         description=_(u"Enter a user name, usually something like 'jsmith'."
             " No spaces or special characters. Usernames and passwords are "
             "case sensitive, make sure the caps lock key is not enabled. "
-            "This is the name used to log in.")
+            "This is the name used to log in."),
         required=True,
     )

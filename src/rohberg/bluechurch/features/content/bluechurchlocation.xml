@@ -4,7 +4,7 @@
       <description/>
       <title>Kontaktperson</title>
       <portal_type>
-        <element>bluechurchprofile</element>
+        <element>bluechurchmembraneprofile</element>
       </portal_type>
     </field>
     <field name="website" type="zope.schema.URI">

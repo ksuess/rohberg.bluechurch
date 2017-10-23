@@ -5,7 +5,7 @@
       <required>False</required>
       <title>Kontakt</title>
       <portal_type>
-        <element>bluechurchprofile</element>
+        <element>bluechurchmembraneprofile</element>
       </portal_type>
     </field>
     <field name="bluechurchtags" type="zope.schema.Set">

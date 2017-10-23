@@ -4,7 +4,7 @@
       <description/>
       <title>Kontaktperson</title>
       <portal_type>
-        <element>bluechurchprofile</element>
+        <element>bluechurchmembraneprofile</element>
       </portal_type>
     </field>
     <field name="ort" type="z3c.relationfield.schema.RelationChoice">
@@ -21,7 +21,7 @@
       <value_type type="z3c.relationfield.schema.RelationChoice">
         <title i18n:translate="">Relation Choice</title>
         <portal_type>
-          <element>bluechurchprofile</element>
+          <element>bluechurchmembraneprofile</element>
         </portal_type>
       </value_type>
     </field>
