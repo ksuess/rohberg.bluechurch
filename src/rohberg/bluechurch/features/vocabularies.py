@@ -19,7 +19,7 @@ def BluchurchTagsVocabularyFactory(context=None):
     normalizer = getUtility(IIDNormalizer)
     
     terms = []
-    tags = api.portal.get_registry_record('bluechurch.bluechurchtags')
+    tags = api.portal.get_registry_record('bluechurch.bluechurchtags') or []
     # json.dumps(channels)
     for tag in tags:
         tag_lower = normalizer.normalize(tag)

@@ -15,6 +15,7 @@ class IBluechurchControlPanel(Interface):
         title=u'Schlagworte',
         description=u'Schlagworte, Tags, ',
         value_type=schema.TextLine(),
+        default=["Familie"],
     )
     GTMCode = schema.TextLine(
         title=u'GTMCode',
