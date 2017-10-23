@@ -1,0 +1,4 @@
+Prozesse und Use Cases
+
+Artist oder Event Manager (Im Folgenden oft nur Artist genannt) registriert sich. Daraufhin öffnet sich die Eingabemaske für sein Artist-Profil.
+
