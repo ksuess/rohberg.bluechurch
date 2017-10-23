@@ -18,7 +18,7 @@
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="add_permission">rohberg.bluechurch.addbluechurchcontent</property>
 
 
  <property name="klass">rohberg.bluechurch.features.content.bluechurchevent.Bluechurchevent</property>

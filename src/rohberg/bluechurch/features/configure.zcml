@@ -36,6 +36,11 @@
       />
 
 
+  <permission
+    id="rohberg.bluechurch.addbluechurchcontent"
+    title="Bluechurch: Add Bluechurch Content"
+    />
+    
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="rohberg.bluechurch.features-hiddenprofiles" />

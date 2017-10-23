@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<rolemap>
+    <roles>
+      <role name="Bluechurch Member"/>
+    </roles>
+    
+  <permissions>
+    <permission name="Bluechurch: Add Bluechurch Content"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Bluechurch Member"/>
+    </permission>
+  </permissions>
+  
+</rolemap>
