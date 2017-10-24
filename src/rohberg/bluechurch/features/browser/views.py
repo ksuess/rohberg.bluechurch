@@ -5,6 +5,7 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.dexterity.browser.view import DefaultView
 
+from rohberg.bluechurch.features import _
 
 class BluechurchprofileView(DefaultView):
     """ the default view for BluechurchProfile"""
