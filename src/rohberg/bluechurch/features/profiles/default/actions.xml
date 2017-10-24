@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <action-provider name="portal_workflow"/>
+ <action-provider name="portal_types"/>
+ <action-provider name="portal_actions"/>
+ 
+ 
+ <object name="user" meta_type="CMF Action Category">
+  <property name="title">User actions</property>
+  
+  <object name="join_bluechurch" meta_type="CMF Action" i18n:domain="plone">
+<!-- TODO: condition fehlt: nur wenn anonymous -->
+   <property name="title" i18n:translate="">Register</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/profiles/++add++dexterity.membrane.bluechurchmembraneprofile</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">True</property>
+   <property name="modal"
+      type="text">{"prependContent": ".portalMessage"}</property>
+  </object>
+
+ </object>
+ 
+ 
+</object>
