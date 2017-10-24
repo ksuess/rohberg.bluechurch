@@ -37,12 +37,17 @@
 
 
   <permission
+    id="rohberg.bluechurch.addbluechurchprofile"
+    title="rohberg.bluechurch.addbluechurchprofile"
+    />
+    
+  <permission
     id="rohberg.bluechurch.addbluechurchcontent"
-    title="rohberg.bluechurch: Add Bluechurch Content"
+    title="rohberg.bluechurch.addbluechurchcontent"
     />
     
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="rohberg.bluechurch.features-hiddenprofiles" />
-
+  
 </configure>

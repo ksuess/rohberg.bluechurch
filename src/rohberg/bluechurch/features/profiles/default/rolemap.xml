@@ -5,12 +5,19 @@
     </roles>
     
   <permissions>
-    <permission name="rohberg.bluechurch: Add Bluechurch Content"
-                acquire="True">
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
-      <role name="Bluechurch Member"/>
-    </permission>
+        <permission name="rohberg.bluechurch.addbluechurchprofile"
+                    acquire="True">
+          <role name="Manager"/>
+          <role name="Site Administrator"/>
+          <role name="Anonymous"/>
+        </permission>
+
+        <permission name="rohberg.bluechurch.addbluechurchcontent"
+                    acquire="True">
+          <role name="Manager"/>
+          <role name="Site Administrator"/>
+          <role name="Bluechurch Member"/>
+        </permission>
   </permissions>
   
 </rolemap>
