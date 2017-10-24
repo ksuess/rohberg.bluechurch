@@ -8,6 +8,18 @@
 
   <includeDependencies package="." />
 
+
+  <permission
+    id="rohberg.bluechurch.addbluechurchprofile"
+    title="rohberg.bluechurch.addbluechurchprofile"
+    />
+    
+  <permission
+    id="rohberg.bluechurch.addbluechurchcontent"
+    title="rohberg.bluechurch.addbluechurchcontent"
+    />
+    
+
   <include package=".browser" />
 
 
@@ -35,16 +47,6 @@
       post_handler=".setuphandlers.uninstall"
       />
 
-
-  <permission
-    id="rohberg.bluechurch.addbluechurchprofile"
-    title="rohberg.bluechurch.addbluechurchprofile"
-    />
-    
-  <permission
-    id="rohberg.bluechurch.addbluechurchcontent"
-    title="rohberg.bluechurch.addbluechurchcontent"
-    />
     
   <utility
       factory=".setuphandlers.HiddenProfiles"

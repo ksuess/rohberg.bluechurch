@@ -44,5 +44,28 @@
        template="templates/bluechurchprofileview.pt"
        permission="zope2.View"
        />
+       
+     
+     
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory=".forms.AddView"
+         name="dexterity.membrane.bluechurchmembraneprofile"
+         />
+     <class class=".forms.AddView">
+         <require
+             permission="rohberg.bluechurch.addbluechurchprofile"
+             interface="zope.publisher.interfaces.browser.IBrowserPage"
+             />
+     </class>
+     <class class=".forms.AddForm">
+         <require
+             permission="rohberg.bluechurch.addbluechurchprofile"
+             interface="zope.publisher.interfaces.browser.IBrowserPage"
+             />
+     </class>
            
 </configure>
