@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xml:lang="en" lang="en"
+
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="rohberg.bluechurch.features"
+    metal:use-macro="context/main_template/macros/master">
+      
+    <metal:content-core fill-slot="content-core">
+        <p tal:content="structure view/wanttoknow">test</p>
+        <!-- <div tal:content="structure request" /> -->
+    </metal:content-core>
+
+</html>
