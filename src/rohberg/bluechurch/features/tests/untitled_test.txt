@@ -1,4 +1,11 @@
-Prozesse und Use Cases
+**Prozesse und Use Cases**
 
 Artist oder Event Manager (Im Folgenden oft nur Artist genannt) registriert sich. Daraufhin öffnet sich die Eingabemaske für sein Artist-Profil.
+
+Im Hintergrund läuft Folgendes ab:
+Anonymous darf in einem Folder „profiles“ Content vom Typ „MembraneProfile“ anlegen und registriert sich damit. Er speichert und wird eingelogged (wenn er nicht Manager oder SiteAdmin ist).
+Er darf eingelogged kein Profil mehr anlegen (ausser er ist Manager oder Siteadmin).
+Er darf nun Events, Locations, etc anlegen.
+
+# TODO: Anonymous darf Profile anlegen
 
