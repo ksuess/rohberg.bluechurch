@@ -31,8 +31,7 @@
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
     </field>
-    <field name="bluechurchcaptcha" type="zope.schema.Int"
-        form:mode="z3c.form.interfaces.IEditForm:input">
+    <field name="bluechurchcaptcha" type="zope.schema.Int">
         <description>Keine Chance den Spammern! Bitte gib eine Zahl zwischen 17 und 23 ein, damit wir wissen, dass Du es bist.</description>
         <max>23</max>
         <min>17</min>
