@@ -32,14 +32,16 @@
     <browser:page
         for="*"
         name="testview"
+        layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
         permission="zope2.Public"
-        class=".views.MyView"
+        class=".views.TestView"
+        template="templates/testviewtemplate.pt"
         />
 
     <browser:page
        name="bluechurchprofileview"
        for="rohberg.bluechurch.features.content.bluechurchprofile.IBluechurchprofile"
-       layer="zope.interface.Interface"
+       layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
        class=".views.BluechurchprofileView"
        template="templates/bluechurchprofileview.pt"
        permission="zope2.View"
