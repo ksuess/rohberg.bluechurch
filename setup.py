@@ -44,6 +44,7 @@ setup(
         'z3c.jbot',
         'plone.app.dexterity',
         'dexterity.membrane',
+        'collective.dexteritytextindexer',
     ],
     extras_require={
         'test': [
