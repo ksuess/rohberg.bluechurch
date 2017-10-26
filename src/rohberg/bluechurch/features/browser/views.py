@@ -8,7 +8,7 @@ from plone.dexterity.browser.view import DefaultView
 
 from rohberg.bluechurch.features import _
 
-class BluechurchprofileView(DefaultView):
+class BluechurchmembraneprofileView(DefaultView):
     """ the default view for BluechurchProfile"""
 
     # def allbctags(self):
@@ -16,12 +16,22 @@ class BluechurchprofileView(DefaultView):
     #     # import pdb; pdb.set_trace()
     #     result = bctags()(self.context).__dict__
     #     return result
+    
+    
 
 
 class TestView(BrowserView):
     """ Testing utilities"""
     
     def wanttoknow(self):
+        
+        # from dexterity.membrane.content.member import IMember
+        # from collective.dexteritytextindexer.utils import searchable
+        #
+        # searchable(IMember, 'first_name')
+        # searchable(IMember, 'last_name')
+        # searchable(IMember, 'bio')
+        
         is_manager = api.user.has_permission('Manage portal')
         if is_manager:
             return "I am Manager"
@@ -29,7 +39,8 @@ class TestView(BrowserView):
         user = current
         username = user.getName()
         roles = api.user.get_roles(username=username)
+        
         fullname = user.getProperty('fullname')
         email = user.getProperty('email')
         home_page = user.getProperty('home_page')
-        return email
+        return roles

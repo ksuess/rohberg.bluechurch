@@ -7,5 +7,5 @@ Anonymous darf in einem Folder „profiles“ Content vom Typ „MembraneProfile
 Er darf eingelogged kein Profil mehr anlegen (ausser er ist Manager oder Siteadmin).
 Er darf nun Events, Locations, etc anlegen.
 
-# TODO: Anonymous darf Profile anlegen
+
 

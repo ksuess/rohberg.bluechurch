@@ -39,10 +39,9 @@
         />
 
     <browser:page
-       name="bluechurchprofileview"
-       for="rohberg.bluechurch.features.content.bluechurchprofile.IBluechurchprofile"
+       name="bluechurchmembraneprofileview"       for="rohberg.bluechurch.features.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
        layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
-       class=".views.BluechurchprofileView"
+       class=".views.BluechurchmembraneprofileView"
        template="templates/bluechurchprofileview.pt"
        permission="zope2.View"
        />

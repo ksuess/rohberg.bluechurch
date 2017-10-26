@@ -18,10 +18,10 @@
         </portal_type>
       </value_type>
     </field>
-    <field name="website" type="zope.schema.URI">
+    <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
-      <title>Website</title>
+      <title>Homepage</title>
     </field>
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>

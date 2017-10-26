@@ -42,6 +42,7 @@
      <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
      <element value="dexterity.membrane.behavior.user.IMembraneUser" />
      <element value="dexterity.membrane.behavior.password.IProvidePasswords" />
+     <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
  </property>
 
   <!-- View information -->
@@ -49,6 +50,7 @@
   <property name="default_view_fallback">False</property>
   <property name="view_methods">
     <element value="base_view" />
+    <element value="bluechurchmembraneprofileview" />    
   </property>
 
   <!-- Method aliases -->

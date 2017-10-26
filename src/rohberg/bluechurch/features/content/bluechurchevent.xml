@@ -14,6 +14,7 @@
         <element>bluechurchlocation</element>
       </portal_type>
     </field>
+    
     <field name="kontakte" type="z3c.relationfield.schema.RelationList">
       <description>Beteiligte Artists, Veranstalter</description>
       <required>False</required>
@@ -21,14 +22,16 @@
       <value_type type="z3c.relationfield.schema.RelationChoice">
         <title i18n:translate="">Relation Choice</title>
         <portal_type>
-          <element>bluechurchmembraneprofile</element>
+            <element>dexterity.membrane.bluechurchmembraneprofile</element>
         </portal_type>
       </value_type>
     </field>
-    <field name="website" type="zope.schema.URI">
+    
+    
+    <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
-      <title>Website</title>
+      <title>Homepage</title>
     </field>
     <field name="facebook_handle" type="zope.schema.TextLine">
       <description>Facebook-Benutzer-ID oder Facebook-Page-ID</description>

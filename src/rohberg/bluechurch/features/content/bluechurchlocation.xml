@@ -4,13 +4,15 @@
       <description/>
       <title>Kontaktperson</title>
       <portal_type>
-        <element>bluechurchmembraneprofile</element>
+        <element>dexterity.membrane.bluechurchmembraneprofile</element>
       </portal_type>
+      <form:widget type="plone.app.widgets.RelatedItemsWidget"/>
     </field>
-    <field name="website" type="zope.schema.URI">
+    
+    <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
-      <title>Website</title>
+      <title>Homepage</title>
     </field>
   </schema>
 </model>
