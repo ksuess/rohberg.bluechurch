@@ -45,6 +45,8 @@ setup(
         'plone.app.dexterity',
         'dexterity.membrane',
         'collective.dexteritytextindexer',
+        'plone.app.relationfield',
+        'plone.formwidget.contenttree',
     ],
     extras_require={
         'test': [
