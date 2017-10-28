@@ -1,5 +1,10 @@
 # coding: utf-8
+from zope import schema
 from zope.interface import implementer
+from plone import api
+from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from plone.autoform.directives import widget
 from plone.dexterity.content import Item
 from plone.supermodel import model
 from plone.formwidget.contenttree import ObjPathSourceBinder
@@ -10,73 +15,31 @@ from plone.autoform.directives import write_permission
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.autoform import directives
+from Products.CMFCore.utils  import getToolByName
+
+import logging
+logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch.features import _
 
-""" ALLOWED_FIELDS = [
-    u'plone.app.textfield.RichText',
-    u'plone.namedfile.field.NamedBlobImage',
-    u'plone.namedfile.field.NamedBlobFile',
-    u'plone.schema.email.Email',
-    u'z3c.relationfield.schema.RelationChoice',
-    u'z3c.relationfield.schema.RelationList',
-    u'zope.schema._bootstrapfields.Bool',
-    u'zope.schema._bootstrapfields.Int',
-    u'zope.schema._bootstrapfields.Password',
-    u'zope.schema._bootstrapfields.Text',
-    u'zope.schema._bootstrapfields.TextLine',
-    u'zope.schema._field.Choice',
-    u'zope.schema._field.Date',
-    u'zope.schema._field.Datetime',
-    u'zope.schema._field.Float',
-    u'zope.schema._field.Set',
-    u'zope.schema._field.URI',
-]
-"""
 class IBluechurchlocation(model.Schema):
     """ Marker interface for Bluechurchlocation
     """
 
-    # # remove after debugging
-    # read_permission(profilepy='zope2.View')
-    # write_permission(profilepy='rohberg.bluechurch.addbluechurchcontent')
-    # profilepy = RelationChoice(
-    #     title=_(u"profilepy"),
-    #     source=CatalogSource(portal_type=['dexterity.membrane.bluechurchmembraneprofile',]),
-    #     required=False,
-    # )
-
     # Kontaktperson
-    read_permission(kontaktperson='zope2.View')
-    write_permission(kontaktperson='rohberg.bluechurch.addbluechurchprofile')
-    kontaktperson = RelationChoice(
+    # TODO: Default fuer kontaktperson: current user
+    widget(
+        'kontaktperson',
+        RelatedItemsFieldWidget,
+        pattern_options={
+            'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile']
+        }
+        )
+    kontaktperson = schema.Choice(
         title=_(u"Kontaktperson"),
-        source=CatalogSource(portal_type=['dexterity.membrane.bluechurchmembraneprofile',]),
         required=True,
-    )
-
-
-    # # remove after debugging
-    # directives.widget('kontaktperson2', AutocompleteFieldWidget)
-    # read_permission(kontaktperson2='zope2.View')
-    # write_permission(kontaktperson2='rohberg.bluechurch.addbluechurchprofile')
-    # kontaktperson2 = RelationChoice(
-    #     title=_(u"kontaktperson2"),
-    #     source=CatalogSource(portal_type=['dexterity.membrane.bluechurchmembraneprofile',]),
-    #     required=True,
-    # )
-    
-    
-    # dokupy = RelationChoice(
-    #     title=_(u"Referenziertes Objekt"),
-    #     source=ObjPathSourceBinder(
-    #         portal_type="Dokument",
-    #         navigation_tree_query=dict(
-    #             portal_type=["Dokument",],
-    #             path={ "query": '/web/profiles' })
-    #     ),
-    #     required=False,
-    # )
+        vocabulary='plone.app.vocabularies.Catalog',
+        )
     
     model.load('bluechurchlocation.xml')
 
@@ -85,3 +48,25 @@ class IBluechurchlocation(model.Schema):
 class Bluechurchlocation(Item):
     """
     """
+
+def setRoles(obj, event):
+    """ Set Role Owner to new kontaktperson"""
+    
+    uidkontaktperson = obj.kontaktperson 
+    username = uidkontaktperson    
+    ploneuser = api.user.get(username)
+
+    # obj.changeOwnership(ploneuser)
+    for otherusername, roles in obj.get_local_roles():
+        obj.manage_delLocalRoles([otherusername])
+    api.user.grant_roles(username=username, obj=obj, roles=["Owner",])
+    
+    # current = api.user.get_current()
+    # current_roles = api.user.get_roles(user=current)
+    # if not "Manager" in current_roles and not "Site Administrator" in current_roles:
+    #     api.user.revoke_roles(user=current, obj=obj, roles=["Owner",])
+    
+    # local roles:
+    # logger.info(api.user.get_roles(user=current, obj=obj))
+    
+    

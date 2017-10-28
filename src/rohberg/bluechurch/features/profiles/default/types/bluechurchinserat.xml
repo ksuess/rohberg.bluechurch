@@ -23,9 +23,8 @@
  
  <property name="klass">rohberg.bluechurch.features.content.bluechurchinserat.Bluechurchinserat</property>
  
- <property name="schema"></property>
- <property name="model_source"></property>
- <property name="model_file">rohberg.bluechurch.features.content:bluechurchinserat.xml</property>
+ <property name="schema">rohberg.bluechurch.features.content.bluechurchinserat.IBluechurchinserat</property>
+ <!-- <property name="model_file">rohberg.bluechurch.features.content:bluechurchinserat.xml</property> -->
 
  <property name="behaviors">
   <element value="plone.app.content.interfaces.INameFromTitle"/>

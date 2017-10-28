@@ -24,17 +24,35 @@ class IBluechurchmembraneprofile(IMember):
     
     model.load('bluechurchmembraneprofile.xml')
     
-def setProfileRoles(profile, event):
+def setRoles(obj, event):
     """Event handler"""
-    # TODO: setProfileRoles
-    logger.info("setProfileRoles")
+    # TODO: setRoles for Profile
+    logger.info("setRoles")
     
-    # granting role for adding content
-    current = api.user.get_current()
-    user = current
-    logger.info(user)
-    username = user.getName()
-    roles = api.user.get_roles(username=username)
-    
-    logger.info(",".join(roles))
-    api.user.grant_roles(username='jane', roles=['Bluechurch Member'])
+    # # granting role for adding content
+    # current = api.user.get_current()
+    # if current:
+    #     user = current
+    #     logger.info(user)
+    #     username = user.getName()
+    #     roles = api.user.get_roles(username=username)
+    #
+    #     logger.info(",".join(roles))
+    #     api.user.grant_roles(username=username, roles=['Bluechurch Member'])
+        
+        
+from Products.membrane.interfaces import IMembraneUserRoles
+from dexterity.membrane.behavior.user import DxUserObject
+from dexterity.membrane.behavior.membraneuser import IMembraneUser
+from zope.component import adapter
+from zope.interface import implementer
+
+DEFAULT_ROLES = ['Bluechurch Member', 'Member']
+
+
+@implementer(IMembraneUserRoles)
+@adapter(IMembraneUser)
+class MyDefaultRoles(DxUserObject):
+
+     def getRolesForPrincipal(self, principal, request=None):
+         return DEFAULT_ROLES

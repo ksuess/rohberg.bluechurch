@@ -23,9 +23,7 @@
 
  <property name="klass">rohberg.bluechurch.features.content.bluechurchevent.Bluechurchevent</property>
  
- <property name="schema"></property>
- <property name="model_source"></property>
- <property name="model_file">rohberg.bluechurch.features.content:bluechurchevent.xml</property>
+ <property name="schema">rohberg.bluechurch.features.content.bluechurchevent.IBluechurchevent</property>
 
  <property name="behaviors">
   <element value="plone.app.event.dx.behaviors.IEventBasic"/>

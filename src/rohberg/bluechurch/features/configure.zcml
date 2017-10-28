@@ -33,10 +33,15 @@
   <subscriber
     for=".content.bluechurchmembraneprofile.IBluechurchmembraneprofile
          Products.membrane.interfaces.events.IMembraneTypeRegisteredEvent"
-    handler=".content.bluechurchmembraneprofile.setProfileRoles"
+    handler=".content.bluechurchmembraneprofile.setRoles"
   />
   
-  
+  <!-- Location -->
+  <subscriber
+    for=".content.bluechurchlocation.IBluechurchlocation
+         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".content.bluechurchlocation.setRoles"
+  />
   
   
   
