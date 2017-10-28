@@ -7,6 +7,11 @@ from plone.dexterity.content import Item
 from plone.supermodel import model
 from zope.interface import implementer
 
+import logging
+logger = logging.getLogger(__name__)
+
+from rohberg.bluechurch.features import _
+
 
 class IBluechurchevent(model.Schema):
     """ Marker interface for Bluechurchevent
