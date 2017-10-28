@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object name="portal_types" meta_type="Plone Types Tool"><!-- TODO: alten Typ bluechurchprofile entfernen -->
-  <object meta_type="Dexterity FTI" name="bluechurchprofile"/>
+  <!-- <object name="bluechurchprofile" meta_type="Dexterity FTI"/> -->
   <object name="bluechurchevent" meta_type="Dexterity FTI"/>
   <object name="bluechurchlocation" meta_type="Dexterity FTI"/>
   <object name="bluechurchinserat" meta_type="Dexterity FTI"/>
