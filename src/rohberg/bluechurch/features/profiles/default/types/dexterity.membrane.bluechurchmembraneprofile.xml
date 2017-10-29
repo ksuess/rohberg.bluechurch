@@ -16,10 +16,10 @@
   <!-- bluechurchmembraneprofile -->
 
    <!-- <property name="model_file">rohberg.bluechurch.features.content:bluechurchmembraneprofile.xml</property> -->
-   <property name="schema">rohberg.bluechurch.features.content.bluechurchmembraneprofile.IBluechurchmembraneprofile</property>
+   <property name="schema">rohberg.bluechurch.features.content.bluechurchmembraneprofile.Bluechurchmembraneprofile</property>
 
    <!-- class used for content items -->
-   <property name="klass">plone.dexterity.content.Item</property>
+   <property name="klass">rohberg.bluechurch.features.content.bluechurchmembraneprofile.Bluechurchmembraneprofile</property>
 <!--
   <property name="product">dexterity.membrane</property>
   <property name="factory">addBluechurchmembraneprofile</property>
@@ -46,7 +46,7 @@
  </property>
 
   <!-- View information -->
-  <property name="default_view">view</property>
+  <property name="default_view">bluechurchmembraneprofileview</property>
   <property name="default_view_fallback">False</property>
   <property name="view_methods">
     <element value="base_view" />

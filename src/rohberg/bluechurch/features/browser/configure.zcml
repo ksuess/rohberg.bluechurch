@@ -46,7 +46,22 @@
        permission="zope2.View"
        />
        
-     
+    <browser:page
+       name="bluechurchlocationview"       for="rohberg.bluechurch.features.content.bluechurchlocation.IBluechurchlocation"
+       layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+       class=".views.BluechurchlocationView"
+       template="templates/bluechurchlocationview.pt"
+       permission="zope2.View"
+       />
+       
+    <browser:page
+       name="bluechurcheventview"       for="rohberg.bluechurch.features.content.bluechurchevent.IBluechurchevent"
+       layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+       class=".views.BluechurcheventView"
+       template="templates/bluechurcheventview.pt"
+       permission="zope2.View"
+       />
+            
      
      <adapter
          for="Products.CMFCore.interfaces.IFolderish

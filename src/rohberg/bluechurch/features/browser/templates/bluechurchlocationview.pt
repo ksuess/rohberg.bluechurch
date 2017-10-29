@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ploneconf.site">
+<body>
+    <metal:content-core fill-slot="content-core">
+        <div tal:content="structure view/w/IRichText.text/render" />
+        <p>
+            <!-- <a tal:attributes="href context/homepage"
+                tal:content="string:Website">location</a> -->
+            <span tal:replace="structure view/w/homepage/render">Website</span>
+        </p>
+        <div>Kontakt: 
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+                href="#"
+                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
+    </metal:content-core>
+</body>
+</html>

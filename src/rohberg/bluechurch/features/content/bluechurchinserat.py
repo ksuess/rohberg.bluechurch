@@ -15,18 +15,6 @@ from rohberg.bluechurch.features import _
 class IBluechurchinserat(model.Schema):
     """ Marker interface for Bluechurchinserat
     """
-    widget(
-        'kontaktperson',
-        RelatedItemsFieldWidget,
-        pattern_options={
-            'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile']
-        }
-        )
-    kontaktperson = schema.Choice(
-        title=_(u"Kontaktperson"),
-        required=True,
-        vocabulary='plone.app.vocabularies.Catalog',
-        )
         
     model.load('bluechurchinserat.xml')
 

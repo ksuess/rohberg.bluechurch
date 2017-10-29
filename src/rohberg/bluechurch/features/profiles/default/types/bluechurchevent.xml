@@ -13,9 +13,10 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">bluechurcheventview</property>
  <property name="view_methods">
   <element value="view"/>
+  <element value="bluechurcheventview" />
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">rohberg.bluechurch.addbluechurchcontent</property>
@@ -35,6 +36,7 @@
   <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
+  <element value="rohberg.bluechurch.features.behaviors.IOwnercontact" />
  </property>
  
  

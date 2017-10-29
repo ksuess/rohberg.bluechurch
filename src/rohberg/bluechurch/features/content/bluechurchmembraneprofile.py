@@ -24,10 +24,10 @@ class IBluechurchmembraneprofile(IMember):
     
     model.load('bluechurchmembraneprofile.xml')
     
-def setRoles(obj, event):
+def setInitialProfileRoles(obj, event):
     """Event handler"""
-    # TODO: setRoles for Profile
-    logger.info("setRoles")
+    # TODO: setInitialProfileRoles for Profile
+    logger.info("setInitialProfileRoles")
     
     # # granting role for adding content
     # current = api.user.get_current()
@@ -48,7 +48,6 @@ from zope.component import adapter
 from zope.interface import implementer
 
 DEFAULT_ROLES = ['Bluechurch Member', 'Member']
-
 
 @implementer(IMembraneUserRoles)
 @adapter(IMembraneUser)

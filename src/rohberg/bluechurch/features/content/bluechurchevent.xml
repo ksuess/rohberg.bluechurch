@@ -7,13 +7,13 @@
         <element>bluechurchmembraneprofile</element>
       </portal_type>
     </field> -->
-    <field name="ort" type="z3c.relationfield.schema.RelationChoice">
+    <!-- <field name="ort" type="z3c.relationfield.schema.RelationChoice">
       <description>Location</description>
       <title>Ort</title>
       <portal_type>
         <element>bluechurchlocation</element>
       </portal_type>
-    </field>
+    </field> -->
     
     <field name="kontakte" type="z3c.relationfield.schema.RelationList">
       <description>Beteiligte Artists, Veranstalter</description>

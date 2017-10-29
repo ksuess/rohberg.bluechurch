@@ -1,10 +1,13 @@
+from Acquisition import aq_inner
 from zope.component import queryUtility
+from zope.component import getMultiAdapter
 from zope.schema.interfaces import IVocabularyFactory
 
 from plone import api
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.dexterity.browser.view import DefaultView
+from plone.app.content.interfaces import INameFromTitle
 from Products.CMFCore.utils  import getToolByName
 
 import logging
@@ -12,6 +15,33 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch.features import _
 
+
+from Acquisition import aq_inner
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
+from zope.security import checkPermission
+from zc.relation.interfaces import ICatalog
+
+def back_references(source_object, attribute_name):
+    """
+    Return back references from source object on specified attribute_name
+    """
+    catalog = getUtility(ICatalog)
+    intids = getUtility(IIntIds)
+    result = []
+    rels = catalog.findRelations(
+                dict(to_id=intids.getId(aq_inner(source_object)),
+                from_attribute=attribute_name)
+            )
+    for rel in rels:
+        try:
+            obj = intids.queryObject(rel.from_id)
+            if obj is not None and checkPermission('zope2.View', obj):
+                result.append(obj)
+        except KeyError, e:
+            logger.error(str(e))
+    return result
+        
 class BluechurchmembraneprofileView(DefaultView):
     """ the default view for BluechurchProfile"""
 
@@ -21,7 +51,35 @@ class BluechurchmembraneprofileView(DefaultView):
     #     result = bctags()(self.context).__dict__
     #     return result
     
+    def locations(self):
+        ls = back_references(self.context, "kontaktperson")
+        return ls
+        # result = []
+        # for location in ls:
+        #     location
+        # return result
     
+
+class BluechurchlocationView(DefaultView):
+    """
+    """
+    
+    @property
+    def kontaktperson_profile(self):
+        kp = api.content.get(UID=self.context.kontaktperson.to_object.UID())
+        return kp
+        
+    @property
+    def kontaktperson_fullname(self):
+        profile = self.kontaktperson_profile
+        name_title = INameFromTitle(profile)
+        return name_title.title
+        
+        
+    
+class BluechurcheventView(DefaultView):
+    """"""
+
 
 
 class TestView(BrowserView):

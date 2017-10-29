@@ -8,7 +8,6 @@
 
   <includeDependencies package="." />
 
-
   <permission
     id="rohberg.bluechurch.addbluechurchprofile"
     title="rohberg.bluechurch.addbluechurchprofile"
@@ -21,6 +20,7 @@
     
 
   <include package=".browser" />
+  <include package=".behaviors" />
 
 
   <utility
@@ -33,17 +33,15 @@
   <subscriber
     for=".content.bluechurchmembraneprofile.IBluechurchmembraneprofile
          Products.membrane.interfaces.events.IMembraneTypeRegisteredEvent"
-    handler=".content.bluechurchmembraneprofile.setRoles"
+    handler=".content.bluechurchmembraneprofile.setInitialProfileRoles"
+  />
+  <adapter
+       factory=".content.bluechurchmembraneprofile.MyDefaultRoles"
+       provides="Products.membrane.interfaces.IMembraneUserRoles"
   />
   
   <!-- Location -->
-  <subscriber
-    for=".content.bluechurchlocation.IBluechurchlocation
-         zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-    handler=".content.bluechurchlocation.setRoles"
-  />
-  
-  
+
   
   
   <genericsetup:registerProfile

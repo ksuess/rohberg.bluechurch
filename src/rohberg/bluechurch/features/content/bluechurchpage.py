@@ -19,19 +19,6 @@ class IBluechurchpage(model.Schema):
     """ Marker interface for Bluechurchpage
     """
 
-    # Kontaktperson
-    widget(
-        'kontaktperson',
-        RelatedItemsFieldWidget,
-        pattern_options={
-            'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile']
-        }
-        )
-    kontaktperson = schema.Choice(
-        title=_(u"Kontaktperson"),
-        required=True,
-        vocabulary='plone.app.vocabularies.Catalog',
-        )
     
     model.load('bluechurchpage.xml')
 
