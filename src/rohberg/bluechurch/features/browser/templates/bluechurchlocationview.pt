@@ -17,6 +17,18 @@
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
         </div>
         
+        
+        <hr/>
+        
+        <div>Events dieser Location: 
+            <tal:ls tal:repeat="obj view/events">
+                <div>
+                    <a tal:attributes="href python:obj.absolute_url()"
+                        tal:content="obj/Title">location</a>
+                </div>
+            </tal:ls>
+        </div>
+        
     </metal:content-core>
 </body>
 </html>

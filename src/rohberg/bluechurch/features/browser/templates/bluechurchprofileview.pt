@@ -35,6 +35,15 @@
                 </div>
             </tal:ls>
         </div>
+
+        <div>Meine Inserate: 
+            <tal:ls tal:repeat="obj view/inserate">
+                <div>
+                    <a tal:attributes="href python:obj.absolute_url()"
+                        tal:content="obj/Title">Inserat</a>
+                </div>
+            </tal:ls>
+        </div>
     </metal:content-core>
 </body>
 </html>

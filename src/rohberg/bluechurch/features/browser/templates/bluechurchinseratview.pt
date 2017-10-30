@@ -5,11 +5,8 @@
 <body>
     <metal:content-core fill-slot="content-core">
         <div tal:content="structure view/w/IRichText.text/render" />
-        <p>
-            <!-- <a tal:attributes="href context/homepage"
-                tal:content="string:Website">location</a> -->
-            <span tal:replace="structure view/w/homepage/render">Website</span>
-        </p>
+
+        <div tal:content="structure view/w/bluechurchtags/render" />
         
         <div>Kontakt: 
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 

@@ -47,6 +47,9 @@ setup(
         'collective.dexteritytextindexer',
         'plone.app.relationfield',
         'plone.formwidget.contenttree',
+        'collective.geolocationbehavior',
+        'plone.formwidget.geolocation',
+        'geopy'
     ],
     extras_require={
         'test': [

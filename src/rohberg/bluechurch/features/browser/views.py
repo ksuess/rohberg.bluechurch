@@ -66,6 +66,14 @@ class BluechurchmembraneprofileView(DefaultView):
         for obj in obs:
             if obj.portal_type=="bluechurchlocation":
                 result.append(obj)
+        return result     
+           
+    def inserate(self):
+        obs = back_references(self.context, "kontaktperson")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchinserat":
+                result.append(obj)
         return result
 
     
@@ -90,6 +98,13 @@ class BluechurchlocationView(OwnedView):
     """
     """        
     
+    def events(self):
+        obs = back_references(self.context, "location")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchevent":
+                result.append(obj)
+        return result
     
 class BluechurcheventView(OwnedView):
     """
