@@ -16,7 +16,7 @@
   <!-- bluechurchmembraneprofile -->
 
    <!-- <property name="model_file">rohberg.bluechurch.features.content:bluechurchmembraneprofile.xml</property> -->
-   <property name="schema">rohberg.bluechurch.features.content.bluechurchmembraneprofile.Bluechurchmembraneprofile</property>
+   <property name="schema">rohberg.bluechurch.features.content.bluechurchmembraneprofile.IBluechurchmembraneprofile</property>
 
    <!-- class used for content items -->
    <property name="klass">rohberg.bluechurch.features.content.bluechurchmembraneprofile.Bluechurchmembraneprofile</property>

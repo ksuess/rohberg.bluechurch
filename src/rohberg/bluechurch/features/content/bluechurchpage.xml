@@ -7,7 +7,7 @@
         <element>bluechurchmembraneprofile</element>
       </portal_type>
     </field> -->
-    <field name="kontakte" type="z3c.relationfield.schema.RelationList">
+    <field name="beteiligte" type="z3c.relationfield.schema.RelationList">
       <description>Beteiligte Artists, Veranstalter</description>
       <required>False</required>
       <title>Artists</title>

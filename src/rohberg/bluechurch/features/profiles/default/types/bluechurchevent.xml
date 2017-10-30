@@ -36,7 +36,8 @@
   <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
-  <element value="rohberg.bluechurch.features.behaviors.IOwnercontact" />
+  <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
+  <element value="rohberg.bluechurch.features.behaviors.kontakt.IOwnercontact" />
  </property>
  
  

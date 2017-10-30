@@ -4,7 +4,24 @@
     i18n:domain="ploneconf.site">
 <body>
     <metal:content-core fill-slot="content-core">
+        <div tal:content="structure view/w/IRichText.text/render" />
+        <p>
+            <span tal:replace="structure view/w/homepage/render">Website</span>
+        </p>
         <div tal:content="structure view/w/bluechurchtags/render" />
+
+        <div>Kontakt: 
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+                href="#"
+                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
+        
+        <div>Location: 
+            <a tal:attributes="href python:view.location_obj.absolute_url()" 
+                href="#"
+                tal:content="view/location_title">Kontaktperson</a>
+        </div>
+        
     </metal:content-core>
 </body>
 </html>

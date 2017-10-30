@@ -39,7 +39,8 @@
         />
 
     <browser:page
-       name="bluechurchmembraneprofileview"       for="rohberg.bluechurch.features.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
+       name="bluechurchmembraneprofileview"
+       for="rohberg.bluechurch.features.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
        layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
        class=".views.BluechurchmembraneprofileView"
        template="templates/bluechurchprofileview.pt"
@@ -61,7 +62,18 @@
        template="templates/bluechurcheventview.pt"
        permission="zope2.View"
        />
-            
+
+       
+    <browser:page
+       name="bluechurchinseratview"
+       for="rohberg.bluechurch.features.content.bluechurchlocation.IBluechurchinserat"
+       layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+       class=".views.BluechurchinseratView"
+       template="templates/bluechurchinseratview.pt"
+       permission="zope2.View"
+       />
+       
+                   
      
      <adapter
          for="Products.CMFCore.interfaces.IFolderish

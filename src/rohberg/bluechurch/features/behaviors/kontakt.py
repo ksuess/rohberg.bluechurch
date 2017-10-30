@@ -1,4 +1,6 @@
+from zope import schema
 from zope.component import adapter
+from zope.component.hooks import getSite
 from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
@@ -31,9 +33,17 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch.features import _
 
-def get_site(context=None):
-    return '/'.join(getSite().getPhysicalPath())
-
+# TODO: clean up get basePath
+def get_profiles_base_path(context=None):
+    path = '/'.join(getSite().getPhysicalPath())
+    path += '/web/profiles'
+    return path
+    
+def get_locations_base_path(context=None):
+    path = '/'.join(getSite().getPhysicalPath())
+    path += '/web/locations'
+    return path
+    
 # @provider(IDefaultFactory)
 @provider(IContextAwareDefaultFactory)
 def profile_current_user(context):
@@ -87,7 +97,7 @@ class IOwnercontact(model.Schema):
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
             'mode': 'search',
-            'basePath': "/web/profiles",
+            'basePath': get_profiles_base_path,
         }
         )
     # fieldset(
@@ -97,7 +107,7 @@ class IOwnercontact(model.Schema):
     # )
     
     
-    # kontaktperson = schema.Choice(
+    # kontaktperson = RelationChoice(
     #     title=_(u"Kontaktperson"),
     #     required=True,
     #     source=CatalogSource(portal_type='dexterity.membrane.bluechurchmembraneprofile'),

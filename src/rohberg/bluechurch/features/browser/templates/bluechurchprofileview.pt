@@ -8,6 +8,17 @@
         <h1 class="documentFirstHeading"><span tal:content="context/first_name">first_name</span> <span tal:content="context/last_name">last_name</span></h1>
         <p tal:content="structure context/bio">Bio</p>
         <p><b tal:content="structure view/w/bluechurchtags/render">bluechurchtags</b></p>
+        
+
+        <div>Meine Events: 
+            <tal:ls tal:repeat="ll view/events">
+                <div>
+                    <a tal:attributes="href python:ll.absolute_url()"
+                        tal:content="ll/Title">location</a>
+                </div>
+            </tal:ls>
+        </div>
+        
         <!-- <ul>Meine Locations:
             <tal:ls tal:repeat="ll view/locations">
                 <li>

@@ -1,1 +1,0 @@
-from kontakt import IOwnercontact

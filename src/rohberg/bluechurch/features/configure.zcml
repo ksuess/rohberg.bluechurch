@@ -29,6 +29,7 @@
       component="rohberg.bluechurch.features.vocabularies.BluchurchTagsVocabularyFactory"
   />
   
+  
   <!-- Profile -->
   <subscriber
     for=".content.bluechurchmembraneprofile.IBluechurchmembraneprofile
@@ -39,6 +40,7 @@
        factory=".content.bluechurchmembraneprofile.MyDefaultRoles"
        provides="Products.membrane.interfaces.IMembraneUserRoles"
   />
+  
   
   <!-- Location -->
 

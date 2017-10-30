@@ -20,9 +20,10 @@
 
   
     <plone:behavior
+        name="rohberg.bluechurch.features.ownerreference"
         title="Ownercontact"
         description="Stellt Feld Kontaktperson bereit. Dies ist derjenige der bearbeiten darf."
-        provides=".IOwnercontact"
+        provides="rohberg.bluechurch.features.behaviors.kontakt.IOwnercontact"
         />
 
 </configure>

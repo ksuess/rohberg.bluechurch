@@ -51,16 +51,26 @@ class BluechurchmembraneprofileView(DefaultView):
     #     result = bctags()(self.context).__dict__
     #     return result
     
+    
+    def events(self):
+        obs = back_references(self.context, "kontaktperson")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchevent":
+                result.append(obj)
+        return result
+        
     def locations(self):
-        ls = back_references(self.context, "kontaktperson")
-        return ls
-        # result = []
-        # for location in ls:
-        #     location
-        # return result
+        obs = back_references(self.context, "kontaktperson")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchlocation":
+                result.append(obj)
+        return result
+
     
 
-class BluechurchlocationView(DefaultView):
+class OwnedView(DefaultView):
     """
     """
     
@@ -75,12 +85,29 @@ class BluechurchlocationView(DefaultView):
         name_title = INameFromTitle(profile)
         return name_title.title
         
-        
+
+class BluechurchlocationView(OwnedView):
+    """
+    """        
     
-class BluechurcheventView(DefaultView):
-    """"""
+    
+class BluechurcheventView(OwnedView):
+    """
+    """
+    
+    @property
+    def location_obj(self):
+        obj = api.content.get(UID=self.context.location.to_object.UID())
+        return obj
+    
+    @property
+    def location_title(self):
+        return self.location_obj.Title()
 
 
+class BluechurchinseratView(OwnedView):
+    """
+    """    
 
 class TestView(BrowserView):
     """ Testing utilities"""

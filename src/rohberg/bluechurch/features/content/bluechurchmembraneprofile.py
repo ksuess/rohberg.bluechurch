@@ -1,6 +1,10 @@
 from zope import schema
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.interface import implementer
 from plone import api
+from plone.autoform import directives
 from plone.supermodel import model
+from plone.dexterity.content import Item
 
 # from Products.membrane.events import MembraneTypeRegisteredEvent
 from Products.membrane.interfaces.events import IMembraneTypeRegisteredEvent
@@ -13,6 +17,11 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch.features import _
 
+profile_types = SimpleVocabulary(
+    [SimpleTerm(value=u'artist', title=_(u'Artist')),
+     SimpleTerm(value=u'eventmanager', title=_(u'Event Manager'))]
+    )
+
 class IBluechurchmembraneprofile(IMember):
     """
     Artist or Event Manager
@@ -22,8 +31,25 @@ class IBluechurchmembraneprofile(IMember):
     dexteritytextindexer.searchable('last_name')
     dexteritytextindexer.searchable('bio')
     
-    model.load('bluechurchmembraneprofile.xml')
+    # directives.widget('select_field', SelectWidget)
+    profile_type = schema.Choice(
+                title=_(u"Profil-Typ"),
+                vocabulary=profile_types,
+                required=True,
+                default="artist",
+            )
     
+    model.load('bluechurchmembraneprofile.xml')
+
+
+
+@implementer(IBluechurchmembraneprofile)
+class Bluechurchmembraneprofile(Item):
+    """
+    """
+    
+    
+        
 def setInitialProfileRoles(obj, event):
     """Event handler"""
     # TODO: setInitialProfileRoles for Profile
