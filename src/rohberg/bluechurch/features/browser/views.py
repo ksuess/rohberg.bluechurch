@@ -124,6 +124,17 @@ class BluechurchinseratView(OwnedView):
     """
     """    
 
+
+class MyProfileView(BrowserView):
+    """Gehe zu meinem Profile"""
+    
+    def __call__(self):
+        current = api.user.get_current()
+        profile = api.content.get(UID=current.id)
+        response = self.request.response
+        response.redirect(profile.absolute_url(), status=301)
+        
+    
 class TestView(BrowserView):
     """ Testing utilities"""
     

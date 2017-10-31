@@ -37,6 +37,15 @@
         class=".views.TestView"
         template="templates/testviewtemplate.pt"
         />
+        
+    <browser:page
+        for="*"
+        name="myprofile"
+        layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="zope2.Public"
+        class=".views.MyProfileView"
+        />
+            
 
     <browser:page
        name="bluechurchmembraneprofileview"
