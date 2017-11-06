@@ -1,4 +1,5 @@
 from Acquisition import aq_inner
+from zope.component.hooks import getSite
 from zope.component import queryUtility
 from zope.component import getMultiAdapter
 from zope.schema.interfaces import IVocabularyFactory
@@ -147,6 +148,9 @@ class TestView(BrowserView):
         # searchable(IMember, 'last_name')
         # searchable(IMember, 'bio')
         
+        skinname = getSite().getCurrentSkinName()
+        return skinname
+        
         is_manager = api.user.has_permission('Manage portal')
         if is_manager:
             return "I am Manager"
@@ -164,4 +168,6 @@ class TestView(BrowserView):
         
         pm = getToolByName(self.context, 'portal_membership')
         roles_in_context = pm.getAuthenticatedMember().getRolesInContext(self.context)
-        return roles_in_context
+        
+        skinname = site.getCurrentSkinName()
+        return skinname
