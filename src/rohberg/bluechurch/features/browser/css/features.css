@@ -1,0 +1,11 @@
+// features.css
+
+// plone.app.z3cform
+.template-view .empty.field {
+   display: none;
+}
+
+// [class*="contenttype-dexterity-membrane"]
+.state-disabled {
+    color: red !important;
+}
