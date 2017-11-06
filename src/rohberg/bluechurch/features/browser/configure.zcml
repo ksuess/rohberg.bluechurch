@@ -18,7 +18,13 @@
       directory="static"
       />
 
-
+    <!-- Resource directory for css -->
+    <browser:resourceDirectory
+        name="rohberg.bluechurch.features.css"
+        directory="css"
+        layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+        />
+        
     <browser:page
         name="bluechurch-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
@@ -82,6 +88,15 @@
        permission="zope2.View"
        />
        
+    <!-- Viewlets -->
+    <browser:viewlet
+      name="bluechurch.useractionsviewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      template="templates/useractionsviewlet.pt"
+      class=".viewlets.UserActionsViewlet"
+      layer="rohberg.bluechurch.features.interfaces.IRohbergBluechurchFeaturesLayer"
+      permission="zope2.View"
+      />
                    
      
      <adapter

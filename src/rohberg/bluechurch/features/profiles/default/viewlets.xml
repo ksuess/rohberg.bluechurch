@@ -1,0 +1,15 @@
+<object>
+    <!-- <hidden manager="plone.belowcontenttitle" skinname="[your skin name]">
+        <viewlet name="plone.footer" />
+        <viewlet name="plone.colophon" />
+        <viewlet name="plone.site_actions" />
+    </hidden>
+
+
+    <order manager="plone.belowcontenttitle" skinname="[your skin name]"
+           based-on="Plone Default">
+        <viewlet name="bluechurch.useractionsviewlet"
+                 insert-before="*" />
+    </order> -->
+</object>
+
