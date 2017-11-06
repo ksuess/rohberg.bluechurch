@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the rohberg.bluechurch.features package."""
+"""Installer for the rohberg.bluechurch package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -13,7 +13,7 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='rohberg.bluechurch.features',
+    name='rohberg.bluechurch',
     version='1.0a1',
     description="Features for Bluechurch",
     long_description=long_description,
@@ -30,10 +30,10 @@ setup(
     keywords='Python Plone',
     author='ksuess',
     author_email='k.suess@rohberg.ch',
-    url='https://pypi.python.org/pypi/rohberg.bluechurch.features',
+    url='https://pypi.python.org/pypi/rohberg.bluechurch',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['rohberg', 'rohberg.bluechurch'],
+    namespace_packages=['rohberg',],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
@@ -49,7 +49,9 @@ setup(
         'plone.formwidget.contenttree',
         'collective.geolocationbehavior',
         'plone.formwidget.geolocation',
-        'geopy'
+        'geopy',
+        'plone.app.theming',
+        'plone.app.themingplugins',
     ],
     extras_require={
         'test': [
