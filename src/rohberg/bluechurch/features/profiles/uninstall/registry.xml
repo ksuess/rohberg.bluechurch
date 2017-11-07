@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<registry>
-    
-	<records interface="rohberg.bluechurch.features.browser.controlpanel.IBluechurchControlPanel"
-	         prefix="bluechurch"
-	         remove="true" />
-             
-</registry>

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xml:lang="en" lang="en"
+
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="rohberg.bluechurch"
+    metal:use-macro="context/main_template/macros/master">
+      
+    <metal:content-core fill-slot="content-core">
+        <p>wanttoknow <span tal:content="structure view/wanttoknow">test</span></p>
+
+        <p>debug <span tal:content="context/portal_type">debug</span></p>
+        <p>debug <span tal:content="context/id">debug</span></p>
+        <!-- <p>debug <span tal:content="user">debug</span></p> -->
+        <!-- <p>Owner <span tal:content="python:context.getOwner()">Owner</span></p> -->
+        
+        <!-- <div tal:content="structure request" /> -->
+        
+    </metal:content-core>
+
+</html>
