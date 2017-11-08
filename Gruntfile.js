@@ -78,11 +78,8 @@ module.exports = function (grunt) {
                 options: {
                     watchTask: true,
                     debugInfo: true,
-<<<<<<< HEAD
                     proxy: "localhost:10680",
-=======
-                    proxy: "localhost:8080",
->>>>>>> origin/master
+
                     reloadDelay: 3000,
                     // reloadDebounce: 2000,
                     online: true
