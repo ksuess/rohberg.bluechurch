@@ -14,12 +14,7 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch import _
 
-# TODO: clean up get basePath
-def get_profiles_base_path(context=None):
-    path = '/'.join(getSite().getPhysicalPath())
-    path += '/web/profiles'
-    return path
-    
+# TODO: clean up get_locations_base_path. Nicht fest verdrahtet
 def get_locations_base_path(context=None):
     path = '/'.join(getSite().getPhysicalPath())
     path += '/web/locations'
@@ -28,28 +23,12 @@ def get_locations_base_path(context=None):
 class IBluechurchevent(model.Schema):
     """ Marker interface for Bluechurchevent
     """
-    # kontaktperson = RelationChoice(
-    #     title=_(u"Kontaktperson"),
-    #     required=True,
-    #     vocabulary='plone.app.vocabularies.Catalog',
-    #     # defaultFactory=profile_current_user,
-    #     )
-    # widget(
-    #     'kontaktperson',
-    #     RelatedItemsFieldWidget,
-    #     pattern_options={
-    #         'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-    #         'mode': 'search',
-    #         'basePath': "/web/profiles",
-    #     }
-    #     )
         
     #TODO: Location
     location = RelationChoice(
         title=_(u"Location"),
         required=True,
         vocabulary='plone.app.vocabularies.Catalog',
-        # defaultFactory=profile_current_user,
         )
     widget(
         'location',

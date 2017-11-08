@@ -39,11 +39,6 @@ def get_profiles_base_path(context=None):
     path += '/web/profiles'
     return path
     
-def get_locations_base_path(context=None):
-    path = '/'.join(getSite().getPhysicalPath())
-    path += '/web/locations'
-    return path
-    
 @provider(IDefaultFactory)
 # @provider(IContextAwareDefaultFactory)
 def profile_current_user():
@@ -130,7 +125,7 @@ class IOwnercontact(model.Schema):
 def setLocalRolesOnBluechurchObjects(obj, event):
     """ Set Role Owner to new kontaktperson (event handler on creation and modification)"""
 
-    logger.info("setLocalRolesOnBluechurchObjects")
+    logger.info("*** setLocalRolesOnBluechurchObjects")
     
     kp = obj.kontaktperson
     logger.info(kp)
