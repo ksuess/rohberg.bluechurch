@@ -52,6 +52,7 @@ setup(
         'geopy',
         'plone.app.theming',
         'plone.app.themingplugins',
+        'collective.monkeypatcher',
     ],
     extras_require={
         'test': [

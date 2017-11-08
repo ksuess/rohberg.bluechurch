@@ -1,0 +1,44 @@
+<model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>    
+    <!-- <field name="homepage" type="zope.schema.URI">
+      <description/>
+      <required>False</required>
+      <title>Homepage</title>
+    </field>
+    <field name="bio" type="zope.schema.Text">
+      <description/>
+      <required>True</required>
+      <title>Bio</title>
+      <form:widget type="plone.app.z3cform.wysiwyg.WysiwygFieldWidget"/>
+    </field> -->
+    
+    <field name="twitter_handle" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>Twitter Handle</title>
+    </field>
+    <field name="facebook_handle" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>Facebook Handle</title>
+    </field>
+    
+    <field name="bluechurchtags" type="zope.schema.Set">
+      <description/>
+      <required>False</required>
+      <title>BluechurchTags</title>
+      <value_type type="zope.schema.Choice">
+        <vocabulary>rohberg.bluechurch.BluchurchTags</vocabulary>
+      </value_type>
+      <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
+    </field>
+    
+    <field name="bluechurchcaptcha" type="zope.schema.Int">
+        <description>Keine Chance den Spammern! Bitte gib eine Zahl zwischen 17 und 23 ein, damit wir wissen, dass Du es bist.</description>
+        <max>23</max>
+        <min>17</min>
+        <title>Captcha</title>
+    </field>
+    
+  </schema>
+</model>

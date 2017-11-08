@@ -1,4 +1,4 @@
-rohberg.bluechurch.features Copyright 2017, ksuess
+rohberg.bluechurch Copyright 2017, ksuess
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

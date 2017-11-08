@@ -3,7 +3,7 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-rohberg.bluechurch.features
+rohberg.bluechurch
 ==============================================================================
 
 Tell me what your product does
@@ -38,14 +38,14 @@ This product has been translated into
 Installation
 ------------
 
-Install rohberg.bluechurch.features by adding it to your buildout::
+Install rohberg.bluechurch by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        rohberg.bluechurch.features
+        rohberg.bluechurch
 
 
 and then running ``bin/buildout``
@@ -54,8 +54,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/rohberg.bluechurch.features/issues
-- Source Code: https://github.com/collective/rohberg.bluechurch.features
+- Issue Tracker: https://github.com/collective/rohberg.bluechurch/issues
+- Source Code: https://github.com/collective/rohberg.bluechurch
 - Documentation: https://docs.plone.org/foo/bar
 
 

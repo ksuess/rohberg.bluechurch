@@ -33,6 +33,7 @@ report.html
 !.gitkeep
 !.travis.yml
 !src/rohberg
+node_modules
 .DS_Store
 *.pyc
 *.pyo

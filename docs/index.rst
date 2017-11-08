@@ -1,5 +1,5 @@
 ====================
-rohberg.bluechurch.features
+rohberg.bluechurch
 ====================
 
 User documentation
