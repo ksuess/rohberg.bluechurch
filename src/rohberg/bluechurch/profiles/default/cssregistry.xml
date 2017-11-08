@@ -23,7 +23,11 @@
       available keys and default values.
       -->
 
+<<<<<<< HEAD:src/rohberg/bluechurch/profiles/default/cssregistry.xml
      <!-- <stylesheet
+=======
+     <stylesheet
+>>>>>>> origin/master:src/rohberg/bluechurch/profiles/default/cssregistry.xml
         id="++resource++rohberg.bluechurch.css/features.css"
         cacheable="True"
         compression="safe"
