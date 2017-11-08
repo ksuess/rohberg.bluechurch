@@ -2,12 +2,8 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-<<<<<<< HEAD:src/rohberg/bluechurch/configure.zcml
     xmlns:i18n="http://namespaces.zope.org/i18n"           
     xmlns:monkey="http://namespaces.plone.org/monkey"
-=======
-    xmlns:i18n="http://namespaces.zope.org/i18n"
->>>>>>> origin/master:src/rohberg/bluechurch/configure.zcml
     i18n_domain="rohberg.bluechurch">
 
   <i18n:registerTranslations directory="locales" />
@@ -41,15 +37,9 @@
       component="rohberg.bluechurch.vocabularies.BluchurchTagsVocabularyFactory"
   />
   <utility
-<<<<<<< HEAD:src/rohberg/bluechurch/configure.zcml
       name="rohberg.bluechurch.Eventformen"
       provides="zope.schema.interfaces.IVocabularyFactory"
       component="rohberg.bluechurch.vocabularies.EventformenVocabularyFactory"
-=======
-      name="rohberg.bluechurch.BluchurchTags"
-      provides="zope.schema.interfaces.IVocabularyFactory"
-      component="rohberg.bluechurch.vocabularies.BluchurchTagsVocabularyFactory"
->>>>>>> origin/master:src/rohberg/bluechurch/configure.zcml
   />
   
   

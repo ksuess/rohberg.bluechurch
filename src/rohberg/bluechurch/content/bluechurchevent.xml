@@ -45,7 +45,6 @@
       <title>BluechurchTags</title>
       <value_type type="zope.schema.Choice">
         <vocabulary>rohberg.bluechurch.BluchurchTags</vocabulary>
-<<<<<<< HEAD:src/rohberg/bluechurch/content/bluechurchevent.xml
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
     </field>
@@ -56,8 +55,6 @@
       <title>Eventformen</title>
       <value_type type="zope.schema.Choice">
         <vocabulary>rohberg.bluechurch.Eventformen</vocabulary>
-=======
->>>>>>> origin/master:src/rohberg/bluechurch/content/bluechurchevent.xml
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
     </field>
