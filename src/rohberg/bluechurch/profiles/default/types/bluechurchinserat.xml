@@ -36,7 +36,6 @@
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
-  <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />
  </property>
  
  

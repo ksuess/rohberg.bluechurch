@@ -1,5 +1,6 @@
 # coding: utf-8
 from zope import schema
+from zope.interface import implements
 from zope.component.hooks import getSite
 from zope.interface import implementer
 from zope.interface import provider
@@ -20,7 +21,9 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.autoform import directives
 from Products.CMFCore.utils  import getToolByName
-from rohberg.bluechurch.content import IBluechurchmembraneprofile
+from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
+
+from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 
 import logging
 logger = logging.getLogger(__name__)
@@ -34,6 +37,7 @@ def get_site(context=None):
 class IBluechurchlocation(model.Schema):
     """ Marker interface for Bluechurchlocation
     """    
+    
     model.load('bluechurchlocation.xml')
 
 
@@ -41,5 +45,6 @@ class IBluechurchlocation(model.Schema):
 class Bluechurchlocation(Item):
     """
     """
+    implements(IBluechurchMemberContent)
 
     

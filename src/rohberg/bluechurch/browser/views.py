@@ -119,6 +119,11 @@ class BluechurcheventView(OwnedView):
     @property
     def location_title(self):
         return self.location_obj.Title()
+    
+    def beteiligte(self):
+        profiles = [rel.to_object for rel in self.context.beteiligte]
+        result = [{'fullname':INameFromTitle(profile).title, 'url':profile.absolute_url()} for profile in profiles]
+        return result
 
 
 class BluechurchinseratView(OwnedView):

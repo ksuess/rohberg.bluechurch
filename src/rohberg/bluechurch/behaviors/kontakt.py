@@ -3,6 +3,7 @@ from zope.component import adapter
 from zope.component.hooks import getSite
 from zope.interface import implementer
 from zope.interface import provider
+from zope.interface import Interface
 from zope.schema.interfaces import IContextAwareDefaultFactory
 
 from Products.CMFCore.interfaces import IDublinCore
@@ -26,7 +27,7 @@ from plone.autoform.directives import write_permission
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from Products.CMFCore.utils  import getToolByName
-from rohberg.bluechurch.content import IBluechurchmembraneprofile
+from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
 
 import logging
 logger = logging.getLogger(__name__)
@@ -37,6 +38,12 @@ from rohberg.bluechurch import _
 def get_profiles_base_path(context=None):
     path = '/'.join(getSite().getPhysicalPath())
     path += '/web/profiles'
+    return path
+
+# TODO: clean up get_locations_base_path. Nicht fest verdrahtet
+def get_locations_base_path(context=None):
+    path = '/'.join(getSite().getPhysicalPath())
+    path += '/web/locations'
     return path
     
 @provider(IDefaultFactory)
@@ -121,26 +128,31 @@ class IOwnercontact(model.Schema):
     #     )
 
 
+class IOwnercontactMarker(Interface):
+    """Marker interface that will be provided by instances using the
+    IOwnercontact behavior. The eventsubscribers foo and bar are registered for
+    this marker.
+    """
 
 def setLocalRolesOnBluechurchObjects(obj, event):
-    """ Set Role Owner to new kontaktperson (event handler on creation and modification)"""
+    """ Set Role Owner to new or edited kontaktperson 
+    (event handler on creation and modification)
+    other local roles on this objects are removed!
+    """
 
     logger.info("*** setLocalRolesOnBluechurchObjects")
     
     kp = obj.kontaktperson
-    logger.info(kp)
-    # import pdb; pdb.set_trace()
     if not kp:
         return
-    username = kp.to_object.UID()
-    logger.info(username)
+    profile = kp.to_object
+    username = profile.UID()
     ploneuser = api.user.get(username)
-    logger.info(ploneuser)
-
-    # obj.changeOwnership(ploneuser)
     for otherusername, roles in obj.get_local_roles():
         obj.manage_delLocalRoles([otherusername])
     api.user.grant_roles(username=username, obj=obj, roles=["Owner",])
+    
+    logger.info("local role 'Owner' auf Objekt {} an {} mit UID {} vergeben".format(str(obj), profile, username))
     
     # current = api.user.get_current()
     # current_roles = api.user.get_roles(user=current)

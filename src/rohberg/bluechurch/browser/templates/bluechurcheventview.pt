@@ -8,12 +8,23 @@
         <p>
             <span tal:replace="structure view/w/homepage/render">Website</span>
         </p>
-        <div tal:content="structure view/w/bluechurchtags/render" />
+        <p>Tags: <span tal:content="structure view/w/bluechurchtags/render" /></p>
+        <p>Eventformen: <span tal:content="structure view/w/eventformen/render" /></p>
+        
+
 
         <div>Kontakt: 
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
+
+        <div>Weitere Beteiligte: 
+            <tal:beteiligte tal:repeat="beteiligter view/beteiligte">
+                <a tal:attributes="href beteiligter/url"
+                    href="#"
+                    tal:content="beteiligter/fullname">Kontaktperson</a>
+            </tal:beteiligte>
         </div>
         
         <div>Location: 

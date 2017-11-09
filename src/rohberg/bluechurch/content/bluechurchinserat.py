@@ -1,11 +1,14 @@
 # coding: utf-8
 from zope import schema
+from zope.interface import implements
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform.directives import widget
 from plone.dexterity.content import Item
 from plone.supermodel import model
 from zope.interface import implementer
+
+from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 
 import logging
 logger = logging.getLogger(__name__)
@@ -22,3 +25,4 @@ class IBluechurchinserat(model.Schema):
 class Bluechurchinserat(Item):
     """
     """
+    implements(IBluechurchMemberContent)

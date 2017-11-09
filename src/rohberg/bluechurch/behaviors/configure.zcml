@@ -5,25 +5,30 @@
 
     <include package="plone.behavior" file="meta.zcml" />
 
+
+
     <subscriber
-        for="rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation
+        for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent
              zope.lifecycleevent.interfaces.IObjectModifiedEvent"
         handler=".kontakt.setLocalRolesOnBluechurchObjects"
     />
     <subscriber
-        for="rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation
+        for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent
              zope.lifecycleevent.interfaces.IObjectAddedEvent"
         handler=".kontakt.setLocalRolesOnBluechurchObjects"
     />
     <!-- TODO: both subscribers also for event, inserat und page -->
 
 
-  
+    <!-- Alle Portal-Types mit IBluechurchMemberContent erhalten das Behavior 
+    und damit das Feld 'kontaktperson' mit der zugehörigen Funktonalität 
+    und können über dieses Interface mit event subscribern gemeinsam behandelt werden.-->
     <plone:behavior
         name="rohberg.bluechurch.ownerreference"
         title="Ownercontact"
-        description="Stellt Feld Kontaktperson bereit. Dies ist derjenige der bearbeiten darf."
+        description="Stellt Feld Kontaktperson bereit. Dies ist der Owner, also derjenige der bearbeiten darf."
         provides="rohberg.bluechurch.behaviors.kontakt.IOwnercontact"
+        for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent"
         />
 
 </configure>
