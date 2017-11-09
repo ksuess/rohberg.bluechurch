@@ -14,7 +14,8 @@
             tal:content="context/homepage | nothing"
             tal:attributes="href context/homepage | nothing"
             target="_blank">Website</a>
-        <p><b tal:content="structure view/w/bluechurchtags/render">bluechurchtags</b></p>
+
+        <p>Tags: <span tal:content="structure view/w/bluechurchtags/render" /></p>            
         
 
         <div>Meine Events: 
