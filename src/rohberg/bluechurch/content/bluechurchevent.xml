@@ -56,7 +56,7 @@
       <value_type type="zope.schema.Choice">
         <vocabulary>rohberg.bluechurch.Eventformen</vocabulary>
       </value_type>
-      <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
+      <!-- <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/> -->
     </field>
         
   </schema>
