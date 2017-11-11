@@ -33,11 +33,7 @@
       <required>False</required>
       <title>Homepage</title>
     </field>
-    <field name="facebook_handle" type="zope.schema.TextLine">
-      <description>Facebook-Benutzer-ID oder Facebook-Page-ID</description>
-      <required>False</required>
-      <title>Facebook Handle</title>
-    </field>
+    
     
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>

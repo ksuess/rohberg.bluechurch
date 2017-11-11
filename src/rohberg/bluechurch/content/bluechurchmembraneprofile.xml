@@ -11,17 +11,7 @@
       <title>Bio</title>
       <form:widget type="plone.app.z3cform.wysiwyg.WysiwygFieldWidget"/>
     </field> -->
-    
-    <field name="twitter_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Twitter Handle</title>
-    </field>
-    <field name="facebook_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Facebook Handle</title>
-    </field>
+
     
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>

@@ -13,21 +13,13 @@
       <required>False</required>
       <title>Title</title>
     </field>
+    
     <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
       <title>Homepage</title>
     </field>
-    <field name="twitter_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Twitter Handle</title>
-    </field>
-    <field name="facebook_handle" type="zope.schema.TextLine">
-      <description/>
-      <required>False</required>
-      <title>Facebook Handle</title>
-    </field>
+    
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>
       <required>False</required>
