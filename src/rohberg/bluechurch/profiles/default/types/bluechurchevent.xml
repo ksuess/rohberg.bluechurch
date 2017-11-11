@@ -38,6 +38,7 @@
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />
   <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
+  <element value="collective.address.behaviors.ISocial"/>
  </property>
  
  
