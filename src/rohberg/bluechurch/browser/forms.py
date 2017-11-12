@@ -18,7 +18,7 @@ class AddForm(add.DefaultAddForm):
         # TODO: Profile nur in Folder "profiles". cleanup restriction to folder profiles
         container = aq_inner(self.context)
         if container.id != "profiles":
-            raise Unauthorized(_(u"Hier keine Profile"))
+            raise Unauthorized(_(u"No Profiles here. Change to 'Profiles'."))
             
         is_manager = api.user.has_permission('Manage portal')
         is_sitemanager = False

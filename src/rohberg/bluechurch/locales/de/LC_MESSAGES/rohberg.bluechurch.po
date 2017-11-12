@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: rohberg.bluechurch\n"
+"Domain: DOMAIN\n"
 
 #: ../content/bluechurchmembraneprofile.py:21
 msgid "Artist"
@@ -47,7 +44,7 @@ msgstr ""
 
 #: ../browser/forms.py:21
 msgid "No Profiles here. Change to 'Profiles'."
-msgstr ""
+msgstr "Hier keine Profile. Wechseln Sie zu 'Profiles'"
 
 #: ../content/bluechurchmembraneprofile.py:36
 msgid "Profil-Typ"
