@@ -4,10 +4,10 @@
     i18n:domain="ploneconf.site">
 <body>
     <metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+
         <div tal:content="structure view/w/IRichText.text/render" />
         <p>
-            <!-- <a tal:attributes="href context/homepage"
-                tal:content="string:Website">location</a> -->
             <span tal:replace="structure view/w/homepage/render">Website</span>
         </p>
         
@@ -29,6 +29,11 @@
             </tal:ls>
         </div>
         
+        <tal:address replace="structure context/@@base_location_view" />
+
+    </metal:block>
     </metal:content-core>
+    
+
 </body>
 </html>

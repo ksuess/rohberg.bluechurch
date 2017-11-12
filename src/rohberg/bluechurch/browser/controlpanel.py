@@ -6,6 +6,7 @@ from plone.z3cform import layout
 from zope import schema
 from zope.interface import Interface
 
+from rohberg.bluechurch import _
 
 class IBluechurchControlPanel(Interface):
 
@@ -17,12 +18,14 @@ class IBluechurchControlPanel(Interface):
         value_type=schema.TextLine(),
         default=["Familie"],
     )
+    
     eventformen = schema.List(
         title=u'Eventformen',
         description=u'Jazzgottesdienst, etc',
         value_type=schema.TextLine(),
         default=["Jazzgottesdienst", "Liturgischer Jazz"],
     )
+        
     GTMCode = schema.TextLine(
         title=u'GTMCode',
         description=u'Google Tag Manager Code',

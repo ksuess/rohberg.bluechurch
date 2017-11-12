@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xml:lang="en" lang="en"
+
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="rohberg.bluechurch"
+    metal:use-macro="context/main_template/macros/master">
+      
+    <metal:content-core fill-slot="content-core">
+        
+        <div>
+            <p tal:repeat="widget view/widgets/values">
+                <b tal:content="widget/label">schema element</b>:
+                <span tal:content="structure widget/render">schema element</span>
+            </p>
+        </div>
+        
+    </metal:content-core>
+
+</html>

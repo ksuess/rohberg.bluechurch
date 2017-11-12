@@ -21,8 +21,10 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.autoform import directives
 from Products.CMFCore.utils  import getToolByName
-from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
 
+from collective import dexteritytextindexer
+
+from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 
 import logging
@@ -37,6 +39,8 @@ def get_site(context=None):
 class IBluechurchlocation(model.Schema):
     """ Marker interface for Bluechurchlocation
     """    
+    # TODO: make location fields searchable
+    # dexteritytextindexer.searchable('bio')
     
     model.load('bluechurchlocation.xml')
 

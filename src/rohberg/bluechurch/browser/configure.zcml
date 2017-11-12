@@ -53,6 +53,16 @@
         />
             
 
+    <!-- alle Feldwerte auflisten -->
+    <browser:page
+        for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent"
+        name="fview"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="zope2.Public"
+        class=".views.FView"
+        template="templates/fviewtemplate.pt"
+        />
+        
     <browser:page
        name="bluechurchmembraneprofileview"
        for="rohberg.bluechurch.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
@@ -60,6 +70,17 @@
        class=".views.BluechurchmembraneprofileView"
        template="templates/bluechurchprofileview.pt"
        permission="zope2.View"
+       />
+       
+       
+
+   <browser:page
+       for="*"
+       name="base_location_view"
+       class=".location.LocationView"
+       template="templates/location_base.pt"
+       permission="zope2.View"
+       layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
        />
        
     <browser:page

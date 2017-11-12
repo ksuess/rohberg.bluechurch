@@ -1,12 +1,15 @@
 # coding: utf-8
 
 from zope.component import getUtility
+from zope.interface import provider
+from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 from plone import api
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
+from rohberg.bluechurch import _
 
 # def BluchurchTagsVocabularyFactory(context=None):
 #     terms = []

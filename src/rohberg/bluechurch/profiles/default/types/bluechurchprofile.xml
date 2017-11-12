@@ -1,5 +1,6 @@
-<!-- obsolete. siehe bluechurchmembraneprofile -->
 <?xml version="1.0"?>
+<!-- OBSOLETE
+    siehe bluechurchmembraneprofile -->
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     name="bluechurchprofile"
     meta_type="Dexterity FTI"
@@ -35,7 +36,7 @@
   <property name="behaviors" purge="false">
       <element value="plone.app.content.interfaces.INameFromTitle"/>
       <element value="plone.app.dexterity.behaviors.id.IShortName"/>
-      <element value="plone.app.relationfield.behavior.IRelatedItems"/>
+      <!-- <element value="plone.app.relationfield.behavior.IRelatedItems"/> -->
       <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
       <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
       <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>

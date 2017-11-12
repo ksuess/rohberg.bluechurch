@@ -113,7 +113,8 @@ class BluechurcheventView(OwnedView):
     
     @property
     def location_obj(self):
-        obj = api.content.get(UID=self.context.location.to_object.UID())
+        # obj = api.content.get(UID=self.context.location.to_object.UID())
+        obj = self.context.location.to_object
         return obj
     
     @property
@@ -175,3 +176,14 @@ class TestView(BrowserView):
         roles_in_context = pm.getAuthenticatedMember().getRolesInContext(self.context)
         
         return roles_in_context
+
+
+
+class FView(DefaultView):
+    """Show all values of all fields
+    
+    """
+    
+    def wanttoknow(self):
+        return "wanttoknow"
+    
