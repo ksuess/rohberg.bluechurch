@@ -48,10 +48,12 @@ setup(
         'plone.app.relationfield',
         'plone.formwidget.contenttree',
         'collective.address',
+        'collective.venue',
         'collective.geolocationbehavior',
         'plone.app.theming',
         'plone.app.themingplugins',
         'collective.monkeypatcher',
+        'eea.facetednavigation',
     ],
     extras_require={
         'test': [
