@@ -12,6 +12,9 @@ from Products.Five.browser import BrowserView
 import json
 import pkg_resources
 
+import logging
+logger = logging.getLogger(__name__)
+
 from rohberg.bluechurch import _
 
 try:

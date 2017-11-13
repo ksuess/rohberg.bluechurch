@@ -8,7 +8,6 @@
 
 <tal:def define="data view/data;
                 address data/address|nothing;
-                contact data/contact|nothing;
                 social data/social|nothing">
 
 <div class="locationview">
@@ -20,28 +19,28 @@
     <div class="documentByLine">
       <tal:if tal:define="google_maps_link view/google_maps_link" tal:condition="google_maps_link">
         <a tal:attributes="href google_maps_link" i18n:translate="label_google_maps_link" target="_blank">Open in Google Maps</a>
-        —
       </tal:if>
-      <dfn
-        i18n:domain="collective.geolocationbehavior"
-        i18n:translate="">Geolocation</dfn>
-      <span class="latitude">
-        <span i18n:translate="label_latitude" i18n:domain="plone.formwidget.geolocation">Latitude</span>: ${data/latitude}
-      </span>
-      <span class="longitude">
-        <span i18n:translate="label_longitude" i18n:domain="plone.formwidget.geolocation">Longitude</span>: ${data/longitude}
-      </span>
     </div>
   </section>
 </tal:geo>
 
+
 <tal:if condition="address">
   <section class="address">
-    <heading>
-      <h3 i18n:translate="label_address">Address</h3>
-    </heading>
     <address>
-      <dl>
+        <tal:if condition="address/street|nothing">
+        <div class="street">${address/street}</div>
+        </tal:if>
+        <tal:if condition="address/zip_code|nothing">
+        <div class="street">${address/zip_code}</div>
+        </tal:if>
+        <tal:if condition="address/city|nothing">
+        <div class="street">${address/city}</div>
+        </tal:if>
+        <tal:if condition="address/country|nothing">
+        <div class="street">${address/country}</div>
+        </tal:if>
+      <!-- <dl>
         <tal:if condition="address/street|nothing">
         <dt class="street" i18n:translate="label_street" i18n:domain="collective.address">Street</dt>
         <dd class="street">${address/street}</dd>
@@ -61,64 +60,20 @@
         <dt class="country" i18n:translate="label_country" i18n:domain="collective.address">Country</dt>
         <dd class="country">${address/country}</dd>
         </tal:if>
-      </dl>
+      </dl> -->
     </address>
   </section>
 </tal:if>
 
-
-<tal:comment replace="nothing">
-    contact data nicht über collective.address
-</tal:comment>
-
-<tal:comment replace="nothing">
-    <tal:if condition="contact">
-      <section class="contact">
-        <heading>
-          <h3 i18n:translate="label_contact">Contact</h3>
-        </heading>
-        <dl>
-          <tal:if condition="contact/email|nothing">
-          <dt class="email" i18n:translate="label_email" i18n:domain="collective.address">Email</dt>
-          <dd class="email"><a href="mailto:${contact/email}">${contact/email}</a></dd>
-          </tal:if>
-
-          <tal:if condition="contact/web|nothing">
-          <dt class="web" i18n:translate="label_web" i18n:domain="collective.address">Web</dt>
-          <dd class="web"><a href="${contact/web}">${contact/web}</a></dd>
-          </tal:if>
-
-          <tal:if condition="contact/phone|nothing">
-          <dt class="phone" i18n:translate="label_phone" i18n:domain="collective.address">Phone</dt>
-          <dd class="phone"><a href="tel:${contact/phone}">${contact/phone}</a></dd>
-          </tal:if>
-
-          <tal:if condition="contact/mobile|nothing">
-          <dt class="mobile" i18n:translate="label_mobile" i18n:domain="collective.address">Mobile</dt>
-          <dd class="mobile"><a href="tel:${contact/mobile}">${contact/mobile}</a></dd>
-          </tal:if>
-
-          <tal:if condition="contact/fax|nothing">
-          <dt class="fax" i18n:translate="label_fax" i18n:domain="collective.address">Fax</dt>
-          <dd class="fax">${contact/fax}</dd>
-          </tal:if>
-        </dl>
-      </section>
-    </tal:if>
-</tal:comment>        
-
-
+      
 <tal:if condition="social">
   <section class="social">
-    <heading>
-      <h3 i18n:translate="label_social">Social Media</h3>
-    </heading>
     <dl>
       <tal:if condition="social/facebook|nothing">
       <dt class="facebook">Facebook</dt>
       <dd class="facebook">
         <a href="${social/facebook}" class="facebook" title="Facebook">
-          <img src="++resource++collective.venue/facebook.svg" width="32" height="32" alt="Facebook" />
+          <img src="./++resource++collective.venue/facebook.svg" width="32" height="32" alt="Facebook" />
         </a>
       </dd>
       </tal:if>

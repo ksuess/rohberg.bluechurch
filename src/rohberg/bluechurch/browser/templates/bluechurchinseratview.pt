@@ -8,7 +8,7 @@
 
         <div tal:content="structure view/w/bluechurchtags/render" />
         
-        <div>Kontakt: 
+        <div class="owner">Kontakt: 
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>

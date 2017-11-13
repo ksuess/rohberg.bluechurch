@@ -43,7 +43,7 @@ class IBluechurchevent(model.Schema):
     beteiligte = RelationList(
         title=_(u"Artists"),
         description=_(u"Beteiligte Artists, Veranstalter"),
-        required=True,
+        required=False,
         value_type=RelationChoice(
                 vocabulary='plone.app.vocabularies.Catalog',
                 )

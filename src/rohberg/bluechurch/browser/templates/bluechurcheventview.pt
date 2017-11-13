@@ -5,6 +5,9 @@
 <body>
     <metal:content-core fill-slot="content-core">
 
+        <!-- <p tal:content="context/city">DEBUG</p> -->
+        <tal:eventsummary replace="structure context/@@event_summary"/>
+    
         <div tal:content="structure view/w/IRichText.text/render" />
         <p>
             <span tal:replace="structure view/w/homepage/render">Website</span>
@@ -14,25 +17,25 @@
         
 
 
-        <div>Kontakt: 
+        <p class="owner">Kontakt: 
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
-        </div>
+        </p>
 
-        <div>Weitere Beteiligte: 
+        <p>Beteiligte Artists: 
             <tal:beteiligte tal:repeat="beteiligter view/beteiligte">
                 <a tal:attributes="href beteiligter/url"
                     href="#"
                     tal:content="beteiligter/fullname">Kontaktperson</a>
             </tal:beteiligte>
-        </div>
+        </p>
         
-        <div>Location: 
+        <p>Location: 
             <a tal:attributes="href python:view.location_obj.absolute_url()" 
                 href="#"
                 tal:content="view/location_title">Kontaktperson</a>
-        </div>
+        </p>
         
     </metal:content-core>
 </body>

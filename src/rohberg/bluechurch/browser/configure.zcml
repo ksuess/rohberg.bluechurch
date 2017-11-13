@@ -11,6 +11,9 @@
       layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
       />
 
+
+    <include file="indexers.zcml" />
+  
     <!-- Publish static files -->
     <plone:static
       name="rohberg.bluechurch"

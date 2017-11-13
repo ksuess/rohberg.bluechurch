@@ -80,9 +80,9 @@ module.exports = function (grunt) {
                     debugInfo: true,
                     proxy: "localhost:10680",
 
-                    reloadDelay: 3000,
+                    reloadDelay: 10000,
                     // reloadDebounce: 2000,
-                    online: true
+                    online: false
                 }
             }
         }
@@ -102,4 +102,5 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['compile']);
     grunt.registerTask('bsync', ["browserSync:html", "watch"]);
     grunt.registerTask('plone-bsync', ["browserSync:plone", "watch"]);
+    // grunt.registerTask('plone-bsync', [ "watch", "browserSync:plone"]);
 };

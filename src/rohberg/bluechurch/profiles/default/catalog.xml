@@ -7,7 +7,15 @@
     <index name="eventformen" meta_type="KeywordIndex">
       <indexed_attr value="eventformen"/>
     </index>
+    <index name="city" meta_type="FieldIndex">
+      <indexed_attr value="city"/>
+    </index>
+    <index name="eventcity" meta_type="FieldIndex">
+      <indexed_attr value="eventcity"/>
+    </index>
 
     <column value="bluechurchtags" />
     <column value="eventformen" />
+    <column value="city" />
+    <column value="eventcity" />
 </object>
