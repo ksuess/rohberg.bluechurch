@@ -115,6 +115,7 @@ class BluechurcheventView(OwnedView):
     def location_obj(self):
         # obj = api.content.get(UID=self.context.location.to_object.UID())
         obj = self.context.location.to_object
+        logger.info("location_obj geholt")
         return obj
     
     @property
@@ -125,6 +126,11 @@ class BluechurcheventView(OwnedView):
         profiles = [rel.to_object for rel in self.context.beteiligte]
         result = [{'fullname':INameFromTitle(profile).title, 'url':profile.absolute_url()} for profile in profiles]
         return result
+        
+    def city(self):
+        context = self.context
+        event = context.portal_catalog(id=context.id)
+        return event[0]['eventcity']
 
 
 class BluechurchinseratView(OwnedView):

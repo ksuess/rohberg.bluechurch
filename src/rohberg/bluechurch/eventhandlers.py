@@ -8,5 +8,4 @@ def notifyEventAfterLocationChange(obj, event):
     
     events = back_references(obj, "location")
     for ev in events:
-        obj.reindexObject(idxs=['eventcity'])
-        
+        ev.reindexObject(idxs=['eventcity'])

@@ -140,7 +140,7 @@ def setLocalRolesOnBluechurchObjects(obj, event):
     other local roles on this objects are removed!
     """
 
-    logger.info("*** setLocalRolesOnBluechurchObjects")
+    # logger.info("*** setLocalRolesOnBluechurchObjects")
     
     kp = obj.kontaktperson
     if not kp:
@@ -152,7 +152,7 @@ def setLocalRolesOnBluechurchObjects(obj, event):
         obj.manage_delLocalRoles([otherusername])
     api.user.grant_roles(username=username, obj=obj, roles=["Owner",])
     
-    logger.info("local role 'Owner' auf Objekt {} an {} mit UID {} vergeben".format(str(obj), profile, username))
+    # logger.info("local role 'Owner' auf Objekt {} an {} mit UID {} vergeben".format(str(obj), profile, username))
     
     # current = api.user.get_current()
     # current_roles = api.user.get_roles(user=current)
