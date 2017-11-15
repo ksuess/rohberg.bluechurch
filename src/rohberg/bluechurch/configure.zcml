@@ -56,7 +56,11 @@
   
   
   <!-- Location -->
-  
+  <subscriber
+      for="rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation
+           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+      handler=".eventhandlers.notifyEventAfterLocationChange"
+  />
   
   
   <genericsetup:registerProfile

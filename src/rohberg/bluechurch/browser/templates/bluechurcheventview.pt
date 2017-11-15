@@ -27,14 +27,15 @@
             <tal:beteiligte tal:repeat="beteiligter view/beteiligte">
                 <a tal:attributes="href beteiligter/url"
                     href="#"
-                    tal:content="beteiligter/fullname">Kontaktperson</a>
+                    tal:content="beteiligter/fullname">Fullname Artist</a>
             </tal:beteiligte>
         </p>
         
         <p>Location: 
             <a tal:attributes="href python:view.location_obj.absolute_url()" 
                 href="#"
-                tal:content="view/location_title">Kontaktperson</a>
+                tal:content="view/location_title">Location</a>, 
+                <span tal:content="view/location_obj/city">City</span>
         </p>
         
     </metal:content-core>
