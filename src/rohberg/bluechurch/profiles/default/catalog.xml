@@ -13,9 +13,13 @@
     <index name="eventcity" meta_type="FieldIndex">
       <indexed_attr value="eventcity"/>
     </index>
+    <index name="profile_type" meta_type="FieldIndex">
+      <indexed_attr value="profile_type"/>
+    </index>
 
     <column value="bluechurchtags" />
     <column value="eventformen" />
     <column value="city" />
     <column value="eventcity" />
+    <column value="profile_type" />
 </object>
