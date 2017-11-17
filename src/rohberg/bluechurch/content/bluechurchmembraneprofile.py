@@ -38,6 +38,23 @@ class IBluechurchmembraneprofile(IMember):
                 required=True,
                 default="artist",
             )
+    zip_code = schema.TextLine(
+        title=_(u'label_zip_code', default=u'Zip Code'),
+        description=_(u'help_zip_code', default=u''),
+        required=False
+    )
+    city = schema.TextLine(
+        title=_(u'label_city', default=u'City'),
+        description=_(u'help_city', default=u''),
+        required=False
+    )
+    country = schema.Choice(
+        title=_(u'label_country', default=u'Country'),
+        description=_(u'help_country',
+                      default=u'Select the country from the list.'),
+        required=False,
+        vocabulary='collective.address.CountryVocabulary'
+    )
     
     model.load('bluechurchmembraneprofile.xml')
 
