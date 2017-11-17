@@ -25,13 +25,13 @@ class IBluechurchevent(model.Schema):
     """
         
     #TODO: Location
-    location = RelationChoice(
+    eventlocation = RelationChoice(
         title=_(u"Location"),
         required=True,
         vocabulary='plone.app.vocabularies.Catalog',
         )
     widget(
-        'location',
+        'eventlocation',
         RelatedItemsFieldWidget,
         pattern_options={
             'selectableTypes': ['bluechurchlocation',],

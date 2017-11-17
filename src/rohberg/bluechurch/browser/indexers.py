@@ -11,12 +11,12 @@ logger = logging.getLogger(__name__)
 
 @indexer(IBluechurchevent)
 def city_event(obj):
-    """location/to_object/city
+    """eventlocation/to_object/city
     """
     # logger.info('city_eventindexed: %r' % obj)
     # return u"Bremen"
     try:        
-        loc = obj.location.to_object
+        loc = obj.eventlocation.to_object
         acc = IAddress(loc, None)
         c = acc.city
         return c

@@ -100,7 +100,7 @@ class BluechurchlocationView(OwnedView):
     """        
     
     def events(self):
-        obs = back_references(self.context, "location")
+        obs = back_references(self.context, "eventlocation")
         result = []
         for obj in obs:
             if obj.portal_type=="bluechurchevent":
@@ -113,8 +113,8 @@ class BluechurcheventView(OwnedView):
     
     @property
     def location_obj(self):
-        # obj = api.content.get(UID=self.context.location.to_object.UID())
-        obj = self.context.location.to_object
+        # obj = api.content.get(UID=self.context.eventlocation.to_object.UID())
+        obj = self.context.eventlocation.to_object
         logger.info("location_obj geholt")
         return obj
     
