@@ -1,54 +1,292 @@
 /* Bluechurch Theme 2017 */
+@grey-light: #ccc;
+@grey-verylight: #eee;
+@grey: #999;
+@grey-dark: #777;
 
-/* our custom styles */
+@dark-blue: #172c38;
 
-// DELETE ME:
-.custom-theme-marker {
-    display: none;
-    position: absolute;
-    top: 300px;
-    left: 30%;
-    margin: auto 0;
-    transform: rotate(-20deg);
-    background: #00ECFF;
-    color: #fff;
-    padding: 1em;
-    z-index: 100;
-}
-.section-front-page .custom-theme-marker{
-    display: block;
+
+@font-face {
+    font-family: 'mic_32_new_rgregular';
+    src: url('mic32new/mic32new-regular-webfont.woff2') format('woff2'),
+         url('mic32new/mic32new-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
+@font-face {
+    font-family: 'mic_32_newmedium';
+    src: url('mic32new/mic32new-medium-webfont.woff2') format('woff2'),
+         url('mic32new/mic32new-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-/* TinyMCE templates */
+}
 
-// image-grid-2x2:
-.image-grid-2x2 {
+@font-face {
+    font-family: 'mic_32_new_rgbold';
+    src: url('mic32new/mic32new-bold-webfont.woff2') format('woff2'),
+         url('mic32new/mic32new-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'mic_32_newlight';
+    src: url('mic32new/mic32new-light-webfont.woff2') format('woff2'),
+         url('mic32new/mic32new-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@plone-font-family-sans-serif:  "mic_32_new_rgregular", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
+@plone-font-family-condensed:   "mic_32_newmedium", "Arial Narrow", sans-serif; //just on 
+
+@fontcolor: #172c38;
+@background: transparent;
+
+@headingcolor: #81b7e6;
+
+@linkcolor: #81b7e6;
+@link-background: transparent;
+@linkactive: #81b7e6;
+@linkactive-background: #172c38;
+@linkhover: @linkactive;
+@linkhover-background: @linkactive-background;
+
+@navigationcolor: white;
+@navigation-background: transparent;
+@navigationactive: #81b7e6;
+@navigationactive-background: #9AD2CD;
+.navigationactive() {
+    color: @navigationactive;
+    background-color: @navigationactive-background;
+}
+.navigationhover() {
+    background-color: transparent;
+}
+
+#visual-portal-wrapper {
+    background-color: @grey;
+    background-image: url('++resource++rohberg.bluechurch.backgrounds/background_default.jpg')
+}
+
+@titel3-font-size: 1.2em;
+
+
+#content a {
+    color: @linkcolor;
+    background-color: @link-background;
+    &:hover, &:active {
+        color: @linkactive;
+        background-color: @linkactive-background;
+    }
+}
+
+.highlighted {
+    color: @linkcolor;
+}
+
+p.callout {
+    width: 70%;
+    float: right;
+    min-width: 30rem;
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    color: white;
     padding: 0;
-    margin: 0 0 @plone-grid-gutter-width 0;
-    list-style: none;
-    .make-row();
+    font-size: 2.5rem;
+    span {
+        background-color: black;
+    }
+}
 
-    > li {
-        .make-xs-column(12);
-        .make-sm-column(6);
-        margin-top: @plone-grid-gutter-width;
+#portal-logo img {
+    max-width: 240px;
+}
+.plone-navbar {
+    background-color: transparent;
+    box-shadow: none;
+}
 
-        img {
-            max-width: 100%;
-            max-height: 100%;
+#portal-globalnav {
+    a {
+        color: @navigationcolor;
+        background-color: @navigation-background;
+        font-weight: bold;
+        font-size: 16px;
+        &:hover {
+            .navigationhover;
+        }
+    }
+    li.selected {
+        border-bottom: 4px solid white;
+        a {
+            // TODO: Navi abhängig von Section
+            .navigationactive;
+        }
+    }
+} 
+body.section-locations #portal-globalnav li.selected a {
+    background-color: #FECC9A;
+}
+body.section-events #portal-globalnav li.selected a {
+    background-color: #E5A28B;
+}
+body.section-profiles #portal-globalnav li.selected a {
+    background-color: #D8E698;
+}
+body.section-research #portal-globalnav li.selected a {
+    background-color: #F29EC4;
+}
+body.section-contact #portal-globalnav li.selected a {
+    background-color: #C6C3B3;
+}
+
+
+#portal-searchbox {
+    display: none;
+}
+#portal-anontools {
+    color: white;
+    a {
+        color: white;
+    }
+}
+
+// main content Bereich
+#content {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    padding: 1rem;
+}
+.section-startseite {
+    .documentFirstHeading {
+        display: none;
+    }
+    #content {
+    background-color: transparent;
+}
+}
+
+/* **********
+Portlets
+************ */
+
+
+@plone-portlet-border: none;
+@plone-portlet-content-bg: transparent;
+@plone-portlet-header-bg: transparent;
+
+@plone-portlet-list-hover-bg: transparent;
+@portlet-padding: 2px;
+
+.portlet {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    border-radius: 0;
+    box-shadow: none;
+}
+.portlet.portletEvents {
+    color: white;
+    background-color: transparent;
+    box-shadow: none;
+    .portletHeader {
+        color: white;
+		font-size: @plone-font-size-base;
+        text-align: right;
+        padding:@portlet-padding;
+        margin-bottom: 2rem;
+        & > a {
+            color: white;
+        }
+    }
+
+    .portletContent {
+    	font-size: @plone-font-size-base;
+    	border-top: @plone-portlet-border;
+    	background: @plone-portlet-content-bg;
+    	font-weight: @plone-font-weight-regular;
+    	& > *, & > div:not(.portalMessage) { //all but ul and tables and portalMessage
+    		padding: 10px 15px;
+    		margin: 0;
+    		color: @plone-gray;
+            text-align: right;
+    	}
+    	> ul {
+    		padding: 0;
+    		list-style: none;
+    		position: relative;
+    		> li {
+                margin-bottom: 2em;
+    			a {
+    			display: block;
+    			padding:@portlet-padding;
+    			position: relative;
+    			z-index: 1;
+    			color: @linkactive;
+                background-color: @linkactive-background;
+                font-size: @titel3-font-size;
+    			}
+    			> a {border-top: @plone-portlet-border;}
+    			&:first-child > a {border-top: 0;}				
+    		}
+    		ul {
+    			padding-left:15px;
+    			list-style: none;
+    		}
+    		.portletItemDetails {
+    			display: block;
+    			z-index: 0;
+    			padding: @portlet-padding;
+    			font-weight: @plone-font-weight-regular;
+    			position: relative;
+    			margin-top: 0;
+                font-size: 1.2rem;
+    			color: white;
+                abbr {
+                    display: none;
+                }
+    		}
+            .location {
+                color: white;
+                padding: 2px;
+                font-size: 1.7rem;
+            }
+            .tile {
+                font-size: 1.9rem;
+                text-transform: uppercase;
+            }
+    		li:hover {background: @plone-portlet-list-hover-bg;
+    			a::before {color: @plone-portlet-list-bullet;}
+    		}
+    	}
+    }
+    .portletFooter {
+        background-color: transparent;
+        color: white;
+        text-align: right;
+        a {
+            color: white;
         }
     }
 }
 
-/*
-    bluechurch stuff
-*/
 
-// colors:
-// #7e8b94
 
-// Profiles
+article.vevent {
+    clear: both;
+}
+/* ***********
+Profiles
+**************** */
 [class^="contenttype-dexterity-membrane"].state-disabled  	{color: @plone-default-private-color;
 	&:hover, &:active, &:focus 		{color: darken(@plone-default-private-color,15%)}}
 
@@ -58,6 +296,7 @@
 }
 
 .documentFirstHeading {
+    color: @headingcolor;
     &.eventmanager {
         color: blue;
     }
@@ -67,24 +306,18 @@
 }
 
 
-// plone.app.z3cform
-.template-view .empty.field {
-   display: none;
-}
 
-body.section-locations,
-body.section-profiles,
-body.section-events {
-    img {
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-    }
-}
-
-/* forms */
+/* *****************
+forms 
+***************** */
 
 .field {
     clear: left;
+}
+
+// plone.app.z3cform
+.template-view .empty.field {
+   display: none;
 }
 /* end forms*/
 
@@ -93,7 +326,87 @@ body.section-events {
     // clear:both;
 }
 
-/* location */
+/* ****************
+views
+******************* */
+
+body.section-locations #main-container,
+body.section-profiles #main-container,
+body.section-events #main-container {
+    img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+}
+
+
+/* ***************
+faceted navigation
+****************** */
+
+#right-area {
+    width: 16em;
+}
+.right-area-js {
+    margin-right: 15em;
+}
+
+.faceted-checkbox-widget .widget-fieldset ul {
+    padding-left: 1rem;
+}
+#content-core {
+    #faceted-results {
+        .photoAlbumEntry {
+            max-height: 128px;
+            overflow: hidden;
+            width: 47%;
+            vertical-align: top;
+            a {
+                vertical-align: top;
+                width: 100%;
+                display: block;
+                margin-right: .5rem;
+                box-shadow: none;
+                text-align: left;
+                color: @dark-blue;
+                border: none;
+                border-radius: 0;
+                font-weight: bold;
+                
+                &.eventmanager {
+                    color: @grey-dark;
+                }
+                &:hover, &:active {
+                    color: @linkactive;
+                    text-decoration: none;
+                    background-color: @linkactive-background;
+                }
+            }
+            img {
+                float: left;
+                padding-right: 0.4rem;
+                max-height: 128px;
+                
+            }
+            .photoAlbumEntryTitle {
+                font-size: 1.7rem;
+                text-transform: uppercase;
+            }
+            .photoAlbumEntryCity {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                display: block;
+                // clear:both;
+            }
+        }
+    }
+
+}
+
+/* *****************
+location 
+***************** */
+
 
 .additionalinfo {
     clear: both;
@@ -215,10 +528,39 @@ body.section-events {
 
 }
 
+/* *********************
+event 
+********************* */
 
-
-/* event */
 ul.event.summary.details {
     list-style-type: none;
     padding-left: 1em;
 }
+
+
+
+
+
+
+
+/* TinyMCE templates */
+
+// image-grid-2x2:
+.image-grid-2x2 {
+    padding: 0;
+    margin: 0 0 @plone-grid-gutter-width 0;
+    list-style: none;
+    .make-row();
+
+    > li {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        margin-top: @plone-grid-gutter-width;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
