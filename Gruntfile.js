@@ -90,10 +90,10 @@ module.exports = function (grunt) {
 
 
     // grunt.loadTasks('tasks');
-    grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     // CWD to theme folder
     grunt.file.setBase('./src/rohberg/bluechurch/theme');
