@@ -83,6 +83,7 @@ class IOwnercontact(model.Schema):
     # TODO: Default Kontaktperson
     kontaktperson = RelationChoice(
         title=_(u"Kontaktperson"),
+        description=_(u"Beschreibung Kontaktperson"),
         required=True,
         # source=CatalogSource(portal_type='dexterity.membrane.bluechurchmembraneprofile'),
         # source=ObjPathSourceBinder(
