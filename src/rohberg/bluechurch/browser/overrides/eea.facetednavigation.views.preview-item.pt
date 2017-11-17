@@ -1,0 +1,54 @@
+<div class="photoAlbumEntry"
+  tal:define="portal_type context/portal_type;
+              useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings|python:[];
+              useView python:portal_type in useViewTypes;">
+  <a tal:define="
+      description context/Description|string:;
+      title context/pretty_title_or_id|string:;
+      city context/city|context/location/to_object/city|string:;
+      fullname python:u'{} {}'.format(getattr(context, 'first_name', ''), getattr(context.aq_explicit, 'last_name', ''));
+      
+      prettytitle python:context.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and fullname or title;
+      desc_or_title python:description or title;
+      url_parent context/aq_parent/absolute_url|string:#;
+      url context/absolute_url|string:#;
+      view_url python:(url and useView and url + '/view') or url;
+      is_namedimage python:getattr(getattr(context, 'image', None), 'getImageSize', None) is not None;
+      image_thumb exists:context/image_thumb;
+      image_tag python:getattr(context, 'tag', None);
+      image_placeholder python:getattr(context, 'image_placeholder', None);
+      profile_type context/profile_type|nothing;
+      start_date context/start|nothing"
+     tal:attributes="href view_url;
+                     title description;
+                     class profile_type">
+
+<tal:block tal:condition="is_namedimage">
+    <span class="photoAlbumEntryWrapper">
+       <img style="border: none" tal:attributes="
+        title desc_or_title;
+        alt title;
+        src string:$url/@@images/image/thumb"/>
+    </span>
+    <span class="photoAlbumEntryTitle" tal:content="prettytitle">Title</span>
+    <span class="photoAlbumEntryCity" tal:content="city">City</span>
+    <span class="photoAlbumEntryStartdate" tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
+    
+
+</tal:block>
+
+<tal:block tal:condition="not:is_namedimage">
+    <span class="photoAlbumEntryWrapper" tal:condition="image_placeholder">
+      <img style="border: none" tal:attributes="
+        title desc_or_title;
+        alt title;
+        src string:$url_parent/@@images/image_placeholder"/>
+    </span>
+
+    <span class="photoAlbumEntryTitle" tal:content="prettytitle">Title</span>
+    <span class="photoAlbumEntryCity" tal:content="city">City</span>
+    <span class="photoAlbumEntryStartdate" tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
+</tal:block>
+
+  </a>
+</div>
