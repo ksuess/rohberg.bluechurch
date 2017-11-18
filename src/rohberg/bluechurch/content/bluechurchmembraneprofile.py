@@ -70,7 +70,10 @@ class Bluechurchmembraneprofile(Item):
 def setInitialProfileRoles(obj, event):
     """Event handler"""
     # TODO: setInitialProfileRoles for Profile
+    # import pdb; pdb.set_trace()
     logger.info("setInitialProfileRoles")
+    username = obj.UID
+    logger.info(username)
     
     # # granting role for adding content
     # current = api.user.get_current()
@@ -82,6 +85,10 @@ def setInitialProfileRoles(obj, event):
     #
     #     logger.info(",".join(roles))
     #     api.user.grant_roles(username=username, roles=['Bluechurch Member'])
+    
+    ploneuser = api.user.get(username)
+    logger.info(ploneuser)
+    # api.user.grant_roles(username=username, roles=['Bluechurch Member'])
         
         
 from Products.membrane.interfaces import IMembraneUserRoles
@@ -91,9 +98,11 @@ from zope.component import adapter
 from zope.interface import implementer
 
 DEFAULT_ROLES = ['Bluechurch Member', 'Member']
+# DEFAULT_ROLES = ['Member',]
 
 @implementer(IMembraneUserRoles)
-@adapter(IMembraneUser)
+# @adapter(IMembraneUser)
+@adapter(IBluechurchmembraneprofile)
 class MyDefaultRoles(DxUserObject):
 
      def getRolesForPrincipal(self, principal, request=None):

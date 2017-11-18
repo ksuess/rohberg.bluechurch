@@ -44,15 +44,16 @@
   
   
   <!-- Profile -->
-  <subscriber
+  <!-- <subscriber
     for=".content.bluechurchmembraneprofile.IBluechurchmembraneprofile
          Products.membrane.interfaces.events.IMembraneTypeRegisteredEvent"
     handler=".content.bluechurchmembraneprofile.setInitialProfileRoles"
-  />
+  /> -->
   <adapter
        factory=".content.bluechurchmembraneprofile.MyDefaultRoles"
        provides="Products.membrane.interfaces.IMembraneUserRoles"
   />
+
   
   
   <!-- Location -->
