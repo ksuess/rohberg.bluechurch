@@ -6,6 +6,7 @@
       description context/Description|string:;
       title context/pretty_title_or_id|string:;
       city context/city|context/location/to_object/city|string:;
+      profile_type context/profile_type|nothing;
       fullname python:u'{} {}'.format(getattr(context, 'first_name', ''), getattr(context.aq_explicit, 'last_name', ''));
       
       prettytitle python:context.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and fullname or title;
@@ -14,8 +15,6 @@
       url context/absolute_url|string:#;
       view_url python:(url and useView and url + '/view') or url;
       is_namedimage python:getattr(getattr(context, 'image', None), 'getImageSize', None) is not None;
-      image_thumb exists:context/image_thumb;
-      image_tag python:getattr(context, 'tag', None);
       image_placeholder python:getattr(context, 'image_placeholder', None);
       profile_type context/profile_type|nothing;
       start_date context/start|nothing"
@@ -30,9 +29,12 @@
         alt title;
         src string:$url/@@images/image/thumb"/>
     </span>
-    <span class="photoAlbumEntryTitle" tal:content="prettytitle">Title</span>
+    <span class="photoAlbumEntryTitle" tal:content="prettytitle"
+        tal:attributes="class python:'photoAlbumEntryTitle' + (profile_type=='eventmanager' and ' eventmanager' or '')">Title</span>
     <span class="photoAlbumEntryCity" tal:content="city">City</span>
-    <span class="photoAlbumEntryStartdate" tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
+    <span class="photoAlbumEntryStartdate" 
+        tal:condition="python:portal_type=='bluechurchevent'" 
+        tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
     
 
 </tal:block>
@@ -45,9 +47,12 @@
         src string:$url_parent/@@images/image_placeholder"/>
     </span>
 
-    <span class="photoAlbumEntryTitle" tal:content="prettytitle">Title</span>
+    <span class="photoAlbumEntryTitle" tal:content="prettytitle"
+        tal:attributes="class python:'photoAlbumEntryTitle' + profile_type=='eventmanager' and ' eventmanager' or ''">Title</span>
     <span class="photoAlbumEntryCity" tal:content="city">City</span>
-    <span class="photoAlbumEntryStartdate" tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
+    <span class="photoAlbumEntryStartdate" 
+        tal:condition="python:portal_type=='bluechurchevent'" 
+        tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
 </tal:block>
 
   </a>
