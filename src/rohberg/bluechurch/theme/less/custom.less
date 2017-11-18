@@ -51,6 +51,8 @@
 
 @headingcolor: #81b7e6;
 
+@thumb_size: 128px;
+
 @linkcolor: #81b7e6;
 @link-background: transparent;
 @linkactive: #81b7e6;
@@ -305,11 +307,16 @@ Profiles
 .documentFirstHeading {
     color: @headingcolor;
     &.eventmanager {
-        color: blue;
+        color: @grey-light;
     }
     &.artist {
-        color: green;
+        // color: green;
     }
+}
+
+.newsImageContainer {
+    border-radius: 0;
+    // max-height: @thumb_size;
 }
 
 
@@ -398,6 +405,9 @@ faceted navigation
             .photoAlbumEntryTitle {
                 font-size: 1.7rem;
                 text-transform: uppercase;
+                &.eventmanager {
+                    color: @grey-dark;
+                }
             }
             .photoAlbumEntryCity {
                 font-size: 1.2rem;
