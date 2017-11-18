@@ -54,7 +54,7 @@
 @linkcolor: #81b7e6;
 @link-background: transparent;
 @linkactive: #81b7e6;
-@linkactive-background: #172c38;
+@linkactive-background: @dark-blue;
 @linkhover: @linkactive;
 @linkhover-background: @linkactive-background;
 
@@ -89,6 +89,11 @@
 
 .highlighted {
     color: @linkcolor;
+    background-color: @linkactive-background;
+    a, a:hover {
+        text-decoration: none;
+        border-bottom: none !important;
+    }
 }
 
 p.callout {
