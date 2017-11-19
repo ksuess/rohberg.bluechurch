@@ -16,14 +16,14 @@ class IBluechurchControlPanel(Interface):
         title=u'Schlagworte',
         description=u'Schlagworte, Tags, ',
         value_type=schema.TextLine(),
-        default=["Familie"],
+        default=["Spiritual Jazz/Sacred Jazz", "Dixie", "Swing", "Bebop", "Latin", "Cool Jazz", "Kinder", "Ethno"]
     )
     
     eventformen = schema.List(
         title=u'Eventformen',
         description=u'Jazzgottesdienst, etc',
         value_type=schema.TextLine(),
-        default=["Jazzgottesdienst", "Liturgischer Jazz"],
+        default=["Jazzgottesdienst", "Liturgischer Jazz", "Konzert"],
     )
         
     GTMCode = schema.TextLine(
