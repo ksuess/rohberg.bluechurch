@@ -54,9 +54,9 @@ class IBluechurchevent(model.Schema):
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
             'mode': 'search',
-            'basePath': get_profiles_base_path,
         }
         )
+    # 'basePath': get_profiles_base_path,
         
     model.load('bluechurchevent.xml')
 

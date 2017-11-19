@@ -35,36 +35,34 @@ logger = logging.getLogger(__name__)
 from rohberg.bluechurch import _
 
 # TODO: clean up get basePath
-def get_profiles_base_path(context=None):
-    path = '/'.join(getSite().getPhysicalPath())
-    path += '/web/profiles'
+def get_profiles_base_path(context):
+    path = '/'.join(api.portal.get_navigation_root(context).getPhysicalPath())
+    path += '/profiles'
+    logger.info("get_profiles_base_path: " + path)
     return path
 
 # TODO: clean up get_locations_base_path. Nicht fest verdrahtet
-def get_locations_base_path(context=None):
-    path = '/'.join(getSite().getPhysicalPath())
-    path += '/web/locations'
+def get_locations_base_path(context):
+    path = '/'.join(api.portal.get_navigation_root(context).getPhysicalPath())
+    path += '/locations'
+    logger.info("get_locations_base_path: " + path)
     return path
     
 @provider(IDefaultFactory)
 # @provider(IContextAwareDefaultFactory)
 def profile_current_user():
     logger.info("profile_current_user")
-    logger.debug("profile_current_user")
-    # logger.info(context)
-    # if context.kontaktperson:
-    #     return
-    current = api.user.get_current()
+
     if api.user.is_anonymous():
-        logger.info("profile_current_user")
-        logger.info(current)
         logger.warn("is_anonymous. why?")
         return None
+        
+    current = api.user.get_current()
     current_roles = api.user.get_roles(user=current)
     if not "Manager" in current_roles and not "Site Administrator" in current_roles:
         try:
             profile = api.content.get(UID=current.id)
-            logger.info(profile)
+            logger.info("current users profile: " + str(profile))
             logger.info(profile.portal_type)
             logger.info(IBluechurchmembraneprofile.providedBy(profile))
         except Exception, e:
@@ -90,7 +88,7 @@ class IOwnercontact(model.Schema):
         #     portal_type="dexterity.membrane.bluechurchmembraneprofile",
         #     navigation_tree_query=dict(
         #         portal_type=["dexterity.membrane.bluechurchmembraneprofile",],
-        #         path={ "query": '/web/profiles' })
+        #         path={ "query": '/profiles' })
         # ),
         vocabulary='plone.app.vocabularies.Catalog',
         defaultFactory=profile_current_user,
@@ -104,6 +102,8 @@ class IOwnercontact(model.Schema):
             'basePath': get_profiles_base_path,
         }
         )
+    # 'basePath': get_profiles_base_path,
+        
     # fieldset(
     #     'categorization',
     #     label=_(u'Categorization'),
@@ -141,7 +141,7 @@ def setLocalRolesOnBluechurchObjects(obj, event):
     other local roles on this objects are removed!
     """
 
-    # logger.info("*** setLocalRolesOnBluechurchObjects")
+    logger.info("*** setLocalRolesOnBluechurchObjects")
     
     kp = obj.kontaktperson
     if not kp:
