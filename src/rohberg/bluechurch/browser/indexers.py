@@ -21,6 +21,6 @@ def city_event(obj):
         c = acc.city
         return c
     except Exception as e:
-        logger.error('index fail: %r' % e)
+        logger.error('index fail: {}'.format(str(e)))
         
   
