@@ -123,6 +123,16 @@
        template="templates/bluechurchinseratview.pt"
        permission="zope2.View"
        />
+              
+   <browser:page
+      name="bluechurchpageview"
+      for="rohberg.bluechurch.content.bluechurchpage.IBluechurchpage"
+      layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+      class=".views.BluechurchpageView"
+      template="templates/bluechurchpageview.pt"
+      permission="zope2.View"
+      />
+       
        
     <!-- Viewlets -->
     <browser:viewlet

@@ -32,9 +32,6 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch import _
 
-def get_site(context=None):
-    return '/'.join(getSite().getPhysicalPath())
-
 
 class IBluechurchlocation(model.Schema):
     """ Marker interface for Bluechurchlocation

@@ -136,6 +136,10 @@ class BluechurcheventView(OwnedView):
 class BluechurchinseratView(OwnedView):
     """
     """    
+    
+class BluechurchpageView(OwnedView):
+    """
+    """    
 
 
 class MyProfileView(BrowserView):

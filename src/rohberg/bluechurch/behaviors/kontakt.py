@@ -27,26 +27,15 @@ from plone.autoform.directives import write_permission
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from Products.CMFCore.utils  import getToolByName
+
 from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
+from rohberg.bluechurch.utils import get_profiles_base_path
 
 import logging
 logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch import _
 
-# TODO: clean up get basePath
-def get_profiles_base_path(context):
-    path = '/'.join(api.portal.get_navigation_root(context).getPhysicalPath())
-    path += '/profiles'
-    logger.info("get_profiles_base_path: " + path)
-    return path
-
-# TODO: clean up get_locations_base_path. Nicht fest verdrahtet
-def get_locations_base_path(context):
-    path = '/'.join(api.portal.get_navigation_root(context).getPhysicalPath())
-    path += '/locations'
-    logger.info("get_locations_base_path: " + path)
-    return path
     
 @provider(IDefaultFactory)
 # @provider(IContextAwareDefaultFactory)
@@ -76,12 +65,14 @@ def profile_current_user():
 class IOwnercontact(model.Schema):
     """Add kontaktperson to content
     """
-    
+
     # Kontaktperson
     # TODO: Default Kontaktperson
+    read_permission(kontaktperson='zope2View')
+    write_permission(kontaktperson='rohberg.bluechurch.addbluechurchcontent')
     kontaktperson = RelationChoice(
         title=_(u"Kontaktperson"),
-        description=_(u"Beschreibung Kontaktperson"),
+        description=_(u"Kontaktperson"),
         required=True,
         # source=CatalogSource(portal_type='dexterity.membrane.bluechurchmembraneprofile'),
         # source=ObjPathSourceBinder(
@@ -93,6 +84,7 @@ class IOwnercontact(model.Schema):
         vocabulary='plone.app.vocabularies.Catalog',
         defaultFactory=profile_current_user,
         )
+    # order_after(notes='*')
     widget(
         'kontaktperson',
         RelatedItemsFieldWidget,
@@ -124,7 +116,7 @@ class IOwnercontact(model.Schema):
     #     pattern_options={
     #         'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
     #         # 'mode': 'search',
-    #         'basePath': get_site,
+    #         'basePath': get_site_path,
     #     }
     #     )
 

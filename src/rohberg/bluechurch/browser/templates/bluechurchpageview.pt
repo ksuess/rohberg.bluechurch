@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ploneconf.site">
+<body>
+    <metal:content-core fill-slot="content-core">
+        <div tal:content="structure view/w/IRichText.text/render" />
+
+        <div tal:content="structure view/w/bluechurchtags/render" />
+        
+        <div class="owner">Kontakt: 
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+                href="#"
+                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
+        
+    </metal:content-core>
+</body>
+</html>

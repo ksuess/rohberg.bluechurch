@@ -48,7 +48,7 @@
     </span>
 
     <span class="photoAlbumEntryTitle" tal:content="prettytitle"
-        tal:attributes="class python:'photoAlbumEntryTitle' + profile_type=='eventmanager' and ' eventmanager' or ''">Title</span>
+        tal:attributes="class python:'photoAlbumEntryTitle' + (profile_type=='eventmanager' and ' eventmanager' or '')">Title</span>
     <span class="photoAlbumEntryCity" tal:content="city">City</span>
     <span class="photoAlbumEntryStartdate" 
         tal:condition="python:portal_type=='bluechurchevent'" 

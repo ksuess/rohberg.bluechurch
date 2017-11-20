@@ -9,16 +9,19 @@
             tal:attributes="class python:context.profile_type=='eventmanager' and 'documentFirstHeading eventmanager' or  'documentFirstHeading artist'">
             <span tal:content="context/first_name">first_name</span> <span tal:content="context/last_name">last_name</span>
         </h1>
+        
+        <p class="city" tal:content="context/city">City</p>
+        
         <p tal:content="structure context/bio">Bio</p>
-        <a tal:condition="context/homepage" 
+        <p><a tal:condition="context/homepage" 
             tal:content="context/homepage | nothing"
             tal:attributes="href context/homepage | nothing"
-            target="_blank">Website</a>
+            target="_blank">Website</a></p>
 
         <p>Tags: <span tal:content="structure view/w/bluechurchtags/render" /></p>            
         
 
-        <div>Meine Events: 
+        <div tal:condition="view/events">Meine Events: 
             <tal:ls tal:repeat="ll view/events">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -35,7 +38,7 @@
                 </li>
             </tal:ls>
         </ul> -->
-        <div>Meine Locations: 
+        <div tal:condition="view/locations">Meine Locations: 
             <tal:ls tal:repeat="ll view/locations">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -44,7 +47,7 @@
             </tal:ls>
         </div>
 
-        <div>Meine Inserate: 
+        <div tal:condition="view/inserate">Meine Inserate: 
             <tal:ls tal:repeat="obj view/inserate">
                 <div>
                     <a tal:attributes="href python:obj.absolute_url()"

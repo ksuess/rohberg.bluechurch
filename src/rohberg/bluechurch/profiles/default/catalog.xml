@@ -17,6 +17,10 @@
       <indexed_attr value="profile_type"/>
     </index>
 
+    <index name="lastname" meta_type="FieldIndex">
+      <indexed_attr value="last_name"/>
+    </index>
+
     <column value="bluechurchtags" />
     <column value="eventformen" />
     <column value="city" />

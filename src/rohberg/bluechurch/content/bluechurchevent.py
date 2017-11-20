@@ -12,7 +12,7 @@ from plone.supermodel import model
 from zope.interface import implementer
 
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
-from rohberg.bluechurch.behaviors.kontakt import get_profiles_base_path, get_locations_base_path
+from rohberg.bluechurch.utils import get_profiles_base_path, get_locations_base_path
 
 import logging
 logger = logging.getLogger(__name__)
@@ -54,9 +54,9 @@ class IBluechurchevent(model.Schema):
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
             'mode': 'search',
+            'basePath': get_profiles_base_path,
         }
         )
-    # 'basePath': get_profiles_base_path,
         
     model.load('bluechurchevent.xml')
 
