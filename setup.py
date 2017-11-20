@@ -48,7 +48,6 @@ setup(
         'plone.app.relationfield',
         'plone.formwidget.contenttree',
         'collective.address',
-        'collective.venue [geolocation]',
         'collective.geolocationbehavior',
         'plone.app.theming',
         'plone.app.themingplugins',

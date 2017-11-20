@@ -2,7 +2,7 @@
 <registry>
     
 	<records interface="rohberg.bluechurch.browser.controlpanel.IBluechurchControlPanel"
-	         prefix="bluechurch" />
+	         prefix="rohberg.bluechurch" />
 
     <records interface="plone.app.querystring.interfaces.IQueryField"
         prefix="plone.app.querystring.field.bluechurchtags">

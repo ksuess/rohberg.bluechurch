@@ -31,6 +31,9 @@
       name="bluechurch"
       />
 
+
+  <utility component=".vocabularies.MapLayers" name="rohberg.bluechurch.map_layers"/>
+      
   <utility
       name="rohberg.bluechurch.BluchurchTags"
       provides="zope.schema.interfaces.IVocabularyFactory"

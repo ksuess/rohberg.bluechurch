@@ -55,7 +55,7 @@ class LocationView(BrowserView):
     @property
     def google_maps_link(self):
         coordinates = self.data_coordinates
-        show_link = getrec('collective.venue.show_google_maps_link')
+        show_link = True
         if not coordinates or not show_link:
             return
 
@@ -67,10 +67,10 @@ class LocationView(BrowserView):
 
     @property
     def map_configuration(self):
-        map_layers = getrec('collective.venue.map_layers') or []
+        map_layers = getrec('rohberg.bluechurch.map_layers') or []
         config = {
             "minimap": True,
-            "default_map_layer": getrec('collective.venue.default_map_layer'),
+            "default_map_layer": getrec('rohberg.bluechurch.default_map_layer'),
             "map_layers": [
                 {"title": _(it), "id": it}
                 for it in map_layers

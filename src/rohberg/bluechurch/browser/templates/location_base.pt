@@ -73,7 +73,7 @@
       <dt class="facebook">Facebook</dt>
       <dd class="facebook">
         <a href="${social/facebook}" class="facebook" title="Facebook">
-          <img src="./++resource++collective.venue/facebook.svg" width="32" height="32" alt="Facebook" />
+          Facebook
         </a>
       </dd>
       </tal:if>
@@ -82,7 +82,7 @@
       <dt class="twitter">Twitter</dt>
       <dd class="twitter">
         <a href="${social/twitter}" class="twitter" title="Twitter">
-          <img src="++resource++collective.venue/twitter.svg" width="32" height="32" alt="Twitter" />
+          Twitter
         </a>
       </dd>
       </tal:if>
@@ -91,7 +91,7 @@
       <dt class="google_plus">Google Plus</dt>
       <dd class="google_plus">
         <a href="${social/google_plus}" class="google_plus" title="Google Plus">
-          <img src="++resource++collective.venue/google-plus.svg" width="32" height="32" alt="Google Plus" />
+          Google+
         </a>
       </dd>
       </tal:if>
@@ -100,7 +100,7 @@
       <dt class="instagram">Instagram</dt>
       <dd class="instagram">
         <a href="${social/instagram}" class="instagram" title="Instagram">
-          <img src="++resource++collective.venue/instagram.svg" width="32" height="32" alt="Instagram" />
+          Instagram
         </a>
       </dd>
       </tal:if>
