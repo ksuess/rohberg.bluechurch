@@ -7,6 +7,7 @@ from zope.schema.interfaces import IVocabularyFactory
 from plone import api
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.statusmessages.interfaces import IStatusMessage
 from plone.dexterity.browser.view import DefaultView
 from plone.app.content.interfaces import INameFromTitle
 from Products.CMFCore.utils  import getToolByName
@@ -143,15 +144,76 @@ class BluechurchpageView(OwnedView):
 
 
 class MyProfileView(BrowserView):
-    """Gehe zu meinem Profile"""
+    """Gehe zu meinem Profil"""
     
     def __call__(self):
         current = api.user.get_current()
         profile = api.content.get(UID=current.id)
         response = self.request.response
-        response.redirect(profile.absolute_url(), status=301)
-        
+        response.redirect(profile.absolute_url()) # , status=301
+
+
+def sendMail(sender, recipient, subject, text, REQUEST):
+    """ TODO: send Mail
+    https://docs.plone.org/develop/plone/misc/email.html#sending-email
     
+    sender, recipient:  type IBluechurchmembraneprofile
+    """
+    
+    portal = api.portal.get()
+    email_charset = 'UTF-8'
+    # mail_template = portal.mail_template_bluechurch_en # geht das?
+    mail_template = getMultiAdapter((portal, REQUEST), name="mail_template_bluechurch_en")
+    # mail_template = portal.restrictedTraverse("mail_template_bluechurch_en")
+    mail_text = mail_template(sender=sender,
+        recipient = recipient,
+        messagetext=text,
+        messagesubject=subject,
+        portal_url=portal.absolute_url(),
+        charset=email_charset,
+        request=REQUEST)
+    try:
+        mail_host = api.portal.get_tool(name='MailHost')
+        # The ``immediate`` parameter causes an email to be sent immediately
+        # (if any error is raised) rather than sent at the transaction
+        # boundary or queued for later delivery.
+        if isinstance(mail_text, unicode):
+            mail_text = mail_text.encode(email_charset)
+        return mail_host.send(mail_text, immediate=True)
+    except SMTPRecipientsRefused:
+        # Don't disclose email address on failure
+        raise SMTPRecipientsRefused('Recipient address rejected by server')
+    logger.info(u"Bluechurch Message '{}' sent to {}".format(subject, recipient))
+            
+class ContactBluechurchmember(BrowserView):
+    """contact_bluechurchmember
+    """
+    
+    def __call__(self):
+        response = self.request.response
+        request = self.request
+        context = self.context
+        current = api.user.get_current()
+        current_profile = api.content.get(UID=current.id)
+        if not current_profile:
+            response.redirect(self.context.absolute_url())
+            return
+        recipient = self.context
+        sender = current_profile
+        subject = request.form.get("messagesubject", "").decode('utf-8')
+        text = request.form.get("messagetext", "").decode('utf-8')
+        messages = IStatusMessage(request)
+        try:
+            sendMail(sender, recipient, subject, text, request)
+            messages.add(_(u"Message '{}' sent to {}.".format(subject, recipient.email)), type=u"info")
+        except Exception, e:
+            msg = _(u"Message '{}' not sent to {}. There were errors.".format(subject, recipient.email))
+            logger.error(msg)
+            logger.error(str(e))
+            messages.add(msg, type=u"error")
+            raise e
+        response.redirect(context.absolute_url())
+
 class TestView(BrowserView):
     """ Testing utilities"""
     

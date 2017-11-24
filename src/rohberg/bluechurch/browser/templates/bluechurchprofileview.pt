@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
     lang="en"
     metal:use-macro="context/main_template/macros/master"
-    i18n:domain="ploneconf.site">
+    i18n:domain="rohberg.bluechurch">
 <body>
     <metal:content-core fill-slot="content-core">
         <!-- <div tal:content="structure view/w/bluechurchtags/render" /> -->
@@ -10,7 +10,34 @@
             <span tal:content="context/first_name">first_name</span> <span tal:content="context/last_name">last_name</span>
         </h1>
         
-        <p class="city" tal:content="context/city">City</p>
+        
+        <div class="container" 
+	         tal:define="isAnon context/@@plone_portal_state/anonymous;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2"><p class="city" tal:content="context/city">City</p></div>
+                <div class="col-xs-12 col-sm-6 pat-bcfeatures"
+                        id="contact_bluechurchmember"
+                    tal:condition="not:isAnon">
+                    <button  class="btn btn-default btn-sm"
+                        i18n:translate="label_contact_button">Contact</button>
+                    <form action="./@@contact_bluechurchmember" method="post"
+                        tal:attributes="action string:${context/absolute_url}/@@contact_bluechurchmember">
+                      <div class="form-group">
+                        <label for="messagesubject">Subject</label>
+                        <input type="text" class="form-control" id="messagesubject" name="messagesubject" 
+                                placeholder="Blue Church Kontakt">
+                      </div>
+                      <div class="form-group">
+                        <label for="messagetext">Text</label>
+                        <textarea class="form-control" id="messagetext" name="messagetext"
+                             placeholder="Remember, be nice!" cols="30" rows="5"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-default btn-sm"
+                          i18n:translate="label_send">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         
         <p tal:content="structure context/bio">Bio</p>
         <p><a tal:condition="context/homepage" 

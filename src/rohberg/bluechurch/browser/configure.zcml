@@ -58,7 +58,15 @@
         class=".views.TestView"
         template="templates/testviewtemplate.pt"
         />
-        
+       
+    <browser:page
+        name="mail_template_bluechurch_en"
+        for="*"
+        template="templates/mail_template_bluechurch_en.pt"
+        permission="zope.Public"
+        />
+             
+    <!-- xyz -->
     <browser:page
         for="*"
         name="myprofile"
@@ -133,7 +141,16 @@
       permission="zope2.View"
       />
        
-       
+      <!-- contact_bluechurchmember -->
+      <browser:page
+            name="contact_bluechurchmember"
+            for="rohberg.bluechurch.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
+            layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+            class=".views.ContactBluechurchmember"
+            permission="zope2.View"
+            />
+      
+      
     <!-- Viewlets -->
     <browser:viewlet
       name="bluechurch.useractionsviewlet"

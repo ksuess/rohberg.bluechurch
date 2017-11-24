@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-24 04:48+0000\n"
+"POT-Creation-Date: 2017-11-24 10:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,7 +105,6 @@ msgstr ""
 msgid "Message '{}' sent to {}."
 msgstr ""
 
-#. Default: "Subject Line"
 #: ../browser/templates/mail_template_bluechurch_en.pt:8
 msgid "Message from Blue Church"
 msgstr ""
@@ -140,6 +139,10 @@ msgstr ""
 
 #: ../browser/controlpanel.py:39
 msgid "Profiles Folder"
+msgstr ""
+
+#: ../content/bluechurchevent.xml
+msgid "Relation Choice"
 msgstr ""
 
 #: ../vocabularies.py:72
@@ -240,6 +243,10 @@ msgstr ""
 #. Default: "Map Layers"
 #: ../browser/controlpanel.py:65
 msgid "label_map_layers"
+msgstr ""
+
+#: ../browser/templates/bluechurchprofileview.pt:32
+msgid "label_send"
 msgstr ""
 
 #. Default: "Zip Code"

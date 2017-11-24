@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-24 04:48+0000\n"
+"POT-Creation-Date: 2017-11-24 10:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: rohberg.bluechurch\n"
 
 #: ../content/bluechurchmembraneprofile.py:21
 msgid "Artist"
@@ -100,12 +100,12 @@ msgstr ""
 
 #: ../browser/views.py:208
 msgid "Message '{}' sent to {}."
-msgstr ""
+msgstr "Message '{}' gesendet an {}."
 
 #. Default: "Subject Line"
 #: ../browser/templates/mail_template_bluechurch_en.pt:8
 msgid "Message from Blue Church"
-msgstr ""
+msgstr "Message from Blue Church"
 
 #: ../vocabularies.py:87
 msgid "NASAGIBS.ViirsEarthAtNight2012"
@@ -137,6 +137,10 @@ msgstr ""
 
 #: ../browser/controlpanel.py:39
 msgid "Profiles Folder"
+msgstr ""
+
+#: ../content/bluechurchevent.xml
+msgid "Relation Choice"
 msgstr ""
 
 #: ../vocabularies.py:72
@@ -238,6 +242,10 @@ msgstr ""
 #: ../browser/controlpanel.py:65
 msgid "label_map_layers"
 msgstr ""
+
+#: ../browser/templates/bluechurchprofileview.pt:32
+msgid "label_send"
+msgstr "send it"
 
 #. Default: "Zip Code"
 #: ../content/bluechurchmembraneprofile.py:42

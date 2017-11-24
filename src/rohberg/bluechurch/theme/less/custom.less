@@ -79,6 +79,18 @@
 
 @titel3-font-size: 1.2em;
 
+#content {
+    .form-group {
+        margin-bottom: .5rem;
+    }
+    button {
+        float: right;
+        padding: .2rem;
+        font-weight: normal;
+        border-radius: 3px;
+    }
+}
+
 
 #content a {
     color: @linkcolor;
@@ -191,6 +203,7 @@ body.section-contact #portal-globalnav li.selected a {
         background-color: @grey-light;
         opacity: 0.8;
         filter: alpha(opacity=80);  
+        border-radius: 0;
     }
 }
 #portal-anontools {
@@ -198,6 +211,12 @@ body.section-contact #portal-globalnav li.selected a {
     a {
         color: white;
         paddin-left: 1rem;
+    }
+}
+
+#content-core {
+    .container, .container-fluid {
+        padding-left: 0px;
     }
 }
 
@@ -221,10 +240,8 @@ body.section-contact #portal-globalnav li.selected a {
 }
 }
 
-/* **********
-Portlets
-************ */
-
+/* *** Portlets 
+*********************************** */
 
 @plone-portlet-border: none;
 @plone-portlet-content-bg: transparent;
@@ -346,9 +363,11 @@ article.vevent {
 #portal-footer-wrapper {
     background-color: transparent;
 }
-/* ***********
-Profiles
-**************** */
+
+
+/* *** Profiles 
+****************************** */
+
 [class^="contenttype-dexterity-membrane"].state-disabled  	{color: @plone-default-private-color;
 	&:hover, &:active, &:focus 		{color: darken(@plone-default-private-color,15%)}}
 
@@ -364,11 +383,12 @@ body.template-bluechurchmembraneprofileview {
     }
 }
 
+.pat-bcfeatures {
+    // color: red;
+}
 
-
-/* *****************
-forms 
-***************** */
+/* *** forms 
+********************************** */
 
 .field {
     clear: left;
@@ -383,9 +403,8 @@ forms
     // clear:both;
 }
 
-/* ****************
-views
-******************* */
+/* *** views
+*************************************** */
 
 body.section-locations #main-container,
 body.section-profiles #main-container,
@@ -397,9 +416,8 @@ body.section-events #main-container {
 }
 
 
-/* ***************
-faceted navigation
-****************** */
+/* *** faceted navigation
+****************************************** */
 
 #right-area {
     width: 16em;
@@ -463,9 +481,8 @@ faceted navigation
 
 }
 
-/* *****************
-location 
-***************** */
+/* *** location 
+***************************************** */
 
 
 .additionalinfo {
@@ -588,9 +605,8 @@ location
 
 }
 
-/* *********************
-event 
-********************* */
+/* *** event 
+****************************************************** */
 .event.summary {
     box-shadow: none;
     background-color: lighten(@headingcolor, 20%);

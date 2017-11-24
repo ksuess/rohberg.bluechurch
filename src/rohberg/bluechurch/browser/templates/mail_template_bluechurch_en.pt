@@ -1,0 +1,20 @@
+<tal:root define="lt string:&lt;;
+                  gt string:&gt;;
+                  dummy python:request.RESPONSE.setHeader('Content-Type', 'text/plain;; charset=%s' % options['charset']);
+                  sender python:options['sender'];
+                  recipient python:options['recipient'];"
+>From: "<span tal:replace="sender/email" />" <span tal:replace="structure lt"/><span tal:replace="sender/email" /><span tal:replace="structure gt"/>
+To: <span tal:replace="recipient/email" />
+Subject: <span i18n:domain="rohberg.bluechurch" i18n:translate="Message from Blue Church" tal:omit-tag="">Message from Blue Church</span>: <span tal:replace="options/messagesubject" />
+Content-Type: text/plain; charset=<span tal:replace="python:options['charset']" />
+Dear <span tal:replace="recipient/first_name" />,
+<span tal:replace="sender/first_name" /> <span tal:replace="sender/last_name" /> joins as you Blue Church and sends you the following message:
+
+<span tal:replace="options/messagesubject" />
+
+<span tal:replace="options/messagetext" />
+
+
+Blue Church
+<span tal:replace="python:options['portal_url']" />
+</tal:root>
