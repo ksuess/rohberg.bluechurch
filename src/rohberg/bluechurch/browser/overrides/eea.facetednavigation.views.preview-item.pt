@@ -24,10 +24,11 @@
 
 <tal:block tal:condition="is_namedimage">
     <span class="photoAlbumEntryWrapper">
-       <img style="border: none" tal:attributes="
-        title desc_or_title;
-        alt title;
-        src string:$url/@@images/image/thumb"/>
+       <img style="border: none" 
+           tal:attributes="
+                title desc_or_title;
+                alt title;
+                src string:$url/@@images/image/thumb"/>
     </span>
     <span class="photoAlbumEntryTitle" tal:content="prettytitle"
         tal:attributes="class python:'photoAlbumEntryTitle' + (profile_type=='eventmanager' and ' eventmanager' or '')">Title</span>
