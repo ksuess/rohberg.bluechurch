@@ -1,6 +1,54 @@
 <?xml version="1.0"?>
 <registry>
     
+    <!-- Siehe zur Bundle Registration 
+        http://plone-training.readthedocs.io/en/latest/javascript/exercises/5.html -->
+    <!-- Resource is done exactly the same as in Exercise 1 -->
+    <records prefix="plone.resources/bluechurch"
+             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="js">++plone++rohberg.bluechurch/bluechurch.js</value> <!-- rohberg.bluechurch ist der Name des static directory definiert in configure.zcml -->
+    </records>
+    
+    <!-- The bundle resource is another resource registration like any other. Remember, the difference here is in the content of the JavaScript file.
+
+One file uses require, the other uses define.
+
+Addditionally, we include our CSS/LESS dependencies here -->
+    <records prefix="plone.resources/bundle-bluechurch"
+              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++rohberg.bluechurch/bundle.js</value>
+      <value key="css">
+        <element>++plone++rohberg.bluechurch/pattern_bc.less</element>
+      </value>
+    </records>
+
+    <!-- bundle registration -->
+    <records prefix="plone.bundles/bluechurch"
+              interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+        <!-- reference to bundle resource definition -->
+        <element>bundle-bluechurch</element>
+      </value>
+      <value key="merge_with">default</value>
+      <value key="enabled">True</value>
+      <value key="jscompilation">++plone++rohberg.bluechurch/bluechurch-compiled.min.js</value>
+      <value key="csscompilation">++plone++rohberg.bluechurch/bluechurch-compiled.css</value>
+      <value key="last_compilation">2017-11-24 00:00:00</value>
+
+      <!-- so we don't include these modules multiple times -->
+      <value key="stub_js_modules">
+        <element>jquery</element>
+        <element>pat-base</element>
+      </value>
+    </records>
+
+    
+    
+    
+    
+    
+    
+    
 	<records interface="rohberg.bluechurch.browser.controlpanel.IBluechurchControlPanel"
 	         prefix="rohberg.bluechurch" />
 
