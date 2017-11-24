@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../browser/forms.py:21
 msgid "No Profiles here. Change to 'Profiles'."
-msgstr "Hier keine Profile. Wechseln Sie zu 'Profiles'"
+msgstr ""
 
 #: ../vocabularies.py:61
 msgid "OpenStreetMap.BlackAndWhite"
