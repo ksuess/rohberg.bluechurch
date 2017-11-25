@@ -47,6 +47,7 @@
 @plone-font-family-condensed:   "mic_32_newmedium", "Arial Narrow", sans-serif; //just on 
 
 @fontcolor: #172c38;
+@light-fontcolor: white;
 @background: transparent;
 
 @headingcolor: #81b7e6;
@@ -59,6 +60,7 @@
 @linkactive-background: @dark-blue;
 @linkhover: @linkactive;
 @linkhover-background: @linkactive-background;
+@linkcolor-light: lighten(@linkcolor, 10%);
 
 @navigationcolor: white;
 @navigation-background: transparent;
@@ -72,22 +74,76 @@
     background-color: transparent;
 }
 
+body {
+    color: white;
+}
 #visual-portal-wrapper {
     background-color: @grey;
-    background-image: url('++resource++rohberg.bluechurch.backgrounds/background_default.jpg')
+    background-image: url('/++plone++rohberg.bluechurch/backgrounds/background_default.jpg')
 }
 
+.plone-modal {
+    color: @dark-blue;
+}
 @titel3-font-size: 1.2em;
 
-#content {
-    .form-group {
-        margin-bottom: .5rem;
+#global_statusmessage {
+    padding: 0 15px;
+}
+
+
+
+#portal-searchbox {
+    #searchGadget {
+        border-radius: 0;
+        background-color: @grey-light;
+        opacity: 0.7;
+        filter: alpha(opacity=70);        
     }
-    button {
-        float: right;
-        padding: .2rem;
-        font-weight: normal;
-        border-radius: 3px;
+    input.searchButton,
+    #searchbox_currentfolder_only {
+        // background-color: @grey-light;
+        opacity: 0.8;
+        filter: alpha(opacity=80);  
+        border-radius: 0;
+    }
+}
+
+
+#portal-anontools,
+#member-actions {
+    color: @light-fontcolor;
+    float: right;
+    font-size: 1.2rem;
+    z-index: 10000;
+    ul {
+      text-align: right;
+      list-style: none;
+      li {
+          margin: 0;
+          a {
+              color: white;
+              padding-left: 1rem;
+              text-transform: lowercase;
+          }            
+      }
+    }
+}
+#member-actions {
+    margin-top: -3rem;
+}
+
+    
+#content {
+    .plone-btn {
+        border: 1px solid @linkcolor-light;
+        .pull-right();
+        &:hover,
+        &:active,
+        &:visited,
+        &:link {
+            border: 1px solid @linkcolor-light;            
+        }
     }
 }
 
@@ -135,10 +191,10 @@ p.callout {
 .documentFirstHeading {
     color: @headingcolor;
     &.eventmanager {
-        color: lighten(@headingcolor, 20%);
+        // color: lighten(@headingcolor, 20%);
     }
     &.artist {
-        color: lighten(@headingcolor, 20%);
+        // color: lighten(@headingcolor, 20%);
     }
 }
 
@@ -148,9 +204,13 @@ p.callout {
     box-shadow: none;
 }
 
-#portal-logo img {
-    max-width: 240px;
+#portal-logo {
+    margin-left: 15px;
+    img {
+        max-width: 240px;
+    }
 }
+
 .plone-navbar {
     background-color: transparent;
     box-shadow: none;
@@ -191,29 +251,6 @@ body.section-contact #portal-globalnav li.selected a {
 }
 
 
-#portal-searchbox {
-    #searchGadget {
-        border-radius: 0;
-        background-color: @grey-light;
-        opacity: 0.7;
-        filter: alpha(opacity=70);        
-    }
-    input.searchButton,
-    #searchbox_currentfolder_only {
-        background-color: @grey-light;
-        opacity: 0.8;
-        filter: alpha(opacity=80);  
-        border-radius: 0;
-    }
-}
-#portal-anontools {
-    color: white;
-    a {
-        color: white;
-        paddin-left: 1rem;
-    }
-}
-
 #content-core {
     .container, .container-fluid {
         padding-left: 0px;
@@ -222,6 +259,7 @@ body.section-contact #portal-globalnav li.selected a {
 
 // main content Bereich
 #content {
+    color: #172c38;
     background-color: white;
     opacity: 0.9;
     filter: alpha(opacity=90);
@@ -378,14 +416,13 @@ article.vevent {
 
 
 body.template-bluechurchmembraneprofileview {
-    .city {
+    .profile_meta {
         text-transform: uppercase;
     }
 }
 
-.pat-bcfeatures {
-    // color: red;
-}
+
+
 
 /* *** forms 
 ********************************** */
