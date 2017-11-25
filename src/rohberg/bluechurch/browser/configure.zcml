@@ -14,7 +14,12 @@
 
     <include file="indexers.zcml" />
   
-    <!-- Publish static files -->
+  
+  
+    <!-- Publish static files 
+        access via 
+        ++plone++rohberg.bluechurch/bluechurch_features.js
+    -->
     <plone:static
       name="rohberg.bluechurch"
       type="plone"
@@ -28,11 +33,11 @@
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
         />
 
-    <browser:resourceDirectory
+    <!-- <browser:resourceDirectory
         name="rohberg.bluechurch.backgrounds"
         directory="backgrounds"
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
-        />
+        /> -->
 
     <browser:resourceDirectory
         name="rohberg.bluechurch.images"
@@ -142,13 +147,23 @@
       />
        
       <!-- contact_bluechurchmember -->
-      <browser:page
+      <!-- <browser:page
             name="contact_bluechurchmember"
             for="rohberg.bluechurch.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
             layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
             class=".views.ContactBluechurchmember"
             permission="zope2.View"
-            />
+            /> -->
+            
+
+    <adapter factory=".contactform.ProfileContactFormAdapter"/>
+
+    <browser:page
+        for="rohberg.bluechurch.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
+        name="contact_bluechurchprofile"
+        class=".contactform.ProfileContactForm"
+        permission="zope2.View"
+        />
       
       
     <!-- Viewlets -->

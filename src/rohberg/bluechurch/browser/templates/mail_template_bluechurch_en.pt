@@ -8,13 +8,13 @@ To: <span tal:replace="recipient/email" />
 Subject: <span i18n:domain="rohberg.bluechurch" i18n:translate="Message from Blue Church" tal:omit-tag="">Message from Blue Church</span>: <span tal:replace="options/messagesubject" />
 Content-Type: text/plain; charset=<span tal:replace="python:options['charset']" />
 Dear <span tal:replace="recipient/first_name" />,
-<span tal:replace="sender/first_name" /> <span tal:replace="sender/last_name" /> joins as you Blue Church and sends you the following message:
+
+<span tal:replace="sender/first_name" /> <span tal:replace="sender/last_name" /> joins Blue Church as you do and sends you the following message:
 
 <span tal:replace="options/messagesubject" />
 
 <span tal:replace="options/messagetext" />
 
 
-Blue Church
-<span tal:replace="python:options['portal_url']" />
+Blue Church - Jazz and Sermon   <span tal:replace="python:options['portal_url']" />
 </tal:root>

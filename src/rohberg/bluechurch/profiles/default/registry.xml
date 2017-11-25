@@ -1,6 +1,18 @@
 <?xml version="1.0"?>
 <registry>
     
+    <records prefix="plone.resources/bluechurch_profile_features"
+             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <!-- <value key="js">++plone++rohberg.bluechurch/jquery.form-validator.min.js</value> -->
+        <value key="js">++plone++rohberg.bluechurch/bc_profile_features.js</value>
+    </records>
+    
+    <records prefix="plone.resources/schnupsi"
+             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="js">++plone++rohberg.bluechurch/schnupsi.js</value>
+    </records>
+    
+    
 	<records interface="rohberg.bluechurch.browser.controlpanel.IBluechurchControlPanel"
 	         prefix="rohberg.bluechurch" />
 

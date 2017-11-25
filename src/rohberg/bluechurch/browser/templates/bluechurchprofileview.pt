@@ -3,38 +3,63 @@
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="rohberg.bluechurch">
 <body>
-    <metal:content-core fill-slot="content-core">
+            
+    <metal:content-core fill-slot="content-core"
+        tal:define="isAnon context/@@plone_portal_state/anonymous;">
         <!-- <div tal:content="structure view/w/bluechurchtags/render" /> -->
+        <a href="#"
+            tal:condition="not:isAnon"
+            tal:attributes="href python:context.absolute_url()+'/@@contact_bluechurchprofile'"
+            class="plone-btn plone-btn-large plone-btn-primary pat-plone-modal"
+            id="clickme_contact_bluechurchmember"
+            data-pat-plone-modal="width: 600"
+            i18n:translate="label_contact_button">Contact</a>
+        
+        <a tal:condition="isAnon"
+            href="#modalanonymouslogin" 
+            class="plone-btn plone-btn-large plone-btn-primary pat-plone-modal"
+            data-pat-plone-modal="width: 400"
+            i18n:translate="label_contact_button">Contact</a>
+           <div id="modalanonymouslogin" style="display: none">
+                 <p><a href="./login">Login</a></p>
+                 <p><a href="/profiles/++add++dexterity.membrane.bluechurchmembraneprofile">Register</a></p>
+           </div>
+           
         <h1 class="documentFirstHeading" 
             tal:attributes="class python:context.profile_type=='eventmanager' and 'documentFirstHeading eventmanager' or  'documentFirstHeading artist'">
             <span tal:content="context/first_name">first_name</span> <span tal:content="context/last_name">last_name</span>
         </h1>
         
-        
         <div class="container" 
 	         tal:define="isAnon context/@@plone_portal_state/anonymous;">
             <div class="row">
-                <div class="col-xs-12 col-sm-2"><p class="city" tal:content="context/city">City</p></div>
-                <div class="col-xs-12 col-sm-6 pat-bcfeatures"
-                        id="contact_bluechurchmember"
-                    tal:condition="not:isAnon">
-                    <button  class="btn btn-default btn-sm"
-                        i18n:translate="label_contact_button">Contact</button>
+                <div class="profile_meta col-xs-12 col-sm-2">
+                    <p tal:content="context/city">City</p>
+                    <p tal:content="context/profile_type">Typ</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 ">
+                    <!-- 
+                            pat-bcfeatures
+                            id="contact_bluechurchmember"
+                        tal:condition="not:isAnon"
                     <form action="./@@contact_bluechurchmember" method="post"
+                        class=""
                         tal:attributes="action string:${context/absolute_url}/@@contact_bluechurchmember">
                       <div class="form-group">
-                        <label for="messagesubject">Subject</label>
-                        <input type="text" class="form-control" id="messagesubject" name="messagesubject" 
-                                placeholder="Blue Church Kontakt">
+                        <label for="messagesubject" i18n:translate="label_subject">Subject</label>
+                        <input type="text" class="form-control"
+                            id="messagesubject" name="messagesubject"
+                            data-validation="required">
                       </div>
                       <div class="form-group">
                         <label for="messagetext">Text</label>
                         <textarea class="form-control" id="messagetext" name="messagetext"
-                             placeholder="Remember, be nice!" cols="30" rows="5"></textarea>
+                             placeholder="" cols="30" rows="5"></textarea>
                       </div>
+                      <p i18n:translate="">The recipient gets an email with your email address to get back to you.</p>
                       <button type="submit" class="btn btn-default btn-sm"
                           i18n:translate="label_send">Send</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

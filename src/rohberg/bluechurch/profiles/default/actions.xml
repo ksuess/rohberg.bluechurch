@@ -17,9 +17,9 @@
       name="url_expr">string:${globals_view/navigationRootUrl}/profiles/++add++dexterity.membrane.bluechurchmembraneprofile</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
-   <property name="available_expr"></property>
+   <property name="available_expr">python:member is None</property>
    <property name="permissions">
-    <element value="rohberg.bluechurch.addbluechurchprofile"/>
+    <element value="View"/>
    </property>
    <property name="visible">True</property>
    <property name="modal"
