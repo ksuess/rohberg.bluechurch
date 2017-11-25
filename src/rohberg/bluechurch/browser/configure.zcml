@@ -175,6 +175,16 @@
       layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
       permission="zope2.View"
       />
+
+      <browser:viewlet
+        name="bluechurch.snippetsviewlet"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        template="templates/snippetsviewlet.pt"
+        class=".viewlets.SnippetsViewlet"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="rohberg.bluechurch.addbluechurchcontent"
+        />
+                   
                    
      
      <adapter

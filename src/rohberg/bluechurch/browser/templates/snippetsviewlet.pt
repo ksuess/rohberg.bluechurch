@@ -1,0 +1,31 @@
+
+
+<div class="snippetsviewlet">
+<!-- member snippets -->
+    
+    
+    <ul id="user_actions">
+        <li>
+            <a
+                href="#"
+                tal:attributes="href python:view.current_user['url']"
+                tal:content="python:view.current_user['fullname']">Ich</a>
+        </li>
+        <li>
+            <a
+                href="/logout"
+                i18n:translate="Logout">Logout</a>
+        </li>
+    </ul>
+
+    
+    <ul id="document_actions">
+        <li tal:condition="view/can_edit">
+            <a href="./edit"
+                class="plone-btn plone-btn-large plone-btn-primary"
+                tal:attributes="href string:${context/absolute_url}/edit">edit</a>
+        </li>
+    </ul>
+    
+    
+</div>

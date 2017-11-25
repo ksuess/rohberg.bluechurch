@@ -98,6 +98,9 @@
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
   <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
-  <replace css:theme-children="#member-actions" css:content="#portal-personaltools ul" css:if-not-content=".ajax_load" css:if-content=".userrole-member" />
+  <after css:theme-children="#member-actions" css:content="#user_actions"  css:if-content=".userrole-member" />
+
+  <!-- edit link -->
+  <before css:theme-children="#content-core" css:content="#document_actions"  css:if-content=".userrole-member" />
 
 </rules>

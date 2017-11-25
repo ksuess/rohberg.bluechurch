@@ -139,18 +139,24 @@ body {
 }
 
     
-#content {
-    .plone-btn {
-        border: 1px solid @linkcolor-light;
-        .pull-right();
-        &:hover,
-        &:active,
-        &:visited,
-        &:link {
-            border: 1px solid @linkcolor-light;            
-        }
+#content .plone-btn,
+input[type="submit"] {
+    border: 1px solid @linkcolor-light;
+    border-radius: 4px;
+    color: @linkcolor;
+    background-color: transparent;
+    .pull-right();
+    &:hover,
+    &:active,
+    &:visited,
+    &:link {
+        border: 1px solid @linkcolor-light;            
+    }
+    &:hover {
+        background-color: @dark-blue;
     }
 }
+
 
 
 #content a {
@@ -663,7 +669,9 @@ ul.event.summary.details {
 
 
 
-
+.snippetsviewlet {
+    display: none;
+}
 
 /* TinyMCE templates */
 

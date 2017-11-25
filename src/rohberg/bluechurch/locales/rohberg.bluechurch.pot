@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-25 16:03+0000\n"
+"POT-Creation-Date: 2017-11-25 21:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "CartoDB.DarkMatterNoLabels"
 msgstr ""
 
-#: ../browser/contactform.py:48
+#: ../browser/contactform.py:56
 msgid "Contact an Artist or Event Manager"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Installs the rohberg.bluechurch add-on."
 msgstr ""
 
-#: ../behaviors/kontakt.py:74
+#: ../behaviors/kontakt.py:73
 msgid "Kontaktperson"
 msgstr ""
 
@@ -101,11 +101,11 @@ msgstr ""
 msgid "Locations Folder"
 msgstr ""
 
-#: ../browser/contactform.py:95
+#: ../browser/contactform.py:103
 msgid "Message '{}' not sent to {}. There were errors."
 msgstr ""
 
-#: ../browser/contactform.py:105
+#: ../browser/contactform.py:113
 msgid "Message '{}' sent to {}."
 msgstr ""
 
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Stamen.Watercolor"
 msgstr ""
 
-#: ../browser/contactform.py:50
+#: ../browser/contactform.py:58
 msgid "The recipient gets an email with your email address to get back to you."
 msgstr ""
 
@@ -210,10 +210,6 @@ msgstr ""
 msgid "default_map_layer"
 msgstr ""
 
-#: ../browser/contactform.py:98
-msgid "error"
-msgstr ""
-
 #: ../content/bluechurchmembraneprofile.py:48
 msgid "help_city"
 msgstr ""
@@ -237,7 +233,7 @@ msgstr ""
 msgid "help_zip_code"
 msgstr ""
 
-#: ../browser/contactform.py:113
+#: ../browser/contactform.py:121
 msgid "label_cancel"
 msgstr ""
 
@@ -270,7 +266,7 @@ msgstr ""
 msgid "label_messagetext"
 msgstr ""
 
-#: ../browser/contactform.py:59
+#: ../browser/contactform.py:67
 msgid "label_send"
 msgstr ""
 
