@@ -32,7 +32,7 @@ class IBluechurchControlPanel(Interface):
         title=u'Eventformen',
         description=u'Jazzgottesdienst, etc',
         value_type=schema.TextLine(),
-        default=["Jazzgottesdienst", "Liturgischer Jazz", "Konzert"],
+        default=["Jazzgottesdienst", "Liturgischer Jazz", "Konzert", "Workshop"],
     )
     
     profiles_base = schema.TextLine(
