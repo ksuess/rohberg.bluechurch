@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-24 10:34+0000\n"
+"POT-Creation-Date: 2017-11-25 16:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,7 @@ msgstr ""
 "Language-Name: Deutsch\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rohberg.bluechurch\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
 #: ../content/bluechurchmembraneprofile.py:21
 msgid "Artist"
@@ -33,6 +34,10 @@ msgstr ""
 #: ../vocabularies.py:86
 msgid "CartoDB.DarkMatterNoLabels"
 msgstr ""
+
+#: ../browser/contactform.py:48
+msgid "Contact an Artist or Event Manager"
+msgstr "Artist kontaktieren"
 
 #: ../vocabularies.py:76
 msgid "Esri.DeLorme"
@@ -94,18 +99,18 @@ msgstr ""
 msgid "Locations Folder"
 msgstr ""
 
-#: ../browser/views.py:210
+#: ../browser/contactform.py:95
 msgid "Message '{}' not sent to {}. There were errors."
 msgstr "Message '{}' wurde nicht an {} gesendet. Es gab Fehler."
 
-#: ../browser/views.py:208
+#: ../browser/contactform.py:105
 msgid "Message '{}' sent to {}."
-msgstr "Message '{}' gesendet an {}."
+msgstr "Message '{}' wurde an {} versendet."
 
 #. Default: "Subject Line"
 #: ../browser/templates/mail_template_bluechurch_en.pt:8
 msgid "Message from Blue Church"
-msgstr "Message von Blue Church"
+msgstr "Blue Church"
 
 #: ../vocabularies.py:87
 msgid "NASAGIBS.ViirsEarthAtNight2012"
@@ -171,6 +176,10 @@ msgstr ""
 msgid "Stamen.Watercolor"
 msgstr ""
 
+#: ../browser/contactform.py:50
+msgid "The recipient gets an email with your email address to get back to you."
+msgstr "Der Empfänger erhält eine Email mit Ihrer Email-Adresse um auf Ihre Kontaktanfrage zurückzukommen."
+
 #: ../vocabularies.py:64
 msgid "Thunderforest.OpenCycleMap"
 msgstr ""
@@ -193,12 +202,16 @@ msgstr ""
 
 #: ../browser/forms.py:32
 msgid "You are already registered."
-msgstr ""
+msgstr "Sie sind bereits registriert"
 
 #. Default: "Default map layer"
 #: ../browser/controlpanel.py:51
 msgid "default_map_layer"
 msgstr ""
+
+#: ../browser/contactform.py:98
+msgid "error"
+msgstr "Fehler"
 
 #: ../content/bluechurchmembraneprofile.py:48
 msgid "help_city"
@@ -223,34 +236,53 @@ msgstr ""
 msgid "help_zip_code"
 msgstr ""
 
+#: ../browser/contactform.py:113
+msgid "label_cancel"
+msgstr "abbrechen"
+
 #. Default: "City"
 #: ../content/bluechurchmembraneprofile.py:47
 msgid "label_city"
-msgstr ""
+msgstr "Stadt"
+
+#. Default: "Contact"
+#: ../browser/templates/bluechurchprofileview.pt:10
+msgid "label_contact_button"
+msgstr "Kontakt"
 
 #. Default: "Country"
 #: ../content/bluechurchmembraneprofile.py:52
 msgid "label_country"
-msgstr ""
+msgstr "Land"
 
 #. Default: "Open in Google Maps"
 #: ../browser/templates/location_base.pt:21
 msgid "label_google_maps_link"
-msgstr ""
+msgstr "in Karte finden"
 
 #. Default: "Map Layers"
 #: ../browser/controlpanel.py:65
 msgid "label_map_layers"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:32
+#: ../browser/contactform.py:30
+msgid "label_messagetext"
+msgstr "Text"
+
+#. Default: "Send"
+#: ../browser/contactform.py:59
 msgid "label_send"
 msgstr "senden"
+
+#. Default: "Subject"
+#: ../browser/contactform.py:25
+msgid "label_subject"
+msgstr "Betreff"
 
 #. Default: "Zip Code"
 #: ../content/bluechurchmembraneprofile.py:42
 msgid "label_zip_code"
-msgstr ""
+msgstr "ZIP"
 
 #: ../configure.zcml:77
 msgid "rohberg.bluechurch"

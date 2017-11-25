@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-24 10:34+0000\n"
+"POT-Creation-Date: 2017-11-25 16:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,10 @@ msgstr ""
 
 #: ../vocabularies.py:86
 msgid "CartoDB.DarkMatterNoLabels"
+msgstr ""
+
+#: ../browser/contactform.py:48
+msgid "Contact an Artist or Event Manager"
 msgstr ""
 
 #: ../vocabularies.py:76
@@ -97,11 +101,11 @@ msgstr ""
 msgid "Locations Folder"
 msgstr ""
 
-#: ../browser/views.py:210
+#: ../browser/contactform.py:95
 msgid "Message '{}' not sent to {}. There were errors."
 msgstr ""
 
-#: ../browser/views.py:208
+#: ../browser/contactform.py:105
 msgid "Message '{}' sent to {}."
 msgstr ""
 
@@ -173,6 +177,10 @@ msgstr ""
 msgid "Stamen.Watercolor"
 msgstr ""
 
+#: ../browser/contactform.py:50
+msgid "The recipient gets an email with your email address to get back to you."
+msgstr ""
+
 #: ../vocabularies.py:64
 msgid "Thunderforest.OpenCycleMap"
 msgstr ""
@@ -202,6 +210,10 @@ msgstr ""
 msgid "default_map_layer"
 msgstr ""
 
+#: ../browser/contactform.py:98
+msgid "error"
+msgstr ""
+
 #: ../content/bluechurchmembraneprofile.py:48
 msgid "help_city"
 msgstr ""
@@ -225,9 +237,18 @@ msgstr ""
 msgid "help_zip_code"
 msgstr ""
 
+#: ../browser/contactform.py:113
+msgid "label_cancel"
+msgstr ""
+
 #. Default: "City"
 #: ../content/bluechurchmembraneprofile.py:47
 msgid "label_city"
+msgstr ""
+
+#. Default: "Contact"
+#: ../browser/templates/bluechurchprofileview.pt:10
+msgid "label_contact_button"
 msgstr ""
 
 #. Default: "Country"
@@ -245,8 +266,16 @@ msgstr ""
 msgid "label_map_layers"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:32
+#: ../browser/contactform.py:30
+msgid "label_messagetext"
+msgstr ""
+
+#: ../browser/contactform.py:59
 msgid "label_send"
+msgstr ""
+
+#: ../browser/contactform.py:25
+msgid "label_subject"
 msgstr ""
 
 #. Default: "Zip Code"
