@@ -40,7 +40,6 @@ from rohberg.bluechurch import _
 @provider(IDefaultFactory)
 # @provider(IContextAwareDefaultFactory)
 def profile_current_user():
-    logger.info("profile_current_user")
 
     if api.user.is_anonymous():
         logger.warn("is_anonymous. why?")
