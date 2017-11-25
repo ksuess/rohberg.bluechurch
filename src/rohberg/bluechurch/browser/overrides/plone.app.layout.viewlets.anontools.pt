@@ -1,0 +1,14 @@
+<div id="portal-anontools" tal:condition="python:view.user_actions and view.anonymous">
+  <ul>
+      <tal:actions repeat="action view/user_actions">
+          <li>
+              <a href=""
+                 tal:attributes="action"
+                 tal:content="action/title"
+                 i18n:translate="">
+                  action title
+              </a>
+          </li>
+      </tal:actions>
+  </ul>
+</div>
