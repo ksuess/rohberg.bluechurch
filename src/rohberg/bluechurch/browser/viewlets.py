@@ -33,7 +33,7 @@ class SnippetsViewlet(base.ViewletBase):
     def can_edit(self):
         current = api.user.get_current()
         local_roles = api.user.get_roles(user=current, obj=self.context, inherit=False)
-        return "Editor" in local_roles
+        return "Editor" in local_roles or "Owner" in local_roles
 
 
 class DocactionsViewlet(SnippetsViewlet):
