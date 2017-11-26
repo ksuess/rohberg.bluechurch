@@ -40,12 +40,14 @@ from rohberg.bluechurch import _
 @provider(IDefaultFactory)
 # @provider(IContextAwareDefaultFactory)
 def profile_current_user():
-
+    current = api.user.get_current()
+    logger.info("current user {}".format(current))
+    
     if api.user.is_anonymous():
-        logger.warn("is_anonymous. why?")
+        logger.warn("profile_current_user: is_anonymous True. Should not happen. User is logged in")
         return None
         
-    current = api.user.get_current()
+
     current_roles = api.user.get_roles(user=current)
     if not "Manager" in current_roles and not "Site Administrator" in current_roles:
         try:
