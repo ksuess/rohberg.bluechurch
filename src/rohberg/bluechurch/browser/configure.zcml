@@ -184,6 +184,17 @@
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
         permission="rohberg.bluechurch.addbluechurchcontent"
         />
+
+      <browser:viewlet
+        name="bluechurch.doc_actions"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        template="templates/doc_actions.pt"
+        class=".viewlets.DocactionsViewlet"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="rohberg.bluechurch.addbluechurchcontent"
+        />
+        
+        
                    
                    
      

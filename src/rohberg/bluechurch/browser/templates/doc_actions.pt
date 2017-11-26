@@ -1,0 +1,8 @@
+
+<ul id="document_actions">
+    <li tal:condition="view/can_edit">
+        <a href="./edit"
+            class="plone-btn plone-btn-large plone-btn-primary"
+            tal:attributes="href string:${context/absolute_url}/edit">edit</a>
+    </li>
+</ul>

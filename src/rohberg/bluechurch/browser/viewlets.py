@@ -26,7 +26,7 @@ class SnippetsViewlet(base.ViewletBase):
         current = api.user.get_current()
         current_profile = api.content.get(UID=current.id)
         result['url'] = current_profile and current_profile.absolute_url() or "#"
-        result['fullname'] = INameFromTitle(current_profile).title
+        result['fullname'] = current_profile and INameFromTitle(current_profile).title or u""
         return result
         
     @property
@@ -34,3 +34,9 @@ class SnippetsViewlet(base.ViewletBase):
         current = api.user.get_current()
         local_roles = api.user.get_roles(user=current, obj=self.context, inherit=False)
         return "Editor" in local_roles
+
+
+class DocactionsViewlet(SnippetsViewlet):
+    """
+    
+    """
