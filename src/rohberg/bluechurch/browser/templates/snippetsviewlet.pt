@@ -1,23 +1,7 @@
 
 
 <div class="snippetsviewlet">
-<!-- member snippets -->
     
-    
-    <ul id="user_actions">
-        <li>
-            <a
-                href="#"
-                tal:attributes="href python:view.current_user['url']"
-                tal:content="python:view.current_user['fullname']">Ich</a>
-        </li>
-        <li>
-            <a
-                href="/logout"
-                i18n:translate="Logout">Logout</a>
-        </li>
-    </ul>
-
 
     
 </div>

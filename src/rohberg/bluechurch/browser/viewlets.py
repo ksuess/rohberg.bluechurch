@@ -3,21 +3,8 @@ from plone import api
 from plone.app.content.interfaces import INameFromTitle
 
 
-class UserActionsViewlet(base.ViewletBase):
-    """ Become a member
-
-    """
-
-    def isMember(self):
-        """ TODO: isMember
-        """
-        return True
-        
-
-
-class SnippetsViewlet(base.ViewletBase):
-    """ diverse Snippets
-
+class BaseViewlet(base.ViewletBase):
+    """ 
     """
     @property
     def current_user(self):
@@ -36,7 +23,24 @@ class SnippetsViewlet(base.ViewletBase):
         return "Editor" in local_roles or "Owner" in local_roles
 
 
-class DocactionsViewlet(SnippetsViewlet):
+class MemberActionsViewlet(BaseViewlet):
+    """"""
+    
+
+class UserActionsViewlet(BaseViewlet):
+    """"""
+    
+    def useractions(self):
+        return []
+    
+    
+class DocactionsViewlet(BaseViewlet):
     """
     
+    """
+    
+    
+class SnippetsViewlet(BaseViewlet):
+    """ diverse Snippets
+
     """

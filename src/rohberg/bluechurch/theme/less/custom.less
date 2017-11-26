@@ -78,6 +78,10 @@
     background-color: transparent;
 }
 
+a {
+    outline: 0 !important;
+}
+    
 body {
     color: white;
 }
@@ -90,6 +94,12 @@ body {
     color: @dark-blue;
 }
 @titel3-font-size: 1.2em;
+
+
+
+#portal-header {
+    height: 5rem;
+}
 
 #global_statusmessage {
     padding: 0 15px;
@@ -114,29 +124,55 @@ body {
 }
 
 
-#portal-anontools,
-#member-actions {
+// #portal-anontools,
+// #member-actions {
+//     color: @light-fontcolor;
+//     float: right;
+//     font-size: 1.2rem;
+//     z-index: 10000;
+//     position: relative;
+//     ul {
+//       text-align: right;
+//       list-style: none;
+//       li {
+//           margin: 0;
+//           a {
+//               color: white;
+//               padding-left: 1rem;
+//               text-transform: lowercase;
+//           }
+//       }
+//     }
+// }
+// #member-actions {
+//     margin-top: -3rem;
+// }
+#member_actions,
+#user_actions {
     color: @light-fontcolor;
     float: right;
     font-size: 1.2rem;
     z-index: 10000;
     position: relative;
-    ul {
-      text-align: right;
-      list-style: none;
-      li {
-          margin: 0;
-          a {
-              color: white;
-              padding-left: 1rem;
-              text-transform: lowercase;
-          }            
-      }
+    text-align: right;
+    list-style: none;
+    li {
+        margin: 0;
+            a {
+            color: white;
+            padding-left: 1rem;
+            outline: 0;
+        }            
     }
 }
-#member-actions {
-    margin-top: -3rem;
+#member_actions {
+    color: red;
 }
+#user_actions {
+    clear: right;
+    text-transform: lowercase;
+}
+
 
 #document_actions {
     list-style: none;

@@ -168,8 +168,16 @@
       
     <!-- Viewlets -->
     <browser:viewlet
+      name="bluechurch.memberactionsviewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      template="templates/memberactionsviewlet.pt"
+      class=".viewlets.MemberActionsViewlet"
+      layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+      permission="rohberg.bluechurch.addbluechurchcontent"
+      />
+    <browser:viewlet
       name="bluechurch.useractionsviewlet"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       template="templates/useractionsviewlet.pt"
       class=".viewlets.UserActionsViewlet"
       layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"

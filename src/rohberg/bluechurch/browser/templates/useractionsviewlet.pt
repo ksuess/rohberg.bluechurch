@@ -1,8 +1,12 @@
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-3">Registration for Bands & Artists</div>
-        <div class="col-xs-12 col-sm-3">Events</div>
-    </div>
-</div>
+<ul id="user_actions">
+    <tal:actions repeat="action python:context.portal_actions.listFilteredActionsFor(context)['user']">
+      <li>
+            <a tal:attributes="href action/url; title action/title;" tal:content="action/title">
+              Action title
+            </a>
+      </li>
+    </tal:actions>
+
+</ul> 
 

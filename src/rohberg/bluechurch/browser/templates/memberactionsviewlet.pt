@@ -1,0 +1,11 @@
+
+<ul id="member_actions">
+    <li>
+        <a
+            href="#"
+            tal:attributes="href python:view.current_user['url']"
+            tal:content="python:view.current_user['fullname']">Ich</a>
+    </li>
+
+</ul> 
+
