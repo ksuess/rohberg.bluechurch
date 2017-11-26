@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-26 12:36+0000\n"
+"POT-Creation-Date: 2017-11-26 15:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 #: ../content/bluechurchevent.py:45
 #: ../content/bluechurchpage.py:30
 msgid "Beteiligte Artists, Veranstalter"
-msgstr ""
+msgstr "Beteiligte Artists"
 
 #: ../vocabularies.py:85
 msgid "CartoDB.DarkMatter"
@@ -83,6 +83,14 @@ msgstr ""
 
 #: ../content/bluechurchmembraneprofile.py:22
 msgid "Event Manager"
+msgstr ""
+
+#: ../browser/templates/bluechurchlocationview.pt:25
+msgid "Events of this location"
+msgstr "Events dieser Location"
+
+#: ../browser/templates/bluechurchprofileview.pt:106
+msgid "Inserate"
 msgstr ""
 
 #: ../configure.zcml:77
@@ -168,7 +176,7 @@ msgstr ""
 
 #: ../profiles/default/actions.xml
 msgid "Register"
-msgstr ""
+msgstr "registrieren"
 
 #: ../content/bluechurchevent.xml
 msgid "Relation Choice"
@@ -202,6 +210,10 @@ msgstr ""
 msgid "Stamen.Watercolor"
 msgstr ""
 
+#: ../browser/templates/bluechurchprofileview.pt:88
+msgid "Starring at"
+msgstr ""
+
 #: ../browser/contactform.py:58
 msgid "The recipient gets an email with your email address to get back to you."
 msgstr "Der Empfänger erhält eine Email mit Ihrer Email-Adresse um auf Ihre Kontaktanfrage zurückzukommen."
@@ -228,7 +240,7 @@ msgstr ""
 
 #: ../browser/forms.py:32
 msgid "You are already registered."
-msgstr "Sie sind bereits registriert"
+msgstr "Sie sind bereits registriert."
 
 #. Default: "Default map layer"
 #: ../browser/controlpanel.py:51
@@ -277,10 +289,22 @@ msgstr "Kontakt"
 msgid "label_country"
 msgstr "Land"
 
+#. Default: "Eventform"
+#: ../browser/templates/bluechurcheventview.pt:43
+msgid "label_eventform"
+msgstr "Event"
+
 #. Default: "Open in Google Maps"
 #: ../browser/templates/location_base.pt:21
 msgid "label_google_maps_link"
 msgstr "in Karte finden"
+
+#. Default: "Kontakt"
+#: ../browser/templates/bluechurcheventview.pt:26
+#: ../browser/templates/bluechurchinseratview.pt:12
+#: ../browser/templates/bluechurchlocationview.pt:17
+msgid "label_kontaktperson"
+msgstr "Kontakt"
 
 #. Default: "Map Layers"
 #: ../browser/controlpanel.py:65

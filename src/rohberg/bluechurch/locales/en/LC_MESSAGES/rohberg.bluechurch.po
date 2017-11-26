@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-26 12:36+0000\n"
+"POT-Creation-Date: 2017-11-26 15:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,6 +83,14 @@ msgstr ""
 #: ../content/bluechurchmembraneprofile.py:22
 msgid "Event Manager"
 msgstr ""
+
+#: ../browser/templates/bluechurchlocationview.pt:25
+msgid "Events of this location"
+msgstr ""
+
+#: ../browser/templates/bluechurchprofileview.pt:106
+msgid "Inserate"
+msgstr "Marketplace Adds"
 
 #: ../configure.zcml:77
 msgid "Installs the rohberg.bluechurch add-on."
@@ -167,7 +175,7 @@ msgstr ""
 
 #: ../profiles/default/actions.xml
 msgid "Register"
-msgstr ""
+msgstr "register"
 
 #: ../content/bluechurchevent.xml
 msgid "Relation Choice"
@@ -199,6 +207,10 @@ msgstr ""
 
 #: ../vocabularies.py:71
 msgid "Stamen.Watercolor"
+msgstr ""
+
+#: ../browser/templates/bluechurchprofileview.pt:88
+msgid "Starring at"
 msgstr ""
 
 #: ../browser/contactform.py:58
@@ -276,10 +288,22 @@ msgstr "Contact"
 msgid "label_country"
 msgstr "Country"
 
+#. Default: "Eventform"
+#: ../browser/templates/bluechurcheventview.pt:43
+msgid "label_eventform"
+msgstr "kind of event"
+
 #. Default: "Open in Google Maps"
 #: ../browser/templates/location_base.pt:21
 msgid "label_google_maps_link"
 msgstr "find in map"
+
+#. Default: "Kontakt"
+#: ../browser/templates/bluechurcheventview.pt:26
+#: ../browser/templates/bluechurchinseratview.pt:12
+#: ../browser/templates/bluechurchlocationview.pt:17
+msgid "label_kontaktperson"
+msgstr ""
 
 #. Default: "Map Layers"
 #: ../browser/controlpanel.py:65
