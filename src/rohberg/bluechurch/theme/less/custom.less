@@ -1,5 +1,5 @@
 #edit-zone {
-    display: none;
+    // display: none;
 }
     
 /* Bluechurch Theme 2017 */
@@ -138,6 +138,11 @@ body {
     margin-top: -3rem;
 }
 
+#document_actions {
+    list-style: none;
+    li {}
+}
+
     
 #content .plone-btn,
 input[type="submit"] {
@@ -146,6 +151,7 @@ input[type="submit"] {
     color: @linkcolor;
     background-color: transparent;
     .pull-right();
+    margin-left: 1rem;
     &:hover,
     &:active,
     &:visited,
@@ -438,11 +444,13 @@ body.template-bluechurchmembraneprofileview {
 /* *** forms 
 ********************************** */
 
+// plone.app.z3cform
 .field {
     clear: left;
 }
-
-// plone.app.z3cform
+.formControls {
+    margin-bottom: 3rem;
+}
 
 /* end forms*/
 
@@ -514,6 +522,8 @@ body.section-events #main-container {
             .photoAlbumEntryTitle {
                 font-size: 1.7rem;
                 text-transform: uppercase;
+                word-wrap: break-word;
+                hyphens: auto;
                 &.eventmanager {
                     color: @grey-dark;
                 }
