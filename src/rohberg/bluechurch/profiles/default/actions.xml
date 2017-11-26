@@ -117,7 +117,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="join_bluechurch" meta_type="CMF Action" i18n:domain="plone">
+  <object name="join_bluechurch" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">Register</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -132,7 +132,7 @@
    <property name="modal"
       type="text">{"prependContent": ".portalMessage"}</property>
   </object>
-  <object name="copy_of_logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="copy_of_logout" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">New Event</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -145,7 +145,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="copy2_of_logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="copy2_of_logout" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">New Location</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -158,7 +158,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="copy3_of_logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="copy3_of_logout" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">New Research Doc</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -171,7 +171,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="copy4_of_logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="copy4_of_logout" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">New Marketplace Add</property>
    <property name="description" i18n:translate=""></property>
    <property
@@ -184,7 +184,7 @@
    </property>
    <property name="visible">True</property>
   </object>
-  <object name="copy5_of_logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="copy5_of_logout" meta_type="CMF Action" i18n:domain="rohberg.bluechurch">
    <property name="title" i18n:translate="">New News</property>
    <property name="description" i18n:translate=""></property>
    <property
