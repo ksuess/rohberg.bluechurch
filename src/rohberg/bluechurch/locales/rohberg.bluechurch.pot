@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-25 21:54+0000\n"
+"POT-Creation-Date: 2017-11-26 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,12 @@ msgid "Artist"
 msgstr ""
 
 #: ../content/bluechurchevent.py:44
+#: ../content/bluechurchpage.py:29
 msgid "Artists"
 msgstr ""
 
 #: ../content/bluechurchevent.py:45
+#: ../content/bluechurchpage.py:30
 msgid "Beteiligte Artists, Veranstalter"
 msgstr ""
 
@@ -89,7 +91,7 @@ msgstr ""
 msgid "Installs the rohberg.bluechurch add-on."
 msgstr ""
 
-#: ../behaviors/kontakt.py:73
+#: ../behaviors/kontakt.py:75
 msgid "Kontaktperson"
 msgstr ""
 
@@ -115,6 +117,26 @@ msgstr ""
 
 #: ../vocabularies.py:87
 msgid "NASAGIBS.ViirsEarthAtNight2012"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "New Event"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "New Location"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "New Marketplace Add"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "New News"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "New Research Doc"
 msgstr ""
 
 #: ../browser/forms.py:21
@@ -143,6 +165,10 @@ msgstr ""
 
 #: ../browser/controlpanel.py:39
 msgid "Profiles Folder"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "Register"
 msgstr ""
 
 #: ../content/bluechurchevent.xml
