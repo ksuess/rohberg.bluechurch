@@ -83,7 +83,7 @@ a {
 }
     
 body {
-    color: white;
+    color: @grey-light;
 }
 #visual-portal-wrapper {
     background-color: @grey;
@@ -243,12 +243,16 @@ p.callout {
 
 .documentFirstHeading {
     color: @headingcolor;
+    border-bottom: none;
     &.eventmanager {
         // color: lighten(@headingcolor, 20%);
     }
     &.artist {
         // color: lighten(@headingcolor, 20%);
     }
+}
+.documentDescription {
+    color: @fontcolor;
 }
 
 .newsImageContainer {
@@ -330,6 +334,36 @@ body.section-contact #portal-globalnav li.selected a {
         font-weight: bold;
 }
 }
+
+.label_meta {
+    font-weight: bold;
+    display: inline-block;
+    width: 10rem;
+}
+.additionalinfo {
+    .label {
+        font-weight: bold;
+    }
+}
+
+#relatedItemBox {
+    margin-top: 3rem;
+    header {
+        font-weight: bold;
+    }
+    ul {
+        list-style: none;
+        padding:0;
+    }
+    [class*="contenttype-"]::before, .contenttype-file #crud-edit-File-widgets-view_title::before {
+        display: none;
+    }
+}
+
+article.vevent {
+    clear: both;
+}
+
 
 /* *** Portlets 
 *********************************** */
@@ -437,19 +471,7 @@ body.section-contact #portal-globalnav li.selected a {
     }
 }
 
-#relatedItemBox {
-    ul {
-        list-style: none;
-        padding:0;
-    }
-    [class*="contenttype-"]::before, .contenttype-file #crud-edit-File-widgets-view_title::before {
-        display: none;
-    }
-}
 
-article.vevent {
-    clear: both;
-}
 
 #portal-footer-wrapper {
     background-color: transparent;
