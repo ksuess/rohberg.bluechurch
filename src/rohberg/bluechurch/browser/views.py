@@ -67,6 +67,14 @@ class BluechurchmembraneprofileView(DefaultView):
         for obj in obs:
             if obj.portal_type=="bluechurchevent":
                 result.append(obj)
+        return result 
+           
+    def starringat(self):
+        obs = back_references(self.context, "beteiligte")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchevent":
+                result.append(obj)
         return result
         
     def locations(self):

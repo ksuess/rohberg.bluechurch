@@ -6,9 +6,10 @@
     <metal:content-core fill-slot="content-core">
         <div tal:content="structure view/w/IRichText.text/render" />
 
-        <div tal:content="structure view/w/bluechurchtags/render" />
+        <br>
+        <div tal:condition="context/bluechurchtags"><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>
         
-        <div class="owner">Kontakt: 
+        <div class="owner"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>

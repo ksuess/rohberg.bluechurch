@@ -14,7 +14,7 @@
         <tal:address replace="structure context/@@base_location_view" />
         
         
-        <div class="owner">Kontakt: 
+        <div class="owner"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
@@ -22,7 +22,7 @@
         
         <div class="additionalinfo">
             <div class="additionalinfoblock">
-                <div class="label">Events dieser Location:</div> 
+                <div class="label" i18n:translate="">Events of this location</div> 
                 <ul tal:repeat="obj view/events">
                     <li>
                         <a tal:attributes="href python:obj.absolute_url()"

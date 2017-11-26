@@ -5,38 +5,43 @@
 <body>
     <metal:content-core fill-slot="content-core">
 
-        <!-- <p tal:content="context/city">DEBUG</p> -->
-        <tal:eventsummary replace="structure context/@@event_summary"/>
     
         <div tal:content="structure view/w/IRichText.text/render" />
-        <p>
+
+
+
+        <tal:eventsummary replace="structure context/@@event_summary"/>
+
+        <div><span class="label_meta">Website</span> 
             <span tal:replace="structure view/w/homepage/render">Website</span>
-        </p>
-        <p>Tags: <span tal:content="structure view/w/bluechurchtags/render" /></p>
-        <p>Eventformen: <span tal:content="structure view/w/eventformen/render" /></p>
-        
-
-
-        <p class="owner">Kontakt: 
-            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
-                href="#"
-                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
-        </p>
-
-        <p>Beteiligte Artists: 
-            <tal:beteiligte tal:repeat="beteiligter view/beteiligte">
-                <a tal:attributes="href beteiligter/url"
-                    href="#"
-                    tal:content="beteiligter/fullname">Fullname Artist</a>
-            </tal:beteiligte>
-        </p>
-        
-        <p>Location: 
+        </div>
+                
+        <div><span class="label_meta">Location</span> 
             <a tal:attributes="href python:view.location_obj.absolute_url()" 
                 href="#"
                 tal:content="view/location_title">Location</a>, 
                 <span tal:content="view/location_obj/city">City</span>
-        </p>
+        </div>
+
+        <div class="owner"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+                href="#"
+                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
+
+        <div tal:define="beteiligte view/beteiligte" 
+            tal:condition="beteiligte"><span class="label_meta">Beteiligte Artists </span>
+            <tal:beteiligte tal:repeat="beteiligter beteiligte">
+                <a tal:attributes="href beteiligter/url"
+                    href="#"
+                    tal:content="beteiligter/fullname">Fullname Artist</a>
+            </tal:beteiligte>
+        </div>
+        
+        
+        <div><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>
+        <div><span class="label_meta" i18n:translate="label_eventform">Eventform</span><span tal:content="structure view/w/eventformen/render" /></div>
+        
         
     </metal:content-core>
 </body>

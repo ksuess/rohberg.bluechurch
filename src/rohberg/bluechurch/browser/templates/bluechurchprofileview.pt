@@ -64,33 +64,37 @@
             </div>
         </div>
         
-        <p tal:content="structure context/bio">Bio</p>
-        <p><a tal:condition="context/homepage" 
+        <div tal:content="structure context/bio">Bio</div>
+        
+        <div><a tal:condition="context/homepage" 
             tal:content="context/homepage | nothing"
             tal:attributes="href context/homepage | nothing"
-            target="_blank">Website</a></p>
+            target="_blank">Website</a></div>
 
-        <p>Tags: <span tal:content="structure view/w/bluechurchtags/render" /></p>            
+        <br>
+        
+        <div><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>      
         
 
-        <div tal:condition="view/events">Meine Events: 
+        <div tal:condition="view/events"><span class="label_meta">Events</span>  
             <tal:ls tal:repeat="ll view/events">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
-                        tal:content="ll/Title">location</a>
+                        tal:content="ll/Title">event</a>
                 </div>
             </tal:ls>
         </div>
         
-        <!-- <ul>Meine Locations:
-            <tal:ls tal:repeat="ll view/locations">
-                <li>
+        <div tal:define="starringat view/starringat" tal:condition="starringat"><span class="label_meta" i18n:translate="Starring at">Starring at</span>  
+            <tal:ls tal:repeat="ll starringat">
+                <div>
                     <a tal:attributes="href python:ll.absolute_url()"
-                        tal:content="ll/Title">location</a>
-                </li>
+                        tal:content="ll/Title">event</a>
+                </div>
             </tal:ls>
-        </ul> -->
-        <div tal:condition="view/locations">Meine Locations: 
+        </div>
+        
+        <div tal:condition="view/locations"><span class="label_meta">Locations</span> 
             <tal:ls tal:repeat="ll view/locations">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -99,7 +103,7 @@
             </tal:ls>
         </div>
 
-        <div tal:condition="view/inserate">Meine Inserate: 
+        <div tal:condition="view/inserate"><span class="label_meta" i18n:translate="">Inserate</span> 
             <tal:ls tal:repeat="obj view/inserate">
                 <div>
                     <a tal:attributes="href python:obj.absolute_url()"
