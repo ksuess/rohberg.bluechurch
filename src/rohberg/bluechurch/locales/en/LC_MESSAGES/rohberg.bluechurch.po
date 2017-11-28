@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-26 15:17+0000\n"
+"POT-Creation-Date: 2017-11-28 00:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,10 @@ msgstr ""
 msgid "Artist"
 msgstr ""
 
+#: ../profiles/default/types/bluechurchprofile.xml
+msgid "Artist oder Veranstalter"
+msgstr ""
+
 #: ../content/bluechurchevent.py:44
 #: ../content/bluechurchpage.py:29
 msgid "Artists"
@@ -27,6 +31,27 @@ msgstr ""
 #: ../content/bluechurchpage.py:30
 msgid "Beteiligte Artists, Veranstalter"
 msgstr "Associated Artists and Event Manager"
+
+#: ../profiles/default/types/bluechurchevent.xml
+msgid "BluechurchEvent"
+msgstr "Event"
+
+#: ../profiles/default/types/bluechurchinserat.xml
+msgid "BluechurchInserat"
+msgstr "Inserat"
+
+#: ../profiles/default/types/bluechurchlocation.xml
+msgid "BluechurchLocation"
+msgstr "Location"
+
+#: ../browser/templates/doc_actions.pt:24
+#: ../profiles/default/types/bluechurchpage.xml
+msgid "BluechurchPage"
+msgstr "Dokument"
+
+#: ../profiles/default/types/bluechurchprofile.xml
+msgid "BluechurchProfile"
+msgstr "Artist or Event Manager"
 
 #: ../vocabularies.py:85
 msgid "CartoDB.DarkMatter"
@@ -39,6 +64,14 @@ msgstr ""
 #: ../browser/contactform.py:56
 msgid "Contact an Artist or Event Manager"
 msgstr "Contact Artist"
+
+#: ../profiles/default/types/bluechurchpage.xml
+msgid "Dokument im Researchbereich"
+msgstr ""
+
+#: ../profiles/default/types/bluechurchprofile.xml
+msgid "Edit"
+msgstr ""
 
 #: ../vocabularies.py:76
 msgid "Esri.DeLorme"
@@ -88,6 +121,18 @@ msgstr ""
 msgid "Events of this location"
 msgstr ""
 
+#: ../browser/templates/doc_actions.pt:17
+msgid "File"
+msgstr ""
+
+#: ../browser/templates/doc_actions.pt:21
+msgid "Folder"
+msgstr ""
+
+#: ../browser/templates/doc_actions.pt:19
+msgid "Image"
+msgstr ""
+
 #: ../browser/templates/bluechurchprofileview.pt:106
 msgid "Inserate"
 msgstr "Marketplace Adds"
@@ -100,7 +145,7 @@ msgstr ""
 msgid "Kontaktperson"
 msgstr "Contact Person"
 
-#: ../content/bluechurchevent.py:29
+#: ../content/bluechurchevent.py:28
 msgid "Location"
 msgstr ""
 
@@ -165,6 +210,10 @@ msgstr ""
 msgid "OpenStreetMap.Mapnik"
 msgstr ""
 
+#: ../profiles/default/types/bluechurchlocation.xml
+msgid "Ort"
+msgstr ""
+
 #: ../content/bluechurchmembraneprofile.py:36
 msgid "Profil-Typ"
 msgstr ""
@@ -176,10 +225,6 @@ msgstr ""
 #: ../profiles/default/actions.xml
 msgid "Register"
 msgstr "register"
-
-#: ../content/bluechurchevent.xml
-msgid "Relation Choice"
-msgstr ""
 
 #: ../vocabularies.py:72
 msgid "Stamen.Terrain"
@@ -213,6 +258,10 @@ msgstr ""
 msgid "Starring at"
 msgstr ""
 
+#: ../profiles/default/types/bluechurchinserat.xml
+msgid "Suche, Biete"
+msgstr "Search and Find"
+
 #: ../browser/contactform.py:58
 msgid "The recipient gets an email with your email address to get back to you."
 msgstr ""
@@ -235,6 +284,14 @@ msgstr ""
 
 #: ../configure.zcml:86
 msgid "Uninstalls the rohberg.bluechurch add-on."
+msgstr ""
+
+#: ../profiles/default/types/bluechurchevent.xml
+msgid "Veranstaltung"
+msgstr ""
+
+#: ../profiles/default/types/bluechurchprofile.xml
+msgid "View"
 msgstr ""
 
 #: ../browser/forms.py:32
