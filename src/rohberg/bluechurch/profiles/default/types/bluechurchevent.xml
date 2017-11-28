@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="bluechurchevent" meta_type="Dexterity FTI" i18n:domain="plone"
+<object name="bluechurchevent" meta_type="Dexterity FTI" i18n:domain="rohberg.bluechurch"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">BluechurchEvent</property>
  <property name="description" i18n:translate="">Veranstaltung</property>
@@ -33,7 +33,7 @@
   <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
   <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
   <element value="plone.app.relationfield.behavior.IRelatedItems"/>
-  <!-- <element value="plone.app.versioningbehavior.behaviors.IVersionable"/> -->
+  <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />

@@ -4,7 +4,7 @@
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     name="bluechurchprofile"
     meta_type="Dexterity FTI"
-    i18n:domain="plone">
+    i18n:domain="rohberg.bluechurch">
 
   <!-- Basic properties -->
   <property
