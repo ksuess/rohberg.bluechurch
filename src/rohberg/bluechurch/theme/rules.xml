@@ -96,7 +96,8 @@
   <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 
   <!-- toolbar -->
-  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-reviewer,.userrole-manager" />
+  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load"
+      css:if-content=".userrole-reviewer,.userrole-manager" />
  
    <!-- <before css:theme-children="#member_user_actions" css:content="#user_actions"  />
    <before css:theme-children="#member_user_actions" css:content="#member_actions"  css:if-content=".userrole-member" /> -->
