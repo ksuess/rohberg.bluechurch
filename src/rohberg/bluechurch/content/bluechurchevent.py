@@ -24,7 +24,6 @@ class IBluechurchevent(model.Schema):
     """ Marker interface for Bluechurchevent
     """
         
-    #TODO: Location
     eventlocation = RelationChoice(
         title=_(u"Location"),
         required=True,
@@ -39,6 +38,7 @@ class IBluechurchevent(model.Schema):
             'basePath': get_locations_base_path,
         }
         )
+
 
     beteiligte = RelationList(
         title=_(u"Artists"),
@@ -59,6 +59,8 @@ class IBluechurchevent(model.Schema):
         )
         
     model.load('bluechurchevent.xml')
+
+
 
 @implementer(IBluechurchevent)
 class Bluechurchevent(Item):

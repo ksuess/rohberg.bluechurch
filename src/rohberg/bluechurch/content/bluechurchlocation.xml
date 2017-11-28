@@ -1,18 +1,11 @@
 <model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
-  <schema>
-    <!-- <field name="kontaktperson" type="z3c.relationfield.schema.RelationChoice">
-      <description/>
-      <title>Kontaktperson</title>
-      <portal_type>
-        <element>dexterity.membrane.bluechurchmembraneprofile</element>
-      </portal_type>
-    </field> -->
-    
+  <schema>    
     
     <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
       <title>Homepage</title>
     </field>
+    
   </schema>
 </model>

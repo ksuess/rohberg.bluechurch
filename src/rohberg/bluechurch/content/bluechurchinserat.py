@@ -15,11 +15,13 @@ logger = logging.getLogger(__name__)
 
 from rohberg.bluechurch import _
 
+
 class IBluechurchinserat(model.Schema):
     """ Marker interface for Bluechurchinserat
     """
         
     model.load('bluechurchinserat.xml')
+
 
 @implementer(IBluechurchinserat)
 class Bluechurchinserat(Item):

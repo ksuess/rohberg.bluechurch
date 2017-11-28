@@ -1,22 +1,12 @@
 <model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
   <schema>
-    <!-- <field name="beteiligte" type="z3c.relationfield.schema.RelationList">
-      <description>Beteiligte Artists, Veranstalter</description>
-      <required>False</required>
-      <title>Artists</title>
-      <value_type type="z3c.relationfield.schema.RelationChoice">
-        <title i18n:translate="">Relation Choice</title>
-        <portal_type>
-          <element>bluechurchmembraneprofile</element>
-        </portal_type>
-      </value_type>
-    </field>
-     -->
+
     <field name="homepage" type="zope.schema.URI">
       <description/>
       <required>False</required>
       <title>Homepage</title>
     </field>
+    
     <field name="bluechurchtags" type="zope.schema.Set">
       <description/>
       <required>False</required>
@@ -26,5 +16,6 @@
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
     </field>
+
   </schema>
 </model>
