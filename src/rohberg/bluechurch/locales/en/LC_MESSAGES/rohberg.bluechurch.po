@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-28 00:21+0000\n"
+"POT-Creation-Date: 2017-11-28 08:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr "Inserat"
 msgid "BluechurchLocation"
 msgstr "Location"
 
-#: ../browser/templates/doc_actions.pt:24
+#: ../browser/templates/doc_actions.pt:28
 #: ../profiles/default/types/bluechurchpage.xml
 msgid "BluechurchPage"
 msgstr "Dokument"
@@ -121,15 +121,15 @@ msgstr ""
 msgid "Events of this location"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:17
+#: ../browser/templates/doc_actions.pt:18
 msgid "File"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:21
+#: ../browser/templates/doc_actions.pt:24
 msgid "Folder"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:19
+#: ../browser/templates/doc_actions.pt:21
 msgid "Image"
 msgstr ""
 
