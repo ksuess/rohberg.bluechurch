@@ -129,7 +129,6 @@ class BluechurcheventView(OwnedView):
     
     @property
     def location_obj(self):
-        # obj = api.content.get(UID=self.context.eventlocation.to_object.UID())
         obj = self.context.eventlocation.to_object
         logger.info("location_obj geholt")
         return obj
