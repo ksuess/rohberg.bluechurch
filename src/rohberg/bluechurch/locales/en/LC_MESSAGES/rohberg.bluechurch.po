@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-28 08:10+0000\n"
+"POT-Creation-Date: 2017-11-30 13:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rohberg.bluechurch\n"
 
-#: ../content/bluechurchmembraneprofile.py:21
+#: ../content/bluechurchmembraneprofile.py:27
 msgid "Artist"
 msgstr ""
 
@@ -22,12 +22,12 @@ msgstr ""
 msgid "Artist oder Veranstalter"
 msgstr ""
 
-#: ../content/bluechurchevent.py:44
+#: ../content/bluechurchevent.py:47
 #: ../content/bluechurchpage.py:29
 msgid "Artists"
 msgstr ""
 
-#: ../content/bluechurchevent.py:45
+#: ../content/bluechurchevent.py:48
 #: ../content/bluechurchpage.py:30
 msgid "Beteiligte Artists, Veranstalter"
 msgstr "Associated Artists and Event Manager"
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Esri.WorldTopoMap"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:22
+#: ../content/bluechurchmembraneprofile.py:28
 msgid "Event Manager"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Inserate"
 msgstr "Marketplace Adds"
 
-#: ../configure.zcml:77
+#: ../configure.zcml:80
 msgid "Installs the rohberg.bluechurch add-on."
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Kontaktperson"
 msgstr "Contact Person"
 
-#: ../content/bluechurchevent.py:28
+#: ../content/bluechurchevent.py:31
 msgid "Location"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Ort"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:36
+#: ../content/bluechurchmembraneprofile.py:42
 msgid "Profil-Typ"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Thunderforest.TransportDark"
 msgstr ""
 
-#: ../configure.zcml:86
+#: ../configure.zcml:89
 msgid "Uninstalls the rohberg.bluechurch add-on."
 msgstr ""
 
@@ -303,12 +303,12 @@ msgstr ""
 msgid "default_map_layer"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:48
+#: ../content/bluechurchmembraneprofile.py:54
 msgid "help_city"
 msgstr ""
 
 #. Default: "Select the country from the list."
-#: ../content/bluechurchmembraneprofile.py:53
+#: ../content/bluechurchmembraneprofile.py:59
 msgid "help_country"
 msgstr ""
 
@@ -322,16 +322,21 @@ msgstr ""
 msgid "help_map_layers"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:43
+#: ../content/bluechurchmembraneprofile.py:49
 msgid "help_zip_code"
 msgstr ""
+
+#. Default: "iCal"
+#: ../browser/templates/event_listing.pt:31
+msgid "label_add_to_ical"
+msgstr "iCal"
 
 #: ../browser/contactform.py:121
 msgid "label_cancel"
 msgstr "cancel"
 
 #. Default: "City"
-#: ../content/bluechurchmembraneprofile.py:47
+#: ../content/bluechurchmembraneprofile.py:53
 msgid "label_city"
 msgstr "City"
 
@@ -341,7 +346,7 @@ msgid "label_contact_button"
 msgstr "Contact"
 
 #. Default: "Country"
-#: ../content/bluechurchmembraneprofile.py:52
+#: ../content/bluechurchmembraneprofile.py:58
 msgid "label_country"
 msgstr "Country"
 
@@ -382,14 +387,29 @@ msgid "label_subject"
 msgstr "Subject"
 
 #. Default: "Zip Code"
-#: ../content/bluechurchmembraneprofile.py:42
+#: ../content/bluechurchmembraneprofile.py:48
 msgid "label_zip_code"
 msgstr "ZIP"
 
-#: ../configure.zcml:77
+#. Default: "Upcoming"
+#: ../browser/templates/event_listing.pt:21
+msgid "mode_future_link"
+msgstr "upcoming events"
+
+#. Default: "Past"
+#: ../browser/templates/event_listing.pt:24
+msgid "mode_past_link"
+msgstr "past events"
+
+#: ../configure.zcml:80
 msgid "rohberg.bluechurch"
 msgstr ""
 
-#: ../configure.zcml:86
+#: ../configure.zcml:89
 msgid "rohberg.bluechurch (uninstall)"
 msgstr ""
+
+#. Default: "Download this event in iCal format"
+#: ../browser/templates/event_listing.pt:28
+msgid "title_add_to_ical"
+msgstr "Download in iCal format"
