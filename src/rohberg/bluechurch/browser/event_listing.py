@@ -46,8 +46,9 @@ class BluechurchEventListing(EventListing):
             # if self.mode in ('past', 'all'):
             #     sort_order = 'reverse'
             sort_on = ctx.sort_on
-            sort_order = ctx.sort_reversed and "reverse" or "ascending"
+            sort_order = ctx.sort_reversed and "reverse" or ""
             ret_mode = RET_MODE_OBJECTS
+            # logger.info("sort_order: {}".format(sort_order))
             
             query = queryparser.parseFormquery(
                 ctx, ctx.query, sort_on=sort_on, sort_order=sort_order
@@ -78,7 +79,7 @@ class BluechurchEventListing(EventListing):
                     start=start, end=end,
                     sort=sort_on, sort_reverse=True if sort_order else False
                 )
-            logger.info("expanded results: {}".format(res))
+            # logger.info("expanded results: {}".format(res))
         else:
             res = self._get_events(ret_mode, expand=expand)
         if batch:
