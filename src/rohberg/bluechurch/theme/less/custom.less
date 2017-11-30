@@ -78,6 +78,12 @@
     background-color: transparent;
 }
 
+.bluechurch_clearfix {
+    &::after {
+      clear: both;
+    }
+}
+
 a {
     outline: 0 !important;
 }
@@ -236,14 +242,16 @@ p.callout {
     color: white;
     padding: 0;
     font-size: 2.5rem;
-    span {
+    & > span {
         background-color: black;
+        padding: 0 0 0 .5em;
     }
 }
 
 .documentFirstHeading {
     color: @headingcolor;
     border-bottom: none;
+    font-size: 3.3rem;
     &.eventmanager {
         // color: lighten(@headingcolor, 20%);
     }
@@ -363,7 +371,9 @@ body.section-contact #portal-globalnav li.selected a {
 article.vevent {
     clear: both;
 }
-
+.vevent div.cal_date {
+    margin-top: .3em;
+}
 
 /* *** Portlets 
 *********************************** */
@@ -462,6 +472,7 @@ article.vevent {
     	}
     }
     .portletFooter {
+        // display: none;
         background-color: transparent;
         color: white;
         text-align: right;
@@ -523,7 +534,7 @@ body.template-bluechurchmembraneprofileview {
 body.section-locations #main-container,
 body.section-profiles #main-container,
 body.section-events #main-container {
-    img {
+    img, object {
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
     }
@@ -543,13 +554,17 @@ body.section-events #main-container {
 .faceted-checkbox-widget .widget-fieldset ul {
     padding-left: 1rem;
 }
-#content-core {
-    #faceted-results {
+body.template-facetednavigation_view,
+body.template-bluechurch_event_listing  {
         .photoAlbumEntry {
             max-height: 128px;
             overflow: hidden;
             width: 47%;
             vertical-align: top;
+            .photoAlbumEntryWrapper {
+                float: left;
+                display: inline-block;
+            }
             a {
                 vertical-align: top;
                 width: 100%;
@@ -557,7 +572,7 @@ body.section-events #main-container {
                 margin-right: .5rem;
                 box-shadow: none;
                 text-align: left;
-                color: @dark-blue;
+                color: @dark-blue !important;
                 border: none;
                 border-radius: 0;
                 font-weight: bold;
@@ -566,12 +581,15 @@ body.section-events #main-container {
                     color: @grey-dark;
                 }
                 &:hover, &:active {
-                    color: @linkactive;
+                    color: @linkactive !important;
                     text-decoration: none;
                     background-color: @linkactive-background;
                 }
+                span {
+                    display: block;
+                }
             }
-            img {
+            img, object {
                 float: left;
                 padding-right: 0.4rem;
                 max-height: 128px;
@@ -579,6 +597,7 @@ body.section-events #main-container {
             }
             .photoAlbumEntryTitle {
                 font-size: 1.7rem;
+                line-height: 1.9rem;
                 text-transform: uppercase;
                 word-wrap: break-word;
                 hyphens: auto;
@@ -589,11 +608,8 @@ body.section-events #main-container {
             .photoAlbumEntryCity {
                 font-size: 1.2rem;
                 text-transform: uppercase;
-                display: block;
-                // clear:both;
             }
         }
-    }
 
 }
 
@@ -780,3 +796,24 @@ body.template-summary_view {
         display: none;
     }
 }
+
+.template-bluechurch_event_listing {
+    article header {
+        position: relative;
+    }
+    ul.mode_selector {
+        font-size: 1.4rem;
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        margin: 0;
+        list-style-type: none;
+        li {
+            display: inline;
+            a {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
