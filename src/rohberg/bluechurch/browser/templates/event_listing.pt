@@ -57,15 +57,15 @@
                   city data/eventlocation/to_object/city|string:;
                   desc_or_title python:description or title;
                   url data/absolute_url;
-                  view_url url;
+                  parent_url context/absolute_url;
                   start_date data/start|nothing"
-                 tal:attributes="href view_url;
+                 tal:attributes="href url;
                                  title description;">
 
                 <tal:block>
                     <span class="photoAlbumEntryWrapper">
                         <object tal:attributes="data string:$url/@@images/image/thumb" type="image/jpg">
-                          <img tal:attributes="src string:$url/++theme++bluechurch/images/default.png" />
+                          <img tal:attributes="src string:$parent_url/++theme++bluechurch/images/default.png" />
                         </object>
                     </span>
     
