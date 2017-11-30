@@ -66,6 +66,9 @@
       handler=".eventhandlers.notifyEventAfterLocationChange"
   />
   
+
+  <adapter factory=".content.bluechurchevent.BluechurchEventAccessor" />
+  
   
   <genericsetup:registerProfile
       name="default"

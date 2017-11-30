@@ -12,8 +12,8 @@
       />
 
 
-    <include file="indexers.zcml" />
-  
+
+    <adapter name="eventcity" factory=".indexers.city_event" />  
   
   
     <!-- Publish static files 
@@ -166,6 +166,27 @@
         />
       
       
+      
+    <!-- event_listing bluechurch style -->
+
+    <browser:page
+        for="*"
+        name="bluechurch_event_listing"
+        class=".event_listing.BluechurchEventListing"
+        template="templates/event_listing.pt"
+        permission="zope2.View"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        />
+    <!-- <browser:page
+      name="bc-preview-item"
+      for="zope.interface.Interface"
+      template="templates/preview-item.pt"
+      permission="zope2.View"
+      /> -->
+
+
+
+
     <!-- Viewlets -->
     <browser:viewlet
       name="bluechurch.memberactionsviewlet"

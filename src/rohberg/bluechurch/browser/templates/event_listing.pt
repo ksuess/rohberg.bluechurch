@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rohberg.bluechurch">
+<body>
+
+<metal:custom_title fill-slot="content-title" tal:define="header view/header_string">
+    <tal:folder tal:condition="not:view/is_collection">
+        <h1 class="documentFirstHeading">
+          <span tal:replace="header/main" tal:condition="header/main"/>
+
+        </h1>
+        <h2 tal:content="header/sub" tal:condition="header/sub" />
+    </tal:folder>
+    <tal:collection tal:condition="view/is_collection">
+        <h1 class="documentFirstHeading">
+          <span tal:replace="context/title" />
+
+        </h1>
+    </tal:collection>
+  <ul class="mode_selector"
+      tal:define="mode request/mode|string:future;
+          show_filter view/show_filter;">
+    <tal:cond condition="show_filter">
+        <li class="" tal:condition="python:mode=='past'">
+          <a class="mode_future"   href="" tal:attributes="href view/mode_future_url"   i18n:translate="mode_future_link">Upcoming</a>
+        </li>
+        <li class="" tal:condition="python:mode=='future'">
+          <a class="mode_past"   href="" tal:attributes="href view/mode_past_url"   i18n:translate="mode_past_link">Past</a>
+        </li>
+    </tal:cond>
+    <li>
+      <a class="mode_ical"  href="" tal:attributes="href view/ical_url"
+         title="Download this event in iCal format"
+         i18n:attributes="title title_add_to_ical;">
+          <span i18n:translate="label_add_to_ical">iCal</span></a>
+
+    </li>
+  </ul>
+</metal:custom_title>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+<tal:def define="batch view/events;
+                 toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+
+    <section>
+        <tal:items repeat="data batch">            
+            
+            <div class="photoAlbumEntry">
+              <a tal:define="
+                  title data/title;
+                  description data/description|string:;
+                  city data/eventlocation/to_object/city|string:;
+                  desc_or_title python:description or title;
+                  url data/absolute_url;
+                  view_url url;
+                  start_date data/start|nothing"
+                 tal:attributes="href view_url;
+                                 title description;">
+
+                <tal:block>
+                    <span class="photoAlbumEntryWrapper">
+                        <object tal:attributes="data string:$url/@@images/image/thumb" type="image/jpg">
+                          <img tal:attributes="src string:$url/++theme++bluechurch/images/default.png" />
+                        </object>
+                    </span>
+    
+    
+                    <span class="photoAlbumEntryTitle" tal:content="title">Title</span>
+                    <span class="photoAlbumEntryCity" tal:content="city">City</span>
+                    <span class="photoAlbumEntryStartdate" 
+                        tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
+                </tal:block>
+
+
+              </a>
+            </div>
+            
+            
+            
+            
+            
+        </tal:items>
+
+    </section>
+
+  <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+</tal:def>
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

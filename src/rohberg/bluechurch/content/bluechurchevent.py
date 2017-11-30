@@ -9,7 +9,10 @@ from z3c.relationfield.schema import RelationList
 from plone.autoform.directives import widget
 from plone.dexterity.content import Item
 from plone.supermodel import model
+from zope.component import adapter
 from zope.interface import implementer
+from plone.event.interfaces import IEventAccessor
+from plone.app.event.dx.behaviors import EventAccessor
 
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 from rohberg.bluechurch.utils import get_profiles_base_path, get_locations_base_path
@@ -67,3 +70,29 @@ class Bluechurchevent(Item):
     """
     """
     implements(IBluechurchMemberContent)
+
+
+
+@adapter(IBluechurchevent)
+@implementer(IEventAccessor)
+class BluechurchEventAccessor(EventAccessor):
+
+
+    def __init__(self, context):
+        super(BluechurchEventAccessor, self).__init__(context)
+        
+    def location(self):
+        logger.info("BluechurchEventAccessor location")
+        
+        context = self.context
+        lct = self.context.eventlocation
+        return lct 
+               
+    def city(self):
+        logger.info("BluechurchEventAccessor city")
+        
+        context = self.context
+        lct = self.context.eventlocation
+        ct = lct.to_object.city
+        logger.info(ct)
+        return ct

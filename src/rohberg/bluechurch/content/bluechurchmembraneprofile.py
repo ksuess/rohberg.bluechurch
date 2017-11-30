@@ -1,10 +1,16 @@
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.component import adapter
 from zope.interface import implementer
 from plone import api
 from plone.autoform import directives
 from plone.supermodel import model
 from plone.dexterity.content import Item
+
+        
+from Products.membrane.interfaces import IMembraneUserRoles
+from dexterity.membrane.behavior.user import DxUserObject
+from dexterity.membrane.behavior.membraneuser import IMembraneUser
 
 # from Products.membrane.events import MembraneTypeRegisteredEvent
 from Products.membrane.interfaces.events import IMembraneTypeRegisteredEvent
@@ -90,12 +96,7 @@ def setInitialProfileRoles(obj, event):
     logger.info(ploneuser)
     # api.user.grant_roles(username=username, roles=['Bluechurch Member'])
         
-        
-from Products.membrane.interfaces import IMembraneUserRoles
-from dexterity.membrane.behavior.user import DxUserObject
-from dexterity.membrane.behavior.membraneuser import IMembraneUser
-from zope.component import adapter
-from zope.interface import implementer
+
 
 DEFAULT_ROLES = ['Bluechurch Member', 'Member']
 # DEFAULT_ROLES = ['Member',]
