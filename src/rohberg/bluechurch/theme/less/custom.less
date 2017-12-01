@@ -10,6 +10,13 @@
 
 @dark-blue: #172c38;
 
+@zufallszahl: Math.random();
+
+@images: 'blue_church_0331.jpg', 'blue_church_0365.jpg', 'blue_church_0407.jpg', ;
+@length: length(@images);
+@random: `Math.ceil(Math.random() * (@{length}))`;
+@randombackground: extract(@images,@random);
+
 
 @font-face {
     font-family: 'mic_32_new_rgregular';
@@ -93,7 +100,9 @@ body {
 }
 #visual-portal-wrapper {
     background-color: @grey;
-    background-image: url('/++plone++rohberg.bluechurch/backgrounds/background_default.jpg')
+    // background-image: url('/++theme++bluechurch/images/backgrounds/@{randombackground}');
+    background-attachment: fixed;
+    background-size: cover
 }
 
 .plone-modal {
@@ -226,6 +235,7 @@ input[type="submit"] {
 .highlighted {
     color: @linkcolor;
     background-color: @linkactive-background;
+    padding: 0 .3em;
     a, a:hover {
         text-decoration: none;
         border-bottom: none !important;
@@ -271,6 +281,10 @@ p.callout {
 
 #portal-logo {
     margin-left: 15px;
+    &>div {
+        width: 240px;
+        height: 35px;
+    }
     img {
         max-width: 240px;
     }
@@ -299,21 +313,86 @@ p.callout {
         }
     }
 } 
-body.section-locations #portal-globalnav li.selected a {
-    background-color: #FECC9A;
+
+body #portal-logo div {
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
 }
-body.section-events #portal-globalnav li.selected a {
-    background-color: #E5A28B;
+
+body.section-start {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_001_home.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #c5c5c5;
+    }
 }
-body.section-profiles #portal-globalnav li.selected a {
-    background-color: #D8E698;
+body.section-events {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_004_events.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #ffcc99;
+    }
 }
-body.section-research #portal-globalnav li.selected a {
-    background-color: #F29EC4;
+body.section-profiles {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_003_bands.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #d8e698;
+    }
 }
-body.section-contact #portal-globalnav li.selected a {
-    background-color: #C6C3B3;
+body.section-locations {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_001_home.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #e5a28b;
+    }
 }
+body.section-research {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_005_workshop.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #dc9bc0;
+    }
+}
+body.section-marketplace {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_005_marketplace.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #a6d1ce;
+    }
+}
+body.section-photos {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_001_home.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #c5c5c5;
+    }
+}
+body.section-about {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_001_home.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #c5c5c5;
+    }
+}
+body.section-contact {
+    #portal-logo div {
+        background-image: url("/++theme++bluechurch/images/logos/logo_bluechurch_001_home.png");
+    }
+    #portal-globalnav li.selected a {
+        background-color: #c5c5c5;
+    }
+}
+
 
 
 #content-core {
@@ -792,6 +871,13 @@ body.template-galleryview {
     #portal-footer, #content header {display: none; } 
     body {background: #111; }
     #content {background-color: transparent;}
+}
+
+.supersized_wrapper {
+    #prevslide:hover,
+    #nextslide:hover {
+        background-color: transparent;
+    }
 }
 
 body.template-summary_view {
