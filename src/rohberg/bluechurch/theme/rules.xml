@@ -3,11 +3,15 @@
        xmlns:css="http://namespaces.plone.org/diazo/css"
        xmlns:xhtml="http://www.w3.org/1999/xhtml"
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-       xmlns:xi="http://www.w3.org/2001/XInclude">
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:math="http://exslt.org/math"
+        extension-element-prefixes="math"
+        >
 
   <theme href="index.html" />
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
+  
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
     <copy attributes="*" css:theme="html" css:content="html" />
@@ -26,6 +30,12 @@
     <after css:theme-children="head" css:content="head link" />
     <!-- Script -->
     <after css:theme-children="head" css:content="head script" />
+    <after css:theme-children="head">
+        <script src="/++theme++bluechurch/bluechurch.js"></script>
+    </after>
+    <replace css:content="#portal-logo img">
+        <div></div>
+    </replace>
   </rules>
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
@@ -107,4 +117,18 @@
   <!-- edit link -->
   <!-- <before css:theme-children="#content-container" css:content="#document_actions"  css:if-content=".userrole-member" /> -->
 
+
+
+  <!-- Pick a random number between 1 - 10 and set as a variable -->
+  <!-- <xsl:variable name="random_10">
+      <xsl:value-of select="(floor(math:random()*10) mod 10) + 1" />
+  </xsl:variable> -->
+  <!-- <before theme-children="/html/body" method="raw">
+      <xsl:attribute name="class">
+          <xsl:value-of select="/html/body/@class" />
+          bg-<xsl:value-of select="17+4" />
+          bg-image-<xsl:value-of select="(1 + floor(math:random()*10))" />
+      </xsl:attribute>
+  </before>
+   -->
 </rules>

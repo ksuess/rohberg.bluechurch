@@ -39,11 +39,11 @@
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
         /> -->
 
-    <browser:resourceDirectory
+    <!-- <browser:resourceDirectory
         name="rohberg.bluechurch.images"
         directory="images"
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
-        />
+        /> -->
         
     <browser:page
         name="bluechurch-controlpanel"
