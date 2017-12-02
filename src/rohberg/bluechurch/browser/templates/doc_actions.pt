@@ -21,12 +21,14 @@
         <a class="plone-btn plone-btn-large" tal:condition="python:view.can_add_here('Image')"
             tal:attributes="href string:${context/absolute_url}/++add++Image" 
             i18n:translate="Image">Image</a>
-        <a class="plone-btn plone-btn-large" tal:condition="python:view.can_add_here('Folder')"
-            
+        <a class="plone-btn plone-btn-large" tal:condition="python:view.can_add_here('Folder')"            
             tal:attributes="href string:${context/absolute_url}/++add++Folder" 
             i18n:translate="Folder">Folder</a>
         <a class="plone-btn plone-btn-large" tal:condition="python:view.can_add_here('bluechurchpage')"
             tal:attributes="href string:${context/absolute_url}/++add++bluechurchpage"
             i18n:translate="BluechurchPage">BluechurchPage</a>
+        <a class="plone-btn plone-btn-large" tal:condition="python:view.can_add_here('bluechurchinserat')"
+            tal:attributes="href string:${context/absolute_url}/++add++bluechurchinserat"
+            i18n:translate="BluechurchInserat">BluechurchInserat</a>
     </li>
 </ul>
