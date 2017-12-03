@@ -91,35 +91,16 @@ class IOwnercontact(model.Schema):
         RelatedItemsFieldWidget,
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-            'mode': 'search',
             'basePath': get_profiles_base_path,
         }
         )
-    # 'basePath': get_profiles_base_path,
         
-    # fieldset(
-    #     'categorization',
-    #     label=_(u'Categorization'),
-    #     fields=['kontaktperson']
-    # )
+    model.fieldset(
+        'categorization',
+        label=_(u'Relations'),
+        fields=['kontaktperson']
+    )
     
-    
-    # kontaktperson = RelationChoice(
-    #     title=_(u"Kontaktperson"),
-    #     required=True,
-    #     source=CatalogSource(portal_type='dexterity.membrane.bluechurchmembraneprofile'),
-    #     # vocabulary='plone.app.vocabularies.Catalog',
-    #     defaultFactory=profile_current_user
-    #     )
-    # widget(
-    #     'kontaktperson',
-    #     RelatedItemsFieldWidget,
-    #     pattern_options={
-    #         'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-    #         # 'mode': 'search',
-    #         'basePath': get_site_path,
-    #     }
-    #     )
 
 
 class IOwnercontactMarker(Interface):

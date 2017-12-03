@@ -38,10 +38,12 @@ class IBluechurchpage(model.Schema):
         RelatedItemsFieldWidget,
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-            'mode': 'search',
             'basePath': get_profiles_base_path,
         }
         )
+    model.fieldset(
+        'categorization',
+        fields=['beteiligte',]
         
     model.load('bluechurchpage.xml')
 

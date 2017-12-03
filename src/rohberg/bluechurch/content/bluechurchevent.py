@@ -14,6 +14,11 @@ from zope.interface import implementer
 from plone.event.interfaces import IEventAccessor
 from plone.app.event.dx.behaviors import EventAccessor
 
+# from plone.formwidget.contenttree import ContentTreeFieldWidget
+# from plone.formwidget.contenttree import MultiContentTreeFieldWidget
+# from plone.formwidget.contenttree import PathSourceBinder
+# from plone.formwidget.contenttree import UUIDSourceBinder
+
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 from rohberg.bluechurch.utils import get_profiles_base_path, get_locations_base_path
 
@@ -37,10 +42,12 @@ class IBluechurchevent(model.Schema):
         RelatedItemsFieldWidget,
         pattern_options={
             'selectableTypes': ['bluechurchlocation',],
-            'mode': 'search',
             'basePath': get_locations_base_path,
-        }
+            }
         )
+# pattern_options:
+# 'mode': 'search',
+# 'basePath': get_locations_base_path,
 
 
     beteiligte = RelationList(
@@ -48,19 +55,25 @@ class IBluechurchevent(model.Schema):
         description=_(u"Beteiligte Artists, Veranstalter"),
         required=False,
         value_type=RelationChoice(
-                vocabulary='plone.app.vocabularies.Catalog',
-                )
+            vocabulary='plone.app.vocabularies.Catalog',
+            )
         )
     widget(
         'beteiligte',
         RelatedItemsFieldWidget,
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-            'mode': 'search',
             'basePath': get_profiles_base_path,
-        }
+            }
         )
-        
+    model.fieldset(
+        'categorization',
+        fields=['beteiligte', 'eventlocation']
+    )
+# pattern_options:
+# 'mode': 'search',
+# 'basePath': get_profiles_base_path,
+
     model.load('bluechurchevent.xml')
 
 
