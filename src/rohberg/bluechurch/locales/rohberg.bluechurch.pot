@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-01 16:37+0000\n"
+"POT-Creation-Date: 2017-12-03 23:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,12 +25,12 @@ msgstr ""
 msgid "Artist oder Veranstalter"
 msgstr ""
 
-#: ../content/bluechurchevent.py:47
+#: ../content/bluechurchevent.py:54
 #: ../content/bluechurchpage.py:29
 msgid "Artists"
 msgstr ""
 
-#: ../content/bluechurchevent.py:48
+#: ../content/bluechurchevent.py:55
 #: ../content/bluechurchpage.py:30
 msgid "Beteiligte Artists, Veranstalter"
 msgstr ""
@@ -39,6 +39,7 @@ msgstr ""
 msgid "BluechurchEvent"
 msgstr ""
 
+#: ../browser/templates/doc_actions.pt:30
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "BluechurchInserat"
 msgstr ""
@@ -47,7 +48,7 @@ msgstr ""
 msgid "BluechurchLocation"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:28
+#: ../browser/templates/doc_actions.pt:27
 #: ../profiles/default/types/bluechurchpage.xml
 msgid "BluechurchPage"
 msgstr ""
@@ -66,6 +67,10 @@ msgstr ""
 
 #: ../browser/contactform.py:56
 msgid "Contact an Artist or Event Manager"
+msgstr ""
+
+#: ../profiles/default/types/bluechurchevent.xml
+msgid "Description Event"
 msgstr ""
 
 #: ../profiles/default/types/bluechurchpage.xml
@@ -148,7 +153,7 @@ msgstr ""
 msgid "Kontaktperson"
 msgstr ""
 
-#: ../content/bluechurchevent.py:31
+#: ../content/bluechurchevent.py:36
 msgid "Location"
 msgstr ""
 
@@ -228,6 +233,10 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: ../behaviors/kontakt.py:100
+msgid "Relations"
+msgstr ""
+
 #: ../vocabularies.py:72
 msgid "Stamen.Terrain"
 msgstr ""
@@ -286,10 +295,6 @@ msgstr ""
 
 #: ../configure.zcml:89
 msgid "Uninstalls the rohberg.bluechurch add-on."
-msgstr ""
-
-#: ../profiles/default/types/bluechurchevent.xml
-msgid "Veranstaltung"
 msgstr ""
 
 #: ../profiles/default/types/bluechurchprofile.xml
