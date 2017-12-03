@@ -37,7 +37,7 @@ class BluechurchEventListing(EventListing):
 
             custom_query = query
             custom_query.update(self.request.get('contentFilter', {}))
-            logger.info("events custom_query: {}".format(custom_query))
+            # logger.info("events custom_query: {}".format(custom_query))
 
             if not 'start' in query and not 'end' in query:
                 res = ctx.results(
