@@ -12,8 +12,7 @@ $(document).ready(function() {
             var filename = $(this).attr('href').split("/").pop();
             $(this).parent().html($(this).html() +'<br><audio src="'+ filename +'" controls="controls"></audio>');
         });
-    } 
-
-    
+    } ;
+ 
     
 });
