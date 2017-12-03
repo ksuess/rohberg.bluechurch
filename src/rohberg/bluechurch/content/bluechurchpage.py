@@ -44,6 +44,7 @@ class IBluechurchpage(model.Schema):
     model.fieldset(
         'categorization',
         fields=['beteiligte',]
+        )
         
     model.load('bluechurchpage.xml')
 
