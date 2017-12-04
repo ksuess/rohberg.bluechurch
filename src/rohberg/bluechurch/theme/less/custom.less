@@ -97,7 +97,19 @@ a {
     
 body {
     color: @grey-light;
+    word-wrap: normal;
+    -ms-word-break: normal;
+        word-break: normal;
+
+        /* Non standard for webkit */
+        word-break: normal;
+
+   -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+       -ms-hyphens: auto;
+           hyphens: auto;
 }
+
 #visual-portal-wrapper {
     background-color: @grey;
     // background-image: url('/++theme++bluechurch/images/backgrounds/@{randombackground}');
@@ -457,6 +469,9 @@ article.vevent {
 /* *** Portlets 
 *********************************** */
 
+.portal-column-two {
+}
+
 @plone-portlet-border: none;
 @plone-portlet-content-bg: transparent;
 @plone-portlet-header-bg: transparent;
@@ -681,8 +696,16 @@ body.template-bluechurch_event_listing  {
                 font-size: 1.7rem;
                 line-height: 1.9rem;
                 text-transform: uppercase;
-                word-wrap: break-word;
-                hyphens: auto;
+               //  -ms-word-break: break-all;
+               //      word-break: break-all;
+               //
+               //      /* Non standard for webkit */
+               //      word-break: break-word;
+               //
+               // -webkit-hyphens: auto;
+               //    -moz-hyphens: auto;
+               //     -ms-hyphens: auto;
+               //         hyphens: auto;
                 &.eventmanager {
                     color: @grey-dark;
                 }
