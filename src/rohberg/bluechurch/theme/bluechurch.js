@@ -9,7 +9,7 @@ $(document).ready(function() {
     var extensions = ["mp3", "wma", "wav", "m4a", "m4b", "m4p", "mpc", "aiff"];
     for (i = 0; i < extensions.length; i++) {
         var related_audio = $('.relatedItems a[href$="'+ extensions[i] +'"]').each(function( index ) {
-            var filename = $(this).attr('href').split("/").pop();
+            var filename = "/"+$(this).attr('href').split("/").slice(3).join("/");
             $(this).parent().html($(this).html() +'<br><audio src="'+ filename +'" controls="controls"></audio>');
         });
     } ;
