@@ -69,19 +69,12 @@ class IOwnercontact(model.Schema):
 
     # Kontaktperson
     # TODO: Default Kontaktperson
-    read_permission(kontaktperson='zope2View')
-    write_permission(kontaktperson='rohberg.bluechurch.addbluechurchcontent')
+    # read_permission(kontaktperson='zope2View')
+    # write_permission(kontaktperson='rohberg.bluechurch.addbluechurchcontent')
     kontaktperson = RelationChoice(
         title=_(u"Kontaktperson"),
         description=_(u"Kontaktperson"),
         required=True,
-        # source=CatalogSource(portal_type='dexterity.membrane.bluechurchmembraneprofile'),
-        # source=ObjPathSourceBinder(
-        #     portal_type="dexterity.membrane.bluechurchmembraneprofile",
-        #     navigation_tree_query=dict(
-        #         portal_type=["dexterity.membrane.bluechurchmembraneprofile",],
-        #         path={ "query": '/profiles' })
-        # ),
         vocabulary='plone.app.vocabularies.Catalog',
         defaultFactory=profile_current_user,
         )
@@ -92,7 +85,7 @@ class IOwnercontact(model.Schema):
         pattern_options={
             'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
             'basePath': get_profiles_base_path,
-        }
+            }
         )
         
     model.fieldset(
