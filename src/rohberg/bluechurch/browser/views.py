@@ -6,6 +6,7 @@ from zope.component import queryUtility
 from zope.component import getMultiAdapter
 from zope.schema.interfaces import IVocabularyFactory
 
+from plone.memoize.view import memoize
 from plone import api
 from Products.CMFPlone.resources import add_resource_on_request
 from Products.Five import BrowserView
@@ -128,9 +129,10 @@ class BluechurcheventView(OwnedView):
     """
     
     @property
+    @memoize
     def location_obj(self):
         obj = self.context.eventlocation.to_object
-        logger.info("location_obj geholt")
+        # logger.info("location_obj geholt")
         return obj
     
     @property
