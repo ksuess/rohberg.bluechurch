@@ -334,8 +334,8 @@ p.callout {
     li.selected {
         border-bottom: 4px solid white;
         a {
-            // TODO: Navi abhängig von Section
-            .navigationactive;
+            color: @dark-blue;
+            background-color: @navigationactive-background;
         }
     }
 } 
@@ -612,6 +612,9 @@ article.vevent {
 
 
 body.template-bluechurchmembraneprofileview {
+    .documentFirstHeading  {
+        display: none;
+    }
     .profile_meta {
         text-transform: uppercase;
     }
