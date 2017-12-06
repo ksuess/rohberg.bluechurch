@@ -54,7 +54,7 @@
 
                 <tal:block>
                     <span class="photoAlbumEntryWrapper">
-                        <object tal:attributes="data string:$url/@@images/image/thumb" type="image/jpg">
+                        <object tal:attributes="data string:$url/@@images/image/mini" type="image/jpg">
                           <img tal:attributes="src string:/++theme++bluechurch/images/default_400.png" />
                         </object>
                     </span>

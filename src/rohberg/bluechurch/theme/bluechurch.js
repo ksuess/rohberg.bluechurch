@@ -14,5 +14,11 @@ $(document).ready(function() {
         });
     } ;
  
+    // collective.collectionfilter
+    $('.filterLabel').each(function(index) {
+        var txt = $(this).text();
+        $(this).text(txt.replace(/-/g, " "));
+    });
+    
     
 });

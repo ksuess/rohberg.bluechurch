@@ -682,7 +682,11 @@ body.template-bluechurch_event_listing  {
             margin: 5px 0;
             .photoAlbumEntryWrapper {
                 float: left;
-                display: inline-block;
+                // display: inline-block;
+                overflow: hidden;
+                width: 128px;
+                height: 128px;
+                margin-right: 0.4em;
             }
             a {
                 vertical-align: top;
@@ -709,10 +713,11 @@ body.template-bluechurch_event_listing  {
                 }
             }
             img, object {
-                float: left;
-                padding-right: 0.4rem;
-                max-height: 128px;
-                
+                // float: left;
+                // padding-right: 0.4rem;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
             .photoAlbumEntryTitle {
                 font-size: 1.7rem;
@@ -738,6 +743,10 @@ body.template-bluechurch_event_listing  {
             }
         }
 
+}
+
+.filterLabel {
+    text-transform: capitalize;
 }
 
 /* *** location 
