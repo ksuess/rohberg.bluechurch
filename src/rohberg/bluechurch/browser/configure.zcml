@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="rohberg.bluechurch">
 
@@ -185,6 +186,15 @@
       /> -->
 
 
+
+    <configure zcml:condition="installed plone.formwidget.geolocation">
+      <browser:page
+          for="*"
+          name="locationsearch"
+          class=".locationsearch.LocationSearch"
+          permission="rohberg.bluechurch.addbluechurchcontent"
+          />
+    </configure>
 
 
     <!-- Viewlets -->

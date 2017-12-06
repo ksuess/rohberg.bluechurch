@@ -114,7 +114,12 @@ class OwnedView(DefaultView):
 
 class BluechurchlocationView(OwnedView):
     """
+    
     """        
+
+    def __call__(self):
+        # add_resource_on_request(self.request, 'bluechurch-locationsearch')
+        return super(BluechurchlocationView, self).__call__()
     
     def events(self):
         obs = back_references(self.context, "eventlocation")

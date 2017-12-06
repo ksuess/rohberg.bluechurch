@@ -77,15 +77,15 @@ class IBluechurchControlPanel(Interface):
         description=u'Google Tag Manager Code',
         required=False,
     )
-    # farbe = schema.TextLine(
-    #     title=u'Farbe',
-    #     required=False,
-    # )
-    # motive = schema.List(
-    #     title=u'Motive',
-    #     description=u"Lorem ipsum tralllalalal",
-    # )
+    
 
+    google_api_key = schema.TextLine(
+        title=_(u'label_google_api_key', default=u'Google maps API Key'),
+        description=_(u'help_google_api_key', 
+            default=u'If you want to use the Google Maps search API for higher accuracy, you have to provide a Google Maps API key here.'),  
+        required=False,
+        default=None
+    )
 
 class BluechurchControlPanelForm(RegistryEditForm):
     """schema_prefix must be the same than that in registry.xml in porfiles"""

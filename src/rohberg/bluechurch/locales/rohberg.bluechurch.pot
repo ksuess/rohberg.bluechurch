@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-03 23:39+0000\n"
+"POT-Creation-Date: 2017-12-06 12:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,6 +121,10 @@ msgstr ""
 msgid "Esri.WorldTopoMap"
 msgstr ""
 
+#: ../profiles/default/types/bluechurchlocation.xml
+msgid "Event Location"
+msgstr ""
+
 #: ../content/bluechurchmembraneprofile.py:28
 msgid "Event Manager"
 msgstr ""
@@ -145,7 +149,7 @@ msgstr ""
 msgid "Inserate"
 msgstr ""
 
-#: ../configure.zcml:80
+#: ../configure.zcml:98
 msgid "Installs the rohberg.bluechurch add-on."
 msgstr ""
 
@@ -217,10 +221,6 @@ msgstr ""
 msgid "OpenStreetMap.Mapnik"
 msgstr ""
 
-#: ../profiles/default/types/bluechurchlocation.xml
-msgid "Ort"
-msgstr ""
-
 #: ../content/bluechurchmembraneprofile.py:42
 msgid "Profil-Typ"
 msgstr ""
@@ -233,8 +233,12 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: ../behaviors/kontakt.py:100
+#: ../behaviors/kontakt.py:93
 msgid "Relations"
+msgstr ""
+
+#: ../locationsearch/locationsearch.pt:1
+msgid "Search address in map"
 msgstr ""
 
 #: ../vocabularies.py:72
@@ -293,7 +297,7 @@ msgstr ""
 msgid "Thunderforest.TransportDark"
 msgstr ""
 
-#: ../configure.zcml:89
+#: ../configure.zcml:107
 msgid "Uninstalls the rohberg.bluechurch add-on."
 msgstr ""
 
@@ -301,7 +305,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: ../browser/forms.py:32
+#: ../browser/forms.py:33
 msgid "You are already registered."
 msgstr ""
 
@@ -322,6 +326,11 @@ msgstr ""
 #. Default: "Set the default map layer"
 #: ../browser/controlpanel.py:55
 msgid "help_default_map_layer"
+msgstr ""
+
+#. Default: "If you want to use the Google Maps search API for higher accuracy, you have to provide a Google Maps API key here."
+#: ../browser/controlpanel.py:84
+msgid "help_google_api_key"
 msgstr ""
 
 #. Default: "Set the available map layers"
@@ -362,6 +371,11 @@ msgstr ""
 msgid "label_eventform"
 msgstr ""
 
+#. Default: "Google maps API Key"
+#: ../browser/controlpanel.py:83
+msgid "label_google_api_key"
+msgstr ""
+
 #. Default: "Open in Google Maps"
 #: ../browser/templates/location_base.pt:21
 msgid "label_google_maps_link"
@@ -396,11 +410,11 @@ msgstr ""
 msgid "label_zip_code"
 msgstr ""
 
-#: ../configure.zcml:80
+#: ../configure.zcml:98
 msgid "rohberg.bluechurch"
 msgstr ""
 
-#: ../configure.zcml:89
+#: ../configure.zcml:107
 msgid "rohberg.bluechurch (uninstall)"
 msgstr ""
 

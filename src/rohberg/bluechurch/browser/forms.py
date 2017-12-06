@@ -28,6 +28,7 @@ class AddForm(add.DefaultAddForm):
             username = user.getName()
             roles = api.user.get_roles(username=username)
             is_sitemanager = "Site Administrator" in roles
+            logger.info("roles and is_anonymous: {} {}".format(roles, is_sitemanager))
         if not(api.user.is_anonymous() or is_manager or is_sitemanager):
             raise Unauthorized(_(u"You are already registered."))
         # try:

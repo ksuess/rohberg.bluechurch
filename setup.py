@@ -49,6 +49,7 @@ setup(
         'plone.formwidget.contenttree',
         'collective.address',
         'collective.geolocationbehavior',
+        'geopy',
         'plone.app.theming',
         'plone.app.themingplugins',
         'collective.monkeypatcher',

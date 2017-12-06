@@ -1,0 +1,2 @@
+<button class="locationsearch btn btn-success" 
+    i18n:domain="rohberg.bluechurch" i18n:translate="">Search address in map</button>
