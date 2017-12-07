@@ -2,8 +2,10 @@
 
 from plone.indexer.decorator import indexer
 from collective.address.behaviors import IAddress
+from dexterity.membrane.behavior.user import INameFromFullName
+# from dexterity.membrane.content.member import IMember
 from rohberg.bluechurch.content.bluechurchevent import IBluechurchevent
-
+from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
 
 import logging
 logger = logging.getLogger(__name__)
@@ -24,3 +26,12 @@ def city_event(obj):
         logger.error('index fail: {}'.format(str(e)))
         
   
+
+# @indexer(IBluechurchmembraneprofile)
+# def Title(object, **kw):
+#     name = INameFromFullName(object, None)
+#     logger.info(u"indexer name: {} {}".format(name, name.title))
+#     if name is not None:
+#         return name.title
+#     return object.Title()
+#
