@@ -1,8 +1,8 @@
 $(document).ready(function() {
     
-    var random_22 = Math.floor((Math.random() * 22) + 1);
+    var random_18 = Math.floor((Math.random() * 18) + 1);
     $("#visual-portal-wrapper")
-        .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_22 + ".jpg')");
+        .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_18 + ".jpg')");
 
     
     // var related_audio = $(".relatedItems a[href$='mp3']").each(function( index ) {
