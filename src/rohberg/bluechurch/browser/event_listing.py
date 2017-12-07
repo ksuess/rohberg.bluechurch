@@ -12,7 +12,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 class BluechurchEventListing(EventListing):
-    """"""
+    """ Collection View
+    
+    Allgemeine View, nicht nur Events
+    """
 
     def __init__(self, context, request):
         super(BluechurchEventListing, self).__init__(context, request)
@@ -22,6 +25,7 @@ class BluechurchEventListing(EventListing):
 
     # @view.memoize
     def events(self, ret_mode=RET_MODE_ACCESSORS, expand=True, batch=True):
+        logger.info("getting batch for event_listing")
         res = []
         if self.is_collection:
             ctx = self.default_context
@@ -66,7 +70,8 @@ class BluechurchEventListing(EventListing):
         
                 else:
                     res = self._get_events(ret_mode, expand=expand)
-
+        for item in res:
+            item.has_image = item.image and True or False
         if batch:
             b_start = self.b_start
             b_size = self.b_size
