@@ -9,12 +9,15 @@ from zope.schema.interfaces import IVocabularyFactory
 from plone.memoize.view import memoize
 from plone import api
 from Products.CMFPlone.resources import add_resource_on_request
+from Products.CMFPlone import utils
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 from plone.dexterity.browser.view import DefaultView
 from plone.app.content.interfaces import INameFromTitle
 from Products.CMFCore.utils  import getToolByName
+
+from dexterity.membrane.behavior.user import INameFromFullName
 
 import logging
 logger = logging.getLogger(__name__)
@@ -93,8 +96,13 @@ class BluechurchmembraneprofileView(DefaultView):
             if obj.portal_type=="bluechurchinserat":
                 result.append(obj)
         return result
+        
+    @property
+    def title(self):
+        context = self.context
+        ttl = INameFromFullName(context).title
+        return ttl
 
-    
 
 class OwnedView(DefaultView):
     """
