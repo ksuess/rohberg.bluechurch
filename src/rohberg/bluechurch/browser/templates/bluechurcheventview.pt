@@ -12,8 +12,10 @@
 
         <tal:eventsummary replace="structure context/@@event_summary"/>
 
-        <div><span class="label_meta">Website</span> 
-            <span tal:replace="structure view/w/homepage/render">Website</span>
+        <div tal:condition="context/homepage"><span class="label_meta">Website</span> 
+            <a tal:attributes="href context/homepage" 
+                target="_blank" 
+                tal:content="context/homepage">Website</a>
         </div>
                 
         <div><span class="label_meta">Location</span> 

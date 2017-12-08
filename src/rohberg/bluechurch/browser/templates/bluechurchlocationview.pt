@@ -7,9 +7,12 @@
     <metal:block define-macro="content-core">
 
         <div tal:content="structure view/w/IRichText.text/render" />
-        <p>
-            <span tal:replace="structure view/w/homepage/render">Website</span>
-        </p>
+
+        <div tal:condition="context/homepage"><span class="label_meta">Website</span> 
+            <a tal:attributes="href context/homepage" 
+                target="_blank" 
+                tal:content="context/homepage">Website</a>
+        </div>
         
         <tal:address replace="structure context/@@base_location_view" />
         
