@@ -3,6 +3,8 @@ from plone.app.layout.viewlets import common as base
 from plone import api
 from plone.app.content.interfaces import INameFromTitle
 from plone.app.content.browser.folderfactories import _allowedTypes
+from Products.CMFCore.interfaces import IFolderish
+from plone.app.contenttypes.interfaces import ICollection
 from Products.CMFPlone.interfaces.constrains import IConstrainTypes
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
@@ -36,9 +38,9 @@ class BaseViewlet(base.ViewletBase):
         return u"Contributor" in local_roles
 
     
-    @memoize
-    def _locallyAllowedTypes(self):
-        addContext = self.context
+    # @memoize
+    def _locallyAllowedTypes(self, addContext):
+        addContext = addContext or self.context
 
         allowed_types = _allowedTypes(self.request, addContext)
         constrain = IConstrainTypes(addContext, None)
@@ -48,14 +50,24 @@ class BaseViewlet(base.ViewletBase):
         # logger.info("locallyAllowed: {}".format(locallyAllowed))
         return locallyAllowed
         
+    @property
+    def add_to_parent(self):
+        return ICollection.providedBy(self.context)
+    
     # @property
+    # @memoize
     def can_add_here(self, type):
         context = self.context
-        
-        locallyAllowed = self._locallyAllowedTypes()
+
+        addContext = self.add_to_parent and context.aq_parent or context
+        locallyAllowed = self._locallyAllowedTypes(addContext)
         
         current = api.user.get_current()
-        local_roles = api.user.get_roles(user=current, obj=context, inherit=True)
+        local_roles = api.user.get_roles(user=current, obj=addContext, inherit=True)
+        
+        # logger.info(u"self.context {}, type {}".format(context, type))
+        # logger.info(u"local_roles {}".format(local_roles))
+        # logger.info(u"_locallyAllowedTypes {}".format(locallyAllowed))
         return (u"Contributor" in local_roles) and type in locallyAllowed
 
 

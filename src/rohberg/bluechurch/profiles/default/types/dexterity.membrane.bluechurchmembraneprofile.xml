@@ -38,6 +38,7 @@
          <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
          <element value="plone.app.dexterity.behaviors.metadata.IOwnership" /> -->
      <!--element value="plone.app.content.interfaces.INameFromTitle" /-->
+     <element value="plone.app.relationfield.behavior.IRelatedItems"/>
      <element value="dexterity.membrane.behavior.user.INameFromFullName" />
      <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
      <element value="dexterity.membrane.behavior.user.IMembraneUser" />

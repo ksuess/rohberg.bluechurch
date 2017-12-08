@@ -25,7 +25,7 @@ class BluechurchEventListing(EventListing):
 
     # @view.memoize
     def events(self, ret_mode=RET_MODE_ACCESSORS, expand=True, batch=True):
-        logger.info("getting batch for event_listing")
+        # logger.info("getting batch for event_listing")
         res = []
         if self.is_collection:
             ctx = self.default_context
