@@ -20,5 +20,6 @@ $(document).ready(function() {
         $(this).text(txt.replace(/-/g, " "));
     });
     
+    $("label[for='__ac_name'], label[for='userid']").text("Email");
     
 });
