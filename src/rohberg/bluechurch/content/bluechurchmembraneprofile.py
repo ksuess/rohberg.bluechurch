@@ -6,7 +6,8 @@ from plone import api
 from plone.autoform import directives
 from plone.supermodel import model
 from plone.dexterity.content import Item
-
+from z3c.form.interfaces import IAddForm, IEditForm
+from plone.autoform import directives
         
 from Products.membrane.interfaces import IMembraneUserRoles
 from dexterity.membrane.behavior.user import DxUserObject
@@ -25,7 +26,9 @@ from rohberg.bluechurch import _
 
 profile_types = SimpleVocabulary(
     [SimpleTerm(value=u'artist', title=_(u'Artist')),
-     SimpleTerm(value=u'eventmanager', title=_(u'Event Manager'))]
+        SimpleTerm(value=u'band', title=_(u'Band')),
+        SimpleTerm(value=u'theologian', title=_(u'Theologian')),
+        SimpleTerm(value=u'eventmanager', title=_(u'Event Manager'))]
     )
 
 class IBluechurchmembraneprofile(IMember):
@@ -47,24 +50,38 @@ class IBluechurchmembraneprofile(IMember):
     zip_code = schema.TextLine(
         title=_(u'label_zip_code', default=u'Zip Code'),
         description=_(u'help_zip_code', default=u''),
-        required=False
+        required=True
     )
     city = schema.TextLine(
         title=_(u'label_city', default=u'City'),
         description=_(u'help_city', default=u''),
-        required=False
+        required=True
     )
     country = schema.Choice(
         title=_(u'label_country', default=u'Country'),
         description=_(u'help_country',
                       default=u'Select the country from the list.'),
-        required=False,
+        required=True,
         vocabulary='collective.address.CountryVocabulary'
     )
     
+    model.fieldset(
+        'categorization',
+        label=_(u'Relations')
+    )
+    
+    # directives.omitted('relatedItems')
+    # directives.no_omit(IEditForm, 'relatedItems')
+    
     model.load('bluechurchmembraneprofile.xml')
 
+# modifications Artist Profile
+IBluechurchmembraneprofile['last_name'].title = _(u"Last Name or Band Name")
+IBluechurchmembraneprofile['first_name'].required = False
 
+from dexterity.membrane.behavior.password import IProvidePasswords
+IProvidePasswords['password'].required = True
+IProvidePasswords['confirm_password'].required = True
 
 @implementer(IBluechurchmembraneprofile)
 class Bluechurchmembraneprofile(Item):

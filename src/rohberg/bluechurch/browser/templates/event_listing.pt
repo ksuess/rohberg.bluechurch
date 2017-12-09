@@ -42,7 +42,9 @@
             
             <div class="photoAlbumEntry col-xs-12 col-sm-6 ">
               <a tal:define="
-                  fullname python:data.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and u'{} {}'.format(getattr(data, 'first_name', ''), getattr(data, 'last_name', '')) or None;
+                  fullname python:data.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and 
+                  (getattr(data, 'first_name', '') and (getattr(data, 'first_name', '')+' ') or '')
+                   + getattr(data, 'last_name', '') or None; 
                   title python:fullname or data.title;
                   description data/description|string:;
                   city data/city|data/eventlocation/to_object/city|string:;
