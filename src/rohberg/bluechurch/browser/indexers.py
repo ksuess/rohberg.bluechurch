@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 def city_event(obj):
     """eventlocation/to_object/city
     """
-    # logger.info('city_eventindexed: %r' % obj)
+    # logger.info('city_event indexed: %r' % obj)
     # return u"Bremen"
     try:        
         loc = obj.eventlocation.to_object

@@ -51,7 +51,7 @@
                   desc_or_title python:description or title;
                   url data/absolute_url;
                   start_date data/start|nothing;
-                  item_hasimage data/has_image|nothing;"
+                  item_hasimage nocall:data/@@images/image|nothing;"
                   tal:attributes="href url;
                         title description;">
 
@@ -61,8 +61,7 @@
                     </span>
                     <span tal:condition="not:item_hasimage" class="photoAlbumEntryWrapper">
                         <img tal:attributes="src string:/++theme++bluechurch/images/default_400.png" />
-                    </span>
-    
+                    </span>    
 
                     <span class="photoAlbumEntryTitle" tal:content="title">Title</span>
                     <span class="photoAlbumEntryCity" tal:content="city">City</span>

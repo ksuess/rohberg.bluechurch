@@ -157,10 +157,11 @@ class BluechurcheventView(OwnedView):
         result = [{'fullname':INameFromTitle(profile).title, 'url':profile.absolute_url()} for profile in profiles]
         return result
         
-    def city(self):
-        context = self.context
-        event = context.portal_catalog(id=context.id)
-        return event[0]['eventcity']
+    # def city(self):
+    #     logger.info("BluechurcheventView def city")
+    #     context = self.context
+    #     event = context.portal_catalog(id=context.id)
+    #     return event[0]['eventcity']
 
 
 class BluechurchinseratView(OwnedView):

@@ -47,9 +47,7 @@ class BluechurchEventListing(EventListing):
                 res = ctx.results(
                     batch=False, brains=True, custom_query=custom_query
                 )
-                # logger.info("results: {}".format(res))
                 res = [it.getObject() for it in res]
-                # logger.info("results: {}".format(res))
             else:
                 res = ctx.results(
                     batch=False, brains=True, custom_query=custom_query
@@ -66,12 +64,12 @@ class BluechurchEventListing(EventListing):
                         start=start, end=end,
                         sort=sort_on, sort_reverse=True if sort_order else False
                     )
-                    # logger.info("expanded results: {}".format(res))
         
                 else:
                     res = self._get_events(ret_mode, expand=expand)
-        for item in res:
-            item.has_image = item.image and True or False
+        # !CSRF!
+        # for item in res:
+        #     item.has_image = item.image and True or False
         if batch:
             b_start = self.b_start
             b_size = self.b_size
