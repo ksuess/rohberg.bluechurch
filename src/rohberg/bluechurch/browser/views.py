@@ -96,6 +96,14 @@ class BluechurchmembraneprofileView(DefaultView):
             if obj.portal_type=="bluechurchinserat":
                 result.append(obj)
         return result
+
+    def research(self):
+        obs = back_references(self.context, "kontaktperson")
+        result = []
+        for obj in obs:
+            if obj.portal_type=="bluechurchpage":
+                result.append(obj)
+        return result
         
     @property
     def title(self):

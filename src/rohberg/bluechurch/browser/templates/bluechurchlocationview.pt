@@ -8,7 +8,7 @@
 
         <div tal:content="structure view/w/IRichText.text/render" />
 
-        <div tal:condition="context/homepage"><span class="label_meta">Website</span> 
+        <div class="meta_block" tal:condition="context/homepage"><span class="label_meta">Website</span> 
             <a tal:attributes="href context/homepage" 
                 target="_blank" 
                 tal:content="context/homepage">Website</a>
@@ -17,7 +17,7 @@
         <tal:address replace="structure context/@@base_location_view" />
         
         
-        <div class="owner"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
+        <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>

@@ -14,8 +14,6 @@ def get_profiles_base_path(context):
     if search_base:
         # path = search_base
         path = uuidToPhysicalPath(search_base)
-        print("path " + path)
-    print("final path (get_profiles_base_path) " + path)
     return path
     
 
@@ -30,6 +28,4 @@ def get_locations_base_path(context):
     if search_base:
         # path = search_base
         path = uuidToPhysicalPath(search_base)
-        print("path " + path)
-    print("final path (get_locations_base_path) " + path)
     return path

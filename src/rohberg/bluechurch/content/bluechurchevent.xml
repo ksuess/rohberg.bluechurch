@@ -1,13 +1,13 @@
 <model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema" i18n:domain="rohberg.bluechurch">
   <schema>
     
-    <field name="homepage" type="zope.schema.URI">
+    <!-- <field name="homepage" type="zope.schema.URI">
       <required>False</required>
       <title>Homepage</title>
-    </field>
+    </field> -->
     
     
-    <field name="bluechurchtags" type="zope.schema.Set">
+    <!-- <field name="bluechurchtags" type="zope.schema.Set">
       <description/>
       <required>False</required>
       <title>BluechurchTags</title>
@@ -16,8 +16,8 @@
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
     </field>
-    
-    
+
+
     <field name="eventformen" type="zope.schema.Set">
       <description/>
       <required>False</required>
@@ -25,8 +25,7 @@
       <value_type type="zope.schema.Choice">
         <vocabulary>rohberg.bluechurch.Eventformen</vocabulary>
       </value_type>
-      <!-- <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/> -->
-    </field>
+    </field> -->
         
   </schema>
 </model>

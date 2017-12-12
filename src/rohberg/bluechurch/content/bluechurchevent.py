@@ -66,6 +66,27 @@ class IBluechurchevent(model.Schema):
             'basePath': get_profiles_base_path,
             }
         )
+        
+    homepage = schema.URI(
+        title=_(u"Website"),
+        description = _(u"e.g. http://www.abcjazzz.com"),
+        required = False,
+    )
+      
+    bluechurchtags = schema.Set(
+        title=_(u'Bluechurch Tags'),
+        value_type=schema.Choice(
+            vocabulary='rohberg.bluechurch.BluchurchTags'),
+        required=False,
+        )
+    
+    eventformen = schema.Set(
+        title=_(u'Event Type'),
+        value_type=schema.Choice(
+            vocabulary='rohberg.bluechurch.Eventformen'),
+        required=False,
+        )
+    
     model.fieldset(
         'categorization',
         fields=['beteiligte', 'eventlocation']

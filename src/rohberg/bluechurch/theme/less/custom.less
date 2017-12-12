@@ -648,6 +648,15 @@ body.template-bluechurchmembraneprofileview {
 .owner {
     // clear:both;
 }
+.meta_container {
+    clear:both;
+}
+.meta_block {
+    margin-top: 0.5em;
+}
+.locationview {
+    margin-top: 1em;
+}
 
 /* *** views
 *************************************** */
@@ -880,6 +889,7 @@ body.template-bluechurch_event_listing  {
 .event.summary {
     box-shadow: none;
     background-color: lighten(@headingcolor, 20%);
+    max-width: 250px;
 }
     
 ul.event.summary.details {
@@ -978,8 +988,31 @@ body.template-summary_view {
 }
 
 // dirty hacks
+
+// Keine Tabs
+// Registrieren: Kein Tab "categorization"
+form.pat-autotoc {
+    nav.autotoc-nav {
+        display: none;
+    }
+    fieldset[id^="fieldset-"].autotoc-section {
+        display: block;
+    }
+}
+
 .template-dexterity-membrane-bluechurchmembraneprofile.userrole-anonymous {
-    #autotoc-item-autotoc-1 {
+
+    #fieldset-categorization.autotoc-section {
         display: none;
     }
 }
+
+
+
+#formfield-form-widgets-IVersionable-changeNote {
+    display: none;
+}
+
+
+
+

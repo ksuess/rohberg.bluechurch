@@ -13,22 +13,22 @@
     </field> -->
 
     
-    <field name="bluechurchtags" type="zope.schema.Set">
+    <!-- <field name="bluechurchtags" type="zope.schema.Set">
       <description/>
       <required>False</required>
-      <title>BluechurchTags</title>
+      <title>Tags</title>
       <value_type type="zope.schema.Choice">
         <vocabulary>rohberg.bluechurch.BluchurchTags</vocabulary>
       </value_type>
       <form:widget type="z3c.form.browser.checkbox.CheckBoxFieldWidget"/>
-    </field>
+    </field> -->
     
-    <field name="bluechurchcaptcha" type="zope.schema.Int">
+    <!-- <field name="bluechurchcaptcha" type="zope.schema.Int">
         <description>13 + 4 ?</description>
         <max>17</max>
         <min>17</min>
         <title>Captcha</title>
-    </field>
+    </field> -->
     
   </schema>
 </model>

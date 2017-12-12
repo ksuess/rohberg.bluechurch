@@ -72,7 +72,8 @@
           <tal:if condition="social/facebook|nothing">
           <dt class="facebook">Facebook</dt>
           <dd class="facebook">
-            <a href="${social/facebook}" class="facebook" title="Facebook">
+            <a href="${social/facebook}" class="facebook" title="Facebook"
+                target="_blank">
               Facebook
             </a>
           </dd>
@@ -81,7 +82,8 @@
           <tal:if condition="social/twitter|nothing">
           <dt class="twitter">Twitter</dt>
           <dd class="twitter">
-            <a href="${social/twitter}" class="twitter" title="Twitter">
+            <a href="${social/twitter}" class="twitter" title="Twitter"
+                target="_blank">
               Twitter
             </a>
           </dd>
@@ -90,7 +92,8 @@
           <tal:if condition="social/google_plus|nothing">
           <dt class="google_plus">Google Plus</dt>
           <dd class="google_plus">
-            <a href="${social/google_plus}" class="google_plus" title="Google Plus">
+            <a href="${social/google_plus}" class="google_plus" title="Google Plus"
+                target="_blank">
               Google+
             </a>
           </dd>
@@ -99,7 +102,8 @@
           <tal:if condition="social/instagram|nothing">
           <dt class="instagram">Instagram</dt>
           <dd class="instagram">
-            <a href="${social/instagram}" class="instagram" title="Instagram">
+            <a href="${social/instagram}" class="instagram" title="Instagram"
+                target="_blank">
               Instagram
             </a>
           </dd>

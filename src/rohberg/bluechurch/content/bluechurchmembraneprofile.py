@@ -18,6 +18,7 @@ from Products.membrane.interfaces.events import IMembraneTypeRegisteredEvent
 
 from dexterity.membrane.content.member import IMember
 from collective import dexteritytextindexer
+from dexterity.membrane.behavior.password import IProvidePasswords
 
 import logging
 logger = logging.getLogger(__name__)
@@ -28,6 +29,7 @@ profile_types = SimpleVocabulary(
     [SimpleTerm(value=u'artist', title=_(u'Artist')),
         SimpleTerm(value=u'band', title=_(u'Band')),
         SimpleTerm(value=u'theologian', title=_(u'Theologian')),
+        SimpleTerm(value=u'interested', title=_(u'Interested Person')),
         SimpleTerm(value=u'eventmanager', title=_(u'Event Manager'))]
     )
 
@@ -42,11 +44,19 @@ class IBluechurchmembraneprofile(IMember):
     
     # directives.widget('select_field', SelectWidget)
     profile_type = schema.Choice(
-                title=_(u"Profil-Typ"),
+                title=_(u"Profile Type"),
                 vocabulary=profile_types,
                 required=True,
                 default="artist",
             )
+            
+    bluechurchtags = schema.Set(
+        title=_(u'Bluechurch Tags'),
+        value_type=schema.Choice(
+            vocabulary='rohberg.bluechurch.BluchurchTags'),
+        required=False,
+        )
+        
     zip_code = schema.TextLine(
         title=_(u'label_zip_code', default=u'Zip Code'),
         description=_(u'help_zip_code', default=u''),
@@ -65,6 +75,13 @@ class IBluechurchmembraneprofile(IMember):
         vocabulary='collective.address.CountryVocabulary'
     )
     
+    bluechurchcaptcha = schema.Int(
+        title=_(u"bluechurchcaptcha"),
+        description=_(u"Prevent spam by typing in the result of 13 + 4."),
+        min=17,
+        max=17
+    )
+    
     model.fieldset(
         'categorization',
         label=_(u'Relations')
@@ -77,11 +94,24 @@ class IBluechurchmembraneprofile(IMember):
 
 # modifications Artist Profile
 IBluechurchmembraneprofile['last_name'].title = _(u"Last Name or Band Name")
+IBluechurchmembraneprofile['first_name'].title = _(u"First Name")
 IBluechurchmembraneprofile['first_name'].required = False
 
-from dexterity.membrane.behavior.password import IProvidePasswords
+IBluechurchmembraneprofile['email'].title = _(u"E-mail Address")
+IBluechurchmembraneprofile['homepage'].title = _(u"Website")
+IBluechurchmembraneprofile['homepage'].description = _(u"e.g. http://www.abcjazzz.com")
+IBluechurchmembraneprofile['bio'].title = _(u"Biography")
+
 IProvidePasswords['password'].required = True
+IProvidePasswords['password'].title = _(u"Password")
 IProvidePasswords['confirm_password'].required = True
+IProvidePasswords['confirm_password'].title = _(u"Confirm Password")
+
+from collective.address.behaviors import ISocial
+ISocial['facebook_url'].description = _(u"e.g. http://www.abcjazzz.com")
+ISocial['twitter_url'].description = _(u"e.g. http://www.abcjazzz.com")
+ISocial['google_plus_url'].description = _(u"e.g. http://www.abcjazzz.com")
+ISocial['instagram_url'].description = _(u"e.g. http://www.abcjazzz.com")
 
 @implementer(IBluechurchmembraneprofile)
 class Bluechurchmembraneprofile(Item):

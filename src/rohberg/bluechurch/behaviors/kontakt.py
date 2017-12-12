@@ -41,7 +41,6 @@ from rohberg.bluechurch import _
 # @provider(IContextAwareDefaultFactory)
 def profile_current_user():
     current = api.user.get_current()
-    logger.info("current user {}".format(current))
     
     if api.user.is_anonymous():
         logger.warn("profile_current_user: is_anonymous True. Should not happen. User is logged in")
@@ -52,9 +51,6 @@ def profile_current_user():
     if not "Manager" in current_roles and not "Site Administrator" in current_roles:
         try:
             profile = api.content.get(UID=current.id)
-            logger.info("current users profile: " + str(profile))
-            logger.info(profile.portal_type)
-            logger.info(IBluechurchmembraneprofile.providedBy(profile))
         except Exception, e:
             logger.error(str(e) + u"No profile found with UID {}".format(current.id))
     else:

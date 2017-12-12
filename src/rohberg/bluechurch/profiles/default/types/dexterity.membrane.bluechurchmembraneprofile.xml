@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <object name="dexterity.membrane.bluechurchmembraneprofile"
    meta_type="Dexterity FTI"
-   i18n:domain="dexterity.membrane" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   i18n:domain="rohberg.bluechurch" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Artist oder Event Manager</property>
-  <property name="description"
-    i18n:translate="">Artist oder Event Manager</property>
+  <property name="title" i18n:translate="">Profile</property>
   <property name="content_icon">user.png</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>

@@ -20,6 +20,12 @@ $(document).ready(function() {
         $(this).text(txt.replace(/-/g, " "));
     });
     
+    
     $("label[for='__ac_name'], label[for='userid']").text("Email");
+    
+    // Translations
+    // $("html[lang='de']");
+    $("html[lang='de'] label[for='form-widgets-ILeadImage-image']").text("Profilbild");
+    $("html[lang='de'] label[for='form-widgets-ILeadImage-image_caption']").text("Legende zum Profilbild");
     
 });

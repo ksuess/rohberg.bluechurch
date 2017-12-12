@@ -72,10 +72,10 @@
 
         <br>
         
-        <div><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>      
+        <div class="meta_block"><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>      
         
 
-        <div tal:condition="view/events"><span class="label_meta">Events</span>  
+        <div class="meta_block" tal:condition="view/events"><span class="label_meta">Events</span>  
             <tal:ls tal:repeat="ll view/events">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -84,7 +84,9 @@
             </tal:ls>
         </div>
         
-        <div tal:define="starringat view/starringat" tal:condition="starringat"><span class="label_meta" i18n:translate="Starring at">Starring at</span>  
+        <div class="meta_block" 
+            tal:define="starringat view/starringat" 
+            tal:condition="starringat"><span class="label_meta" i18n:translate="Starring at">Starring at</span>  
             <tal:ls tal:repeat="ll starringat">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -93,7 +95,7 @@
             </tal:ls>
         </div>
         
-        <div tal:condition="view/locations"><span class="label_meta">Locations</span> 
+        <div class="meta_block" tal:condition="view/locations"><span class="label_meta">Locations</span> 
             <tal:ls tal:repeat="ll view/locations">
                 <div>
                     <a tal:attributes="href python:ll.absolute_url()"
@@ -102,11 +104,21 @@
             </tal:ls>
         </div>
 
-        <div tal:condition="view/inserate"><span class="label_meta" i18n:translate="">Inserate</span> 
+        <div class="meta_block" tal:condition="view/inserate"><span class="label_meta" i18n:translate="">Inserate</span> 
             <tal:ls tal:repeat="obj view/inserate">
                 <div>
                     <a tal:attributes="href python:obj.absolute_url()"
                         tal:content="obj/Title">Inserat</a>
+                </div>
+            </tal:ls>
+        </div>
+        
+        <div class="meta_block" tal:condition="view/research"><span class="label_meta" i18n:translate="">Research</span> 
+            <tal:ls tal:repeat="obj view/research">
+                <div>
+                    <a tal:attributes="href python:obj.absolute_url();
+                            title obj/description"
+                        tal:content="obj/Title">Research Document</a>
                 </div>
             </tal:ls>
         </div>

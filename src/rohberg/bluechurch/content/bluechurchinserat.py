@@ -19,7 +19,14 @@ from rohberg.bluechurch import _
 class IBluechurchinserat(model.Schema):
     """ Marker interface for Bluechurchinserat
     """
-        
+    
+    bluechurchtags = schema.Set(
+        title=_(u'Bluechurch Tags'),
+        value_type=schema.Choice(
+            vocabulary='rohberg.bluechurch.BluchurchTags'),
+        required=False,
+        )
+          
     model.load('bluechurchinserat.xml')
 
 

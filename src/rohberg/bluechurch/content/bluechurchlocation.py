@@ -38,8 +38,17 @@ class IBluechurchlocation(model.Schema):
     """    
     # TODO: make location fields searchable
     # dexteritytextindexer.searchable('bio')
+        
+    homepage = schema.URI(
+        title=_(u"Website"),
+        description = _(u"e.g. http://www.abcjazzz.com"),
+        required = False,
+    )
     
     model.load('bluechurchlocation.xml')
+
+from collective.address.behaviors import IAddress
+IAddress['street'].required = True
 
 
 @implementer(IBluechurchlocation)
