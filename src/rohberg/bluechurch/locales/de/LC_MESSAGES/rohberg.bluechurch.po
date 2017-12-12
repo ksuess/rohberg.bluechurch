@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-12 12:31+0000\n"
+"POT-Creation-Date: 2017-12-12 13:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Interested Person"
 msgstr "Interessent"
 
-#: ../behaviors/kontakt.py:75
+#: ../behaviors/kontakt.py:71
 msgid "Kontaktperson"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Register"
 msgstr "registrieren"
 
-#: ../behaviors/kontakt.py:93
+#: ../behaviors/kontakt.py:89
 #: ../content/bluechurchmembraneprofile.py:87
 msgid "Relations"
 msgstr ""
@@ -420,6 +420,11 @@ msgstr ""
 #: ../browser/templates/event_listing.pt:29
 msgid "label_add_to_ical"
 msgstr "iCal"
+
+#. Default: "Beteiligte Artists"
+#: ../browser/templates/bluechurcheventview.pt:37
+msgid "label_beteiligte"
+msgstr "Beteiligte"
 
 #: ../browser/contactform.py:121
 msgid "label_cancel"

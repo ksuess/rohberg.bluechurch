@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-12 12:31+0000\n"
+"POT-Creation-Date: 2017-12-12 13:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,9 +184,9 @@ msgstr ""
 msgid "Interested Person"
 msgstr ""
 
-#: ../behaviors/kontakt.py:75
+#: ../behaviors/kontakt.py:71
 msgid "Kontaktperson"
-msgstr "Contact Person"
+msgstr "Contact"
 
 #: ../content/bluechurchmembraneprofile.py:96
 msgid "Last Name or Band Name"
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Register"
 msgstr "register"
 
-#: ../behaviors/kontakt.py:93
+#: ../behaviors/kontakt.py:89
 #: ../content/bluechurchmembraneprofile.py:87
 msgid "Relations"
 msgstr ""
@@ -420,6 +420,11 @@ msgstr ""
 msgid "label_add_to_ical"
 msgstr "iCal"
 
+#. Default: "Beteiligte Artists"
+#: ../browser/templates/bluechurcheventview.pt:37
+msgid "label_beteiligte"
+msgstr "Involved"
+
 #: ../browser/contactform.py:121
 msgid "label_cancel"
 msgstr "cancel"
@@ -442,7 +447,7 @@ msgstr "Country"
 #. Default: "Eventform"
 #: ../browser/templates/bluechurcheventview.pt:49
 msgid "label_eventform"
-msgstr "kind of event"
+msgstr "Event Type"
 
 #. Default: "Google maps API Key"
 #: ../browser/controlpanel.py:83
@@ -459,7 +464,7 @@ msgstr "find in map"
 #: ../browser/templates/bluechurchinseratview.pt:12
 #: ../browser/templates/bluechurchlocationview.pt:20
 msgid "label_kontaktperson"
-msgstr "contact person"
+msgstr "Contact"
 
 #. Default: "Map Layers"
 #: ../browser/controlpanel.py:65

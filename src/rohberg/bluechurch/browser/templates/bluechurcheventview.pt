@@ -34,7 +34,7 @@
         <div class="meta_container">
 
             <div class="meta_block" tal:define="beteiligte view/beteiligte" 
-                tal:condition="beteiligte"><span class="label_meta">Beteiligte Artists </span>
+                tal:condition="beteiligte"><span class="label_meta" i18n:translate="label_beteiligte">Beteiligte Artists</span>
                 <tal:beteiligte tal:repeat="beteiligter beteiligte">
                     <tal:item tal:define="is_last repeat/beteiligter/end">
                         <a tal:attributes="href beteiligter/url"
