@@ -3,11 +3,12 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.component import adapter
 from zope.interface import implementer
 from plone import api
-from plone.autoform import directives
+from plone.autoform.directives import widget
 from plone.supermodel import model
 from plone.dexterity.content import Item
 from z3c.form.interfaces import IAddForm, IEditForm
 from plone.autoform import directives
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
         
 from Products.membrane.interfaces import IMembraneUserRoles
 from dexterity.membrane.behavior.user import DxUserObject
@@ -42,14 +43,15 @@ class IBluechurchmembraneprofile(IMember):
     dexteritytextindexer.searchable('last_name')
     dexteritytextindexer.searchable('bio')
     
-    # directives.widget('select_field', SelectWidget)
-    profile_type = schema.Choice(
+    widget(profile_type='z3c.form.browser.checkbox.CheckBoxFieldWidget')
+    profile_type = schema.Set(
                 title=_(u"Profile Type"),
-                vocabulary=profile_types,
+                value_type=schema.Choice(
+                    vocabulary=profile_types),
                 required=True,
-                default="artist",
             )
-            
+    
+    directives.widget(bluechurchtags='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     bluechurchtags = schema.Set(
         title=_(u'Bluechurch Tags'),
         value_type=schema.Choice(

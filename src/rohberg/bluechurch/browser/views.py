@@ -276,4 +276,27 @@ class FView(DefaultView):
     
     def wanttoknow(self):
         return "wanttoknow"
+        
+class UpdatePofileTypes(BrowserView):
+    """"""
+    
+    def __call__(self):
+        context = self.context
+        print("*** update types")
+        for ob in context.values():
+            if ob.portal_type == "dexterity.membrane.bluechurchmembraneprofile":
+                tt = ob.profile_type
+                if not isinstance(tt, set):
+                    print("{} {}".format(ob.id, tt))
+                    # ob.profile_type = set([tt])
+                    # ob.reindexObject()
+            else:
+                print(ob.portal_type)
+        print("update done.")
+        # for ob in context.values():
+        #     print(ob.profile_type)
+            
+        # response = self.request.response
+        # response.redirect(context.absolute_url()) # , status=301
+    
     

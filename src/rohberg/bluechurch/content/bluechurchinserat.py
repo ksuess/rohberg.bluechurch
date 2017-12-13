@@ -20,6 +20,7 @@ class IBluechurchinserat(model.Schema):
     """ Marker interface for Bluechurchinserat
     """
     
+    widget(bluechurchtags='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     bluechurchtags = schema.Set(
         title=_(u'Bluechurch Tags'),
         value_type=schema.Choice(

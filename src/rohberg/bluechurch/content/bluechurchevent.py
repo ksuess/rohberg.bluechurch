@@ -73,6 +73,7 @@ class IBluechurchevent(model.Schema):
         required = False,
     )
       
+    widget(bluechurchtags='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     bluechurchtags = schema.Set(
         title=_(u'Bluechurch Tags'),
         value_type=schema.Choice(
@@ -80,6 +81,8 @@ class IBluechurchevent(model.Schema):
         required=False,
         )
     
+      
+    widget(eventformen='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     eventformen = schema.Set(
         title=_(u'Event Type'),
         value_type=schema.Choice(

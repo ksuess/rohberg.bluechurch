@@ -13,7 +13,7 @@
     <index name="eventcity" meta_type="FieldIndex">
       <indexed_attr value="eventcity"/>
     </index>
-    <index name="profile_type" meta_type="FieldIndex">
+    <index name="profile_type" meta_type="KeywordIndex">
       <indexed_attr value="profile_type"/>
     </index>
 

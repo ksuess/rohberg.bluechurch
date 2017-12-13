@@ -59,6 +59,13 @@
     <!-- Views -->
 
     <browser:page
+        for="Products.CMFCore.interfaces.IFolderish"
+        name="updateprofiletypes"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="cmf.ManagePortal"
+        class=".views.UpdatePofileTypes"
+        />
+    <browser:page
         for="*"
         name="testview"
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
