@@ -287,7 +287,7 @@ p.callout {
 .documentFirstHeading {
     color: @headingcolor;
     border-bottom: none;
-    font-size: 3.3rem;
+    font-size: 4.0rem;
     &.eventmanager {
         // color: lighten(@headingcolor, 20%);
     }
@@ -430,10 +430,19 @@ body.section-contact {
         border: 1px solid @dark-blue;
         max-width: 100%;
     }
+}
+// nicht event_listing for collections:
+body.portaltype-folder,
+body.portaltype-bluechurchinserat,
+body.portaltype-bluechurchpage,
+body.portaltype-dexterity-membrane-bluechurchmembraneprofile,
+body.portaltype-bluechurchevent,
+body.portaltype-bluechurchlocation {
     img {
         max-width: 100%;
     }
 }
+
 
 // main content Bereich
 #content {
@@ -661,9 +670,7 @@ body.template-bluechurchmembraneprofileview {
 /* *** views
 *************************************** */
 
-body.section-locations #main-container,
-body.section-profiles #main-container,
-body.section-events #main-container {
+body.template-bluechurch_event_listing #main-container {
     img, object {
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
@@ -703,9 +710,13 @@ body.template-bluechurch_event_listing  {
                 img, object {
                     // float: left;
                     // padding-right: 0.4rem;
-                    width: 100%;
-                    height: 100%;
+                    // new solution for older browser: width and height
+                    // width: 100%;
+                    // height: 100%;
                     object-fit: cover;
+                    &.default {
+                        width: 100%;
+                    }
                 }
             }
             a {
@@ -733,8 +744,8 @@ body.template-bluechurch_event_listing  {
                 }
             }
             .photoAlbumEntryTitle {
-                font-size: 2.2rem;
-                line-height: 2.4rem;
+                font-size: 2.0rem;
+                line-height: 2.15rem;
                 text-transform: uppercase;
                //  -ms-word-break: break-all;
                //      word-break: break-all;
@@ -751,9 +762,14 @@ body.template-bluechurch_event_listing  {
                 }
             }
             .photoAlbumEntryCity {
-                font-size: 1.6rem;
-                line-height: 1.75rem;
+                font-size: 1.4rem;
+                line-height: 1.5rem;
                 text-transform: uppercase;
+            }
+        }
+        #content-core {
+            .photoAlbumEntry img {
+                max-width: unset;
             }
         }
 
@@ -1014,5 +1030,60 @@ form.pat-autotoc {
 }
 
 
+// squared
+// .frame-square {
+//     display: inline-block;
+//     vertical-align: top;
+//     width: 128px;
+//     height: 128px;
+//     margin-right: .5em;
+//     margin-bottom: .3em;
+// }
+//
+// .crop {
+//   height: 100%;
+//   overflow: hidden;
+//   position: relative;
+//
+//   img {
+//     display: block;
+//     min-width: 100%;
+//     width: unset;
+//     min-height: 100%;
+//     height: unset;
+//     margin: auto;
+//     position: absolute;
+//     top: -100%;
+//     right: -100%;
+//     bottom: -100%;
+//     left: -100%;
+//   }
+// }
 
+.frame-square {
+    display: inline-block;
+    vertical-align: top;
+    width: 128px;
+    height: 128px;
+}
 
+.crop {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  
+  img {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+  }
+  img.landscape {
+      
+  }
+}

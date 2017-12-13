@@ -56,11 +56,13 @@
                         title description;">
 
                 <tal:block>
-                    <span tal:condition="item_hasimage" class="photoAlbumEntryWrapper">
-                        <img tal:attributes="src string:$url/@@images/image/mini" />
+                    <span tal:condition="item_hasimage" class="photoAlbumEntryWrapper frame-square">
+                        <span class="crop">
+                            <img tal:attributes="src string:$url/@@images/image/mini" />
+                        </span>
                     </span>
                     <span tal:condition="not:item_hasimage" class="photoAlbumEntryWrapper">
-                        <img tal:attributes="src string:/++theme++bluechurch/images/default_400.png" />
+                        <img class="default" tal:attributes="src string:/++theme++bluechurch/images/default_400.png" />
                     </span>    
 
                     <span class="photoAlbumEntryTitle" tal:content="title">Title</span>
