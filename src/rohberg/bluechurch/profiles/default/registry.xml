@@ -72,7 +72,9 @@
         <value key="enabled">True</value>
         <value key="sortable">False</value>
         <value key="operations">
-        <element>plone.app.querystring.operation.string.is</element>
+            <element>plone.app.querystring.operation.string.is</element>
+            <element>plone.app.querystring.operation.selection.any</element>
+            <element>plone.app.querystring.operation.selection.all</element>
         </value>
         <value key="group">Metadata</value>
     </records>
@@ -84,7 +86,22 @@
         <value key="enabled">True</value>
         <value key="sortable">False</value>
         <value key="operations">
-        <element>plone.app.querystring.operation.string.is</element>
+            <element>plone.app.querystring.operation.string.is</element>
+            <element>plone.app.querystring.operation.selection.any</element>
+            <element>plone.app.querystring.operation.selection.all</element>
+        </value>
+        <value key="group">Metadata</value>
+    </records>
+    
+    <records interface="plone.app.querystring.interfaces.IQueryField"
+        prefix="plone.app.querystring.field.lastname">
+        <value key="title">Lastname</value>
+        <value key="description">Last Name</value>
+        <value key="enabled">True</value>
+        <value key="sortable">True</value>
+        <value key="operations">
+            <element>plone.app.querystring.operation.string.is</element>
+            <element>plone.app.querystring.operation.string.contains</element>
         </value>
         <value key="group">Metadata</value>
     </records>
