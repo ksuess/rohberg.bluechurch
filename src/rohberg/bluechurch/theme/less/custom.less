@@ -247,7 +247,7 @@ input[type="submit"] {
 .highlighted {
     color: @linkcolor;
     background-color: @linkactive-background;
-    padding: 0 .1em;
+    padding: 0 .1sem;
     a, a:hover {
         text-decoration: none;
         border-bottom: none !important;
@@ -457,12 +457,18 @@ body.portaltype-bluechurchlocation {
 .section-home {
     .documentFirstHeading {
         display: none;
-    }
+        }
     #content {
         color: white;
         background-color: transparent;
         font-weight: bold;
+    }
 }
+.section-photos {
+    #content {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+    }
 }
 
 .label_meta {
@@ -914,6 +920,9 @@ body.template-bluechurch_event_listing  {
 ul.event.summary.details {
     list-style-type: none;
     padding-left: 1em;
+    .timezone {
+        display: none;
+    }
 }
 
 /* *** images
