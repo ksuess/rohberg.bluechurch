@@ -5,7 +5,8 @@ $(document).ready(function() {
         .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_18 + ".jpg')");
 
     
-    // var related_audio = $(".relatedItems a[href$='mp3']").each(function( index ) {
+    
+    // "related item" als audio player anzeigen, wenn mp3 oder aehnliches
     var extensions = ["mp3", "wma", "wav", "m4a", "m4b", "m4p", "mpc", "aiff"];
     for (i = 0; i < extensions.length; i++) {
         var related_audio = $('.relatedItems a[href$="'+ extensions[i] +'"]').each(function( index ) {
