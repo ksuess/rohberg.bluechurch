@@ -13,6 +13,11 @@
     <index name="eventcity" meta_type="FieldIndex">
       <indexed_attr value="eventcity"/>
     </index>
+
+    <index name="country" meta_type="FieldIndex">
+      <indexed_attr value="country"/>
+    </index>
+    
     <index name="profile_type" meta_type="KeywordIndex">
       <indexed_attr value="profile_type"/>
     </index>
@@ -25,5 +30,6 @@
     <column value="eventformen" />
     <column value="city" />
     <column value="eventcity" />
+    <column value="country" />
     <column value="profile_type" />
 </object>
