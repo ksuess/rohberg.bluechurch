@@ -286,13 +286,14 @@ p.callout {
     // width: 45%;
     // float: right;
     // min-width: 30rem;
-    text-align: right;
+    text-align: left;
     border: none;
     background-color: transparent;
     color: white;
     font-size: 2.5rem;
     line-height: 1.4; 
-    padding: 2px 0;    
+    padding: 2px 0;  
+    margin-bottom: 2em;  
     & > span {
         background-color: @dark-blue;         
         display: inline;
@@ -303,6 +304,11 @@ p.callout {
     }
     .highlighted {
         padding: 0;
+    }
+}
+@media (min-width: @plone-screen-sm-min) {
+    .fetterflatter_rechts {
+        text-align: right;
     }
 }
 .fetterflatter_links {
