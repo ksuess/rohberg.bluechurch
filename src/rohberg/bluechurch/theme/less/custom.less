@@ -18,44 +18,44 @@
 @randombackground: extract(@images,@random);
 
 
-@font-face {
-    font-family: 'mic_32_new_rgregular';
-    src: url('mic32new/mic32new-regular-webfont.woff2') format('woff2'),
-         url('mic32new/mic32new-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: 'mic_32_new_rgregular';
+//     src: url('mic32new/mic32new-regular-webfont.woff2') format('woff2'),
+//          url('mic32new/mic32new-regular-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//
+// }
+//
+// @font-face {
+//     font-family: 'mic_32_newmedium';
+//     src: url('mic32new/mic32new-medium-webfont.woff2') format('woff2'),
+//          url('mic32new/mic32new-medium-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//
+// }
+//
+// @font-face {
+//     font-family: 'mic_32_new_rgbold';
+//     src: url('mic32new/mic32new-bold-webfont.woff2') format('woff2'),
+//          url('mic32new/mic32new-bold-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//
+// }
+//
+// @font-face {
+//     font-family: 'mic_32_newlight';
+//     src: url('mic32new/mic32new-light-webfont.woff2') format('woff2'),
+//          url('mic32new/mic32new-light-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//
+// }
 
-}
-
-@font-face {
-    font-family: 'mic_32_newmedium';
-    src: url('mic32new/mic32new-medium-webfont.woff2') format('woff2'),
-         url('mic32new/mic32new-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'mic_32_new_rgbold';
-    src: url('mic32new/mic32new-bold-webfont.woff2') format('woff2'),
-         url('mic32new/mic32new-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'mic_32_newlight';
-    src: url('mic32new/mic32new-light-webfont.woff2') format('woff2'),
-         url('mic32new/mic32new-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@plone-font-family-sans-serif:  "mic_32_new_rgregular", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
-@plone-font-family-condensed:   "mic_32_newmedium", "Arial Narrow", sans-serif; //just on 
+@plone-font-family-sans-serif:  "Mic32New-Regular", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
+@plone-font-family-condensed:   "Mic32New-Medium", "Arial Narrow", sans-serif; //just on 
 
 @fontcolor: #172c38;
 @light-fontcolor: white;
@@ -89,6 +89,9 @@
     &::after {
       clear: both;
     }
+}
+.bluechurch_clear {
+    clear: both;
 }
 
 a {
@@ -247,7 +250,7 @@ input[type="submit"] {
 .highlighted {
     color: @linkcolor;
     background-color: @linkactive-background;
-    padding: 0 .1sem;
+    padding: .1em 0.1em .0em 0.1em;
     a, a:hover {
         text-decoration: none;
         border-bottom: none !important;
@@ -262,26 +265,43 @@ p.callout {
     border: none;
     background-color: transparent;
     color: white;
-    // padding: 0;
     font-size: 2.5rem;
-
-
     line-height: 1.4; 
-    padding: 2px 0; 
-    // width: 400px;
-    // margin: 20px auto;
-
-    
+    padding: 2px 0;     
     & > span {
-        background-color: @dark-blue;
-        // padding: 0 0 0 .5em;
-         
+        background-color: @dark-blue;         
         display: inline;
-        padding: 0rem 0.5rem;  
+        padding: .1em 0.3em .0em 0.3em;  
         // Needs prefixing
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
     }
+}
+
+.fetterflatter_rechts {
+    width: 45%;
+    float: right;
+    min-width: 30rem;
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 1.4; 
+    padding: 2px 0;     
+    & > span {
+        background-color: @dark-blue;         
+        display: inline;
+        padding: .1em 0.3em .0em 0.3em;  
+        // Needs prefixing
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+}
+.fetterflatter_links {
+    .fetterflatter_rechts;
+    float: left;
+    text-align: left;
 }
 
 .documentFirstHeading {
