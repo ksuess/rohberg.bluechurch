@@ -256,6 +256,10 @@ input[type="submit"] {
         border-bottom: none !important;
     }
 }
+.highlighted_white {
+    .highlighted;
+    color: #fff;
+}
 
 p.callout {
     width: 70%;
@@ -279,23 +283,26 @@ p.callout {
 }
 
 .fetterflatter_rechts {
-    width: 45%;
-    float: right;
-    min-width: 30rem;
+    // width: 45%;
+    // float: right;
+    // min-width: 30rem;
     text-align: right;
     border: none;
     background-color: transparent;
     color: white;
     font-size: 2.5rem;
     line-height: 1.4; 
-    padding: 2px 0;     
+    padding: 2px 0;    
     & > span {
         background-color: @dark-blue;         
         display: inline;
-        padding: .1em 0.3em .0em 0.3em;  
+        padding: .1em 0.2em .0em 0.2em;  
         // Needs prefixing
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
+    }
+    .highlighted {
+        padding: 0;
     }
 }
 .fetterflatter_links {
@@ -1118,4 +1125,34 @@ form.pat-autotoc {
   img.landscape {
       
   }
+}
+
+
+.fontellostuff {
+    font-family:"Fontello";
+    font-size: 100%;
+    padding: 0;
+    margin:0;
+    position: relative;
+    left: inherit;
+    display: inline-block;
+    color: inherit;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-right: @plone-padding-base-vertical;
+    content: '\e834';
+}
+aside.filterCity {
+    .portletHeader {
+        // cursor: pointer;
+        // color: @linkcolor;
+        .open-down:before {
+            .fontellostuff;
+            content: '\25bc';
+        }
+    }
+    .portletContent {
+        // display: none;
+    }
 }

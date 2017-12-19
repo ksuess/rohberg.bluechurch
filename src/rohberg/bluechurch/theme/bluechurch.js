@@ -15,11 +15,11 @@ $(document).ready(function() {
         });
     } ;
  
-    // collective.collectionfilter
-    $('.filterLabel').each(function(index) {
-        var txt = $(this).text();
-        $(this).text(txt.replace(/-/g, " "));
-    });
+    // // collective.collectionfilter
+    // $('.filterLabel').each(function(index) {
+    //     var txt = $(this).text();
+    //     $(this).text(txt.replace(/-/g, " "));
+    // });
     
     
     $("label[for='__ac_name'], label[for='userid']").text("Email");
@@ -28,5 +28,15 @@ $(document).ready(function() {
     // $("html[lang='de']");
     $("html[lang='de'] label[for='form-widgets-ILeadImage-image']").text("Profilbild");
     $("html[lang='de'] label[for='form-widgets-ILeadImage-image_caption']").text("Legende zum Profilbild");
+    
+    $("aside.filterCity .portletContent").hide();
+    $('aside.filterCity .portletHeader').css({"cursor":"pointer","color": "#81b7e6"});
+    $('aside.filterCity .portletHeader').prepend("<span class='open-down'></span>");
+
+    $("aside.filterCity .portletHeader" ).click(function() {
+      $("aside.filterCity .portletContent").slideToggle( function() {
+        // Animation complete.
+      });
+    });
     
 });
