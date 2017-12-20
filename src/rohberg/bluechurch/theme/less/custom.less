@@ -563,7 +563,8 @@ article.vevent {
     box-shadow: none;
 }
 .portlet.portletEvents,
-.portlet.portletNews {
+.portlet.portletNews,
+[class*="portlet-collection-"] {
     color: white;
     background-color: transparent;
     opacity: 1;
@@ -575,14 +576,14 @@ article.vevent {
         color: white;
 		font-size: @plone-font-size-base;
         text-align: right;
-        padding:@portlet-padding;
-        margin-bottom: 2rem;
+        padding-bottom: 0;
         & > a {
             color: white;
         }
     }
 
-    .portletContent {
+    .portletContent,
+    & {
     	font-size: @plone-font-size-base;
     	border-top: @plone-portlet-border;
     	background: @plone-portlet-content-bg;
@@ -665,6 +666,11 @@ article.vevent {
 .portlet.portletNews {
     .portletContent > ul > li a, .portlet.portletNews .portletContent > ul > li a {
         color: #fff;
+    }
+}
+[class*="portlet-collection-"] {
+    .portletHeader {
+        display: block;
     }
 }
     
