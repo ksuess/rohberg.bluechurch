@@ -92,12 +92,10 @@ class IBluechurchevent(model.Schema):
     
     model.fieldset(
         'categorization',
+        label=_(u'Relations'),
         fields=['beteiligte', 'eventlocation']
     )
-# pattern_options:
-# 'mode': 'search',
-# 'basePath': get_profiles_base_path,
-
+    
     model.load('bluechurchevent.xml')
 
 
