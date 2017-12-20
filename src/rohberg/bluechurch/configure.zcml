@@ -122,4 +122,11 @@ Also hier dann z.B.
       replacement=".monkeypatches.patched_default_from_schema"
       /> 
       
+      
+  <!-- collectionfilter -->
+  <configure xmlns="http://namespaces.zope.org/zope">
+    <adapter factory=".collectionfilter.groupby_modifier" name="modifier_1" />
+  </configure>
+      
+      
 </configure>
