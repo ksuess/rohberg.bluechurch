@@ -83,6 +83,8 @@ class IBluechurchmembraneprofile(IMember):
         min=17,
         max=17
     )
+    directives.omitted('bluechurchcaptcha')
+    directives.no_omit(IAddForm, 'bluechurchcaptcha')
     
     model.fieldset(
         'categorization',
