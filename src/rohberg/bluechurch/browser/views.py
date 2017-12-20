@@ -233,6 +233,19 @@ class TestView(BrowserView):
     """ Testing utilities"""
     
     def wanttoknow(self):
+        context = self.context
+        
+        for item in context.getFolderContents():
+            name = INameFromFullName(item.getObject(), None)
+            print(u"{:10} \t {:30} \t {:30} \t {:30}".format(item.portal_type, item.id, item.getObject().Title(), name and name.title ))
+        return context.id
+        
+            
+        name = INameFromFullName(context, None)
+        print(name)
+        print(name.title)
+        print(context.Title())
+        return "INameFromFullName"
         
         # from dexterity.membrane.content.member import IMember
         # from collective.dexteritytextindexer.utils import searchable
