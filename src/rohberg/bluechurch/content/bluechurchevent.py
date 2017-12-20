@@ -45,11 +45,7 @@ class IBluechurchevent(model.Schema):
             'basePath': get_locations_base_path,
             }
         )
-# pattern_options:
-# 'mode': 'search',
-# 'basePath': get_locations_base_path,
-
-
+        
     beteiligte = RelationList(
         title=_(u"Artists"),
         description=_(u"Beteiligte Artists, Veranstalter"),
