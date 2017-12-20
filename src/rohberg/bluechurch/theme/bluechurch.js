@@ -1,5 +1,6 @@
 $(document).ready(function() {
     
+    // background images
     var random_18 = Math.floor((Math.random() * 18) + 1);
     $("#visual-portal-wrapper")
         .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_18 + ".jpg')");
@@ -15,11 +16,11 @@ $(document).ready(function() {
         });
     } ;
  
-    // // collective.collectionfilter
-    // $('.filterLabel').each(function(index) {
-    //     var txt = $(this).text();
-    //     $(this).text(txt.replace(/-/g, " "));
-    // });
+    // collective.collectionfilter
+    $('.filterLabel').each(function(index) {
+        var txt = $(this).text();
+        $(this).text(txt.replace(/-/g, " "));
+    });
     
     
     $("label[for='__ac_name'], label[for='userid']").text("Email");
