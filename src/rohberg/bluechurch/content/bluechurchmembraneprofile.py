@@ -20,6 +20,7 @@ from Products.membrane.interfaces.events import IMembraneTypeRegisteredEvent
 from dexterity.membrane.content.member import IMember
 from collective import dexteritytextindexer
 from dexterity.membrane.behavior.password import IProvidePasswords
+from dexterity.membrane.behavior.user import INameFromFullName
 
 import logging
 logger = logging.getLogger(__name__)
@@ -121,6 +122,12 @@ ISocial['instagram_url'].description = _(u"e.g. http://www.abcjazzz.com")
 class Bluechurchmembraneprofile(Item):
     """
     """
+    def Title(self):
+        return INameFromFullName(self).title
+
+    @property
+    def title(self):
+        return INameFromFullName(self).title
     
     
         

@@ -27,11 +27,12 @@ def city_event(obj):
         
   
 
-# @indexer(IBluechurchmembraneprofile)
-# def Title(object, **kw):
-#     name = INameFromFullName(object, None)
-#     logger.info(u"indexer name: {} {}".format(name, name.title))
-#     if name is not None:
-#         return name.title
-#     return object.Title()
-#
+@indexer(IBluechurchmembraneprofile)
+def Title(object, **kw):
+    name = INameFromFullName(object, None)
+    # logger.info(u"indexer name: {} {}".format(name, name.title))
+    if name is not None:
+        logger.info(u"indexer name: {}".format(name.title))
+        return name.title
+    return object.Title()
+
