@@ -495,8 +495,14 @@ body.portaltype-bluechurchlocation {
         color: white;
         background-color: transparent;
         font-weight: bold;
+        @media (min-width: @plone-screen-md-min) {
+            h1 {
+                font-size: 52px;
+            }
+        }
     }
 }
+
 .section-photos {
     #content {
         opacity: 1.0;
@@ -551,17 +557,19 @@ article.vevent {
 
 .portlet {
     background-color: white;
-    opacity: 0.7;
-    filter: alpha(opacity=70);
+    opacity: 0.75;
+    filter: alpha(opacity=75);
     border-radius: 0;
     box-shadow: none;
 }
-.portlet.portletEvents {
+.portlet.portletEvents,
+.portlet.portletNews {
     color: white;
     background-color: transparent;
     opacity: 1;
     filter: alpha(opacity=100);    
     box-shadow: none;
+    margin-bottom: 5rem;
     .portletHeader {
         display: none;
         color: white;
@@ -579,6 +587,9 @@ article.vevent {
     	border-top: @plone-portlet-border;
     	background: @plone-portlet-content-bg;
     	font-weight: @plone-font-weight-regular;
+        img {
+            display: none;
+        }
     	& > *, & > div:not(.portalMessage) { //all but ul and tables and portalMessage
     		padding: 10px 15px;
     		margin: 0;
@@ -590,10 +601,11 @@ article.vevent {
     		list-style: none;
     		position: relative;
     		> li {
-                margin-bottom: 2em;
+                margin-bottom: 1.5em;
     			a {
     			display: block;
     			padding:@portlet-padding;
+                padding-top: 5px;
     			position: relative;
     			z-index: 1;
     			color: @linkactive;
@@ -611,6 +623,8 @@ article.vevent {
     			display: block;
     			z-index: 0;
     			padding: @portlet-padding;
+                padding-top: 0;
+                padding-bottom: 0;
     			font-weight: @plone-font-weight-regular;
     			position: relative;
     			margin-top: 0;
@@ -623,6 +637,8 @@ article.vevent {
             .location {
                 color: white;
                 padding: 2px;
+                padding-top: 0;
+                padding-bottom: 0;
                 font-size: 1.7rem;
             }
             .tile {
@@ -645,6 +661,13 @@ article.vevent {
         }
     }
 }
+
+.portlet.portletNews {
+    .portletContent > ul > li a, .portlet.portletNews .portletContent > ul > li a {
+        color: #fff;
+    }
+}
+    
 
 .portletNavigationTree a {
     font-weight: bold;
@@ -1149,16 +1172,33 @@ form.pat-autotoc {
     margin-right: @plone-padding-base-vertical;
     content: '\e834';
 }
+// City Filter
 aside.filterCity {
     .portletHeader {
-        // cursor: pointer;
-        // color: @linkcolor;
-        .open-down:before {
-            .fontellostuff;
-            content: '\25bc';
-        }
+        display: none;
     }
-    .portletContent {
-        // display: none;
+}
+.innerPortletwrapper {
+    display: none;
+}
+.portletWrapperCollapsible {
+    background-color: #fff;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    .portlet {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+    }
+}
+.portletHeaderCollapsible {
+    cursor: pointer;
+    color: @linkcolor;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 13px 15px;
+    .open-down:before,
+    &:before {
+        .fontellostuff;
+        content: '\25bc';
     }
 }
