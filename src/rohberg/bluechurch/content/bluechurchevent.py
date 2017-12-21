@@ -34,20 +34,6 @@ from rohberg.bluechurch import _
 class IBluechurchevent(model.Schema):
     """ Marker interface for Bluechurchevent
     """
-        
-    # eventlocation = RelationChoice(
-    #     title=_(u"Location"),
-    #     required=True,
-    #     vocabulary='plone.app.vocabularies.Catalog',
-    #     )
-    # widget(
-    #     'eventlocation',
-    #     RelatedItemsFieldWidget,
-    #     pattern_options={
-    #         'selectableTypes': ['bluechurchlocation',],
-    #         'basePath': get_locations_base_path,
-    #         }
-    #     )
     
     directives.order_after(city='IEventLocation.location')
     city = schema.TextLine(
@@ -64,37 +50,6 @@ class IBluechurchevent(model.Schema):
         required=True,
         vocabulary='collective.address.CountryVocabulary'
     )
-        
-    # beteiligte = RelationList(
-    #     title=_(u"Artists"),
-    #     description=_(u"Beteiligte Artists, Veranstalter"),
-    #     required=False,
-    #     value_type=RelationChoice(
-    #         vocabulary='plone.app.vocabularies.Catalog',
-    #         )
-    #     )
-    # widget(
-    #     'beteiligte',
-    #     RelatedItemsFieldWidget,
-    #     pattern_options={
-    #         'selectableTypes': ['dexterity.membrane.bluechurchmembraneprofile',],
-    #         'basePath': get_profiles_base_path,
-    #         }
-    #     )
-        
-    # homepage = schema.URI(
-    #     title=_(u"Website"),
-    #     description = _(u"e.g. http://www.abcjazzz.com"),
-    #     required = False,
-    # )
-      
-    # widget(bluechurchtags='z3c.form.browser.checkbox.CheckBoxFieldWidget')
-    # bluechurchtags = schema.Set(
-    #     title=_(u'Bluechurch Tags'),
-    #     value_type=schema.Choice(
-    #         vocabulary='rohberg.bluechurch.BluchurchTags'),
-    #     required=False,
-    #     )
     
       
     widget(eventformen='z3c.form.browser.checkbox.CheckBoxFieldWidget')
@@ -104,12 +59,7 @@ class IBluechurchevent(model.Schema):
             vocabulary='rohberg.bluechurch.Eventformen'),
         required=False,
         )
-    
-    # model.fieldset(
-    #     'categorization',
-    #     label=_(u'Relations'),
-    #     # fields=['beteiligte', 'eventlocation']
-    # )
+
     
     model.load('bluechurchevent.xml')
 
