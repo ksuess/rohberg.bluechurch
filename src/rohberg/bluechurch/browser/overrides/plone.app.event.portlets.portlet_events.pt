@@ -2,8 +2,6 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       tal:omit-tag="">
-      <tal:comment tal:condition="nothing">changes
-      ksuess 16.11.2017 no images. see item_hasimage and False</tal:comment>
 <section class="portlet portletEvents"
     i18n:domain="plone.app.event">
 
@@ -24,20 +22,15 @@
                       item_url      item/url;
                       item_descr    item/description;
                       item_title    item/title;
-                      item_hasimage item/context/image|nothing;"
+                      item_city item/context/city;"
           tal:attributes="class python:'portletItem odd' if oddrow else 'portletItem even'">
         <span class="portletItemDetails">
           <tal:date replace="structure python:view.formatted_date(item)" />
         </span>
-        <span class="location" tal:content="item/context/eventlocation/to_object/city | nothing">City</span>
+        <span class="location" tal:content="item_city">City</span>
         <a href="#" class="tile"
             tal:attributes="href item_url;
-                            title item_descr"
-            tal:define="scale item/context/@@images|nothing;">
-          <span tal:condition="python:item_hasimage and False">
-              <img tal:define="img_tag python:scale.scale('image', scale=thumb_scale).tag(css_class='pull-right thumb-'+thumb_scale)"
-                   tal:replace="structure img_tag" />
-          </span>
+                            title item_descr">
           <span tal:replace="item_title">Some Event</span>
         </a>
 

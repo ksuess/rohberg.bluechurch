@@ -17,3 +17,9 @@ msgstr ""
 
 msgid "New Entries"
 msgstr "New Entries"
+
+msgid "bluechurch_event_listing"
+msgstr "Bluechurch Event Listing"
+
+msgid "bluechurch_event_listing_simple"
+msgstr "Bluechurch Event Listing Simple"

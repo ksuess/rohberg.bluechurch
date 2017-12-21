@@ -21,15 +21,7 @@
 
         </h1>
     </tal:collection>
-  <ul class="mode_selector">
-    <li>
-      <a class="mode_ical"  href="" tal:attributes="href view/ical_url"
-         title="Download this event in iCal format"
-         i18n:attributes="title title_add_to_ical;">
-          <span i18n:translate="label_add_to_ical">iCal</span></a>
 
-    </li>
-  </ul>
 </metal:custom_title>
 
 <metal:content-core fill-slot="content-core">
@@ -47,7 +39,7 @@
                    + getattr(data, 'last_name', '') or None; 
                   title python:fullname or data.title;
                   description data/description|string:;
-                  city data/city|data/eventlocation/to_object/city|string:;
+                  city data/city|string:;
                   desc_or_title python:description or title;
                   url data/absolute_url;
                   start_date data/start|nothing;

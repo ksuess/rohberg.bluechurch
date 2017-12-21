@@ -32,7 +32,7 @@
         <div class="container" 
 	         tal:define="isAnon context/@@plone_portal_state/anonymous;">
             <div class="row">
-                <div class="profile_meta col-xs-12 col-sm-2">
+                <div class="profile_meta col-xs-12 col-sm-4">
                     <p tal:content="context/city">City</p>
                     <p>
                         <tal:typen tal:repeat="typ context/profile_type">
@@ -65,17 +65,7 @@
                 </div>
             </tal:ls>
         </div>
-        
-        <div class="meta_block" 
-            tal:define="starringat view/starringat" 
-            tal:condition="starringat"><span class="label_meta" i18n:translate="Starring at">Starring at</span>  
-            <tal:ls tal:repeat="ll starringat">
-                <div>
-                    <a tal:attributes="href python:ll.absolute_url()"
-                        tal:content="ll/Title">event</a>
-                </div>
-            </tal:ls>
-        </div>
+
         
         <div class="meta_block" tal:condition="view/locations"><span class="label_meta">Locations</span> 
             <tal:ls tal:repeat="ll view/locations">

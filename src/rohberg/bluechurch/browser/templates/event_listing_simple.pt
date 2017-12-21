@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rohberg.bluechurch">
+<body>
+
+<metal:custom_title fill-slot="content-title" tal:define="header view/header_string">
+    <tal:folder tal:condition="not:view/is_collection">
+        <h1 class="documentFirstHeading">
+          <span tal:replace="header/main" tal:condition="header/main"/>
+
+        </h1>
+        <h2 tal:content="header/sub" tal:condition="header/sub" />
+    </tal:folder>
+    <tal:collection tal:condition="view/is_collection">
+        <h1 class="documentFirstHeading">
+          <span tal:replace="context/title" />
+
+        </h1>
+    </tal:collection>
+
+</metal:custom_title>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+<tal:def define="batch view/events;
+                 toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
+
+    <section>
+        <tal:items repeat="data batch">       
+            <div class="eventEntry" 
+                tal:define="
+                      fullname python:data.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and 
+                      (getattr(data, 'first_name', '') and (getattr(data, 'first_name', '')+' ') or '')
+                       + getattr(data, 'last_name', '') or None; 
+                      title python:fullname or data.title;
+                      description data/description|string:;
+                      city data/city|string:;
+                      desc_or_title python:description or title;
+                      start_date data/start|nothing;">
+
+                  <a tal:attributes="href data/absolute_url;">
+                    <div class="eventEntryLeft">
+
+                        <tal:block tal:define="item_location data/location|string:;">
+                            <span class="eeStart" 
+                                tal:content="python:view.localized_time(start_date)">Startdate</span>
+                            <tal:location tal:condition="item_location"><span tal:content="item_location">Location</span>, </tal:location>
+                            <span class="eeCity" tal:content="city">City</span>
+                        </tal:block>
+
+                    </div>      
+              
+                    <div class="eventEntryRight">
+                        <tal:block tal:define="item_location data/location|string:;">
+                            <span class="eeTitle" tal:content="title">Title</span>
+                        </tal:block>
+                    </div>
+
+                  </a>
+            </div>
+            
+            
+        </tal:items>
+
+    </section>
+
+  <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+</tal:def>
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 from plone.memoize import view
+from plone import api
 from Products.CMFPlone.PloneBatch import Batch
 from plone.app.querystring import queryparser
 from plone.app.event.browser.event_listing import EventListing
@@ -22,8 +23,11 @@ class BluechurchEventListing(EventListing):
         
         self.schnupsi = u"foo"
         
+    def localized_time(self, date):
+        localized = api.portal.get_localized_time(datetime=date, long_format=True)
+        return localized
 
-    # @view.memoize
+    @view.memoize
     def events(self, ret_mode=RET_MODE_ACCESSORS, expand=True, batch=True):
         # logger.info("getting batch for event_listing")
         res = []

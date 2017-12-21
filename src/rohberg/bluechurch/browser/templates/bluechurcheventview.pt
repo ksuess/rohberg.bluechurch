@@ -5,25 +5,18 @@
 <body>
     <metal:content-core fill-slot="content-core">
 
-    
-        <div tal:content="structure view/w/IRichText.text/render" />
 
-
-
-        <tal:eventsummary replace="structure context/@@event_summary"/>
-
-        <div class="meta_block" class="meta_block" tal:condition="context/homepage"><span class="label_meta">Website</span> 
-            <a tal:attributes="href context/homepage" 
-                target="_blank" 
-                tal:content="context/homepage">Website</a>
+        <!-- <tal:eventsummary replace="structure context/@@event_summary"/> -->
+        
+        <div tal:define="item_location context/location|string:;">
+            <tal:date replace="view/start" /> <tal:location tal:condition="item_location"><span tal:content="item_location">Location</span>, </tal:location><span tal:content="context/city|string:">City</span>
         </div>
-            
-        <div class="meta_block"><span class="label_meta">Location</span> 
-            <a tal:attributes="href python:view.location_obj.absolute_url()" 
-                href="#"
-                tal:content="view/location_title">Location</a>, 
-                <span tal:content="view/location_obj/city">City</span>
+        <div class="discreet small">
+            <span tal:content="structure view/w/eventformen/render" />
         </div>
+
+
+        <div class="fulltext" tal:content="structure view/w/IRichText.text/render" />
 
         <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
@@ -31,24 +24,6 @@
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
         </div>
 
-        <div class="meta_container">
-
-            <div class="meta_block" tal:define="beteiligte view/beteiligte" 
-                tal:condition="beteiligte"><span class="label_meta" i18n:translate="label_beteiligte">Beteiligte Artists</span>
-                <tal:beteiligte tal:repeat="beteiligter beteiligte">
-                    <tal:item tal:define="is_last repeat/beteiligter/end">
-                        <a tal:attributes="href beteiligter/url"
-                            href="#"
-                            tal:content="beteiligter/fullname">Fullname Artist</a><span tal:condition="not: is_last">, </span>
-                    </tal:item>
-                </tal:beteiligte>
-            </div>
-        
-        
-            <div class="meta_block"><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>
-            <div class="meta_block"><span class="label_meta" i18n:translate="label_eventform">Eventform</span><span tal:content="structure view/w/eventformen/render" /></div>
-            
-        </div>
         
         
     </metal:content-core>

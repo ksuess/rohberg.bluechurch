@@ -78,14 +78,14 @@ Also hier dann z.B.
   
   
   <!-- Location -->
-  <subscriber
+  <!-- <subscriber
       for="rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation
            zope.lifecycleevent.interfaces.IObjectModifiedEvent"
       handler=".eventhandlers.notifyEventAfterLocationChange"
-  />
+  /> -->
   
 
-  <adapter factory=".content.bluechurchevent.BluechurchEventAccessor" />
+  <!-- <adapter factory=".content.bluechurchevent.BluechurchEventAccessor" /> -->
   
   
   <genericsetup:registerProfile

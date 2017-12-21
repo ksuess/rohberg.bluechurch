@@ -16,6 +16,8 @@ from Products.statusmessages.interfaces import IStatusMessage
 from plone.dexterity.browser.view import DefaultView
 from plone.app.content.interfaces import INameFromTitle
 from Products.CMFCore.utils  import getToolByName
+from zope.component import getMultiAdapter
+from zope.contentprovider.interfaces import IContentProvider
 
 from dexterity.membrane.behavior.user import INameFromFullName
 
@@ -72,14 +74,7 @@ class BluechurchmembraneprofileView(DefaultView):
             if obj.portal_type=="bluechurchevent":
                 result.append(obj)
         return result 
-           
-    def starringat(self):
-        obs = back_references(self.context, "beteiligte")
-        result = []
-        for obj in obs:
-            if obj.portal_type=="bluechurchevent":
-                result.append(obj)
-        return result
+
         
     def locations(self):
         obs = back_references(self.context, "kontaktperson")
@@ -136,46 +131,29 @@ class BluechurchlocationView(OwnedView):
     def __call__(self):
         # add_resource_on_request(self.request, 'bluechurch-locationsearch')
         return super(BluechurchlocationView, self).__call__()
-    
-    def events(self):
-        obs = back_references(self.context, "eventlocation")
-        result = []
-        for obj in obs:
-            if obj.portal_type=="bluechurchevent":
-                result.append(obj)
-        return result
-    
+
+
 class BluechurcheventView(OwnedView):
     """
     """
+
+    def formatted_date(self, occ):
+        provider = getMultiAdapter(
+            (self.context, self.request, self),
+            IContentProvider, name='formatted_date'
+        )
+        return provider(occ)
     
-    @property
-    @memoize
-    def location_obj(self):
-        obj = self.context.eventlocation.to_object
-        # logger.info("location_obj geholt")
-        return obj
-    
-    @property
-    def location_title(self):
-        return self.location_obj.Title()
-    
-    def beteiligte(self):
-        profiles = [rel.to_object for rel in self.context.beteiligte]
-        result = [{'fullname':INameFromTitle(profile).title, 'url':profile.absolute_url()} for profile in profiles]
-        return result
-        
-    # def city(self):
-    #     logger.info("BluechurcheventView def city")
-    #     context = self.context
-    #     event = context.portal_catalog(id=context.id)
-    #     return event[0]['eventcity']
+    def start(self):
+        localized = api.portal.get_localized_time(datetime=self.context.start, long_format=True)
+        return localized
 
 
 class BluechurchinseratView(OwnedView):
     """
     """    
-    
+
+
 class BluechurchpageView(OwnedView):
     """
     """    

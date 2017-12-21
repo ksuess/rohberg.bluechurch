@@ -5,7 +5,7 @@
   <a tal:define="
       description context/Description|string:;
       title context/pretty_title_or_id|string:;
-      city context/city|context/eventlocation/to_object/city|string:;
+      city context/city|string:;
       profile_type context/profile_type|nothing;
       fullname python:u'{} {}'.format(getattr(context, 'first_name', ''), getattr(context.aq_explicit, 'last_name', ''));
       

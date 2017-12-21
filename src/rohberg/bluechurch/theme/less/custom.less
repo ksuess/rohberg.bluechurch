@@ -94,6 +94,8 @@
     clear: both;
 }
 
+.small { font-size: 90%; }
+
 a {
     outline: 0 !important;
 }
@@ -1192,6 +1194,7 @@ aside.filterCity {
     background-color: #fff;
     opacity: 0.75;
     filter: alpha(opacity=75);
+    margin-bottom: 1em;
     .portlet {
         opacity: 1.0;
         filter: alpha(opacity=100);
@@ -1207,5 +1210,76 @@ aside.filterCity {
     &:before {
         .fontellostuff;
         content: '\25bc';
+    }
+}
+
+
+// Event AddForm
+#formfield-form-widgets-IEventBasic-open_end,
+#formfield-form-widgets-IEventBasic-whole_day,
+#formfield-form-widgets-IEventRecurrence-recurrence,
+body.portaltype-bluechurchevent.template-edit #formfield-form-widgets-IBasic-description,
+body.template-bluechurchevent #formfield-form-widgets-IBasic-description {
+    display: none;
+}
+
+body.template-bluechurcheventview {
+    abbr {
+        cursor: unset;
+        border: none;
+        text-decoration: none;
+    }
+    .fulltext {
+        margin-top: 2em;
+    }
+}
+
+
+body.template-bluechurch_event_listing_simple {
+    .portlet {
+        opacity: .6;
+        filter: alpha(opacity=60);
+    }
+    #content {
+        background: transparent;
+        .eventEntry {
+            background-color: @dark-blue;
+            margin: 0 0 .9em 0;
+            padding: 0 5px;
+                .eventEntryLeft,
+                .eventEntryRight {
+                    display: block;
+                }
+                .eventEntryLeft {    
+                }
+            .eeTitle {
+                font-size: 20px;
+            }
+            a {
+                padding: 5px 0 4px 0; 
+                &:hover {
+                text-decoration: none;
+                }
+            }
+            &:hover {
+                background-color: @dark-blue;
+            }
+}
+    }
+}
+
+@media (min-width: @plone-screen-md-min) {
+    body.template-bluechurch_event_listing_simple {
+        #content {
+            .eventEntry {
+                .eventEntryLeft,
+                .eventEntryRight {
+                    display: inline-block;
+                }
+                .eventEntryLeft {
+                    width: 20em;        
+                }
+            }
+        }
     }
 }
