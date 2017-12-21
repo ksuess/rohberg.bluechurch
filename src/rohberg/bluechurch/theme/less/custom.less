@@ -183,7 +183,8 @@ body {
 #user_actions {
     color: @light-fontcolor;
     float: right;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
     z-index: 10000;
     position: relative;
     text-align: right;
@@ -284,11 +285,12 @@ p.callout {
     }
 }
 
-.fetterflatter_rechts {
+.fetterflatter_rechts,
+.fetterflatter_links {
     // width: 45%;
     // float: right;
     // min-width: 30rem;
-    text-align: left;
+    text-align: justify;
     border: none;
     background-color: transparent;
     color: white;
@@ -308,15 +310,15 @@ p.callout {
         padding: 0;
     }
 }
+
 @media (min-width: @plone-screen-sm-min) {
+    .fetterflatter_links {
+        text-align: left;
+    }
     .fetterflatter_rechts {
         text-align: right;
+        float: right;
     }
-}
-.fetterflatter_links {
-    .fetterflatter_rechts;
-    float: left;
-    text-align: left;
 }
 
 .documentFirstHeading {
@@ -1048,7 +1050,8 @@ body.template-galleryview {
 }
 
 body.template-summary_view {
-    .documentByLine {
+    .documentByLine,
+    .tileFooter a {
         display: none;
     }
 }
@@ -1222,6 +1225,14 @@ body.portaltype-bluechurchevent.template-edit #formfield-form-widgets-IBasic-des
 body.template-bluechurchevent #formfield-form-widgets-IBasic-description {
     display: none;
 }
+// Felder ausblenden
+#formfield-form-widgets-ICategorization-language {
+    display: none;
+}
+// filed under
+nav#category {
+    display: none;
+}
 
 body.template-bluechurcheventview {
     abbr {
@@ -1277,7 +1288,7 @@ body.template-bluechurch_event_listing_simple {
                     display: inline-block;
                 }
                 .eventEntryLeft {
-                    width: 20em;        
+                    width: 22em;        
                 }
             }
         }

@@ -7,7 +7,6 @@
         <div tal:content="structure view/w/IRichText.text/render" />
 
         <br>
-        <div class="meta_block" tal:condition="context/bluechurchtags"><span class="label_meta">Tags</span><span tal:content="structure view/w/bluechurchtags/render" /></div>
         
         <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
             <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
