@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-12 13:25+0000\n"
+"POT-Creation-Date: 2017-12-21 22:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: rohberg.bluechurch\n"
 
-#: ../content/bluechurchmembraneprofile.py:29
+#: ../content/bluechurchmembraneprofile.py:33
 msgid "Artist"
 msgstr ""
 
@@ -22,27 +22,23 @@ msgstr ""
 msgid "Artist oder Veranstalter"
 msgstr "Profile"
 
-#: ../content/bluechurchevent.py:54
-#: ../content/bluechurchpage.py:29
+#: ../content/bluechurchpage.py:36
 msgid "Artists"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:30
+#: ../content/bluechurchmembraneprofile.py:34
 msgid "Band"
 msgstr ""
 
-#: ../content/bluechurchevent.py:55
-#: ../content/bluechurchpage.py:30
+#: ../content/bluechurchpage.py:37
 msgid "Beteiligte Artists, Veranstalter"
 msgstr "Associated Artists and Event Manager"
 
-#: ../content/bluechurchmembraneprofile.py:103
+#: ../content/bluechurchmembraneprofile.py:69
 msgid "Biography"
 msgstr ""
 
-#: ../content/bluechurchevent.py:77
-#: ../content/bluechurchinserat.py:24
-#: ../content/bluechurchmembraneprofile.py:54
+#: ../content/bluechurchmembraneprofile.py:84
 msgid "Bluechurch Tags"
 msgstr ""
 
@@ -76,7 +72,7 @@ msgstr ""
 msgid "CartoDB.DarkMatterNoLabels"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:108
+#: ../content/bluechurchmembraneprofile.py:140
 msgid "Confirm Password"
 msgstr ""
 
@@ -92,7 +88,7 @@ msgstr "Sermon, Concert, Workshop,..."
 msgid "Dokument im Researchbereich"
 msgstr "Research Document"
 
-#: ../content/bluechurchmembraneprofile.py:100
+#: ../content/bluechurchmembraneprofile.py:132
 msgid "E-mail Address"
 msgstr ""
 
@@ -144,23 +140,19 @@ msgstr ""
 msgid "Event Location"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:33
+#: ../content/bluechurchmembraneprofile.py:37
 msgid "Event Manager"
 msgstr ""
 
-#: ../content/bluechurchevent.py:84
+#: ../content/bluechurchevent.py:57
 msgid "Event Type"
-msgstr ""
-
-#: ../browser/templates/bluechurchlocationview.pt:28
-msgid "Events of this location"
 msgstr ""
 
 #: ../browser/templates/doc_actions.pt:15
 msgid "File"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:97
+#: ../content/bluechurchmembraneprofile.py:52
 msgid "First Name"
 msgstr ""
 
@@ -172,7 +164,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:107
+#: ../browser/templates/bluechurchprofileview.pt:79
 msgid "Inserate"
 msgstr "Marketplace Adds"
 
@@ -180,7 +172,7 @@ msgstr "Marketplace Adds"
 msgid "Installs the rohberg.bluechurch add-on."
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:32
+#: ../content/bluechurchmembraneprofile.py:36
 msgid "Interested Person"
 msgstr ""
 
@@ -188,12 +180,12 @@ msgstr ""
 msgid "Kontaktperson"
 msgstr "Contact"
 
-#: ../content/bluechurchmembraneprofile.py:96
-msgid "Last Name or Band Name"
+#: ../content/bluechurchmembraneprofile.py:57
+msgid "Last Name"
 msgstr ""
 
-#: ../content/bluechurchevent.py:36
-msgid "Location"
+#: ../content/bluechurchmembraneprofile.py:128
+msgid "Last Name or Band Name"
 msgstr ""
 
 #: ../browser/controlpanel.py:44
@@ -257,11 +249,11 @@ msgstr ""
 msgid "OpenStreetMap.Mapnik"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:106
+#: ../content/bluechurchmembraneprofile.py:138
 msgid "Password"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:80
+#: ../content/bluechurchmembraneprofile.py:110
 msgid "Prevent spam by typing in the result of 13 + 4."
 msgstr ""
 
@@ -269,7 +261,7 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:47
+#: ../content/bluechurchmembraneprofile.py:76
 msgid "Profile Type"
 msgstr ""
 
@@ -282,11 +274,11 @@ msgid "Register"
 msgstr "register"
 
 #: ../behaviors/kontakt.py:89
-#: ../content/bluechurchmembraneprofile.py:87
+#: ../content/bluechurchmembraneprofile.py:119
 msgid "Relations"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:116
+#: ../browser/templates/bluechurchprofileview.pt:88
 msgid "Research"
 msgstr ""
 
@@ -322,10 +314,6 @@ msgstr ""
 msgid "Stamen.Watercolor"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:89
-msgid "Starring at"
-msgstr ""
-
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "Suche, Biete"
 msgstr "Search and Find"
@@ -334,7 +322,7 @@ msgstr "Search and Find"
 msgid "The recipient gets an email with your email address to get back to you."
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:31
+#: ../content/bluechurchmembraneprofile.py:35
 msgid "Theologian"
 msgstr ""
 
@@ -362,9 +350,9 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: ../content/bluechurchevent.py:71
-#: ../content/bluechurchlocation.py:43
-#: ../content/bluechurchmembraneprofile.py:101
+#: ../content/bluechurchlocation.py:44
+#: ../content/bluechurchmembraneprofile.py:62
+#: ../content/bluechurchpage.py:30
 msgid "Website"
 msgstr ""
 
@@ -372,7 +360,7 @@ msgstr ""
 msgid "You are already registered."
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:79
+#: ../content/bluechurchmembraneprofile.py:109
 msgid "bluechurchcaptcha"
 msgstr "Captcha"
 
@@ -381,18 +369,40 @@ msgstr "Captcha"
 msgid "default_map_layer"
 msgstr ""
 
-#: ../content/bluechurchevent.py:72
-#: ../content/bluechurchlocation.py:44
-#: ../content/bluechurchmembraneprofile.py:102
+#: ../content/bluechurchmembraneprofile.py:134
 msgid "e.g. http://www.abcjazzz.com"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:67
+#: ../content/bluechurchmembraneprofile.py:145
+msgid "e.g. plus.google.com/+ElizabethLeddy"
+msgstr ""
+
+#: ../content/bluechurchlocation.py:45
+#: ../content/bluechurchmembraneprofile.py:63
+#: ../content/bluechurchpage.py:31
+msgid "e.g. www.abcjazzz.com"
+msgstr ""
+
+#: ../content/bluechurchmembraneprofile.py:143
+msgid "e.g. www.facebook.com/myprofile"
+msgstr ""
+
+#: ../content/bluechurchmembraneprofile.py:146
+msgid "e.g. www.instagram.com/myprofile"
+msgstr ""
+
+#: ../content/bluechurchmembraneprofile.py:144
+msgid "e.g. www.twitter.com/myprofile"
+msgstr ""
+
+#: ../content/bluechurchevent.py:41
+#: ../content/bluechurchmembraneprofile.py:97
 msgid "help_city"
 msgstr ""
 
 #. Default: "Select the country from the list."
-#: ../content/bluechurchmembraneprofile.py:72
+#: ../content/bluechurchevent.py:48
+#: ../content/bluechurchmembraneprofile.py:102
 msgid "help_country"
 msgstr ""
 
@@ -411,26 +421,17 @@ msgstr ""
 msgid "help_map_layers"
 msgstr ""
 
-#: ../content/bluechurchmembraneprofile.py:62
+#: ../content/bluechurchmembraneprofile.py:92
 msgid "help_zip_code"
 msgstr ""
-
-#. Default: "iCal"
-#: ../browser/templates/event_listing.pt:29
-msgid "label_add_to_ical"
-msgstr "iCal"
-
-#. Default: "Beteiligte Artists"
-#: ../browser/templates/bluechurcheventview.pt:37
-msgid "label_beteiligte"
-msgstr "Involved"
 
 #: ../browser/contactform.py:121
 msgid "label_cancel"
 msgstr "cancel"
 
 #. Default: "City"
-#: ../content/bluechurchmembraneprofile.py:66
+#: ../content/bluechurchevent.py:40
+#: ../content/bluechurchmembraneprofile.py:96
 msgid "label_city"
 msgstr "City"
 
@@ -440,14 +441,10 @@ msgid "label_contact_button"
 msgstr "Contact"
 
 #. Default: "Country"
-#: ../content/bluechurchmembraneprofile.py:71
+#: ../content/bluechurchevent.py:47
+#: ../content/bluechurchmembraneprofile.py:101
 msgid "label_country"
 msgstr "Country"
-
-#. Default: "Eventform"
-#: ../browser/templates/bluechurcheventview.pt:49
-msgid "label_eventform"
-msgstr "Event Type"
 
 #. Default: "Google maps API Key"
 #: ../browser/controlpanel.py:83
@@ -460,9 +457,9 @@ msgid "label_google_maps_link"
 msgstr "find in map"
 
 #. Default: "Kontakt"
-#: ../browser/templates/bluechurcheventview.pt:28
-#: ../browser/templates/bluechurchinseratview.pt:12
-#: ../browser/templates/bluechurchlocationview.pt:20
+#: ../browser/templates/bluechurcheventview.pt:21
+#: ../browser/templates/bluechurchinseratview.pt:11
+#: ../browser/templates/bluechurchlocationview.pt:23
 msgid "label_kontaktperson"
 msgstr "Contact"
 
@@ -486,7 +483,7 @@ msgid "label_subject"
 msgstr "Subject"
 
 #. Default: "Zip Code"
-#: ../content/bluechurchmembraneprofile.py:61
+#: ../content/bluechurchmembraneprofile.py:91
 msgid "label_zip_code"
 msgstr "ZIP"
 
@@ -497,8 +494,3 @@ msgstr ""
 #: ../configure.zcml:107
 msgid "rohberg.bluechurch (uninstall)"
 msgstr ""
-
-#. Default: "Download this event in iCal format"
-#: ../browser/templates/event_listing.pt:26
-msgid "title_add_to_ical"
-msgstr "Download in iCal format"
