@@ -69,7 +69,7 @@ class IOwnercontact(model.Schema):
     # write_permission(kontaktperson='rohberg.bluechurch.addbluechurchcontent')
     kontaktperson = RelationChoice(
         title=_(u"Kontaktperson"),
-        description=_(u"Kontaktperson"),
+        # description=_(u"Kontaktperson"),
         required=True,
         vocabulary='plone.app.vocabularies.Catalog',
         defaultFactory=profile_current_user,
