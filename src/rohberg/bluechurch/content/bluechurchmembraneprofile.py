@@ -22,6 +22,8 @@ from collective import dexteritytextindexer
 from dexterity.membrane.behavior.password import IProvidePasswords
 from dexterity.membrane.behavior.user import INameFromFullName
 
+from rohberg.bluechurch.fields import URI_bluechurch
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -35,6 +37,8 @@ profile_types = SimpleVocabulary(
         SimpleTerm(value=u'eventmanager', title=_(u'Event Manager'))]
     )
 
+    
+    
 class IBluechurchmembraneprofile(IMember):
     """
     Artist or Event Manager
@@ -43,6 +47,12 @@ class IBluechurchmembraneprofile(IMember):
     dexteritytextindexer.searchable('first_name')
     dexteritytextindexer.searchable('last_name')
     dexteritytextindexer.searchable('bio')
+    
+    website = URI_bluechurch(
+        title=_(u"Website"),
+        description = _(u"e.g. www.abcjazzz.com"),
+        required = False,
+    )
     
     widget(profile_type='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     profile_type = schema.Set(
@@ -113,10 +123,10 @@ IProvidePasswords['confirm_password'].required = True
 IProvidePasswords['confirm_password'].title = _(u"Confirm Password")
 
 from collective.address.behaviors import ISocial
-ISocial['facebook_url'].description = _(u"e.g. http://www.abcjazzz.com")
-ISocial['twitter_url'].description = _(u"e.g. http://www.abcjazzz.com")
-ISocial['google_plus_url'].description = _(u"e.g. http://www.abcjazzz.com")
-ISocial['instagram_url'].description = _(u"e.g. http://www.abcjazzz.com")
+ISocial['facebook_url'].description = _(u"e.g. www.facebook.com/myprofile")
+ISocial['twitter_url'].description = _(u"e.g. www.twitter.com/myprofile")
+ISocial['google_plus_url'].description = _(u"e.g. plus.google.com/+ElizabethLeddy")
+ISocial['instagram_url'].description = _(u"e.g. www.instagram.com/myprofile")
 
 @implementer(IBluechurchmembraneprofile)
 class Bluechurchmembraneprofile(Item):

@@ -47,10 +47,18 @@
         
         <div tal:content="structure context/bio">Bio</div>
         
-        <div><a tal:condition="context/homepage" 
+        <tal:homepage tal:define="website context/website">
+            <div tal:condition="website">
+                <a tal:attributes="href website" 
+                    target="_blank" 
+                    tal:content="python:website[website.index('://')+3:]">Website</a>
+            </div>
+        </tal:homepage>
+        
+        <!-- <div><a tal:condition="context/homepage"
             tal:content="context/homepage | nothing"
             tal:attributes="href context/homepage | nothing"
-            target="_blank">Website</a></div>
+            target="_blank">Website</a></div> -->
 
         <br>
         

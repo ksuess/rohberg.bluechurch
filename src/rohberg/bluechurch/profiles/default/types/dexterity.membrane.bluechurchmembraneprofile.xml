@@ -37,8 +37,8 @@
          <element value="plone.app.dexterity.behaviors.metadata.IOwnership" /> -->
      <!--element value="plone.app.content.interfaces.INameFromTitle" /-->
      <element value="plone.app.relationfield.behavior.IRelatedItems"/>
-     <element value="dexterity.membrane.behavior.user.INameFromFullName" />
      <element value="dexterity.membrane.behavior.user.IMembraneUser" />
+     <element value="dexterity.membrane.behavior.user.INameFromFullName" />
      <element value="dexterity.membrane.behavior.password.IProvidePasswords" />
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
      <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />

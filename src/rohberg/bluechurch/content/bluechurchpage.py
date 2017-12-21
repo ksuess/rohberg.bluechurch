@@ -14,6 +14,7 @@ from zope.interface import implementer
 
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
 from rohberg.bluechurch.utils import get_profiles_base_path, get_locations_base_path
+from rohberg.bluechurch.fields import URI_bluechurch
 
 import logging
 logger = logging.getLogger(__name__)
@@ -24,6 +25,12 @@ from rohberg.bluechurch import _
 class IBluechurchpage(model.Schema):
     """ Marker interface for Bluechurchpage
     """
+    
+    homepage = URI_bluechurch(
+        title=_(u"Website"),
+        description = _(u"e.g. www.abcjazzz.com"),
+        required = False,
+    )
     
     beteiligte = RelationList(
         title=_(u"Artists"),

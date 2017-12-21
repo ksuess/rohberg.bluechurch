@@ -26,6 +26,7 @@ from collective import dexteritytextindexer
 
 from rohberg.bluechurch.content.bluechurchmembraneprofile import IBluechurchmembraneprofile
 from rohberg.bluechurch.content.interfaces import IBluechurchMemberContent
+from rohberg.bluechurch.fields import URI_bluechurch
 
 import logging
 logger = logging.getLogger(__name__)
@@ -38,10 +39,10 @@ class IBluechurchlocation(model.Schema):
     """    
     # TODO: make location fields searchable
     # dexteritytextindexer.searchable('bio')
-        
-    homepage = schema.URI(
+
+    homepage = URI_bluechurch(
         title=_(u"Website"),
-        description = _(u"e.g. http://www.abcjazzz.com"),
+        description = _(u"e.g. www.abcjazzz.com"),
         required = False,
     )
     

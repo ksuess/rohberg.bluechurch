@@ -8,11 +8,14 @@
 
         <div tal:content="structure view/w/IRichText.text/render" />
 
-        <div class="meta_block" tal:condition="context/homepage"><span class="label_meta">Website</span> 
-            <a tal:attributes="href context/homepage" 
-                target="_blank" 
-                tal:content="context/homepage">Website</a>
-        </div>
+
+        <tal:homepage tal:define="homepage context/homepage">
+            <div class="meta_block" tal:condition="homepage"><span class="label_meta">Website</span> 
+                <a tal:attributes="href homepage" 
+                    target="_blank" 
+                    tal:content="python:homepage[homepage.index('://')+3:]">Website</a>
+            </div>
+        </tal:homepage>
         
         <tal:address replace="structure context/@@base_location_view" />
         
