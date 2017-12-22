@@ -54,11 +54,6 @@
                     tal:content="python:website[website.index('://')+3:]">Website</a>
             </div>
         </tal:homepage>
-        
-        <!-- <div><a tal:condition="context/homepage"
-            tal:content="context/homepage | nothing"
-            tal:attributes="href context/homepage | nothing"
-            target="_blank">Website</a></div> -->
 
         <br>
         
