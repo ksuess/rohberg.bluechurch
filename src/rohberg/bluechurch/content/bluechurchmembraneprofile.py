@@ -125,7 +125,7 @@ IProvidePasswords['confirm_password'].title = _(u"Confirm Password")
 from collective.address.behaviors import ISocial
 ISocial['facebook_url'].description = _(u"e.g. www.facebook.com/myprofile")
 ISocial['twitter_url'].description = _(u"e.g. www.twitter.com/myprofile")
-ISocial['google_plus_url'].description = _(u"e.g. plus.google.com/+ElizabethLeddy")
+ISocial['google_plus_url'].description = _(u"e.g. plus.google.com/myprofile")
 ISocial['instagram_url'].description = _(u"e.g. www.instagram.com/myprofile")
 
 @implementer(IBluechurchmembraneprofile)
