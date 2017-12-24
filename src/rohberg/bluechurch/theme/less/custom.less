@@ -1230,7 +1230,8 @@ body.template-bluechurchevent #formfield-form-widgets-IBasic-description {
 #formfield-form-widgets-IGeolocatable-geolocation .form-group,
 [id^="formfield-form-widgets-ISocial-"],
 body.portaltype-dexterity-membrane-bluechurchmembraneprofile #formfield-form-widgets-homepage,
-body.template-dexterity-membrane-bluechurchmembraneprofile #formfield-form-widgets-homepage {
+body.template-dexterity-membrane-bluechurchmembraneprofile #formfield-form-widgets-homepage,
+#form-widgets-bio_text_format {
     display: none;
 }
 // filed under
@@ -1296,5 +1297,16 @@ body.template-bluechurch_event_listing_simple {
                 }
             }
         }
+    }
+}
+
+// pagination
+
+.pagination {
+    li {
+        &.active > span {
+        color: white; //@linkcolor-light;
+        border: none !important;
+    }
     }
 }
