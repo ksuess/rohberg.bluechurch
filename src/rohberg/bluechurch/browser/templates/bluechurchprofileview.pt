@@ -45,7 +45,7 @@
             </div>
         </div>
         
-        <div tal:content="structure context/bio">Bio</div>
+        <div tal:content="structure context/bio/output|context/bio|nothing">Bio</div>
         
         <tal:homepage tal:define="website context/website">
             <div tal:condition="website">
