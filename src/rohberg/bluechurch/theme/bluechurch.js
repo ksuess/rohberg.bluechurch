@@ -8,13 +8,26 @@ $(document).ready(function() {
     
     
     // "related item" als audio player anzeigen, wenn mp3 oder aehnliches
-    var extensions = ["mp3", "wma", "wav", "m4a", "m4b", "m4p", "mpc", "aiff"];
+    var extensions = ["mp3", "mp4", "wma", "wav", "m4a", "m4b", "mpc", "aiff"];
+    // "m4p", 
     for (i = 0; i < extensions.length; i++) {
         var related_audio = $('.relatedItems a[href$="'+ extensions[i] +'"]').each(function( index ) {
             var filename = "/"+$(this).attr('href').split("/").slice(3).join("/");
             $(this).parent().html($(this).html() +'<br><audio src="'+ filename +'" controls="controls"></audio>');
         });
     } ;
+    
+    // Links auf Audio-Files in Player umwandeln
+    var extensions = ["mp3", "mp4", "wma", "wav", "m4a", "m4b", "mpc", "aiff"];
+    // "m4p",
+    var snip = '<audio src="mysrc" controls="controls"></audio>'
+    for (i = 0; i < extensions.length; i++) {
+        $('a[href$=".' + extensions[i] + '"]').each(function() {
+            var href = $(this).attr('href');
+            $(this).parent().html(snip.replace('mysrc',href));
+        })
+    } ;
+    
  
     // collective.collectionfilter
     $('.filterLabel').each(function(index) {
