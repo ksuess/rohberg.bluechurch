@@ -22,9 +22,10 @@ $(document).ready(function() {
     // "m4p",
     var snip = '<audio src="mysrc" controls="controls"></audio>'
     for (i = 0; i < extensions.length; i++) {
-        $('a[href$=".' + extensions[i] + '"]').each(function() {
-            var href = $(this).attr('href');
-            $(this).parent().html(snip.replace('mysrc',href));
+        $("body").not("body.template-file_view")
+            .find('a[href$=".' + extensions[i] + '"]').each(function() {
+                var href = $(this).attr('href');
+                $(this).parent().html(snip.replace('mysrc',href));
         })
     } ;
     
