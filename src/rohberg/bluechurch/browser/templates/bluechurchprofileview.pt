@@ -20,8 +20,8 @@
             data-pat-plone-modal="width: 400"
             i18n:translate="label_contact_button">Contact</a>
            <div id="modalanonymouslogin" style="display: none">
-                 <p><a href="./login">Login</a></p>
-                 <p><a href="/profiles/++add++dexterity.membrane.bluechurchmembraneprofile">Register</a></p>
+                 <p><a href="./login" i18n:translate="">login</a></p>
+                 <p><a href="/profiles/++add++dexterity.membrane.bluechurchmembraneprofile" i18n:translate="">register</a></p>
            </div>
            
         <h1 class="documentFirstHeading" 
