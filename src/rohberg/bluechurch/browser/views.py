@@ -101,10 +101,21 @@ class BluechurchmembraneprofileView(DefaultView):
         return result
         
     @property
+    @memoize
     def title(self):
         context = self.context
         ttl = INameFromFullName(context).title
+        print(u"profile title {}".format(ttl))
         return ttl
+        
+    @property
+    @memoize
+    def is_current(self):
+        context = self.context
+        current = api.user.get_current()
+        current_profile = api.content.get(UID=current.id)
+        print(u"is_current {}".format(context.id == current_profile.id))
+        return context.id == current_profile.id
 
 
 class OwnedView(DefaultView):

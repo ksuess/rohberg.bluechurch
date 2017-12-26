@@ -7,7 +7,7 @@
     <metal:content-core fill-slot="content-core"
         tal:define="isAnon context/@@plone_portal_state/anonymous;">
         <a href="#"
-            tal:condition="not:isAnon"
+            tal:condition="python: not isAnon and not view.is_current"
             tal:attributes="href python:context.absolute_url()+'/@@contact_bluechurchprofile'"
             class="plone-btn plone-btn-large plone-btn-primary pat-plone-modal"
             id="clickme_contact_bluechurchmember"
