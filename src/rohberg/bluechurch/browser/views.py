@@ -105,7 +105,7 @@ class BluechurchmembraneprofileView(DefaultView):
     def title(self):
         context = self.context
         ttl = INameFromFullName(context).title
-        print(u"profile title {}".format(ttl))
+        # print(u"profile title {}".format(ttl))
         return ttl
         
     @property
@@ -114,7 +114,8 @@ class BluechurchmembraneprofileView(DefaultView):
         context = self.context
         current = api.user.get_current()
         current_profile = api.content.get(UID=current.id)
-        print(u"is_current {}".format(context.id == current_profile.id))
+        if not current_profile: # admin
+            return False
         return context.id == current_profile.id
 
 
