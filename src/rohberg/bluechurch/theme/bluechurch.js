@@ -25,7 +25,8 @@ $(document).ready(function() {
         $("body").not("body.template-file_view")
             .find('a[href$=".' + extensions[i] + '"]').each(function() {
                 var href = $(this).attr('href');
-                $(this).parent().html(snip.replace('mysrc',href));
+                // $(this).parent().html(snip.replace('mysrc',href));
+                $(this).replaceWith(snip.replace('mysrc',href));
         })
     } ;
     
