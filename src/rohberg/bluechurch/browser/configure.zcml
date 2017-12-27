@@ -275,4 +275,105 @@
              />
      </class>
            
+           
+<!-- Bug Fix Factory Addform for dexterity types in Plone 5.1 -->
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="Collection"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="Document"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="Folder"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="Link"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="File"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="Image"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="bluechurchevent"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="bluechurchinserat"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="bluechurchpage"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="bluechurchlocation"
+         />
+         
+     <adapter
+         for="Products.CMFCore.interfaces.IFolderish
+              zope.publisher.interfaces.browser.IDefaultBrowserLayer
+              plone.dexterity.interfaces.IDexterityFTI"
+         provides="zope.publisher.interfaces.browser.IBrowserPage"
+         factory="plone.dexterity.browser.add.DefaultAddView"
+         name="EasyForm"
+         />
+     
 </configure>
