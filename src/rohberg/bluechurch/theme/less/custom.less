@@ -10,12 +10,6 @@
 
 @dark-blue: #172c38;
 
-@zufallszahl: Math.random();
-
-@images: 'blue_church_0331.jpg', 'blue_church_0365.jpg', 'blue_church_0407.jpg', ;
-@length: length(@images);
-@random: `Math.ceil(Math.random() * (@{length}))`;
-@randombackground: extract(@images,@random);
 
 
 // @font-face {
@@ -117,9 +111,9 @@ body {
 
 #visual-portal-wrapper {
     background-color: @grey;
-    // background-image: url('/++theme++bluechurch/images/backgrounds/@{randombackground}');
     background-attachment: fixed;
-    background-size: cover
+    // background-size: cover;
+    background-repeat: repeat;
 }
 
 .plone-modal {
@@ -1319,4 +1313,11 @@ body.section-help {
     img {
         max-width: 100%;
     }
+}
+
+@media(max-width: @plone-screen-sm-min) {
+    
+}
+@media(max-width: @plone-screen-xs-min) {
+    
 }
