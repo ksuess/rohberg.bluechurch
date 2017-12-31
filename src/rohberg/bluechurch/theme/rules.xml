@@ -32,7 +32,6 @@
     <after css:theme-children="head" css:content="head script" />
     <after css:theme-children="head">
         <script src="/++theme++bluechurch/bluechurch_20171231.js"></script>
-        <script src="/++plone++rohberg.bluechurch/schnupsi.js"></script>
     </after>
     <replace css:content="#portal-logo img">
         <div></div>
