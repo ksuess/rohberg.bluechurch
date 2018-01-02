@@ -67,6 +67,8 @@
 @linkhover-background: @linkactive-background;
 @linkcolor-light: lighten(@linkcolor, 10%);
 
+@plone-sitenav-link-hover-bg: @linkcolor-light;
+
 @navigationcolor: white;
 @navigation-background: transparent;
 @navigationactive: #81b7e6;
@@ -566,6 +568,9 @@ article.vevent {
     filter: alpha(opacity=75);
     border-radius: 0;
     box-shadow: none;
+    .portletContent > ul > li a {
+        color: @linkcolor;
+    }
 }
 .portlet.portletEvents,
 .portlet.portletNews,
@@ -619,7 +624,9 @@ article.vevent {
                 background-color: @linkactive-background;
                 font-size: @titel3-font-size;
     			}
-    			> a {border-top: @plone-portlet-border;}
+    			> a {
+                    border-top: @plone-portlet-border;
+                }
     			&:first-child > a {border-top: 0;}				
     		}
     		ul {
