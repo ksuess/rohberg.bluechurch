@@ -61,24 +61,22 @@ $(document).ready(function() {
     $("html[lang='de'] label[for='form-widgets-ILeadImage-image']").text("Profilbild");
     $("html[lang='de'] label[for='form-widgets-ILeadImage-image_caption']").text("Legende zum Profilbild");
     
-    // Collapse City Filter
-    // $("aside.filterCity .portletContent").hide();
-    // $('aside.filterCity .portletHeader').css({"cursor":"pointer","color": "#81b7e6"});
-    // $('aside.filterCity .portletHeader').prepend("<span class='open-down'></span>");
-
-
-    var portlet = $("aside.filterCity")
-    var pwrapper = portlet.parent().addClass("portletWrapperCollapsible");    
-    var pheader = portlet.find(".portletHeader");
-    portlet.wrap( "<div class='innerPortletwrapper'></div>" );
-    var iwrapper = pwrapper.find(".innerPortletwrapper");
-    pheader.addClass("portletHeaderCollapsible").insertBefore(iwrapper);
     
 
-    pheader.click(function() {
-      iwrapper.slideToggle( function() {
-        // Animation complete.
-      });
+    var portlet = $("aside.filterCity, aside.filterCountry");
+    portlet.each(function() {
+        var pwrapper = $(this).parent().addClass("portletWrapperCollapsible");    
+        var pheader = $(this).find(".portletHeader");
+        $(this).wrap( "<div class='innerPortletwrapper'></div>" );
+        var iwrapper = pwrapper.find(".innerPortletwrapper");
+        pheader.addClass("portletHeaderCollapsible").insertBefore(iwrapper);
+    
+
+        pheader.click(function() {
+          iwrapper.slideToggle( function() {
+            // Animation complete.
+          });
+        }); 
     });
     
     

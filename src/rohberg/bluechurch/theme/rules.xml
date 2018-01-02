@@ -31,7 +31,7 @@
     <!-- Script -->
     <after css:theme-children="head" css:content="head script" />
     <after css:theme-children="head">
-        <script src="/++theme++bluechurch/bluechurch_20171231.js"></script>
+        <script src="/++theme++bluechurch/bluechurch_20180102.js"></script>
     </after>
     <replace css:content="#portal-logo img">
         <div></div>
