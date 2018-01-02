@@ -7,46 +7,23 @@
       i18n:domain="rohberg.bluechurch">
 <body>
 
-<metal:custom_title fill-slot="content-title" tal:define="header view/header_string">
-    <tal:folder tal:condition="not:view/is_collection">
-        <h1 class="documentFirstHeading">
-          <span tal:replace="header/main" tal:condition="header/main"/>
-
-        </h1>
-        <h2 tal:content="header/sub" tal:condition="header/sub" />
-    </tal:folder>
-    <tal:collection tal:condition="view/is_collection">
-        <h1 class="documentFirstHeading">
-          <span tal:replace="context/title" />
-
-        </h1>
-    </tal:collection>
-
-</metal:custom_title>
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
-<tal:def define="batch view/events;
-                 toLocalizedTime nocall: context/@@plone/toLocalizedTime;">
-
+<tal:def define="batch view/events;">
     <section class="row">
         <tal:items repeat="data batch">            
             
             <div class="photoAlbumEntry col-xs-12 col-sm-6 ">
               <a tal:define="
-                  fullname python:data.portal_type=='dexterity.membrane.bluechurchmembraneprofile' and 
-                  (getattr(data, 'first_name', '') and (getattr(data, 'first_name', '')+' ') or '')
-                   + getattr(data, 'last_name', '') or None; 
-                  title python:fullname or data.title;
+                  title data/title|string:;
                   description data/description|string:;
                   city data/city|string:;
                   desc_or_title python:description or title;
                   url data/absolute_url;
-                  start_date data/start|nothing;
-                  item_hasimage nocall:data/@@images/image|nothing;"
+                  item_hasimage data/@@images/image|nothing;"
                   tal:attributes="href url;
                         title description;">
-
                 <tal:block>
                     <span tal:condition="item_hasimage" class="photoAlbumEntryWrapper frame-square">
                         <span class="crop">
@@ -59,24 +36,15 @@
 
                     <span class="photoAlbumEntryTitle" tal:content="title">Title</span>
                     <span class="photoAlbumEntryCity" tal:content="city">City</span>
-                    <span class="photoAlbumEntryStartdate" 
-                        tal:content="python:here.toLocalizedTime(start_date)">Startdate</span>
                 </tal:block>
-
-
               </a>
             </div>
-            
-            
-            
-            
             
         </tal:items>
 
     </section>
 
   <div metal:use-macro="context/batch_macros/macros/navigation" />
-
 </tal:def>
 </metal:block>
 </metal:content-core>

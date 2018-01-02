@@ -22,6 +22,7 @@ $(document).ready(function() {
     }
     // end background images
     
+    
     // "related item" als audio player anzeigen, wenn mp3 oder aehnliches
     var extensions = ["mp3", "mp4", "wma", "wav", "m4a", "m4b", "mpc", "aiff"];
     // "m4p", 
