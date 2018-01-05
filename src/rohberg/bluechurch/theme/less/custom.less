@@ -349,19 +349,18 @@ input[type="submit"] {
 
 
 
+#content-core a {
+    border-bottom: none;
+    &:hover{
+        border-bottom: none;
+    }
+}
 #content a {
     color: @linkcolor;
     background-color: @link-background;
     &:hover, &:active {
         color: @linkactive;
-        background-color: @linkactive-background;
-        border-bottom: none;
-    }
-}
-#content-core a {
-    border-bottom: none;
-    &:hover{
-        border-bottom: none;
+        text-decoration: underline;
     }
 }
 
@@ -1371,6 +1370,9 @@ body.template-bluechurcheventview {
     }
     .fulltext {
         margin-top: 2em;
+    }
+    .iCalEntry {
+        margin-left: 1em;
     }
 }
 

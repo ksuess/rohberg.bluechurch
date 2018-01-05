@@ -22,10 +22,6 @@
                               item_has_image      python:item.getIcon"
                               tal:attributes="title item/Description">
               <a tal:attributes="href  item_url">
-                 <img class="thumb-icon"
-                      tal:define="getIcon python:item.getURL() +'/@@images/image/icon'"
-                      tal:condition="item_has_image"
-                      tal:attributes="src  string:$getIcon">
                   <span tal:attributes="class string:$item_type_class $item_wf_state_class url;"
                         tal:content="item/pretty_title_or_id">
                           Item Title</span>

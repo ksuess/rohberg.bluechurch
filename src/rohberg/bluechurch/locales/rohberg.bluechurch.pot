@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-26 12:07+0000\n"
+"POT-Creation-Date: 2018-01-05 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -423,6 +423,11 @@ msgstr ""
 msgid "help_zip_code"
 msgstr ""
 
+#. Default: "iCal"
+#: ../browser/templates/bluechurcheventview.pt:15
+msgid "label_add_to_ical"
+msgstr ""
+
 #: ../browser/contactform.py:121
 msgid "label_cancel"
 msgstr ""
@@ -455,7 +460,7 @@ msgid "label_google_maps_link"
 msgstr ""
 
 #. Default: "Kontakt"
-#: ../browser/templates/bluechurcheventview.pt:21
+#: ../browser/templates/bluechurcheventview.pt:24
 #: ../browser/templates/bluechurchinseratview.pt:11
 #: ../browser/templates/bluechurchlocationview.pt:23
 msgid "label_kontaktperson"
@@ -497,4 +502,9 @@ msgstr ""
 
 #: ../configure.zcml:107
 msgid "rohberg.bluechurch (uninstall)"
+msgstr ""
+
+#. Default: "Download this event in iCal format"
+#: ../browser/templates/bluechurcheventview.pt:11
+msgid "title_add_to_ical"
 msgstr ""
