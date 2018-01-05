@@ -1,26 +1,26 @@
 $(document).ready(function() {
     
-    // background images    
-    var random_17 = Math.floor((Math.random() * 17) + 1); // Zahl von 1 bis 17
-    
-    // media query event handler
-    if (matchMedia) {
-      const mq = window.matchMedia("(min-width: 480px)");
-      mq.addListener(WidthChange);
-      WidthChange(mq);
-    }
-
-    // media query change
-    function WidthChange(mq) {
-        if (mq.matches) {
-            $("#visual-portal-wrapper")
-                .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_17 + ".jpg')");
-        } else {
-            $("#visual-portal-wrapper")
-                .css("background-image", "url('/++theme++bluechurch/images/backgrounds_small/blue_church_" + random_17 + "_resized.jpg')");
-        }
-    }
-    // end background images
+    // // background images
+    // var random_17 = Math.floor((Math.random() * 17) + 1); // Zahl von 1 bis 17
+    //
+    // // media query event handler
+    // if (matchMedia) {
+    //   const mq = window.matchMedia("(min-width: 480px)");
+    //   mq.addListener(WidthChange);
+    //   WidthChange(mq);
+    // }
+    //
+    // // media query change
+    // function WidthChange(mq) {
+    //     if (mq.matches) {
+    //         $("#visual-portal-wrapper")
+    //             .css("background-image", "url('/++theme++bluechurch/images/backgrounds/blue_church_" + random_17 + ".jpg')");
+    //     } else {
+    //         $("#visual-portal-wrapper")
+    //             .css("background-image", "url('/++theme++bluechurch/images/backgrounds_small/blue_church_" + random_17 + "_resized.jpg')");
+    //     }
+    // }
+    // // end background images
     
     
     // "related item" als audio player anzeigen, wenn mp3 oder aehnliches
