@@ -73,6 +73,14 @@
         class=".views.TestView"
         template="templates/testviewtemplate.pt"
         />
+        
+    <browser:page
+        for="*"
+        name="background"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        permission="zope2.Public"
+        class=".views.BackgroundView"
+        />
        
     <browser:page
         name="mail_template_bluechurch_en"

@@ -1,10 +1,15 @@
 # coding: utf-8
+import os
+from random import randint
 from smtplib import SMTPException, SMTPRecipientsRefused
 from Acquisition import aq_inner
+from zExceptions import BadRequest
 from zope.component.hooks import getSite
+from zope.interface import implementer
 from zope.component import queryUtility
 from zope.component import getMultiAdapter
 from zope.schema.interfaces import IVocabularyFactory
+from zope.publisher.interfaces import IPublishTraverse
 
 from plone.memoize.view import memoize
 from plone import api
@@ -217,6 +222,43 @@ def sendMail(sender, recipient, subject, text, REQUEST):
     # logger.info(u"Bluechurch Message '{}' has been sent to {} {}".format(subject, recipient.id, recipient.email))
 
 
+
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+@implementer(IPublishTraverse)
+class BackgroundView(BrowserView):
+    """ Helpers
+    
+    call with /@@background/big
+    or
+    /@@background/small
+    """
+    
+    def publishTraverse(self, request, size="big"):
+        if size not in ('big', 'small'):
+            raise BadRequest
+        self.size = size
+        return self
+        
+    def background(self, size="big"):
+        num = randint(1, 17)
+        path = os.path.dirname(__file__)
+        if size == "small":
+            filename = "theme/images/backgrounds_small/blue_church_"+str(num)+"_resized.jpg"
+        else:
+            filename = "theme/images/backgrounds/blue_church_"+str(num)+".jpg"
+        self.filename = "/".join([path, "..", filename])
+        f = open(self.filename, "rb")
+        image_data = f.read()
+        f.close()
+        self.request.response.setHeader("Content-type", "image/jpeg")
+        return image_data
+        
+        
+    def __call__(self):
+        bg = self.background(self.size)
+        return bg
+        
 
 
 class TestView(BrowserView):
