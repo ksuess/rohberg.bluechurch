@@ -118,7 +118,7 @@ body {
     background-repeat: repeat;
 }
 // small windows
-@media (min-width: @plone-screen-xs-max) {
+@media (max-width: @plone-screen-xs-max) {
     #visual-portal-wrapper {
         &.bg_1 {
             background-image: url('/++theme++bluechurch/images/backgrounds_small/blue_church_1_resized.jpg');
@@ -173,6 +173,7 @@ body {
         }
     }
 }
+
 // not so small windows
 @media (min-width: @plone-screen-xs-min) {
     #visual-portal-wrapper {
