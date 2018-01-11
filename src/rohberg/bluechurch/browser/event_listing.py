@@ -71,6 +71,10 @@ class BluechurchEventListing(EventListing):
         
                 else:
                     res = self._get_events(ret_mode, expand=expand)
+        else:
+            res = self.context.getFolderContents() # brains
+            res = [item.getObject() for item in res]
+            # res = self.context.getItems()
         # !CSRF!
         # for item in res:
         #     item.has_image = item.image and True or False

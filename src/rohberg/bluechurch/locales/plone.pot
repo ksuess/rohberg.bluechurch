@@ -1,7 +1,10 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-12-12 13:25+0000\n"
+"POT-Creation-Date: 2018-01-05 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,18 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: de\n"
-"Language-Name: Deutsch\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: rohberg.bluechurch\n"
-"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
-
+"Domain: plone\n"
 
 msgid "New Entries"
-msgstr "Neue Einträge"
+msgstr "New Entries"
 
 msgid "bluechurch_event_listing"
-msgstr "Bluechurch Event Listing"
+msgstr "Bluechurch Listing"
 
 msgid "bluechurch_event_listing_simple"
-msgstr "Bluechurch Event Listing Simple"
+msgstr "Bluechurch Listing Simple"

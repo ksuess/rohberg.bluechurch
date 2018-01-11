@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-05 16:01+0000\n"
+"POT-Creation-Date: 2018-01-11 16:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -423,7 +423,7 @@ msgid "help_zip_code"
 msgstr ""
 
 #. Default: "iCal"
-#: ../browser/templates/bluechurcheventview.pt:15
+#: ../browser/templates/bluechurcheventview.pt:16
 msgid "label_add_to_ical"
 msgstr ""
 
@@ -459,7 +459,7 @@ msgid "label_google_maps_link"
 msgstr "in Karte finden"
 
 #. Default: "Kontakt"
-#: ../browser/templates/bluechurcheventview.pt:24
+#: ../browser/templates/bluechurcheventview.pt:25
 #: ../browser/templates/bluechurchinseratview.pt:11
 #: ../browser/templates/bluechurchlocationview.pt:23
 msgid "label_kontaktperson"
