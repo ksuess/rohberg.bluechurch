@@ -3,7 +3,8 @@
     i18n:domain="rohberg.bluechurch"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="view_methods" purge="False">
-      <element value="bluechurch_event_listing"
-              i18n:translate=""/>
+      <element value="bluechurch_event_listing" i18n:translate=""/>
+      <element value="bluechurch_event_listing_color" i18n:translate=""/>
+      <element value="bluechurch_event_listing_simple" i18n:translate=""/>
  </property>
 </object>

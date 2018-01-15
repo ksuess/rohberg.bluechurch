@@ -904,7 +904,8 @@ body.section-events #main-container {
     padding-left: 1rem;
 }
 body.template-facetednavigation_view,
-body.template-bluechurch_event_listing  {
+body.template-bluechurch_event_listing,
+body.template-bluechurch_event_listing_color {
         .photoAlbumEntry {
             max-height: 128px;
             overflow: hidden;
@@ -918,7 +919,7 @@ body.template-bluechurch_event_listing  {
                 width: 128px;
                 height: 128px;
                 margin-right: 0.4em;
-                background-color: @grey-light;
+                // background-color: @grey-light;
                 img, object {
                     // float: left;
                     // padding-right: 0.4rem;
@@ -981,7 +982,7 @@ body.template-bluechurch_event_listing  {
         }
         #content-core {
             .photoAlbumEntry img {
-                max-width: unset;
+                max-width: 128px; // siehe auch .crop
             }
         }
 
@@ -1247,35 +1248,6 @@ form.pat-autotoc {
 
 
 // squared
-// .frame-square {
-//     display: inline-block;
-//     vertical-align: top;
-//     width: 128px;
-//     height: 128px;
-//     margin-right: .5em;
-//     margin-bottom: .3em;
-// }
-//
-// .crop {
-//   height: 100%;
-//   overflow: hidden;
-//   position: relative;
-//
-//   img {
-//     display: block;
-//     min-width: 100%;
-//     width: unset;
-//     min-height: 100%;
-//     height: unset;
-//     margin: auto;
-//     position: absolute;
-//     top: -100%;
-//     right: -100%;
-//     bottom: -100%;
-//     left: -100%;
-//   }
-// }
-
 .frame-square {
     display: inline-block;
     vertical-align: top;

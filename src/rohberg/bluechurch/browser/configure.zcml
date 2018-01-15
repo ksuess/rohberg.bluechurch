@@ -197,6 +197,14 @@
         />
     <browser:page
         for="*"
+        name="bluechurch_event_listing_color"
+        class=".event_listing.BluechurchEventListing"
+        template="templates/event_listing_colorful.pt"
+        permission="zope2.View"
+        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
+        />
+    <browser:page
+        for="*"
         name="bluechurch_event_listing_simple"
         class=".event_listing.BluechurchEventListing"
         template="templates/event_listing_simple.pt"

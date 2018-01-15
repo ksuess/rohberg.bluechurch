@@ -266,10 +266,29 @@ class TestView(BrowserView):
     
     def wanttoknow(self):
         context = self.context
+        portal = api.portal
+        
+
+        items = context.portal_catalog(portal_type=['File', 'Image', 'BluechurchLocation', 'dexterity.membrane.bluechurchmembraneprofile'])
+        for item in items[:100000]:
+          obj = item.getObject()
+          size = 0
+          if obj.portal_type == 'File':
+            size = obj.file.size
+          else:
+              field = obj.image
+              if field: 
+                  size = field.size
+          if size > 1024*1024 *1:
+              url = u"<a href='{0}'>{0}</a>".format(item.getURL())
+              print(u"***** {:.1f} {} {}".format(float(size)/1024/1024, url, obj.portal_type))
+
+        return "sizes"
+        
         
         for item in context.getFolderContents():
             name = INameFromFullName(item.getObject(), None)
-            print(u"{:10} \t {:30} \t {:30} \t {:30}".format(item.portal_type, item.id, item.getObject().Title(), name and name.title ))
+            print(u"{:30} \t {:30} \t {:30} \t {:30}".format(item.portal_type, item.id, item.Title, name and name.title ))
         return context.id
         
             

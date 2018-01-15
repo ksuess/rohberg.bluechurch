@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rohberg.bluechurch">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+<tal:def define="batch view/events;">
+    <section class="row">
+        <tal:items repeat="data batch">            
+            
+            <div class="photoAlbumEntry col-xs-12 col-sm-6 ">
+              <a tal:define="
+                  title data/title|string:;
+                  description data/description|string:;
+                  city data/city|string:;
+                  desc_or_title python:description or title;
+                  url data/absolute_url;
+                  item_hasimage data/@@images/image|nothing;"
+                  tal:attributes="href url;
+                        title description;">
+                <tal:block>
+                    <span tal:condition="item_hasimage" class="photoAlbumEntryWrapper">
+                        <span class="nocrop">
+                            <img tal:attributes="src string:$url/@@images/image/mini" />
+                        </span>
+                    </span>
+                    <span tal:condition="not:item_hasimage" class="photoAlbumEntryWrapper">
+                        <img class="default" tal:attributes="src string:/++theme++bluechurch/images/default_400.png" />
+                    </span>    
+
+                    <span class="photoAlbumEntryTitle" tal:content="title">Title</span>
+                    <span class="photoAlbumEntryCity" tal:content="city">City</span>
+                </tal:block>
+              </a>
+            </div>
+            
+        </tal:items>
+
+    </section>
+
+  <div metal:use-macro="context/batch_macros/macros/navigation" />
+</tal:def>
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
