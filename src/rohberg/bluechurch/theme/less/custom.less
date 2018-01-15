@@ -1429,6 +1429,22 @@ body.section-help {
     }
 }
 
+.plone-breadcrumb  {
+    margin-bottom: 2px;
+    ol > li + li::before {
+        content: ">";
+        position: absolute;
+        padding: 0 5px;
+        color: #cccccc;
+        border: none;
+        left: -20px;
+        top: 0px;
+        padding: 0 !important;
+    } 
+}
+
+    
+
 @media(max-width: @plone-screen-sm-min) {
     
 }
