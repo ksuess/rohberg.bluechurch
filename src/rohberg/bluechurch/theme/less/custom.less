@@ -81,6 +81,23 @@
     background-color: transparent;
 }
 
+
+.meta1 {
+    color: @fontcolor;
+    font-size: 2.0rem;
+    line-height: 2.15rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.meta2 {
+    color: @fontcolor;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;        
+}
+
+
 .bluechurch_clearfix {
     &::after {
       clear: both;
@@ -345,7 +362,9 @@ body {
     li {}
 }
 
-    
+.plone-btn {
+    padding: 6px 12px 2px 12px;
+}    
 #content .plone-btn,
 input[type="submit"] {
     border: 1px solid @linkcolor-light;
@@ -489,9 +508,23 @@ body.portaltype-folder {
 }
 
 .newsImageContainer {
+    float: left;
     border-radius: 0;
     // max-height: @thumb_size;
     box-shadow: none;
+}
+
+.leadImage {
+    .newsImageContainer {
+        .frame-square();
+        margin: 0 0.4em 0.4em 0;
+        a {
+            .crop();
+            figcaption {
+                // display: none;
+            }
+        }
+    }
 }
 
 #portal-logo {
@@ -615,6 +648,7 @@ body.section-contact {
 
 
 #content-core {
+    clear: both;
     .container, .container-fluid {
         padding-left: 0px;
     }
@@ -867,11 +901,8 @@ article.vevent {
 
 
 body.template-bluechurchmembraneprofileview {
-    header .documentFirstHeading  {
-        display: none;
-    }
-    .profile_meta {
-        text-transform: uppercase;
+    .documentFirstHeading  {
+        .meta1();
     }
 }
 
@@ -924,6 +955,15 @@ body.section-start iframe {
         filter: grayscale(100%);
     }
 }
+article {
+    header {
+        clear: both;
+    }
+}
+
+.profile_meta {
+    .meta2();
+}
 
 
 /* *** faceted navigation
@@ -957,12 +997,6 @@ body.template-bluechurch_event_listing_color {
                 margin-right: 0.4em;
                 // background-color: @grey-light;
                 img, object {
-                    // float: left;
-                    // padding-right: 0.4rem;
-                    // new solution for older browser: width and height
-                    // width: 100%;
-                    // height: 100%;
-                    object-fit: cover;
                     &.default {
                         width: 100%;
                     }
@@ -1031,6 +1065,11 @@ body.template-bluechurch_event_listing_color {
 /* *** location 
 ***************************************** */
 
+.template-bluechurchlocationview {
+    .documentFirstHeading {
+        .meta1();
+    }
+}
 
 .additionalinfo {
     clear: both;
@@ -1285,16 +1324,18 @@ form.pat-autotoc {
 
 // squared
 .frame-square {
-    display: inline-block;
+    display: block;
     vertical-align: top;
     width: 128px;
     height: 128px;
+    overflow: hidden;
 }
 
 .crop {
   height: 100%;
   overflow: hidden;
   position: relative;
+  display: block;
   
   img {
     display: block;
@@ -1306,6 +1347,7 @@ form.pat-autotoc {
     right: -100%;
     bottom: -100%;
     left: -100%;
+    object-fit: cover;
   }
   img.landscape {
       
@@ -1347,7 +1389,8 @@ aside.filterCity {
         filter: alpha(opacity=100);
     }
 }
-.portletHeaderCollapsible {
+.portletHeaderCollapsible,
+.backlink {
     cursor: pointer;
     color: @linkcolor;
     font-weight: 500;
@@ -1357,6 +1400,27 @@ aside.filterCity {
     &:before {
         .fontellostuff;
         content: '\25bc';
+    }
+}
+
+.backlink {
+    cursor: pointer;
+    color: @linkcolor;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 13px 15px;
+    &:before {
+        .fontellostuff;
+        content: '\25b2';
+    }
+    &:hover {
+        color: @linkcolor;        
+    }
+}
+.portaltype-folder,
+.portaltype-collection {
+    .backlink {
+        display: none;
     }
 }
 

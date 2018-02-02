@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-15 10:59+0000\n"
+"POT-Creation-Date: 2018-02-02 16:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:82
+#: ../browser/templates/bluechurchprofileview.pt:80
 msgid "Inserate"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 msgid "Relations"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:91
+#: ../browser/templates/bluechurchprofileview.pt:89
 msgid "Research"
 msgstr ""
 
@@ -356,6 +356,11 @@ msgstr ""
 
 #: ../browser/forms.py:33
 msgid "You are already registered."
+msgstr ""
+
+#. Default: "^ back to the roots"
+#: ../browser/templates/backviewlet.pt:10
+msgid "backlink"
 msgstr ""
 
 #: ../content/bluechurchmembraneprofile.py:92
@@ -462,7 +467,7 @@ msgstr ""
 #. Default: "Kontakt"
 #: ../browser/templates/bluechurcheventview.pt:25
 #: ../browser/templates/bluechurchinseratview.pt:11
-#: ../browser/templates/bluechurchlocationview.pt:23
+#: ../browser/templates/bluechurchlocationview.pt:34
 msgid "label_kontaktperson"
 msgstr ""
 

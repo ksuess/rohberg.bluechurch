@@ -3,8 +3,8 @@
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="rohberg.bluechurch">
 <body>
-
-    <metal:content-core fill-slot="content-core"
+    
+    <metal:title fill-slot="content-title"
         tal:define="isAnon context/@@plone_portal_state/anonymous;">
         <a href="#"
             tal:condition="python: not isAnon and not view.is_current"
@@ -29,22 +29,20 @@
             <span tal:content="view/title">fullname</span>
         </h1>
         
-        <div class="container" 
-	         tal:define="isAnon context/@@plone_portal_state/anonymous;">
-            <div class="row">
-                <div class="profile_meta col-xs-12 col-sm-4">
-                    <p tal:content="context/city">City</p>
-                    <p>
-                        <tal:typen tal:repeat="typ context/profile_type">
-                            <tal:item tal:define="is_last repeat/typ/end">
-                                <span tal:content="typ"></span><span tal:condition="not: is_last">, </span>
-                            </tal:item>
-                        </tal:typen>
-                    </p>
-                </div>
-            </div>
+        <div class="profile_meta">
+            <p tal:content="context/city">City</p>
+            <p>
+                <tal:typen tal:repeat="typ context/profile_type">
+                    <tal:item tal:define="is_last repeat/typ/end">
+                        <span tal:content="typ"></span><span tal:condition="not: is_last">, </span>
+                    </tal:item>
+                </tal:typen>
+            </p>
         </div>
-        
+    </metal:title>
+
+    <metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
         <div tal:content="structure context/bio/output|context/bio|nothing">Bio</div>
         
         <tal:homepage tal:define="website context/website">
@@ -97,6 +95,7 @@
                 </div>
             </tal:ls>
         </div>
+    </metal:block>
     </metal:content-core>
 </body>
 </html>

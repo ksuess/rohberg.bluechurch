@@ -3,6 +3,17 @@
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="rohberg.bluechurch">
 <body>
+    
+    <metal:title fill-slot="content-title">
+        <h1 class="documentFirstHeading"
+            tal:define="title context/Title"
+            tal:condition="title"
+            tal:content="title">Title or id</h1>
+        <div class="profile_meta">
+            <p tal:content="context/city">City</p>
+        </div>
+    </metal:title>
+    
     <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
 
