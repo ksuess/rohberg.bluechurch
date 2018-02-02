@@ -9,14 +9,14 @@
         <a href="#"
             tal:condition="python: not isAnon and not view.is_current"
             tal:attributes="href python:context.absolute_url()+'/@@contact_bluechurchprofile'"
-            class="plone-btn plone-btn-large plone-btn-primary pat-plone-modal"
+            class="bc-button pull-right pat-plone-modal"
             id="clickme_contact_bluechurchmember"
             data-pat-plone-modal="width: 600"
             i18n:translate="label_contact_button">Contact</a>
         
         <a tal:condition="isAnon"
             href="#modalanonymouslogin" 
-            class="plone-btn plone-btn-large plone-btn-primary pat-plone-modal"
+            class="bc-button pull-right pat-plone-modal"
             data-pat-plone-modal="width: 400"
             i18n:translate="label_contact_button">Contact</a>
            <div id="modalanonymouslogin" style="display: none">

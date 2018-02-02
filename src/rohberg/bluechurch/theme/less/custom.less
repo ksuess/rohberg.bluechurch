@@ -362,14 +362,15 @@ body {
     li {}
 }
 
-.plone-btn {
-    padding: 6px 12px 2px 12px;
-}    
+// For buttons see .bc-button
+.plone-btn,    
 #content .plone-btn,
 input[type="submit"] {
-    border: 1px solid @linkcolor-light;
+    font-size: 1.4rem;
     border-radius: 4px;
+    padding: 5px 10px 3px 10px;
     color: @linkcolor;
+    border: 1px solid @linkcolor;
     background-color: transparent;
     .pull-right();
     margin-left: 1rem;
@@ -377,7 +378,7 @@ input[type="submit"] {
     &:active,
     &:visited,
     &:link {
-        border: 1px solid @linkcolor-light;            
+        border: 1px solid @linkcolor;            
     }
     &:hover {
         background-color: @dark-blue;
@@ -1389,13 +1390,7 @@ aside.filterCity {
         filter: alpha(opacity=100);
     }
 }
-.portletHeaderCollapsible,
-.backlink {
-    cursor: pointer;
-    color: @linkcolor;
-    font-weight: 500;
-    font-size: 18px;
-    padding: 13px 15px;
+.portletHeaderCollapsible {
     .open-down:before,
     &:before {
         .fontellostuff;
@@ -1404,17 +1399,9 @@ aside.filterCity {
 }
 
 .backlink {
-    cursor: pointer;
-    color: @linkcolor;
-    font-weight: 500;
-    font-size: 18px;
-    padding: 13px 15px;
     &:before {
         .fontellostuff;
-        content: '\25b2';
-    }
-    &:hover {
-        color: @linkcolor;        
+        content: '\25c0';
     }
 }
 .portaltype-folder,
@@ -1556,21 +1543,41 @@ body.section-help {
     }
 }
 
-a.bc-button,
-#content a.bc-button,
-#content-core a.bc-button {
-    border: 1px solid #fff;
+// Der neue Button-Standard.
+.bc-button,
+#content .bc-button,
+#content-core .bc-button {
+    font-size: 1.4rem;
     border-radius: 4px;
-    background-color: @linkcolor-light;
-    color: #fff;
-    padding: 3px 10px;
-    // .pull-right();
-    &:hover {
-        background-color: @dark-blue;  
+    padding: 5px 10px 3px 10px;
+    color: @linkcolor;
+    border: 1px solid @linkcolor;
+    background-color: transparent;
+    &:active,
+    &:visited,
+    &:link {        
+    }
+    &.on_the_wild {
+        color: #fff;
         border: 1px solid #fff;
+        background-color: @linkcolor-light;
+        &:active,
+        &:visited,
+        &:link {
+        }
+
+    }
+    &:hover {
+        background-color: @dark-blue;
         text-decoration: none;
     }
+    &.on_the_wild {
+        &:hover {
+        }
+    }
 }
+
+
 .align-center {
     text-align: center;
 }
