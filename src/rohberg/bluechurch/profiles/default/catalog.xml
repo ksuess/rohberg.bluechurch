@@ -33,6 +33,4 @@
     <column value="country" />
     <column value="profile_type" />
     
-    <column value="is_default_page" />	
-    
 </object>
