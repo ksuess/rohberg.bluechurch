@@ -62,7 +62,7 @@ $(document).ready(function() {
     $("html[lang='de'] label[for='form-widgets-ILeadImage-image_caption']").text("Legende zum Profilbild");
     
     
-
+    // Portlets collapsed. Header rausnehmen, damit sichtbar
     var portlet = $("aside.filterCity, aside.filterCountry");
     portlet.each(function() {
         var pwrapper = $(this).parent().addClass("portletWrapperCollapsible");    
