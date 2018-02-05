@@ -6,7 +6,10 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="rohberg.bluechurch">
 <body>
-
+      <tal:comment replace="nothing">
+        images not automatically grayscaled
+        images not cropped
+      </tal:comment>
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">

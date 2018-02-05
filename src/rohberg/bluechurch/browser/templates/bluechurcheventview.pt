@@ -4,7 +4,7 @@
     i18n:domain="rohberg.bluechurch">
 <body>
     <metal:content-core fill-slot="content-core">
-        <div tal:define="item_location context/location|string:;">
+        <div class="event_meta" tal:define="item_location context/location|string:;">
             <tal:date replace="view/start" /> <tal:location tal:condition="item_location"><span tal:content="item_location">Location</span>, </tal:location><span tal:content="context/city|string:">City</span>
             <tal:span tal:define="here_url context/@@plone_context_state/object_url;
                             portal_url context/@@plone_portal_state/portal_url;">

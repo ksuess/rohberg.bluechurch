@@ -124,9 +124,7 @@ Also hier dann z.B.
       
       
   <!-- collectionfilter -->
-  <configure xmlns="http://namespaces.zope.org/zope">
-    <adapter factory=".collectionfilter.groupby_modifier" name="modifier_1" />
-  </configure>
+  <adapter factory=".collectionfilter.groupby_modifier" name="modifier_1" />
       
       
 </configure>

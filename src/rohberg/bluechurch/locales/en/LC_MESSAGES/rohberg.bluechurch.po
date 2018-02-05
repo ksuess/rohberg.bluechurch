@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-02 16:48+0000\n"
+"POT-Creation-Date: 2018-02-05 08:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -357,7 +357,7 @@ msgid "You are already registered."
 msgstr ""
 
 #. Default: "^ back to the roots"
-#: ../browser/templates/backviewlet.pt:10
+#: ../browser/templates/backviewlet.pt:11
 msgid "backlink"
 msgstr "back"
 
@@ -458,14 +458,14 @@ msgid "label_google_api_key"
 msgstr ""
 
 #. Default: "Open in Google Maps"
-#: ../browser/templates/location_base.pt:21
+#: ../browser/templates/location_base.pt:22
 msgid "label_google_maps_link"
 msgstr "find in map"
 
 #. Default: "Kontakt"
 #: ../browser/templates/bluechurcheventview.pt:25
 #: ../browser/templates/bluechurchinseratview.pt:11
-#: ../browser/templates/bluechurchlocationview.pt:34
+#: ../browser/templates/bluechurchpageview.pt:18
 msgid "label_kontaktperson"
 msgstr "Contact"
 
@@ -496,6 +496,10 @@ msgstr "ZIP"
 #: ../browser/templates/bluechurchprofileview.pt:23
 msgid "login"
 msgstr ""
+
+#: ../browser/templates/event_listing_simple.pt:45
+msgid "previous events"
+msgstr "previous events"
 
 #: ../browser/templates/bluechurchprofileview.pt:24
 msgid "register"
