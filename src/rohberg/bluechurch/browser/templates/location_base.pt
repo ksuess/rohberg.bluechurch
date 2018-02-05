@@ -10,111 +10,60 @@
                 address data/address|nothing;
                 social data/social|nothing">
 
-<div class="locationview">
+    <div class="locationview">
+        
+        
+        <tal:geo tal:define="geojson view/data_geojson" tal:condition="geojson">
+          <section class="map">
+            <div class="pat-leaflet" data-geojson='${geojson}' data-pat-leaflet='${view/map_configuration}'></div>
 
-    <tal:geo tal:define="geojson view/data_geojson" tal:condition="geojson">
-      <section class="map">
-        <div class="pat-leaflet" data-geojson='${geojson}' data-pat-leaflet='${view/map_configuration}'></div>
-
-        <div class="documentByLine">
-          <tal:if tal:define="google_maps_link view/google_maps_link" tal:condition="google_maps_link">
-            <a tal:attributes="href google_maps_link" i18n:translate="label_google_maps_link" target="_blank">Open in Google Maps</a>
-          </tal:if>
-        </div>
-      </section>
-    </tal:geo>
+            <div class="documentByLine">
+              <tal:if tal:define="google_maps_link view/google_maps_link" tal:condition="google_maps_link">
+                <a tal:attributes="href google_maps_link" i18n:translate="label_google_maps_link" target="_blank">Open in Google Maps</a>
+              </tal:if>
+            </div>
+          </section>
+        </tal:geo>
 
 
-    <tal:if condition="address">
-      <section class="address">
-        <address>
-            <tal:if condition="address/street|nothing">
-            <div class="street">${address/street}</div>
-            </tal:if>
-            <tal:if condition="address/zip_code|nothing">
-            <div class="street">${address/zip_code}</div>
-            </tal:if>
-            <tal:if condition="address/city|nothing">
-            <div class="street">${address/city}</div>
-            </tal:if>
-            <tal:if condition="address/country|nothing">
-            <div class="street">${address/country}</div>
-            </tal:if>
-          <!-- <dl>
-            <tal:if condition="address/street|nothing">
-            <dt class="street" i18n:translate="label_street" i18n:domain="collective.address">Street</dt>
-            <dd class="street">${address/street}</dd>
-            </tal:if>
+        <tal:homepage tal:define="homepage context/homepage">
+            <div class="meta_block" tal:condition="homepage"> 
+                <a tal:attributes="href homepage" 
+                    target="_blank" 
+                    tal:content="python:homepage[homepage.index('://')+3:]">Website</a>
+            </div>
+        </tal:homepage>
 
-            <tal:if condition="address/zip_code|nothing">
-            <dt class="zip_code" i18n:translate="label_zip_code" i18n:domain="collective.address">Zip</dt>
-            <dd class="zip_code">${address/zip_code}</dd>
-            </tal:if>
 
-            <tal:if condition="address/city|nothing">
-            <dt class="city" i18n:translate="label_city" i18n:domain="collective.address">City</dt>
-            <dd class="city">${address/city}</dd>
-            </tal:if>
-
-            <tal:if condition="address/country|nothing">
-            <dt class="country" i18n:translate="label_country" i18n:domain="collective.address">Country</dt>
-            <dd class="country">${address/country}</dd>
-            </tal:if>
-          </dl> -->
-        </address>
-      </section>
-    </tal:if>
+        <tal:if condition="address">
+          <section class="address">
+            <address>
+                <tal:if condition="address/street|nothing">
+                <div class="street">${address/street}</div>
+                </tal:if>
+                <tal:if condition="address/zip_code|nothing">
+                <div class="street">${address/zip_code}</div>
+                </tal:if>
+                <tal:if condition="address/city|nothing">
+                <div class="street">${address/city}</div>
+                </tal:if>
+                <tal:if condition="address/country|nothing">
+                <div class="street">${address/country}</div>
+                </tal:if>
+            </address>
+          </section>
+        </tal:if>
 
       
-    <tal:if condition="social">
-      <section class="social">
-        <dl>
-          <tal:if condition="social/facebook|nothing">
-          <dt class="facebook">Facebook</dt>
-          <dd class="facebook">
-            <a href="${social/facebook}" class="facebook" title="Facebook"
-                target="_blank">
-              Facebook
-            </a>
-          </dd>
-          </tal:if>
-
-          <tal:if condition="social/twitter|nothing">
-          <dt class="twitter">Twitter</dt>
-          <dd class="twitter">
-            <a href="${social/twitter}" class="twitter" title="Twitter"
-                target="_blank">
-              Twitter
-            </a>
-          </dd>
-          </tal:if>
-
-          <tal:if condition="social/google_plus|nothing">
-          <dt class="google_plus">Google Plus</dt>
-          <dd class="google_plus">
-            <a href="${social/google_plus}" class="google_plus" title="Google Plus"
-                target="_blank">
-              Google+
-            </a>
-          </dd>
-          </tal:if>
-
-          <tal:if condition="social/instagram|nothing">
-          <dt class="instagram">Instagram</dt>
-          <dd class="instagram">
-            <a href="${social/instagram}" class="instagram" title="Instagram"
-                target="_blank">
-              Instagram
-            </a>
-          </dd>
-          </tal:if>
-        </dl>
-      </section>
-    </tal:if>
+        <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+                href="#"
+                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
+        </div>
 
 
 
-</div>
+    </div>
 
 </tal:def>
 

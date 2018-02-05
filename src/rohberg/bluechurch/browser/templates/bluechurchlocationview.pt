@@ -18,24 +18,9 @@
     <metal:block define-macro="content-core">
 
         <div tal:content="structure view/w/IRichText.text/render" />
-
-
-        <tal:homepage tal:define="homepage context/homepage">
-            <div class="meta_block" tal:condition="homepage"><span class="label_meta">Website</span> 
-                <a tal:attributes="href homepage" 
-                    target="_blank" 
-                    tal:content="python:homepage[homepage.index('://')+3:]">Website</a>
-            </div>
-        </tal:homepage>
         
         <tal:address replace="structure context/@@base_location_view" />
         
-        
-        <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
-            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
-                href="#"
-                tal:content="view/kontaktperson_fullname">Kontaktperson</a>
-        </div>
         
         <div class="bluechurch_clear"></div>
     </metal:block>

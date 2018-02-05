@@ -3,7 +3,9 @@ from collective.address.behaviors import IAddress
 from collective.address.behaviors import IContact
 from collective.address.behaviors import ISocial
 from collective.address.vocabulary import get_pycountry_name
+from plone import api
 from plone.api.portal import get_registry_record as getrec
+from plone.app.content.interfaces import INameFromTitle
 from plone.app.uuid.utils import uuidToObject
 from plone.uuid.interfaces import IUUID
 from Products.CMFPlone.utils import safe_unicode
@@ -189,3 +191,15 @@ class LocationView(BrowserView):
             ]
         })
         return geo_json
+        
+    @property
+    def kontaktperson_profile(self):
+        kp = api.content.get(UID=self.context.kontaktperson.to_object.UID())
+        return kp
+        
+        
+    @property
+    def kontaktperson_fullname(self):
+        profile = self.kontaktperson_profile
+        name_title = INameFromTitle(profile)
+        return name_title.title
