@@ -28,12 +28,14 @@ class BaseViewlet(base.ViewletBase):
         return result
         
     # @property
+    @memoize
     def can_edit(self):
         current = api.user.get_current()
         local_roles = api.user.get_roles(user=current, obj=self.context, inherit=True)
         return u"Editor" in local_roles or u"Owner" in local_roles
         
     # @property
+    @memoize
     def can_add(self):
         current = api.user.get_current()
         local_roles = api.user.get_roles(user=current, obj=self.context, inherit=True)
@@ -88,7 +90,15 @@ class DocactionsViewlet(BaseViewlet):
     """
     tal:condition="context/isPrincipiaFolderish"
     """
-    
+
+    @memoize
+    def show(self):
+        context = self.context
+        pt = context.portal_type
+        # logger.info("self.can_add() or self.can_edit() {}".format(self.can_add() or self.can_edit()))
+        return (pt in ["Folder", "Collection",] and self.can_add()) or self.can_edit()
+        
+        
     
 class SnippetsViewlet(BaseViewlet):
     """ diverse Snippets

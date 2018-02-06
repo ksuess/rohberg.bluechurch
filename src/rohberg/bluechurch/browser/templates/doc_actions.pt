@@ -1,5 +1,6 @@
 <ul id="document_actions" 
     class="bluechurch_clearfix"
+    tal:condition="view/show"
     i18n:domain="rohberg.bluechurch"
         tal:define="isAnon context/@@plone_portal_state/anonymous;">
     
