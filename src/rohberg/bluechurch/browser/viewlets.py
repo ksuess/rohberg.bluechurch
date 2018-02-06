@@ -15,12 +15,14 @@ logger = logging.getLogger(__name__)
 class BaseViewlet(base.ViewletBase):
     """ 
     """
+    # TODO: cache per request
     @property
+    @memoize_contextless
     def current_user(self):
-        result = {}
-        
+        result = {}        
         current = api.user.get_current()
         current_profile = api.content.get(UID=current.id)
+        result['id'] = current.id
         result['url'] = current_profile and current_profile.absolute_url() or "#"
         result['fullname'] = current_profile and INameFromTitle(current_profile).title or u""
         return result
