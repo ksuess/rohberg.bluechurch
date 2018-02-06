@@ -31,7 +31,7 @@
     <!-- Script -->
     <after css:theme-children="head" css:content="head script" />
     <after css:theme-children="head">
-        <script src="/++theme++bluechurch/bluechurch_20180105.js"></script>
+        <script src="/++theme++bluechurch/bluechurch_20180206.js"></script>
     </after>
     <replace css:content="#portal-logo img">
         <div></div>
@@ -105,27 +105,5 @@
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load"
       css:if-content=".userrole-reviewer,.userrole-manager" />
- 
-   <!-- <before css:theme-children="#member_user_actions" css:content="#user_actions"  />
-   <before css:theme-children="#member_user_actions" css:content="#member_actions"  css:if-content=".userrole-member" /> -->
- 
-   <!-- <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" /> -->
 
-  <!-- edit link -->
-  <!-- <before css:theme-children="#content-container" css:content="#document_actions"  css:if-content=".userrole-member" /> -->
-
-
-
-  <!-- Pick a random number between 1 - 10 and set as a variable -->
-  <!-- <xsl:variable name="random_10">
-      <xsl:value-of select="(floor(math:random()*10) mod 10) + 1" />
-  </xsl:variable> -->
-  <!-- <before theme-children="/html/body" method="raw">
-      <xsl:attribute name="class">
-          <xsl:value-of select="/html/body/@class" />
-          bg-<xsl:value-of select="17+4" />
-          bg-image-<xsl:value-of select="(1 + floor(math:random()*10))" />
-      </xsl:attribute>
-  </before>
-   -->
 </rules>
