@@ -510,6 +510,10 @@ body.portaltype-collection,
 body.portaltype-folder {
     .documentFirstHeading {
         font-size: 8.0rem;
+        //bis 480px
+        @media (max-width: @plone-screen-xs-min) {
+            font-size: 5rem;
+        }
     }
 }
 
@@ -528,14 +532,22 @@ body.portaltype-folder {
 .leadImage {
     .newsImageContainer {
         .frame-square();
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 300px;
+        max-height: 300px;
         margin: 0 0.4em 0.4em 0;
         a {
             .crop();
             figcaption {
                 // display: none;
             }
+        }
+        // ab 480px
+        @media (min-width: @plone-screen-xs-min) {
+            width: 200px;
+            height: 200px;            
+        }
+        img {
         }
     }
 }
@@ -1153,9 +1165,13 @@ body.template-bluechurch_event_listing_color {
         margin: 0 0 1em 0;
 
         &.map {
-            width: 50%;
+            width: 100%;
             min-height: 400px;
             float: right;
+            // ab 480px
+            @media (min-width: @plone-screen-xs-min) { 
+                width: 50%;
+            }
         }
 
         &.address,
@@ -1467,8 +1483,9 @@ aside.filterCountry {
 
 .backlink {
     &:before {
-        .fontellostuff;
-        content: '\25c0';
+        // .fontellostuff;
+        // content: '\25c0';
+        content:"< "
     }
 }
 .portaltype-folder,
