@@ -87,4 +87,26 @@ $(document).ready(function() {
     });
     
     
+    // $(".plone-navbar-toggle").toggle(function() {
+    //     $(this).removeClass( "collapsed" );
+    //     var target = $(this).attr('data-target');
+    //     $(target).slideDown();
+    // }, function() {
+    //     $(this).addClass( "collapsed" );
+    //     var target = $(this).attr('data-target');
+    //     $(target).slideUp();
+    //
+    // });
+    
+    // Menu on small devices
+    $( ".plone-navbar-toggle" ).click(function(event) {
+        var pnt = $(this);
+        event.stopPropagation();
+        var target = $(this).attr('data-target');
+        $(target).slideToggle( "slow", function() {
+            pnt.toggleClass("expanded");
+        });
+    });
+    
+    
 });
