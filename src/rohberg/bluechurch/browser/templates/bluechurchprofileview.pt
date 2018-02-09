@@ -61,8 +61,10 @@
         <div class="meta_block" tal:condition="view/events"><span class="label_meta">Events</span>  
             <tal:ls tal:repeat="ll view/events">
                 <div>
-                    <a tal:attributes="href python:ll.absolute_url()"
-                        tal:content="ll/Title">event</a>
+                    <a tal:attributes="href python:ll.absolute_url()">
+                        <span tal:content="python:here.toLocalizedTime(ll.start)">start</span>   
+                        <span tal:content="ll/Title">event</span>                     
+                    </a>
                 </div>
             </tal:ls>
         </div>

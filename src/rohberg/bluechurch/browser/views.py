@@ -1,30 +1,29 @@
 # coding: utf-8
-import os
-from random import randint
-from smtplib import SMTPException, SMTPRecipientsRefused
 from Acquisition import aq_inner
-from zExceptions import BadRequest
-from zope.component.hooks import getSite
-from zope.interface import implementer
-from zope.component import queryUtility
-from zope.component import getMultiAdapter
-from zope.schema.interfaces import IVocabularyFactory
-from zope.publisher.interfaces import IPublishTraverse
-
+from DateTime import DateTime
+from dexterity.membrane.behavior.user import INameFromFullName
+import os
 from plone.memoize.view import memoize
 from plone import api
+from plone.dexterity.browser.view import DefaultView
+from plone.app.content.interfaces import INameFromTitle
 from Products.CMFPlone.resources import add_resource_on_request
 from Products.CMFPlone import utils
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
-from plone.dexterity.browser.view import DefaultView
-from plone.app.content.interfaces import INameFromTitle
 from Products.CMFCore.utils  import getToolByName
+from random import randint
+from smtplib import SMTPException, SMTPRecipientsRefused
+from zExceptions import BadRequest
+from zope.component.hooks import getSite
+from zope.interface import implementer
 from zope.component import getMultiAdapter
 from zope.contentprovider.interfaces import IContentProvider
-
-from dexterity.membrane.behavior.user import INameFromFullName
+from zope.component import queryUtility
+from zope.component import getMultiAdapter
+from zope.schema.interfaces import IVocabularyFactory
+from zope.publisher.interfaces import IPublishTraverse
 
 import logging
 logger = logging.getLogger(__name__)
@@ -41,7 +40,7 @@ from zc.relation.interfaces import ICatalog
 def back_references(source_object, attribute_name):
     """
     Return back references from source object on specified attribute_name
-    """
+    """    
     catalog = getUtility(ICatalog)
     intids = getUtility(IIntIds)
     result = []
@@ -72,35 +71,40 @@ class BluechurchmembraneprofileView(DefaultView):
     #     return result
     
     
+    @memoize
+    def back_references(self):        
+        brs = back_references(self.context, "kontaktperson")
+        return brs
+    
+    @memoize
     def events(self):
-        obs = back_references(self.context, "kontaktperson")
         result = []
-        for obj in obs:
+        today = DateTime()
+        for obj in self.back_references():
             if obj.portal_type=="bluechurchevent":
-                result.append(obj)
+                if DateTime(obj.end) >= today:
+                    result.append(obj)
+        result = sorted(result, key=lambda event: event.start)
         return result 
 
         
     def locations(self):
-        obs = back_references(self.context, "kontaktperson")
         result = []
-        for obj in obs:
+        for obj in self.back_references():
             if obj.portal_type=="bluechurchlocation":
                 result.append(obj)
         return result     
            
     def inserate(self):
-        obs = back_references(self.context, "kontaktperson")
         result = []
-        for obj in obs:
+        for obj in self.back_references():
             if obj.portal_type=="bluechurchinserat":
                 result.append(obj)
         return result
 
     def research(self):
-        obs = back_references(self.context, "kontaktperson")
         result = []
-        for obj in obs:
+        for obj in self.back_references():
             if obj.portal_type=="bluechurchpage":
                 result.append(obj)
         return result
