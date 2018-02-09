@@ -56,6 +56,11 @@
         />
 
 
+    <!-- Register the z3c.form validator -->
+    <adapter factory=".validators.FileFileSizeValidator" />
+    <adapter factory=".validators.ImageFileSizeValidator" />
+
+        
     <!-- Views -->
 
     <browser:page

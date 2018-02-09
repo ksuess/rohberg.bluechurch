@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-05 08:05+0000\n"
+"POT-Creation-Date: 2018-02-09 16:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "BluechurchEvent"
 msgstr "Event"
 
-#: ../browser/templates/doc_actions.pt:27
+#: ../browser/templates/doc_actions.pt:29
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "BluechurchInserat"
 msgstr "Inserat"
@@ -56,7 +56,7 @@ msgstr "Inserat"
 msgid "BluechurchLocation"
 msgstr "Location"
 
-#: ../browser/templates/doc_actions.pt:24
+#: ../browser/templates/doc_actions.pt:26
 #: ../profiles/default/types/bluechurchpage.xml
 msgid "BluechurchPage"
 msgstr "Dokument"
@@ -149,7 +149,7 @@ msgstr "Event-Manager"
 msgid "Event Type"
 msgstr "Event-Form"
 
-#: ../browser/templates/doc_actions.pt:15
+#: ../browser/templates/doc_actions.pt:17
 msgid "File"
 msgstr "Datei"
 
@@ -157,15 +157,15 @@ msgstr "Datei"
 msgid "First Name"
 msgstr "Vorname"
 
-#: ../browser/templates/doc_actions.pt:21
+#: ../browser/templates/doc_actions.pt:23
 msgid "Folder"
 msgstr "Ordner"
 
-#: ../browser/templates/doc_actions.pt:18
+#: ../browser/templates/doc_actions.pt:20
 msgid "Image"
 msgstr "Bild"
 
-#: ../browser/templates/bluechurchprofileview.pt:80
+#: ../browser/templates/bluechurchprofileview.pt:82
 msgid "Inserate"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr "registrieren"
 msgid "Relations"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:89
+#: ../browser/templates/bluechurchprofileview.pt:91
 msgid "Research"
 msgstr ""
 
@@ -397,6 +397,11 @@ msgstr ""
 msgid "e.g. www.twitter.com/myprofile"
 msgstr ""
 
+#. Default: "File is too large (more than ${result} MB)"
+#: ../browser/validators.py:26
+msgid "file_too_large_msg"
+msgstr "Die Datei ist zu gross (mehr als ${result} MB)"
+
 #: ../content/bluechurchevent.py:41
 #: ../content/bluechurchmembraneprofile.py:80
 msgid "help_city"
@@ -426,6 +431,11 @@ msgstr ""
 #: ../content/bluechurchmembraneprofile.py:75
 msgid "help_zip_code"
 msgstr ""
+
+#. Default: "Image is too large (more than ${result} MB)"
+#: ../browser/validators.py:45
+msgid "image_too_large_msg"
+msgstr "Das Bild ist zu gross (mehr als ${result} MB)"
 
 #. Default: "iCal"
 #: ../browser/templates/bluechurcheventview.pt:16
@@ -500,11 +510,11 @@ msgstr ""
 
 #: ../browser/templates/event_listing_simple.pt:45
 msgid "previous events"
-msgid "stattgefundene Veranstaltungen"
+msgstr ""
 
 #: ../browser/templates/bluechurchprofileview.pt:24
 msgid "register"
-msgstr "registrieren"
+msgstr ""
 
 #: ../configure.zcml:98
 msgid "rohberg.bluechurch"

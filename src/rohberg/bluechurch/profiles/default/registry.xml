@@ -4,7 +4,25 @@
 	<records interface="rohberg.bluechurch.browser.controlpanel.IBluechurchControlPanel"
 	         prefix="rohberg.bluechurch" />
              
-             
+       
+<!-- some setting -->
+     <record name="rohberg.bluechurch.maxFileSize">
+       <field type="plone.registry.field.Int">
+         <description>Maximum Size for uploaded files in KB
+         </description>
+         <title>Maximum File Size</title>
+       </field>
+       <value>150000</value>
+     </record>
+
+     <record name="rohberg.bluechurch.maxImageSize">
+       <field type="plone.registry.field.Int">
+         <description>Maximum Size for uploaded images in KB
+         </description>
+         <title>Maximum Image Size</title>
+       </field>
+       <value>1500</value>
+     </record>
              
 <!-- locationsearch stuff -->
              

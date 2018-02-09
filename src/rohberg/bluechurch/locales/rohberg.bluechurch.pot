@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-05 08:05+0000\n"
+"POT-Creation-Date: 2018-02-09 16:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "BluechurchEvent"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:27
+#: ../browser/templates/doc_actions.pt:29
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "BluechurchInserat"
 msgstr ""
@@ -58,7 +58,7 @@ msgstr ""
 msgid "BluechurchLocation"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:24
+#: ../browser/templates/doc_actions.pt:26
 #: ../profiles/default/types/bluechurchpage.xml
 msgid "BluechurchPage"
 msgstr ""
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Event Type"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:15
+#: ../browser/templates/doc_actions.pt:17
 msgid "File"
 msgstr ""
 
@@ -159,15 +159,15 @@ msgstr ""
 msgid "First Name"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:21
+#: ../browser/templates/doc_actions.pt:23
 msgid "Folder"
 msgstr ""
 
-#: ../browser/templates/doc_actions.pt:18
+#: ../browser/templates/doc_actions.pt:20
 msgid "Image"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:80
+#: ../browser/templates/bluechurchprofileview.pt:82
 msgid "Inserate"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 msgid "Relations"
 msgstr ""
 
-#: ../browser/templates/bluechurchprofileview.pt:89
+#: ../browser/templates/bluechurchprofileview.pt:91
 msgid "Research"
 msgstr ""
 
@@ -398,6 +398,11 @@ msgstr ""
 msgid "e.g. www.twitter.com/myprofile"
 msgstr ""
 
+#. Default: "File is too large (more than ${result} MB)"
+#: ../browser/validators.py:26
+msgid "file_too_large_msg"
+msgstr ""
+
 #: ../content/bluechurchevent.py:41
 #: ../content/bluechurchmembraneprofile.py:80
 msgid "help_city"
@@ -426,6 +431,11 @@ msgstr ""
 
 #: ../content/bluechurchmembraneprofile.py:75
 msgid "help_zip_code"
+msgstr ""
+
+#. Default: "Image is too large (more than ${result} MB)"
+#: ../browser/validators.py:45
+msgid "image_too_large_msg"
 msgstr ""
 
 #. Default: "iCal"
