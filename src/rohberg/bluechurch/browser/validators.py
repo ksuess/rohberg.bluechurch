@@ -45,7 +45,7 @@ class ImageFileSizeValidator(validator.FileUploadValidator):
             msgid = _(u"image_too_large_msg", default=u"Image is too large (more than ${result} MB)", 
                 mapping={u"result": "{:.1f}".format(float(maximumSize)/1000)})
             translated = self.context.translate(msgid)            
-            if value.getSize() > maximumSize*1000:
+            if value and value.getSize() > maximumSize*1000:
                 raise Invalid(translated)
 
 
