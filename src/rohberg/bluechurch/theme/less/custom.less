@@ -123,6 +123,21 @@ video {
     max-width: 100%;
 }
 
+table {
+    border: none;
+    color: @fontcolor;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          border: none;
+        }
+      }
+    }
+}
+
 [class*="image-"] {
     max-width: 100%;
     height: auto;
@@ -725,7 +740,7 @@ body.portaltype-bluechurchlocation {
 // main content Bereich
 #content {
     font-size: 1.7rem;
-    color: #172c38;
+    color: @fontcolor;
     background-color: white;
     opacity: 0.9;
     filter: alpha(opacity=90);
