@@ -953,6 +953,10 @@ article.vevent {
        padding-left: 40px;
    }
 }
+// bug fix portlets.plone.less
+.portletNavigationTree .portletContent > ul > li > a::before {
+  content: unset;
+}
 
 #portal-footer-wrapper {
     background-color: transparent;
@@ -1081,7 +1085,7 @@ body.template-bluechurch_event_listing_color {
                 width: 128px;
                 height: 128px;
                 margin-right: 0.4em;
-                // background-color: @grey-light;
+                background-color: @grey-light;
                 img, object {
                     &.default {
                         width: 100%;
