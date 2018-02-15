@@ -1045,6 +1045,13 @@ body.section-start iframe {
         filter: grayscale(100%);
     }
 }
+// no grayscale
+body.section-research.subsection-publications #main-container {
+    img, object {
+        -webkit-filter: unset; /* Safari 6.0 - 9.0 */
+        filter: unset;
+    }
+}
 article {
     header {
         clear: both;

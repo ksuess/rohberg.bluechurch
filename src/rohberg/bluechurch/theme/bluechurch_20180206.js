@@ -82,7 +82,7 @@ $(document).ready(function() {
     
     // Playlist
     $("a.playlist-button").click(function() {
-        window.open(this.href, "_blank", "width=400,height=600"); 
+        window.open(this.href, "_blank", "width=500,height=600"); 
         return false;
     });
     
