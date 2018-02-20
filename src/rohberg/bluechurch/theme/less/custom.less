@@ -1083,23 +1083,17 @@ body.template-facetednavigation_view,
 body.template-bluechurch_event_listing,
 body.template-bluechurch_event_listing_color {
         .photoAlbumEntry {
-            max-height: 128px;
+            max-height: @square_size;
             overflow: hidden;
             // width: 47%;
             vertical-align: top;
             margin: 5px 0;
             .photoAlbumEntryWrapper {
                 float: left;
-                // display: inline-block;
-                overflow: hidden;
-                width: 128px;
-                height: 128px;
                 margin-right: 0.4em;
                 background-color: @grey-light;
-                img, object {
-                    &.default {
-                        width: 100%;
-                    }
+                img.default {
+                    width: @square_size;
                 }
             }
             a {
@@ -1148,11 +1142,6 @@ body.template-bluechurch_event_listing_color {
                 font-size: 1.4rem;
                 line-height: 1.5rem;
                 text-transform: uppercase;
-            }
-        }
-        #content-core {
-            .photoAlbumEntry img {
-                max-width: 128px; // siehe auch .crop
             }
         }
 
@@ -1380,6 +1369,10 @@ body.template-summary_view {
             padding: 0;
             margin-right: 1em;
         }
+        .frame-square {
+            width: 150px;
+            height: 150px;
+        }
     } 
     
 }
@@ -1439,11 +1432,19 @@ form.pat-autotoc {
 
 
 // squared
+// <span class="frame-square">
+//     <span class="crop">
+//         <img src="http://bluechurch.example.com/profiles/boris-bell/@@images/image/mini">
+//     </span>
+// </span>
+
+@square_size: 128px;
+
 .frame-square {
     display: block;
     vertical-align: top;
-    width: 128px;
-    height: 128px;
+    width: @square_size;
+    height: @square_size;
     overflow: hidden;
 }
 
@@ -1455,6 +1456,7 @@ form.pat-autotoc {
   
   img {
     display: block;
+    max-width: @square_size;
     min-width: 100%;
     min-height: 100%;
     margin: auto;
@@ -1464,9 +1466,9 @@ form.pat-autotoc {
     bottom: -100%;
     left: -100%;
     object-fit: cover;
-  }
-  img.landscape {
-      
+    &.default {
+        width: 100%;
+    }
   }
 }
 
