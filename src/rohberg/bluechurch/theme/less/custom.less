@@ -1369,10 +1369,19 @@ body.template-galleryview {
 }
 
 body.template-summary_view {
-    .documentByLine,
-    .tileFooter a {
-        display: none;
-    }
+    .tileItem {
+        clear: both;
+        margin-bottom: 1em;
+        .documentByLine,
+        .tileFooter a {
+            display: none;
+        }
+        .tileImage {
+            padding: 0;
+            margin-right: 1em;
+        }
+    } 
+    
 }
 
 .template-bluechurch_event_listing {
