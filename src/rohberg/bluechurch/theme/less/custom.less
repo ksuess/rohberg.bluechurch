@@ -1090,6 +1090,9 @@ body.template-bluechurch_event_listing_color {
             margin: 5px 0;
             .photoAlbumEntryWrapper {
                 float: left;
+                overflow: hidden;
+                width: 128px;
+                height: 128px;
                 margin-right: 0.4em;
                 background-color: @grey-light;
                 img.default {
@@ -1142,6 +1145,11 @@ body.template-bluechurch_event_listing_color {
                 font-size: 1.4rem;
                 line-height: 1.5rem;
                 text-transform: uppercase;
+            }
+        }
+        #content-core {
+            .photoAlbumEntry img {
+                max-width: @square_size; // siehe auch .crop
             }
         }
 
@@ -1737,7 +1745,6 @@ body.template-bluechurch_event_listing_simple {
     // right: 30rem;
     float: right;
     padding: 0 .5rem;
-    font-size: 5.5rem;
     .playlist-button {
         color: @linkcolor-light;
     }

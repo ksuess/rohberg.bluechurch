@@ -88,7 +88,7 @@ class IBluechurchControlPanel(Interface):
     )
 
 class BluechurchControlPanelForm(RegistryEditForm):
-    """schema_prefix must be the same than that in registry.xml in porfiles"""
+    """schema_prefix must be the same than that in registry.xml in profiles"""
     schema = IBluechurchControlPanel
     schema_prefix = "rohberg.bluechurch"
     label = u'Bluechurch Settings'
