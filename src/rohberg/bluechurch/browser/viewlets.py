@@ -113,11 +113,5 @@ class BacklinkViewlet(base.ViewletBase):
         context = self.context
         pt = context.portal_type
         context_state = context.restrictedTraverse('@@plone_context_state')
-        # print(context)
-        # print(pt)
-        # print(not pt in ["Folder", "Collection"])
-        # # print(context_state)
-        # print(context_state.is_default_page())
-        # print(not context_state.is_default_page())
         result = not pt in ["Folder", "Collection"] and not context_state.is_default_page()
         return result

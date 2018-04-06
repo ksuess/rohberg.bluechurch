@@ -53,7 +53,7 @@ setup(
         'plone.app.theming',
         'plone.app.themingplugins',
         'collective.monkeypatcher',
-        'eea.facetednavigation',
+        'collective.collectionfilter',
     ],
     extras_require={
         'test': [
