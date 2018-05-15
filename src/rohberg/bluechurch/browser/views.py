@@ -150,7 +150,7 @@ class BluechurchlocationView(OwnedView):
     """        
 
     def __call__(self):
-        # add_resource_on_request(self.request, 'bluechurch-locationsearch')
+        # add_resource_on_request(self.request, 'bluechurch-locationsearch') # TODO später: add_bundle....
         return super(BluechurchlocationView, self).__call__()
 
 

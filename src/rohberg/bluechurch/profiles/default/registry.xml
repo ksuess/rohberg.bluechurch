@@ -30,14 +30,10 @@
     <records prefix="plone.resources/bluechurch-locationsearch" 
         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="js">++resource++bluechurch.locationsearch/locationsearch.js</value>
-      <value key="url">++resource++bluechurch.locationsearch</value>
-      <value key="css">
-        <element>++resource++bluechurch.locationsearch/styles.less</element>
-      </value>
     </records>
     
 
-    <records prefix="plone.resources/bluechurch-locationsearch-bundle"
+    <records prefix="plone.resources/resource-bundle-bluechurch-locationsearch"
              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="js">++resource++bluechurch.locationsearch/bluechurch-locationsearch-bundle.js</value>
       <value key="css">
@@ -45,13 +41,13 @@
       </value>
     </records>
 
-    <records prefix="plone.bundles/bluechurch-locationsearch-bundle" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <records prefix="plone.bundles/bundle-bluechurch-locationsearch" 
+                interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
-        <element>bluechurch-locationsearch-bundle</element>
+          <element>resource-bundle-bluechurch-locationsearch</element>
       </value>
       <value key="enabled">True</value>
       <value key="jscompilation">++resource++bluechurch.locationsearch/bluechurch-locationsearch-bundle-compiled.js</value>
-      <!-- <value key="jscompilation">++resource++bluechurch.locationsearch/bluechurch-locationsearch-bundle-compiled.js</value> -->
       <value key="csscompilation">++resource++bluechurch.locationsearch/bluechurch-locationsearch-bundle-compiled.css</value>
       <value key="last_compilation">2017-12-06 00:00:00</value>
       <value key="stub_js_modules">
@@ -66,7 +62,6 @@
       </value>
     </records>
     
-             
 <!-- end of locationsearch stuff -->
     
     

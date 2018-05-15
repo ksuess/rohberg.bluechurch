@@ -20,8 +20,7 @@ class BluechurchEventListing(EventListing):
 
     def __init__(self, context, request):
         super(BluechurchEventListing, self).__init__(context, request)
-        
-        self.schnupsi = u"foo"
+
         
     def localized_time(self, date):
         localized = api.portal.get_localized_time(datetime=date, long_format=True)
