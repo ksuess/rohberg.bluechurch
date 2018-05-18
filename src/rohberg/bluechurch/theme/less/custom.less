@@ -48,6 +48,8 @@
 //
 // }
 
+@plone-headings-line-height: 1.25;
+
 @plone-font-family-sans-serif:  "Mic32New-Regular", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; // Roboto seems Plone's DIN
 @plone-font-family-condensed:   "Mic32New-Medium", "Arial Narrow", sans-serif; //just on 
 
@@ -1747,7 +1749,8 @@ body.template-bluechurch_event_listing_simple {
 }
 
 // Playlist
-#playerviewlet {
+#playerviewlet,
+#playerbuttonviewlet {
     // position: absolute;
     // right: 30rem;
     float: right;
@@ -1757,4 +1760,9 @@ body.template-bluechurch_event_listing_simple {
     }
 }
 
-    
+
+.wrapwrap {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
