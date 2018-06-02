@@ -6,5 +6,6 @@
       <element value="bluechurch_event_listing" i18n:translate=""/>
       <element value="bluechurch_event_listing_color" i18n:translate=""/>
       <element value="bluechurch_event_listing_simple" i18n:translate=""/>
+      <element value="album_view_plus" i18n:translate=""/>
  </property>
 </object>

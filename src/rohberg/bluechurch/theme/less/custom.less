@@ -1373,6 +1373,9 @@ body.template-galleryview {
         background-color: transparent;
     }
 }
+#supersized-loader {
+    display: none;
+}
 
 body.template-summary_view {
     .tileItem {
@@ -1765,4 +1768,38 @@ body.template-bluechurch_event_listing_simple {
     hyphens: auto;
     overflow-wrap: break-word;
     word-wrap: break-word;
+}
+
+@width-photoAlbumEntry: 400px;
+body.template-album_view_plus {
+    div.photoAlbumEntry {
+        // display: block;
+        position: relative;
+        color: #eee;
+        margin: 8px 5px;
+        & > div {
+            text-align: left;
+            vertical-align: middle;
+            display: table-cell;
+            font-weight: 400;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: none;
+            background-color: rgb(252, 252, 253);
+            width: @width-photoAlbumEntry;
+            height: @width-photoAlbumEntry;
+            .photoAlbumEntryWrapper {
+                display: block;
+                display: block;
+                width: @width-photoAlbumEntry;
+                height: @width-photoAlbumEntry;
+            }
+            .photoAlbumEntryTitle {
+                display: block;
+                position: absolute;
+                bottom: 20px;
+                margin: 0 0 0 10px;
+            }            
+        }
+
+    }
 }

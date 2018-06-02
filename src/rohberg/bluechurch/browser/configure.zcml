@@ -103,7 +103,17 @@
         class=".views.MyProfileView"
         />
             
-
+    <browser:page
+        name="album_view_plus"
+        template="templates/listing_album.pt"
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class="plone.app.contenttypes.browser.folder.FolderView"
+      permission="zope2.View"
+        menu="plone_displayviews"
+        title="Galerie"
+        />
+            
+            
     <!-- alle Feldwerte auflisten -->
     <browser:page
         for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent"
