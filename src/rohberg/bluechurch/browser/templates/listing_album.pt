@@ -25,10 +25,10 @@
                   image_scale portal/@@image_scale">
   <tal:images tal:repeat="image images">
     <div class="photoAlbumEntry">
-      <div class="pat-plone-modal"
+      <span class="pat-plone-modal"
            tal:attributes="href string:${image/getURL}/view;
                          title image/Description">
-        <span class="photoAlbumEntryWrapper">
+        <span class="photoAlbumEntryWrapper frame-square">
             <span class="crop">
                 <img tal:replace="structure python:image_scale.tag(image, 'image', scale='large')" />
             </span>          
@@ -36,7 +36,7 @@
         <span class="photoAlbumEntryTitle" tal:content="image/Title">
             Title
         </span>
-      </div>
+      </span>
     </div>
   </tal:images>
 
