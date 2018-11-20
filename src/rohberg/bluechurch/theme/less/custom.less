@@ -980,6 +980,10 @@ article.vevent {
     }
 }
 
+.portletMailChimp {
+    padding: 2rem 1rem;
+}
+
 /* *** Profiles
 ****************************** */
 
@@ -1824,19 +1828,24 @@ body.template-album_view_plus {
 }
 
 
-#commenting {
-    background-color: #fff;
-}
-div.discussion {
-    background-color: #fff;
-    padding: 2rem 1rem;
-
-}
+#commenting,
+div.discussion,
 .reply {
     background-color: #fff;
+    color: @fontcolor;
     input[type="submit"] {
         color: #fff;
         border: 1px solid #fff;
         background-color: #accfee;
     }
+}
+#commenting {
+    padding: 2rem 1rem;
+}
+div.discussion {
+    padding: 2rem 1rem;
+
+}
+.reply {
+
 }
