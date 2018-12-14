@@ -40,7 +40,7 @@ from zc.relation.interfaces import ICatalog
 def back_references(source_object, attribute_name):
     """
     Return back references from source object on specified attribute_name
-    """    
+    """
     catalog = getUtility(ICatalog)
     intids = getUtility(IIntIds)
     result = []
@@ -56,10 +56,27 @@ def back_references(source_object, attribute_name):
         except KeyError, e:
             logger.error(str(e))
     return result
-        
+
+
+class Utilities(object):
+    """Verschiedene utilities."""
+
+    def get_commenter_home_url(self, username=None):
+        if not username:
+            return None
+        profile = api.content.get(UID=username)
+        if profile:
+            return profile.absolute_url()
+
+    def get_commenter_portrait(self, username=None):
+        if not username:
+            return None
+        return self.get_commenter_home_url(username=username)+'/@@images/image/thumb'
+
+
 class BluechurchmembraneprofileView(DefaultView):
     """ the default view for BluechurchProfile"""
-    
+
     def __call__(self):
         add_resource_on_request(self.request, 'bluechurch_profile_features')
         return super(BluechurchmembraneprofileView, self).__call__()
@@ -69,13 +86,13 @@ class BluechurchmembraneprofileView(DefaultView):
     #     # import pdb; pdb.set_trace()
     #     result = bctags()(self.context).__dict__
     #     return result
-    
-    
+
+
     @memoize
-    def back_references(self):        
+    def back_references(self):
         brs = back_references(self.context, "kontaktperson")
         return brs
-    
+
     @memoize
     def events(self):
         result = []
@@ -85,16 +102,16 @@ class BluechurchmembraneprofileView(DefaultView):
                 if DateTime(obj.end) >= today:
                     result.append(obj)
         result = sorted(result, key=lambda event: event.start)
-        return result 
+        return result
 
-        
+
     def locations(self):
         result = []
         for obj in self.back_references():
             if obj.portal_type=="bluechurchlocation":
                 result.append(obj)
-        return result     
-           
+        return result
+
     def inserate(self):
         result = []
         for obj in self.back_references():
@@ -108,7 +125,7 @@ class BluechurchmembraneprofileView(DefaultView):
             if obj.portal_type=="bluechurchpage":
                 result.append(obj)
         return result
-        
+
     @property
     @memoize
     def title(self):
@@ -116,7 +133,7 @@ class BluechurchmembraneprofileView(DefaultView):
         ttl = INameFromFullName(context).title
         # print(u"profile title {}".format(ttl))
         return ttl
-        
+
     @property
     @memoize
     def is_current(self):
@@ -131,23 +148,23 @@ class BluechurchmembraneprofileView(DefaultView):
 class OwnedView(DefaultView):
     """
     """
-    
+
     @property
     def kontaktperson_profile(self):
         kp = api.content.get(UID=self.context.kontaktperson.to_object.UID())
         return kp
-        
+
     @property
     def kontaktperson_fullname(self):
         profile = self.kontaktperson_profile
         name_title = INameFromTitle(profile)
         return name_title.title
-        
+
 
 class BluechurchlocationView(OwnedView):
     """
-    
-    """        
+
+    """
 
     def __call__(self):
         # add_resource_on_request(self.request, 'bluechurch-locationsearch') # TODO später: add_bundle....
@@ -164,7 +181,7 @@ class BluechurcheventView(OwnedView):
             IContentProvider, name='formatted_date'
         )
         return provider(occ)
-    
+
     def start(self):
         localized = api.portal.get_localized_time(datetime=self.context.start, long_format=True)
         return localized
@@ -172,17 +189,17 @@ class BluechurcheventView(OwnedView):
 
 class BluechurchinseratView(OwnedView):
     """
-    """    
+    """
 
 
 class BluechurchpageView(OwnedView):
     """
-    """    
+    """
 
 
 class MyProfileView(BrowserView):
     """Gehe zu meinem Profil"""
-    
+
     def __call__(self):
         current = api.user.get_current()
         profile = api.content.get(UID=current.id)
@@ -193,10 +210,10 @@ class MyProfileView(BrowserView):
 def sendMail(sender, recipient, subject, text, REQUEST):
     """ TODO: send Mail
     https://docs.plone.org/develop/plone/misc/email.html#sending-email
-    
+
     sender, recipient:  type IBluechurchmembraneprofile
     """
-    
+
     portal = api.portal.get()
     email_charset = 'UTF-8'
     mail_template = getMultiAdapter((portal, REQUEST), name="mail_template_bluechurch_en")
@@ -232,18 +249,18 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 @implementer(IPublishTraverse)
 class BackgroundView(BrowserView):
     """ Helpers
-    
+
     call with /@@background/big
     or
     /@@background/small
     """
-    
+
     def publishTraverse(self, request, size="big"):
         if size not in ('big', 'small'):
             raise BadRequest
         self.size = size
         return self
-        
+
     def background(self, size="big"):
         num = randint(1, 17)
         path = os.path.dirname(__file__)
@@ -257,21 +274,21 @@ class BackgroundView(BrowserView):
         f.close()
         self.request.response.setHeader("Content-type", "image/jpeg")
         return image_data
-        
-        
+
+
     def __call__(self):
         bg = self.background(self.size)
         return bg
-        
+
 
 
 class TestView(BrowserView):
     """ Testing utilities"""
-    
+
     def wanttoknow(self):
         context = self.context
         portal = api.portal
-        
+
 
         items = context.portal_catalog(portal_type=['File', 'Image', 'BluechurchLocation', 'dexterity.membrane.bluechurchmembraneprofile'])
         for item in items[:100000]:
@@ -281,36 +298,36 @@ class TestView(BrowserView):
             size = obj.file.size
           else:
               field = obj.image
-              if field: 
+              if field:
                   size = field.size
           if size > 1024*1024 *1:
               url = u"<a href='{0}'>{0}</a>".format(item.getURL())
               print(u"***** {:.1f} {} {}".format(float(size)/1024/1024, url, obj.portal_type))
 
         return "sizes"
-        
-        
+
+
         for item in context.getFolderContents():
             name = INameFromFullName(item.getObject(), None)
             print(u"{:30} \t {:30} \t {:30} \t {:30}".format(item.portal_type, item.id, item.Title, name and name.title ))
         return context.id
-        
-            
+
+
         name = INameFromFullName(context, None)
         print(name)
         print(name.title)
         print(context.Title())
         return "INameFromFullName"
-        
+
         # from dexterity.membrane.content.member import IMember
         # from collective.dexteritytextindexer.utils import searchable
         #
         # searchable(IMember, 'first_name')
         # searchable(IMember, 'last_name')
         # searchable(IMember, 'bio')
-        
+
         skinname = getSite().getCurrentSkinName()
-        
+
         is_manager = api.user.has_permission('Manage portal')
         if is_manager:
             return "I am Manager"
@@ -322,14 +339,14 @@ class TestView(BrowserView):
         username = user.getName()
         roles = api.user.get_roles()
         permissions = api.user.get_permissions()
-        
+
         fullname = user.getProperty('fullname')
         email = user.getProperty('email')
         home_page = user.getProperty('home_page')
-        
+
         pm = getToolByName(self.context, 'portal_membership')
         roles_in_context = pm.getAuthenticatedMember().getRolesInContext(self.context)
-        
+
         # return permissions
         return roles
         return roles_in_context
@@ -339,15 +356,15 @@ class TestView(BrowserView):
 
 class FView(DefaultView):
     """Show all values of all fields
-    
+
     """
-    
+
     def wanttoknow(self):
         return "wanttoknow"
-        
+
 class UpdatePofileTypes(BrowserView):
     """"""
-    
+
     def __call__(self):
         context = self.context
         print("*** update types")
@@ -363,8 +380,6 @@ class UpdatePofileTypes(BrowserView):
         print("update done.")
         # for ob in context.values():
         #     print(ob.profile_type)
-            
+
         # response = self.request.response
         # response.redirect(context.absolute_url()) # , status=301
-    
-    

@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='rohberg.bluechurch',
-    version='1.0a1',
+    version='1.0a2',
     description="Features for Bluechurch",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers

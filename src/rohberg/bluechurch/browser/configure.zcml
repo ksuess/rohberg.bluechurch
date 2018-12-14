@@ -16,11 +16,11 @@
 
     <!-- <adapter name="eventcity" factory=".indexers.city_event" />   -->
     <!-- <adapter name="Title" factory=".indexers.Title" /> -->
-  
-  
-  
-    <!-- Publish static files 
-        access via 
+
+
+
+    <!-- Publish static files
+        access via
         ++plone++rohberg.bluechurch/bluechurch_features.js
     -->
     <plone:static
@@ -47,7 +47,7 @@
         directory="images"
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
         /> -->
-        
+
     <browser:page
         name="bluechurch-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
@@ -60,9 +60,18 @@
     <adapter factory=".validators.FileFileSizeValidator" />
     <adapter factory=".validators.ImageFileSizeValidator" />
 
-        
+
     <!-- Views -->
 
+    <!-- Utilities -->
+    <browser:page
+        name="utilities"
+        for="*"
+        class=".views.Utilities"
+        permission="zope.Public"
+        />
+
+        
     <browser:page
         for="Products.CMFCore.interfaces.IFolderish"
         name="updateprofiletypes"
@@ -78,7 +87,7 @@
         class=".views.TestView"
         template="templates/testviewtemplate.pt"
         />
-        
+
     <browser:page
         for="*"
         name="background"
@@ -86,14 +95,14 @@
         permission="zope2.Public"
         class=".views.BackgroundView"
         />
-       
+
     <browser:page
         name="mail_template_bluechurch_en"
         for="*"
         template="templates/mail_template_bluechurch_en.pt"
         permission="zope.Public"
         />
-             
+
     <!-- xyz -->
     <browser:page
         for="*"
@@ -102,7 +111,7 @@
         permission="zope2.Public"
         class=".views.MyProfileView"
         />
-            
+
     <browser:page
         name="album_view_plus"
         template="templates/listing_album.pt"
@@ -112,8 +121,8 @@
         menu="plone_displayviews"
         title="Galerie"
         />
-            
-            
+
+
     <!-- alle Feldwerte auflisten -->
     <browser:page
         for="rohberg.bluechurch.content.interfaces.IBluechurchMemberContent"
@@ -123,7 +132,7 @@
         class=".views.FView"
         template="templates/fviewtemplate.pt"
         />
-        
+
     <browser:page
        name="bluechurchmembraneprofileview"
        for="rohberg.bluechurch.content.bluechurchmembraneprofile.IBluechurchmembraneprofile"
@@ -132,8 +141,8 @@
        template="templates/bluechurchprofileview.pt"
        permission="zope2.View"
        />
-       
-       
+
+
 
    <browser:page
        for="*"
@@ -143,7 +152,7 @@
        permission="zope2.View"
        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
        />
-       
+
     <browser:page
        name="bluechurchlocationview"       for="rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation"
        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
@@ -151,7 +160,7 @@
        template="templates/bluechurchlocationview.pt"
        permission="zope2.View"
        />
-       
+
     <browser:page
        name="bluechurcheventview"       for="rohberg.bluechurch.content.bluechurchevent.IBluechurchevent"
        layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
@@ -160,7 +169,7 @@
        permission="zope2.View"
        />
 
-       
+
     <browser:page
        name="bluechurchinseratview"
        for="rohberg.bluechurch.content.bluechurchinserat.IBluechurchinserat"
@@ -169,7 +178,7 @@
        template="templates/bluechurchinseratview.pt"
        permission="zope2.View"
        />
-              
+
    <browser:page
       name="bluechurchpageview"
       for="rohberg.bluechurch.content.bluechurchpage.IBluechurchpage"
@@ -178,7 +187,7 @@
       template="templates/bluechurchpageview.pt"
       permission="zope2.View"
       />
-       
+
       <!-- contact_bluechurchmember -->
       <!-- <browser:page
             name="contact_bluechurchmember"
@@ -187,7 +196,7 @@
             class=".views.ContactBluechurchmember"
             permission="zope2.View"
             /> -->
-            
+
 
     <adapter factory=".contactform.ProfileContactFormAdapter"/>
 
@@ -197,9 +206,9 @@
         class=".contactform.ProfileContactForm"
         permission="zope2.View"
         />
-      
-      
-      
+
+
+
     <!-- event_listing bluechurch style -->
 
     <browser:page
@@ -280,7 +289,7 @@
         layer="rohberg.bluechurch.interfaces.IRohbergBluechurchFeaturesLayer"
         permission="rohberg.bluechurch.addbluechurchcontent"
         />
-        
+
     <!-- Back viewlet -->
     <browser:viewlet
         name="bluechurch.backviewlet"
@@ -291,10 +300,10 @@
         template="templates/backviewlet.pt"
         class=".viewlets.BacklinkViewlet"
         permission="zope2.View"
-        />        
-                   
-                   
-     
+        />
+
+
+
      <adapter
          for="Products.CMFCore.interfaces.IFolderish
               zope.publisher.interfaces.browser.IDefaultBrowserLayer
@@ -315,8 +324,8 @@
              interface="zope.publisher.interfaces.browser.IBrowserPage"
              />
      </class>
-           
-           
+
+
      <!-- Bug Fix Factory Addform for dexterity types in Plone 5.1 -->
      <adapter
          for="Products.CMFCore.interfaces.IContentish
@@ -332,5 +341,5 @@
          provides="zope.publisher.interfaces.browser.IBrowserPage"
          factory="plone.dexterity.browser.add.DefaultAddView"
          />
-     
+
 </configure>
