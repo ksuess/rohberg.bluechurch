@@ -20,10 +20,10 @@
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
- 
- 
+
+
  <property name="klass">rohberg.bluechurch.content.bluechurchpage.Bluechurchpage</property>
- 
+
  <property name="schema">rohberg.bluechurch.content.bluechurchpage.IBluechurchpage</property>
  <!-- <property name="model_file">rohberg.bluechurch.content:bluechurchpage.xml</property> -->
 
@@ -33,14 +33,14 @@
   <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
   <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
   <element value="plone.app.relationfield.behavior.IRelatedItems"/>
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
+  <!-- <element value="plone.app.versioningbehavior.behaviors.IVersionable"/> -->
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />
   <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
  </property>
- 
- 
+
+
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>

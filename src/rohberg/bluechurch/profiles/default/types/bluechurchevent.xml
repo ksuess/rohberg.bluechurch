@@ -23,25 +23,25 @@
 
 
  <property name="klass">rohberg.bluechurch.content.bluechurchevent.Bluechurchevent</property>
- 
+
  <property name="schema">rohberg.bluechurch.content.bluechurchevent.IBluechurchevent</property>
 
  <property name="behaviors">
   <element value="plone.app.event.dx.behaviors.IEventBasic"/>
   <!-- <element value="plone.app.event.dx.behaviors.IEventRecurrence"/> -->
-  <element value="plone.app.event.dx.behaviors.IEventLocation"/>  
+  <element value="plone.app.event.dx.behaviors.IEventLocation"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
   <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
   <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
   <!-- <element value="plone.app.relationfield.behavior.IRelatedItems"/> -->
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
+  <!-- <element value="plone.app.versioningbehavior.behaviors.IVersionable"/> -->
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />
   <!-- <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/> -->
  </property>
- 
- 
+
+
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>

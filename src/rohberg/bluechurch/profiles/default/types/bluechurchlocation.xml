@@ -20,10 +20,10 @@
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">rohberg.bluechurch.addbluechurchcontent</property>
- 
- 
+
+
  <property name="klass">rohberg.bluechurch.content.bluechurchlocation.Bluechurchlocation</property>
- 
+
  <property name="schema">rohberg.bluechurch.content.bluechurchlocation.IBluechurchlocation</property>
  <!-- <property name="model_file">rohberg.bluechurch.content:bluechurchlocation.xml</property> -->
 
@@ -32,7 +32,7 @@
   <!-- <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->
   <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
   <element value="plone.app.relationfield.behavior.IRelatedItems"/>
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
+  <!-- <element value="plone.app.versioningbehavior.behaviors.IVersionable"/> -->
   <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
   <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
   <element value="rohberg.bluechurch.behaviors.kontakt.IOwnercontact" />
@@ -42,8 +42,8 @@
   <element value="collective.address.behaviors.ISocial"/>
   <element value="collective.geolocationbehavior.geolocation.IGeolocatable"/>
  </property>
- 
- 
+
+
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>
