@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-09 16:21+0000\n"
+"POT-Creation-Date: 2018-12-16 18:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,6 +163,10 @@ msgstr ""
 msgid "Folder"
 msgstr ""
 
+#: ../browser/configure.zcml:123
+msgid "Galerie"
+msgstr ""
+
 #: ../browser/templates/doc_actions.pt:20
 msgid "Image"
 msgstr ""
@@ -216,7 +220,7 @@ msgid "New Location"
 msgstr ""
 
 #: ../profiles/default/actions.xml
-msgid "New Marketplace Add"
+msgid "New Marketplace Ad"
 msgstr ""
 
 #: ../profiles/default/actions.xml

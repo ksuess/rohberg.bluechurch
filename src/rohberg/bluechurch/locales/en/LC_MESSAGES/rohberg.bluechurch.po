@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-09 16:21+0000\n"
+"POT-Creation-Date: 2018-12-16 18:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Event"
 #: ../browser/templates/doc_actions.pt:29
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "BluechurchInserat"
-msgstr "Marketplace Add"
+msgstr "marketplace ad"
 
 #: ../profiles/default/types/bluechurchlocation.xml
 msgid "BluechurchLocation"
@@ -160,13 +160,17 @@ msgstr ""
 msgid "Folder"
 msgstr ""
 
+#: ../browser/configure.zcml:123
+msgid "Galerie"
+msgstr ""
+
 #: ../browser/templates/doc_actions.pt:20
 msgid "Image"
 msgstr ""
 
 #: ../browser/templates/bluechurchprofileview.pt:82
 msgid "Inserate"
-msgstr "Marketplace Adds"
+msgstr "marketplace ads"
 
 #: ../configure.zcml:98
 msgid "Installs the rohberg.bluechurch add-on."
@@ -214,8 +218,8 @@ msgid "New Location"
 msgstr "new location"
 
 #: ../profiles/default/actions.xml
-msgid "New Marketplace Add"
-msgstr "new marketplace add"
+msgid "New Marketplace Ad"
+msgstr ""
 
 #: ../profiles/default/actions.xml
 msgid "New News"

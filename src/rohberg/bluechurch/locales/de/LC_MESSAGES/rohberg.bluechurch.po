@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-09 16:21+0000\n"
+"POT-Creation-Date: 2018-12-16 18:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -161,6 +161,10 @@ msgstr "Vorname"
 msgid "Folder"
 msgstr "Ordner"
 
+#: ../browser/configure.zcml:123
+msgid "Galerie"
+msgstr ""
+
 #: ../browser/templates/doc_actions.pt:20
 msgid "Image"
 msgstr "Bild"
@@ -215,8 +219,8 @@ msgid "New Location"
 msgstr "neue Location"
 
 #: ../profiles/default/actions.xml
-msgid "New Marketplace Add"
-msgstr "neues Inserat"
+msgid "New Marketplace Ad"
+msgstr "Neues Inserat"
 
 #: ../profiles/default/actions.xml
 msgid "New News"
@@ -510,11 +514,11 @@ msgstr ""
 
 #: ../browser/templates/event_listing_simple.pt:45
 msgid "previous events"
-msgstr ""
+msgstr "frühere Events"
 
 #: ../browser/templates/bluechurchprofileview.pt:24
 msgid "register"
-msgstr ""
+msgstr "registrieren"
 
 #: ../configure.zcml:98
 msgid "rohberg.bluechurch"
