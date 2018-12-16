@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-05 16:01+0000\n"
+"POT-Creation-Date: 2015-03-23 08:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: rohberg.bluechurch\n"
+"Domain: plone\n"
 
 msgid "New Entries"
 msgstr "New Entries"
@@ -25,3 +25,9 @@ msgstr "Bluechurch Listing Colorful"
 
 msgid "bluechurch_event_listing_simple"
 msgstr "Bluechurch Listing Simple"
+
+msgid "label_says"
+msgstr "wrote on"
+
+msgid "summary_view_comments"
+msgstr "Summary with comments"

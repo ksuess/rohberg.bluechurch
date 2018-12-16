@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-12-16 18:00+0000\n"
+"POT-Creation-Date: 2018-12-16 20:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,6 +317,10 @@ msgstr ""
 #: ../profiles/default/types/bluechurchinserat.xml
 msgid "Suche, Biete"
 msgstr "Search and Find"
+
+#: ../browser/configure.zcml:135
+msgid "Summary view with comments"
+msgstr ""
 
 #: ../browser/contactform.py:58
 msgid "The recipient gets an email with your email address to get back to you."

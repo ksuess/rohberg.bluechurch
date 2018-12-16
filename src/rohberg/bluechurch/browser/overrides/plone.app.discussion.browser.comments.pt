@@ -187,6 +187,7 @@
                    i18n:attributes="value label_login_to_add_comments;"
                    />
         </form>
+        <div class="visualClear"><!-- --></div>
     </div>
 
     <div id="commenting" class="reply" tal:condition="python:isDiscussionAllowed and (isAnon and isAnonymousDiscussionAllowed or userHasReplyPermission)">

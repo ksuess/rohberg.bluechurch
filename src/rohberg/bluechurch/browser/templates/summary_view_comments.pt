@@ -46,6 +46,13 @@
             </span>
           </div>
 
+          <div class="commentinfo">
+              <span class=""
+      tal:define="total_comments obj/++conversation++default/total_comments;"
+      tal:condition="total_comments"><span tal:replace="total_comments">17</span>&nbsp;<span tal:replace="python:total_comments>1 and 'Kommentare' or 'Kommentar'" >Kommentare</span></span>
+          </div>
+
+
           <div class="tileFooter">
             <a tal:attributes="href item_link"
                 i18n:translate="read_more">

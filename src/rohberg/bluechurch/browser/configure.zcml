@@ -71,7 +71,7 @@
         permission="zope.Public"
         />
 
-        
+
     <browser:page
         for="Products.CMFCore.interfaces.IFolderish"
         name="updateprofiletypes"
@@ -121,6 +121,19 @@
         menu="plone_displayviews"
         title="Galerie"
         />
+
+
+    <browser:pages
+            for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+            class="plone.app.contenttypes.browser.collection.CollectionView"
+            permission="zope2.View">
+          <browser:page
+              name="summary_view_comments"
+              template="templates/summary_view_comments.pt"
+              menu="plone_displayviews"
+              title="Summary view with comments"
+              />
+    </browser:pages>
 
 
     <!-- alle Feldwerte auflisten -->
