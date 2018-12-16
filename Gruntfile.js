@@ -39,13 +39,18 @@ module.exports = function (grunt) {
                 src: 'less/*.css'
             }
         },
+        shell: {
+            greet: {
+                command: greeting => 'say ' + greeting
+            }
+        },
         watch: {
             scripts: {
                 files: [
                     'less/*.less',
                     'barceloneta/less/*.less'
                 ],
-                tasks: ['less', 'postcss']
+                tasks: ['less', 'postcss', 'shell:greet:watch done']
             }
         },
         browserSync: {
@@ -77,10 +82,9 @@ module.exports = function (grunt) {
                 },
                 options: {
                     watchTask: true,
-                    debugInfo: true,
+                    // debugInfo: true,
                     proxy: "localhost:10680",
-
-                    reloadDelay: 10000,
+                    // reloadDelay: 10000,
                     // reloadDebounce: 2000,
                     online: false
                 }
@@ -94,6 +98,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-shell');
 
     // CWD to theme folder
     grunt.file.setBase('./src/rohberg/bluechurch/theme');

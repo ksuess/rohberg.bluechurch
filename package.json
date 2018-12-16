@@ -10,6 +10,7 @@
     "grunt-postcss": "^0.8.0",
     "pixrem": "^3.0.2",
     "cssnano": "^3.7.7",
-    "autoprefixer": "^6.5.1"
+    "autoprefixer": "^6.5.1",
+    "grunt-shell": "latest"
   }
 }
