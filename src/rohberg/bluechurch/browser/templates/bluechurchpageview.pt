@@ -6,21 +6,25 @@
     <metal:content-core fill-slot="content-core">
         <div tal:content="structure view/w/IRichText.text/render" />
 
-        <tal:homepage tal:define="homepage context/homepage">
-            <div class="meta_block" tal:condition="homepage"><span class="label_meta">Website</span> 
-                <a tal:attributes="href homepage" 
-                    target="_blank" 
+        <tal:homepage tal:define="homepage context/homepage|nothing">
+            <div class="meta_block" tal:condition="homepage"><span class="label_meta">Website</span>
+                <a tal:attributes="href homepage"
+                    target="_blank"
                     tal:content="python:homepage[homepage.index('://')+3:]">Website</a>
             </div>
         </tal:homepage>
 
-        
+
         <div class="owner meta_block"><span class="label_meta" i18n:translate="label_kontaktperson">Kontakt</span>
-            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()" 
+            <a tal:attributes="href python:view.kontaktperson_profile.absolute_url()"
                 href="#"
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
         </div>
-        
+
+        <script src="++theme++bluechurch/js/pdfjs/pdf.js"></script>
+        <!-- <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
+        <script src="/++theme++bluechurch/js/bluechurch_pdf.js"></script>
+
     </metal:content-core>
 </body>
 </html>

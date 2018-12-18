@@ -11,7 +11,7 @@
   <theme href="index.html" />
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
-  
+
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
     <copy attributes="*" css:theme="html" css:content="html" />
@@ -31,7 +31,12 @@
     <!-- Script -->
     <after css:theme-children="head" css:content="head script" />
     <after css:theme-children="head">
-        <script src="/++theme++bluechurch/bluechurch_theme.js?t=1007"></script>
+        <!-- <script src="/++theme++bluechurch/pdfjs/pdf.js"></script> -->
+        <!-- <script src="/++theme++bluechurch/pdfjs/pdf.worker.js"></script> -->
+        <!-- <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
+
+
+        <script src="/++theme++bluechurch/js/bluechurch_theme.js"></script>
     </after>
     <replace css:content="#portal-logo img">
         <div></div>
