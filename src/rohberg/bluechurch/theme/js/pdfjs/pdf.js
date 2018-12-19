@@ -20,6 +20,8 @@
  * Javascript code in this page
  */
 
+// change ksuess
+// pdfjsLib when require.js is present
 (function webpackUniversalModuleDefinition(root, factory) {
     root["pdfjs-dist/build/pdf"] = root.pdfjsLib = factory();
 	// if(typeof exports === 'object' && typeof module === 'object')

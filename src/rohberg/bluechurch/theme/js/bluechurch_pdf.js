@@ -9,7 +9,7 @@ function dorenderpdf(url, canvasid) {
       pdf.getPage(pageNumber).then(function(page) {
         console.log('Page loaded');
 
-        var scale = 1.5;
+        var scale = 0.5;
         var viewport = page.getViewport(scale);
 
         // Prepare canvas using PDF page dimensions
@@ -45,16 +45,14 @@ $(document).ready(function() {
     //
     // // The workerSrc property shall be specified.
     pdfjsLib.GlobalWorkerOptions.workerSrc = '++theme++bluechurch/js/pdfjs/pdf.worker.js';
-    //
-
 
     // Link to PDF
     $("a[href$='.pdf']").each(function(index) {
         let url = $(this).attr("href");
         let canvasid = 'canvas-'+index;
-        $(this).after("<canvas id='"+ canvasid +"'></canvas>");
+        $(this).prepend("<canvas id='"+ canvasid +"'></canvas><br/>");
         dorenderpdf(url, canvasid);
-        // var v1 = pdfjsLib.getDocument(url);
+        $(this).attr("target", "_blank");
     });
 
 
