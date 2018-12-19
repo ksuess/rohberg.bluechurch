@@ -31,3 +31,6 @@ msgstr "Summary with comments"
 
 msgid "label_says"
 msgstr "wrote on"
+
+msgid "label_wrote"
+msgstr "wrote on"

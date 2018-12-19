@@ -30,5 +30,8 @@ msgstr "Bluechurch Listing Simple"
 msgid "label_says"
 msgstr "schrieb am"
 
+msgid "label_wrote"
+msgstr "schrieb am"
+
 msgid "summary_view_comments"
 msgstr "Kurzfassung mit Kommentaren"
