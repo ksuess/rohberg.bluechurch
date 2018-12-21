@@ -398,5 +398,5 @@ class ListMembersInfo(BrowserView):
             for item in items:
                 obj = item.getObject()
                 # print(u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country)))
-                result += "\n" + u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country))
+                result += "\n" + u"{},{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country), ";".join(list(obj.profile_type)))
             return result
