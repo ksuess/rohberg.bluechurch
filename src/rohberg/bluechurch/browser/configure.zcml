@@ -71,6 +71,14 @@
         permission="zope.Public"
         />
 
+    <browser:page
+        name="listmembersinfo"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".views.ListMembersInfo"
+        permission="zope.Public"
+        />
+
+
 
     <browser:page
         for="Products.CMFCore.interfaces.IFolderish"

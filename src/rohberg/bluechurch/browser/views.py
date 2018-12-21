@@ -1,5 +1,6 @@
 # coding: utf-8
 from Acquisition import aq_inner
+from collective.address.vocabulary import get_pycountry_name
 from DateTime import DateTime
 from dexterity.membrane.behavior.user import INameFromFullName
 import os
@@ -383,3 +384,16 @@ class UpdatePofileTypes(BrowserView):
 
         # response = self.request.response
         # response.redirect(context.absolute_url()) # , status=301
+
+
+class ListMembersInfo(BrowserView):
+
+        def __call__(self):
+            context = self.context
+            portal_catalog = api.portal.get_tool('portal_catalog')
+            items = portal_catalog(portal_type=['dexterity.membrane.bluechurchmembraneprofile', ])
+
+            print("")
+            for item in items:
+              obj = item.getObject()
+              print(u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country)))
