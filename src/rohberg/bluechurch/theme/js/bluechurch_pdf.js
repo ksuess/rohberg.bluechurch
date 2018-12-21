@@ -46,13 +46,26 @@ $(document).ready(function() {
     // // The workerSrc property shall be specified.
     pdfjsLib.GlobalWorkerOptions.workerSrc = '++theme++bluechurch/js/pdfjs/pdf.worker.js';
 
-    // Link to PDF
+    // Link to PDF auf einer Seite
     $("a[href$='.pdf']").each(function(index) {
         let url = $(this).attr("href");
         let canvasid = 'canvas-'+index;
         $(this).prepend("<canvas id='"+ canvasid +"'></canvas><br/>");
         dorenderpdf(url, canvasid);
         $(this).attr("target", "_blank");
+    });
+
+    // Auch in der Uebersicht
+    // Nur die ersten drei (Ladezeit!)
+    $("a.summary[href$='.pdf/view']").each(function(index) {
+        if (index<3) {
+            let url = $(this).attr("href").replace(/.pdf\/view/gi, ".pdf");;
+            let canvasid = 'canvas-'+index;
+            console.debug(url);
+            $(this).prepend("<canvas id='"+ canvasid +"'></canvas><br/>");
+            dorenderpdf(url, canvasid);
+            $(this).attr("target", "_blank");
+        }
     });
 
 

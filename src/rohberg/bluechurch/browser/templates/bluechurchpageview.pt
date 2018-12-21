@@ -21,9 +21,8 @@
                 tal:content="view/kontaktperson_fullname">Kontaktperson</a>
         </div>
 
-        <script src="++theme++bluechurch/js/pdfjs/pdf.js"></script>
-        <!-- <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
-        <script src="/++theme++bluechurch/js/bluechurch_pdf.js"></script>
+        <!-- <script src="++theme++bluechurch/js/pdfjs/pdf.js"></script>
+        <script src="/++theme++bluechurch/js/bluechurch_pdf.js"></script> -->
 
     </metal:content-core>
 </body>
