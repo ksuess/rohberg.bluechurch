@@ -394,6 +394,9 @@ class ListMembersInfo(BrowserView):
             items = portal_catalog(portal_type=['dexterity.membrane.bluechurchmembraneprofile', ])
 
             print("")
+            result = ""
             for item in items:
-              obj = item.getObject()
-              print(u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country)))
+                obj = item.getObject()
+                # print(u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country)))
+                result += "\n" + u"{},{},{},{}".format(obj.email, obj.last_name, obj.first_name, get_pycountry_name(obj.country))
+            return result
